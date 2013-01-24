@@ -1,6 +1,6 @@
 Flow report for DE2_TOP
-Tue Jan 22 23:08:05 2013
-Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
+Thu Jan 24 16:20:20 2013
+Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
 ---------------------
@@ -19,7 +19,7 @@ Quartus II 32-bit Version 12.1 Build 177 11/07/2012 SJ Web Edition
 ----------------
 ; Legal Notice ;
 ----------------
-Copyright (C) 1991-2012 Altera Corporation
+Copyright (C) 1991-2011 Altera Corporation
 Your use of Altera Corporation's design tools, logic functions 
 and other software and tools, and its AMPP partner logic 
 functions, and any output files from any of the foregoing 
@@ -35,26 +35,26 @@ applicable agreement for further details.
 
 
 
-+-------------------------------------------------------------------------------+
-; Flow Summary                                                                  ;
-+------------------------------------+------------------------------------------+
-; Flow Status                        ; Successful - Tue Jan 22 23:08:04 2013    ;
-; Quartus II 32-bit Version          ; 12.1 Build 177 11/07/2012 SJ Web Edition ;
-; Revision Name                      ; DE2_TOP                                  ;
-; Top-level Entity Name              ; DE2_TOP                                  ;
-; Family                             ; Cyclone II                               ;
-; Device                             ; EP2C35F672C6                             ;
-; Timing Models                      ; Final                                    ;
-; Total logic elements               ; 0 / 33,216 ( 0 % )                       ;
-;     Total combinational functions  ; 0 / 33,216 ( 0 % )                       ;
-;     Dedicated logic registers      ; 0 / 33,216 ( 0 % )                       ;
-; Total registers                    ; 0                                        ;
-; Total pins                         ; 425 / 475 ( 89 % )                       ;
-; Total virtual pins                 ; 0                                        ;
-; Total memory bits                  ; 0 / 483,840 ( 0 % )                      ;
-; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                           ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                            ;
-+------------------------------------+------------------------------------------+
++--------------------------------------------------------------------------------+
+; Flow Summary                                                                   ;
++------------------------------------+-------------------------------------------+
+; Flow Status                        ; Successful - Thu Jan 24 16:20:20 2013     ;
+; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
+; Revision Name                      ; DE2_TOP                                   ;
+; Top-level Entity Name              ; DE2_TOP                                   ;
+; Family                             ; Cyclone II                                ;
+; Device                             ; EP2C35F672C6                              ;
+; Timing Models                      ; Final                                     ;
+; Total logic elements               ; 455 / 33,216 ( 1 % )                      ;
+;     Total combinational functions  ; 448 / 33,216 ( 1 % )                      ;
+;     Dedicated logic registers      ; 104 / 33,216 ( < 1 % )                    ;
+; Total registers                    ; 104                                       ;
+; Total pins                         ; 425 / 475 ( 89 % )                        ;
+; Total virtual pins                 ; 0                                         ;
+; Total memory bits                  ; 310,000 / 483,840 ( 64 % )                ;
+; Embedded Multiplier 9-bit elements ; 0 / 70 ( 0 % )                            ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                            ;
++------------------------------------+-------------------------------------------+
 
 
 +-----------------------------------------+
@@ -62,27 +62,30 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/22/2013 23:07:51 ;
+; Start date & time ; 01/24/2013 16:19:47 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_TOP             ;
 +-------------------+---------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                           ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 203050749530269.135891407104076       ; --            ; --          ; --             ;
-; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --             ;
-; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --             ;
-; PARTITION_COLOR                     ; 16764057                              ; --            ; --          ; Top            ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top            ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top            ;
-; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --             ;
-; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --             ;
-; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                   ; --            ; --          ; eda_blast_fpga ;
-+-------------------------------------+---------------------------------------+---------------+-------------+----------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                       ;
++-------------------------------------+---------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+---------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 132683363797220.135906238705096       ; --            ; --          ; --         ;
+; IP_TOOL_NAME                        ; RAM: 2-PORT                           ; --            ; --          ; --         ;
+; IP_TOOL_VERSION                     ; 8.0                                   ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
+; MISC_FILE                           ; vga_buffer_bb.v                       ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 14622752                              ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --         ;
+; USE_GENERATED_PHYSICAL_CONSTRAINTS  ; Off                                   ; --            ; --          ; eda_palace ;
++-------------------------------------+---------------------------------------+---------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -90,11 +93,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:01     ; 1.0                     ; 338 MB              ; 00:00:01                           ;
-; Fitter                    ; 00:00:06     ; 1.0                     ; 455 MB              ; 00:00:06                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 347 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:01     ; 1.0                     ; 305 MB              ; 00:00:01                           ;
-; Total                     ; 00:00:11     ; --                      ; --                  ; 00:00:11                           ;
+; Analysis & Synthesis      ; 00:00:10     ; 1.0                     ; 381 MB              ; 00:00:08                           ;
+; Fitter                    ; 00:00:11     ; 1.7                     ; 530 MB              ; 00:00:13                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 384 MB              ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 2.7                     ; 400 MB              ; 00:00:04                           ;
+; Total                     ; 00:00:29     ; --                      ; --                  ; 00:00:27                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -103,20 +106,20 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; NEPTUNE          ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; NEPTUNE          ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; NEPTUNE          ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; NEPTUNE          ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; PH238-10         ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; PH238-10         ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; PH238-10         ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; PH238-10         ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 
 ------------
 ; Flow Log ;
 ------------
-quartus_map --read_settings_files=on --write_settings_files=off template_project -c DE2_TOP
-quartus_fit --read_settings_files=off --write_settings_files=off template_project -c DE2_TOP
-quartus_asm --read_settings_files=off --write_settings_files=off template_project -c DE2_TOP
-quartus_sta template_project -c DE2_TOP
+quartus_map --read_settings_files=on --write_settings_files=off VGA_m4k -c DE2_TOP
+quartus_fit --read_settings_files=off --write_settings_files=off VGA_m4k -c DE2_TOP
+quartus_asm --read_settings_files=off --write_settings_files=off VGA_m4k -c DE2_TOP
+quartus_sta VGA_m4k -c DE2_TOP
 
 
 

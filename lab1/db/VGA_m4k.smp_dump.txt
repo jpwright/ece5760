@@ -1,0 +1,7 @@
+
+State Machine - |DE2_TOP|state
+Name state.test3 state.test2 state.test1 state.init 
+state.init 0 0 0 0 
+state.test1 0 0 1 1 
+state.test2 0 1 0 1 
+state.test3 1 0 0 1 
