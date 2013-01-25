@@ -1,5 +1,5 @@
 Flow report for DE2_TOP
-Fri Jan 25 13:57:14 2013
+Fri Jan 25 14:02:12 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Fri Jan 25 13:57:13 2013     ;
+; Flow Status                        ; Successful - Fri Jan 25 14:02:10 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/25/2013 13:56:44 ;
+; Start date & time ; 01/25/2013 14:01:25 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_TOP             ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 132683363797220.135914020403588 ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 132683363430515.135914047904328 ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; RAM: 2-PORT                     ; --            ; --          ; --         ;
 ; IP_TOOL_VERSION                     ; 8.0                             ; --            ; --          ; --         ;
 ; MISC_FILE                           ; vga_buffer_bb.v                 ; --            ; --          ; --         ;
@@ -89,11 +89,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:08     ; 1.0                     ; 375 MB              ; 00:00:06                           ;
-; Fitter                    ; 00:00:12     ; 2.4                     ; 528 MB              ; 00:00:14                           ;
-; Assembler                 ; 00:00:03     ; 1.0                     ; 384 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 402 MB              ; 00:00:04                           ;
-; Total                     ; 00:00:27     ; --                      ; --                  ; 00:00:26                           ;
+; Analysis & Synthesis      ; 00:00:19     ; 1.0                     ; 374 MB              ; 00:00:07                           ;
+; Fitter                    ; 00:00:17     ; 2.2                     ; 532 MB              ; 00:00:15                           ;
+; Assembler                 ; 00:00:05     ; 1.0                     ; 384 MB              ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:08     ; 1.0                     ; 402 MB              ; 00:00:05                           ;
+; Total                     ; 00:00:49     ; --                      ; --                  ; 00:00:30                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -102,10 +102,10 @@ applicable agreement for further details.
 +---------------------------+------------------+-----------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name   ; OS Version ; Processor type ;
 +---------------------------+------------------+-----------+------------+----------------+
-; Analysis & Synthesis      ; PH238-10         ; Windows 7 ; 6.1        ; x86_64         ;
-; Fitter                    ; PH238-10         ; Windows 7 ; 6.1        ; x86_64         ;
-; Assembler                 ; PH238-10         ; Windows 7 ; 6.1        ; x86_64         ;
-; TimeQuest Timing Analyzer ; PH238-10         ; Windows 7 ; 6.1        ; x86_64         ;
+; Analysis & Synthesis      ; PH238-11         ; Windows 7 ; 6.1        ; x86_64         ;
+; Fitter                    ; PH238-11         ; Windows 7 ; 6.1        ; x86_64         ;
+; Assembler                 ; PH238-11         ; Windows 7 ; 6.1        ; x86_64         ;
+; TimeQuest Timing Analyzer ; PH238-11         ; Windows 7 ; 6.1        ; x86_64         ;
 +---------------------------+------------------+-----------+------------+----------------+
 
 

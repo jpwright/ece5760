@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Fri Jan 25 13:48:21 2013
+Analysis & Synthesis Status : Successful - Fri Jan 25 15:38:14 2013
 Quartus II 64-Bit Version : 11.0 Build 157 04/27/2011 SJ Full Version
 Revision Name : DE2_TOP
 Top-level Entity Name : DE2_TOP
 Family : Cyclone II
-Total logic elements : 752
-    Total combinational functions : 725
-    Dedicated logic registers : 204
-Total registers : 204
+Total logic elements : 5,411
+    Total combinational functions : 5,391
+    Dedicated logic registers : 1,407
+Total registers : 1407
 Total pins : 425
 Total virtual pins : 0
 Total memory bits : 310,000

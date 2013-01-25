@@ -1,17 +1,10 @@
 
 State Machine - |DE2_TOP|state
-Name state.draw_walker2 state.draw_walker1 state.init2 state.init1 state.new_walker state.update_walker state.draw_walker state.test6 state.test5 state.test4 state.test3 state.test2 state.test1 state.init 
-state.init 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-state.test1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-state.test2 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-state.test3 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-state.test4 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-state.test5 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-state.test6 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-state.draw_walker 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-state.update_walker 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-state.new_walker 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-state.init1 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-state.init2 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-state.draw_walker1 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-state.draw_walker2 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name state.chill state.new_row2 state.test3 state.test2 state.test1 state.init state.new_row 
+state.init 0 0 0 0 0 0 0 
+state.test1 0 0 0 0 1 1 0 
+state.test2 0 0 0 1 0 1 0 
+state.test3 0 0 1 0 0 1 0 
+state.new_row 0 0 0 0 0 1 1 
+state.new_row2 0 1 0 0 0 1 0 
+state.chill 1 0 0 0 0 1 0 

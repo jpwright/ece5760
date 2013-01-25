@@ -1,5 +1,5 @@
 Fitter report for DE2_TOP
-Fri Jan 25 13:57:06 2013
+Fri Jan 25 14:01:59 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -66,7 +66,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Fitter Summary                                                                 ;
 +------------------------------------+-------------------------------------------+
-; Fitter Status                      ; Successful - Fri Jan 25 13:57:06 2013     ;
+; Fitter Status                      ; Successful - Fri Jan 25 14:01:58 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
@@ -141,12 +141,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.44        ;
+; Average used               ; 2.16        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;  18.8%      ;
+;     2-4 processors         ;  13.6%      ;
 +----------------------------+-------------+
 
 
@@ -3807,7 +3807,7 @@ Note: Fitter may spread logical memories into multiple blocks to improve timing.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Fitter
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Fri Jan 25 13:56:54 2013
+    Info: Processing started: Fri Jan 25 14:01:41 2013
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off VGA_m4k -c DE2_TOP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Selected device EP2C35F672C6 for design "DE2_TOP"
@@ -3857,7 +3857,7 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 8 does not use VREF pins and has 3.3V VCCIO pins. 53 total pin(s) used --  3 pins available
 Warning: PLL "VGA_Audio_PLL:p1|altpll:altpll_component|pll" output port clk[1] feeds output pin "AUD_XCK" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance
 Warning: PLL "VGA_Audio_PLL:p1|altpll:altpll_component|pll" output port clk[2] feeds output pin "VGA_CLK" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance
-Info: Fitter preparation operations ending: elapsed time is 00:00:02
+Info: Fitter preparation operations ending: elapsed time is 00:00:04
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info: Fitter placement operations beginning
@@ -4414,10 +4414,10 @@ Warning: Following 159 pins have no output enable or a GND or VCC output enable 
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Generated suppressed messages file Z:/ece5760/VGA_m4k/DE2_TOP.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 7 warnings
-    Info: Peak virtual memory: 528 megabytes
-    Info: Processing ended: Fri Jan 25 13:57:07 2013
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:14
+    Info: Peak virtual memory: 532 megabytes
+    Info: Processing ended: Fri Jan 25 14:02:00 2013
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:16
 
 
 +----------------------------+
