@@ -148,7 +148,7 @@ module DE2_TOP (
    //assign HEX5 = 7'h7F;
    //assign HEX6 = 7'h7F;
    //assign HEX7 = 7'h7F;
-   assign LEDR = 18'h0;
+   //assign LEDR = 18'h0;
   // assign LEDG = 9'h0;
   
    //Set all GPIO to tri-state.
@@ -294,7 +294,7 @@ reg [8:0] y_walker;
 reg [7:0] rule;
 reg [3:0] sum; //neighbor sum
 
-assign LEDG = sum;
+//assign LEDG = sum;
 ////////////////////////////////////
 /*From megaWizard:
 	module vga_buffer (
@@ -330,9 +330,9 @@ vga_buffer display(
 	.q_b (mem_bit) ); // data used to update VGA
 
 // make the color white
-assign  mVGA_R = {8{disp_bit}} ;
+assign  mVGA_R = {10{disp_bit}} ;
 assign  mVGA_G = {10{disp_bit}} ;
-assign  mVGA_B = {2{disp_bit}} ;
+assign  mVGA_B = {10{disp_bit}} ;
 
 // DLA state machine
 assign reset = ~KEY[0];
@@ -350,6 +350,16 @@ HexDigit H4(HEX4, rule[4]);
 HexDigit H5(HEX5, rule[5]);
 HexDigit H6(HEX6, rule[6]);
 HexDigit H7(HEX7, rule[7]);
+
+assign LEDR[17:0] = SW[17:0];
+assign LEDG[0] = ~KEY[0];
+assign LEDG[1] = ~KEY[0];
+assign LEDG[2] = ~KEY[1];
+assign LEDG[3] = ~KEY[1];
+assign LEDG[4] = ~KEY[2];
+assign LEDG[5] = ~KEY[2];
+assign LEDG[6] = ~KEY[3];
+assign LEDG[7] = ~KEY[3];
 
 reg [641:0] row = 642'd34; //Extra 2 are for zero-padding
 
@@ -399,6 +409,9 @@ begin
 		y_rand <= 29'h55555555;
 		//read SW0:7
 		rule <= SW[7:0];
+		//init a randwalker to just left of center
+		x_walker <= 10'd300;
+		y_walker <= 9'd240;
 		
 		state <= init;	//first state in regular state machine 
 	end
@@ -411,36 +424,147 @@ begin
 			// next three states write the inital dot
 			init: //write a single dot in the middle of the screen
 			begin
-				we <= 1'b1 ;
-				addr_reg <= {10'd320,9'd0} ;	//(x,y)							
+				we <= 1'b0 ;
+				addr_reg <= {10'd320,9'd240} ;	//(x,y)							
 				//write a white dot in the middle of the screen
 				data_reg <= 1'b1 ;
+				state <= init1 ;
+			end			
+			
+			init1: //delay enable 'we' to account for registering addr,data
+			begin
+				we <= 1'b1;								
+				//write a white dot in the middle of the screen
+				data_reg <= 1'b1 ;
+				state <= init2 ;
+			end	 
+			
+			init2: 
+			// finish write a single dot in the middle of the screen
+			// and set up first read
+			begin
+				we <= 1'b0;	
+				//read left neighbor
+				// use result TWO cycles later (state==test2)
+				// -- one to load the addr reg, one to read memory
+				addr_reg <= {x_walker-10'd1,y_walker};							
 				state <= test1 ;
+			end	
+					
+			test1: 
+			begin	
+				sum <= 0; 		//init sum of neighbors
+				we <= 1'b0; 	//no memory write 
+				//read right neighbor 
+				addr_reg <= {x_walker+10'd1,y_walker};
+				state <= test2 ;			
 			end
 			
-			//
-			test1:
-			begin
-				we <= 1'b0;
-				addr_reg <= {10'd250,9'd0};
-				data_reg <= compute;
-				state <= test2;
+			test2: 
+			begin				
+				we <= 1'b0; //no memory write 
+				sum <= sum + {3'b0, state_bit};	//use left neighbor
+				//read upper neighbor 
+				addr_reg <= {x_walker,y_walker - 9'd1};
+				state <= test3 ;	
 			end
 			
-			test2:
+			test3:  
 			begin
-				we <= 1'b1;
-				addr_reg <= {10'd250,9'd100};
-				data_reg <= compute;
-				state <= test3;
+				we <= 1'b0; //no memory write 
+				sum <= sum + {3'b0, state_bit}; //use right neighbor
+				//read lower neighbor 
+				addr_reg <= {x_walker,y_walker + 9'd1};
+				state <= test4 ;							
 			end
 			
-			test3:
+			test4: 
 			begin
-				we <= 1'b0;
-				addr_reg <= {10'd250,9'd100};
-				data_reg <= compute;
-				state <= test1;
+				we <= 1'b0; //no memory write 
+				sum <= sum + {3'b0, state_bit}; // use upper neighbor
+				state <= test5 ;							
+			end
+			
+			test5: 
+			begin
+				we <= 1'b0; //no memory write 
+				sum <= sum + {3'b0, state_bit} ; // use lower neighbor
+				state <= test6 ;
+			end	
+			
+			test6:
+			begin
+				if (sum>0) // then there is one or more neighbors
+				begin
+					state <= draw_walker;
+				end
+				else // if get here, then no neighbors, so update position
+					state <= update_walker; 
+			end
+			
+			// the next three states draw the walker in memory
+			draw_walker: //draw the walker
+			begin
+				addr_reg <= {x_walker,y_walker};
+				data_reg <= 1'b1 ;
+				state <= draw_walker1 ;	
+			end
+			
+			draw_walker1:
+			begin
+				we <= 1'b1; // memory write enable 
+				state <= draw_walker2 ;
+			end
+			
+			draw_walker2:
+			begin
+				we <= 1'b0; // finish memory write 
+				state <= new_walker ;
+			end		
+			
+			update_walker: //update the walker
+			begin
+				we <= 1'b0; //no mem write
+				//inc/dec x while staying on screen
+				if (x_walker<10'd632 & x_rand[30]==1)
+					x_walker <= x_walker+1;
+				else if (x_walker>10'd4 & x_rand[30]==0)
+					x_walker <= x_walker-1;
+				//inc/dec y while staying on screen
+				if (y_walker<9'd472 & y_rand[28]==1)
+					y_walker <= y_walker+1;
+				else if (y_walker>9'd4 & y_rand[28]==0)
+					y_walker <= y_walker-1;
+				//update the x,y random number gens
+				x_rand <= {x_rand[29:0], x_low_bit} ;
+				y_rand <= {y_rand[27:0], y_low_bit} ;
+				state <= init2 ;	
+			end
+			
+			new_walker: //generate a new one
+			begin
+				we <= 1'b0; // no memory write
+				//init randwalker x
+				if (x_rand[30])
+				begin
+					x_walker <= {1'b0,x_rand[29:21]}+10'd50;
+					if (y_rand[28])
+						y_walker <= 9'd472;
+					else
+						y_walker <= 9'd4;
+				end
+				else
+				begin
+					y_walker <= {1'b0,x_rand[29:22]}+9'd50;
+					if (y_rand[28])
+						x_walker <= 10'd632;
+					else
+						x_walker <= 10'd4;
+				end
+				//update the x,y random number gens
+				x_rand <= {x_rand[29:0], x_low_bit} ;
+				y_rand <= {y_rand[27:0], y_low_bit} ;
+				state <= init2;
 			end
 		endcase
 	end // else if ( KEY[3]) 
