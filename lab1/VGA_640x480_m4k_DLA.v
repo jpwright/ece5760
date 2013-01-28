@@ -351,7 +351,7 @@ HexDigit H5(HEX5, rule[5]);
 HexDigit H6(HEX6, rule[6]);
 HexDigit H7(HEX7, rule[7]);
 
-assign LEDR[17:0] = SW[17:0];
+assign LEDR[7:0] = SW[7:0];
 assign LEDG[0] = ~KEY[0];
 assign LEDG[1] = ~KEY[0];
 assign LEDG[2] = ~KEY[1];
@@ -361,20 +361,24 @@ assign LEDG[5] = ~KEY[2];
 assign LEDG[6] = ~KEY[3];
 assign LEDG[7] = ~KEY[3];
 
+reg [7:0] current_state;
 
+assign LEDR[17:10] = current_state[7:0];
 
-reg [641:0] row = 642'd0; //Extra 2 are for zero-padding
-reg [641:0] prow = 642'd1; //Extra 2 are for zero-padding
-reg [9:0] col = 9'd0;
-reg [9:0] pointer = 10'd1; //Start row pointer at the 1, due to zero padding.
+reg [641:0] row_data = 642'd0; //Extra 2 are for zero-padding
+reg [641:0] prow_data = 642'd0; //Extra 2 are for zero-padding
+reg [8:0] current_row = 9'd0;
+reg [9:0] current_col = 10'd1; //Start row pointer at the 1, due to zero padding.
 
 wire [641:0] result;
+
+reg print = 1'b1;
 
 genvar index;
 generate
 for (index=1; index < 641; index=index+1)
 	begin: gen_code_label 
-		Automaton A_inst(result[index], prow[index+1:index-1], rule);
+		Automaton A_inst(result[index], prow_data[index+1:index-1], rule);
 	end
 endgenerate
 //Automaton Tester
@@ -410,12 +414,13 @@ begin
 		y_rand <= 29'h55555555;
 		//read SW0:7
 		rule <= SW[7:0];
-		row[320] = 1'b1;
+		row_data <= 642'd0;
+		prow_data <= 642'd0;
 		state <= init;	//first state in regular state machine 
 	end
 	
 	//begin state machine to modify display 
-	else if ( KEY[3])  // KEY3 is pause
+	else if ( KEY[3] )  // KEY3 is pause
 	begin
 		case(state)
 			
@@ -426,6 +431,11 @@ begin
 				addr_reg <= {10'd320,9'd0} ;	//(x,y)							
 				//write a white dot in the middle of the screen
 				data_reg <= 1'b1 ;
+				print = 1'b1;
+				row_data[320] <= 1'b1;
+				current_col <= 10'd1;
+				current_row <= 9'd0;
+				current_state <= 8'b10000000;
 				state <= test1 ;
 			end
 			
@@ -435,16 +445,19 @@ begin
 				we <= 1'b0;
 				//addr_reg <= {10'd250,9'd0};
 				//data_reg <= compute;
-				
-				
+				if (print == 1'b1) begin
+					addr_reg <= {current_col,current_row};
+					data_reg <= row_data[current_col];
+				end
+				current_state <= 8'b01000000;
 				state <= test2;
 			end
 			
 			test2:
 			begin
 				we <= 1'b1;
-				addr_reg <= {pointer,col};
-				data_reg <= row[pointer];
+				
+				current_state <= 8'b00100000;
 				state <= test3;
 			end
 			
@@ -452,22 +465,30 @@ begin
 			begin
 				we <= 1'b0;
 				
-				if (pointer == 10'd640) begin
-					pointer <= 10'd1;
-					if (col == 9'd200) begin
-						//col <= 9'd0;
-						state <= chill;
+				if (current_col >= 10'd640) begin
+				   current_col <= 10'd1;
+					if (current_row >= 9'd480) begin
+						//current_row <= 9'd0;
+						print <= 1'b0;
+						//state <= chill;
 					end
 					else begin
-						col <= col + 9'd1;
+						//if ( ~KEY[2] )
+						//begin
+							current_row <= current_row + 9'd1;
+							state <= new_row;
+						//end
+						//else begin
+							//state <= test1;
+						//end
 					end
-					state <= new_row;
+					
 				end
 				else begin
-					pointer <= pointer + 10'd1;
+					current_col <= current_col + 10'd1;
 					state <= test1;
 				end
-				
+				current_state <= 8'b00010000;
 				//addr_reg <= {10'd250,9'd100};
 				//data_reg <= compute;
 				
@@ -475,19 +496,22 @@ begin
 			
 			new_row:
 			begin
-				row <= result;
+				prow_data <= row_data;
+				current_state <= 8'b00001000;
 				state <= new_row2;
 			end
 			
 			new_row2:
 			begin
-				prow <= row;
+				row_data <= result;
+				current_state <= 8'b00000100;
 				state <= test1;
 			end
 			
 			chill:
 			begin
 				//just chill
+				current_state <= 8'b00000010;
 				state <= chill;
 			end
 			

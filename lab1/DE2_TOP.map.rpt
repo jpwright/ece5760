@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_TOP
-Fri Jan 25 15:38:14 2013
+Mon Jan 28 16:38:21 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -67,15 +67,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jan 25 15:38:14 2013     ;
+; Analysis & Synthesis Status        ; Successful - Mon Jan 28 16:38:21 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 5,411                                     ;
-;     Total combinational functions  ; 5,391                                     ;
-;     Dedicated logic registers      ; 1,407                                     ;
-; Total registers                    ; 1407                                      ;
+; Total logic elements               ; 4,809                                     ;
+;     Total combinational functions  ; 4,785                                     ;
+;     Dedicated logic registers      ; 1,412                                     ;
+; Total registers                    ; 1412                                      ;
 ; Total pins                         ; 425                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 310,000                                   ;
@@ -218,20 +218,20 @@ applicable agreement for further details.
 +---------------------------------------------+------------------------------------------------+
 ; Resource                                    ; Usage                                          ;
 +---------------------------------------------+------------------------------------------------+
-; Estimated Total logic elements              ; 5,411                                          ;
+; Estimated Total logic elements              ; 4,809                                          ;
 ;                                             ;                                                ;
-; Total combinational functions               ; 5391                                           ;
+; Total combinational functions               ; 4785                                           ;
 ; Logic element usage by number of LUT inputs ;                                                ;
-;     -- 4 input functions                    ; 3976                                           ;
-;     -- 3 input functions                    ; 1314                                           ;
-;     -- <=2 input functions                  ; 101                                            ;
+;     -- 4 input functions                    ; 3986                                           ;
+;     -- 3 input functions                    ; 44                                             ;
+;     -- <=2 input functions                  ; 755                                            ;
 ;                                             ;                                                ;
 ; Logic elements by mode                      ;                                                ;
-;     -- normal mode                          ; 5324                                           ;
+;     -- normal mode                          ; 4718                                           ;
 ;     -- arithmetic mode                      ; 67                                             ;
 ;                                             ;                                                ;
-; Total registers                             ; 1407                                           ;
-;     -- Dedicated logic registers            ; 1407                                           ;
+; Total registers                             ; 1412                                           ;
+;     -- Dedicated logic registers            ; 1412                                           ;
 ;     -- I/O registers                        ; 0                                              ;
 ;                                             ;                                                ;
 ; I/O pins                                    ; 425                                            ;
@@ -240,9 +240,9 @@ applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                              ;
 ;                                             ;                                                ;
 ; Maximum fan-out node                        ; VGA_Audio_PLL:p1|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 1464                                           ;
-; Total fan-out                               ; 25420                                          ;
-; Average fan-out                             ; 3.48                                           ;
+; Maximum fan-out                             ; 1469                                           ;
+; Total fan-out                               ; 24904                                          ;
+; Average fan-out                             ; 3.72                                           ;
 +---------------------------------------------+------------------------------------------------+
 
 
@@ -251,7 +251,7 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_TOP                                  ; 5391 (2415)       ; 1407 (1337)  ; 310000      ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                                                                                       ;              ;
+; |DE2_TOP                                  ; 4785 (1810)       ; 1412 (1342)  ; 310000      ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                                                                                       ;              ;
 ;    |Automaton:gen_code_label[100].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[100].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[101].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[101].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[102].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[102].A_inst                                                                  ;              ;
@@ -362,7 +362,7 @@ applicable agreement for further details.
 ;    |Automaton:gen_code_label[198].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[198].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[199].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[199].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[19].A_inst|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[19].A_inst                                                                   ;              ;
-;    |Automaton:gen_code_label[1].A_inst|   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[1].A_inst                                                                    ;              ;
+;    |Automaton:gen_code_label[1].A_inst|   ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[1].A_inst                                                                    ;              ;
 ;    |Automaton:gen_code_label[200].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[200].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[201].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[201].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[202].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[202].A_inst                                                                  ;              ;
@@ -895,7 +895,7 @@ applicable agreement for further details.
 ;    |Reset_Delay:r0|                       ; 28 (28)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Reset_Delay:r0                                                                                        ;              ;
 ;    |VGA_Audio_PLL:p1|                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1                                                                                      ;              ;
 ;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1|altpll:altpll_component                                                              ;              ;
-;    |VGA_Controller:u1|                    ; 64 (64)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Controller:u1                                                                                     ;              ;
+;    |VGA_Controller:u1|                    ; 65 (65)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Controller:u1                                                                                     ;              ;
 ;    |vga_buffer:display|                   ; 326 (0)           ; 7 (0)        ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display                                                                                    ;              ;
 ;       |altsyncram:altsyncram_component|   ; 326 (0)           ; 7 (0)        ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component                                                    ;              ;
 ;          |altsyncram_m352:auto_generated| ; 326 (0)           ; 7 (7)        ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated                     ;              ;
@@ -950,16 +950,20 @@ Encoding Type:  One-Hot
 +----------------------------------------+----------------------------------------------+
 ; VGA_Controller:u1|Cur_Color_R[8,9]     ; Stuck at GND due to stuck port data_in       ;
 ; VGA_Controller:u1|Cur_Color_B[2..9]    ; Stuck at GND due to stuck port data_in       ;
-; row[0,641]                             ; Stuck at GND due to stuck port data_in       ;
-; prow[641]                              ; Stuck at GND due to stuck port data_in       ;
+; current_state[0]                       ; Stuck at GND due to stuck port data_in       ;
 ; VGA_Controller:u1|Cur_Color_R[0..6]    ; Merged with VGA_Controller:u1|Cur_Color_R[7] ;
 ; VGA_Controller:u1|Cur_Color_G[0..9]    ; Merged with VGA_Controller:u1|Cur_Color_R[7] ;
 ; VGA_Controller:u1|Cur_Color_B[0,1]     ; Merged with VGA_Controller:u1|Cur_Color_R[7] ;
-; state~2                                ; Lost fanout                                  ;
-; state~3                                ; Lost fanout                                  ;
-; state~5                                ; Lost fanout                                  ;
+; prow_data[641]                         ; Merged with prow_data[0]                     ;
+; row_data[641]                          ; Merged with row_data[0]                      ;
+; row_data[0]                            ; Stuck at GND due to stuck port data_in       ;
+; prow_data[0]                           ; Stuck at GND due to stuck port data_in       ;
+; state~9                                ; Lost fanout                                  ;
+; state~10                               ; Lost fanout                                  ;
+; state~12                               ; Lost fanout                                  ;
 ; state.chill                            ; Stuck at GND due to stuck port data_in       ;
-; Total Number of Removed Registers = 36 ;                                              ;
+; current_state[1]                       ; Stuck at GND due to stuck port data_in       ;
+; Total Number of Removed Registers = 39 ;                                              ;
 +----------------------------------------+----------------------------------------------+
 
 
@@ -968,7 +972,7 @@ Encoding Type:  One-Hot
 +---------------+---------------------------+----------------------------------------+
 ; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
 +---------------+---------------------------+----------------------------------------+
-; row[641]      ; Stuck at GND              ; prow[641]                              ;
+; state.chill   ; Stuck at GND              ; current_state[1]                       ;
 ;               ; due to stuck port data_in ;                                        ;
 +---------------+---------------------------+----------------------------------------+
 
@@ -978,12 +982,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1407  ;
-; Number of registers using Synchronous Clear  ; 23    ;
-; Number of registers using Synchronous Load   ; 21    ;
+; Total registers                              ; 1412  ;
+; Number of registers using Synchronous Clear  ; 663   ;
+; Number of registers using Synchronous Load   ; 29    ;
 ; Number of registers using Asynchronous Clear ; 42    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 100   ;
+; Number of registers using Clock Enable       ; 1383  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -993,21 +997,24 @@ Encoding Type:  One-Hot
 +----------------------------------------+---------+
 ; Inverted Register                      ; Fan out ;
 +----------------------------------------+---------+
-; pointer[0]                             ; 90      ;
-; prow[0]                                ; 5       ;
+; current_col[0]                         ; 91      ;
+; print                                  ; 6       ;
 ; Total number of inverted registers = 2 ;         ;
 +----------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+-----------------------+----------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered            ; Example Multiplexer Output ;
-+--------------------+-----------+---------------+----------------------+------------------------+-----------------------+----------------------------+
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; |DE2_TOP|addr_reg[0]  ;                            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; |DE2_TOP|addr_reg[15] ;                            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; |DE2_TOP|state        ;                            ;
-+--------------------+-----------+---------------+----------------------+------------------------+-----------------------+----------------------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered              ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------+----------------------------+
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; |DE2_TOP|addr_reg[4]    ;                            ;
+; 4:1                ; 640 bits  ; 1280 LEs      ; 640 LEs              ; 640 LEs                ; |DE2_TOP|prow_data[636] ;                            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |DE2_TOP|addr_reg[15]   ;                            ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; |DE2_TOP|state          ;                            ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; |DE2_TOP|state          ;                            ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; |DE2_TOP|state          ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------+----------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------+
@@ -1652,7 +1659,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:42     ;
+; Top            ; 00:00:36     ;
 +----------------+--------------+
 
 
@@ -1662,7 +1669,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Fri Jan 25 15:37:28 2013
+    Info: Processing started: Mon Jan 28 16:37:44 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_m4k -c DE2_TOP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file vga_buffer.v
@@ -1673,16 +1680,16 @@ Info: Found 1 design units, including 1 entities, in source file reset_delay.v
     Info: Found entity 1: Reset_Delay
 Info: Found 1 design units, including 1 entities, in source file vga_audio_pll.v
     Info: Found entity 1: VGA_Audio_PLL
-Warning (10229): Verilog HDL Expression warning at VGA_640x480_m4k_DLA.v(410): truncated literal to match 29 bits
+Warning (10229): Verilog HDL Expression warning at VGA_640x480_m4k_DLA.v(414): truncated literal to match 29 bits
 Info: Found 3 design units, including 3 entities, in source file vga_640x480_m4k_dla.v
     Info: Found entity 1: DE2_TOP
     Info: Found entity 2: Automaton
     Info: Found entity 3: HexDigit
 Info: Elaborating entity "DE2_TOP" for the top level hierarchy
-Warning (10230): Verilog HDL assignment warning at VGA_640x480_m4k_DLA.v(446): truncated value with size 20 to match size of target (19)
-Warning (10030): Net "result[641]" at VGA_640x480_m4k_DLA.v(371) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "result[0]" at VGA_640x480_m4k_DLA.v(371) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "result[641]" at VGA_640x480_m4k_DLA.v(373) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "result[0]" at VGA_640x480_m4k_DLA.v(373) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "LEDG[8]" at VGA_640x480_m4k_DLA.v(33) has no driver
+Warning (10034): Output port "LEDR[9..8]" at VGA_640x480_m4k_DLA.v(34) has no driver
 Warning (10034): Output port "I2C_SCLK" at VGA_640x480_m4k_DLA.v(98) has no driver
 Warning (10034): Output port "AUD_DACDAT" at VGA_640x480_m4k_DLA.v(129) has no driver
 Warning (10665): Bidirectional port "AUD_DACLRCK" at VGA_640x480_m4k_DLA.v(128) has a one-way connection to bidirectional port "AUD_ADCLRCK"
@@ -1835,6 +1842,10 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX7[2]" is stuck at GND
     Warning (13410): Pin "HEX7[6]" is stuck at VCC
     Warning (13410): Pin "LEDG[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[8]" is stuck at GND
+    Warning (13410): Pin "LEDR[9]" is stuck at GND
+    Warning (13410): Pin "LEDR[10]" is stuck at GND
+    Warning (13410): Pin "LEDR[11]" is stuck at GND
     Warning (13410): Pin "UART_TXD" is stuck at GND
     Warning (13410): Pin "IRDA_TXD" is stuck at GND
     Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND
@@ -1946,14 +1957,24 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "AUD_DACDAT" is stuck at GND
     Warning (13410): Pin "TD_RESET" is stuck at VCC
 Info: 3 registers lost all their fanouts during netlist optimizations. The first 3 are displayed below.
-    Info: Register "state~2" lost all its fanouts during netlist optimizations.
-    Info: Register "state~3" lost all its fanouts during netlist optimizations.
-    Info: Register "state~5" lost all its fanouts during netlist optimizations.
+    Info: Register "state~9" lost all its fanouts during netlist optimizations.
+    Info: Register "state~10" lost all its fanouts during netlist optimizations.
+    Info: Register "state~12" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file Z:/ece5760/lab1/DE2_TOP.map.smsg
 Info: Generating hard_block partition "hard_block:auto_generated_inst"
     Info: Adding node "VGA_Audio_PLL:p1|altpll:altpll_component|pll"
-Warning: Design contains 24 input pin(s) that do not drive logic
+Warning: Design contains 34 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "EXT_CLOCK"
+    Warning (15610): No output dependent on input pin "SW[8]"
+    Warning (15610): No output dependent on input pin "SW[9]"
+    Warning (15610): No output dependent on input pin "SW[10]"
+    Warning (15610): No output dependent on input pin "SW[11]"
+    Warning (15610): No output dependent on input pin "SW[12]"
+    Warning (15610): No output dependent on input pin "SW[13]"
+    Warning (15610): No output dependent on input pin "SW[14]"
+    Warning (15610): No output dependent on input pin "SW[15]"
+    Warning (15610): No output dependent on input pin "SW[16]"
+    Warning (15610): No output dependent on input pin "SW[17]"
     Warning (15610): No output dependent on input pin "UART_RXD"
     Warning (15610): No output dependent on input pin "IRDA_RXD"
     Warning (15610): No output dependent on input pin "OTG_INT0"
@@ -1977,18 +1998,18 @@ Warning: Design contains 24 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "TD_DATA[7]"
     Warning (15610): No output dependent on input pin "TD_HS"
     Warning (15610): No output dependent on input pin "TD_VS"
-Info: Implemented 5914 device resources after synthesis - the final resource count might be different
+Info: Implemented 5311 device resources after synthesis - the final resource count might be different
     Info: Implemented 48 input pins
     Info: Implemented 218 output pins
     Info: Implemented 159 bidirectional pins
-    Info: Implemented 5412 logic cells
+    Info: Implemented 4809 logic cells
     Info: Implemented 76 RAM segments
     Info: Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 188 warnings
-    Info: Peak virtual memory: 401 megabytes
-    Info: Processing ended: Fri Jan 25 15:38:14 2013
-    Info: Elapsed time: 00:00:46
-    Info: Total CPU time (on all processors): 00:00:35
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 202 warnings
+    Info: Peak virtual memory: 395 megabytes
+    Info: Processing ended: Mon Jan 28 16:38:22 2013
+    Info: Elapsed time: 00:00:38
+    Info: Total CPU time (on all processors): 00:00:32
 
 
 +------------------------------------------+
