@@ -330,17 +330,17 @@ vga_buffer display(
 	.q_b (mem_bit) ); // data used to update VGA
 
 // make the color white
-assign  mVGA_R = {8{disp_bit}} ;
-assign  mVGA_G = {10{disp_bit}} ;
-assign  mVGA_B = {2{disp_bit}} ;
+
+//reg [9:0] color_r = {8{disp_bit}} ;
+//reg [9:0] color_g = {10{disp_bit}} ;
+//reg [9:0] color_b = {2{disp_bit}} ;
+
+assign  mVGA_R = {2{disp_bit}};
+assign  mVGA_G = {10{disp_bit}};
+assign  mVGA_B = {2{disp_bit}};
 
 // DLA state machine
 assign reset = ~KEY[0];
-
-//right-most bit for rand number shift regs
-//your basic XOR random # gen
-assign x_low_bit = x_rand[27] ^ x_rand[30];
-assign y_low_bit = y_rand[26] ^ y_rand[28];
 
 HexDigit H0(HEX0, rule[0]);
 HexDigit H1(HEX1, rule[1]);
@@ -361,9 +361,12 @@ assign LEDG[5] = ~KEY[2];
 assign LEDG[6] = ~KEY[3];
 assign LEDG[7] = ~KEY[3];
 
-reg [7:0] current_state;
+reg [7:0] current_state = 8'b11111111;
 
 assign LEDR[17:10] = current_state[7:0];
+
+reg reset_val;
+assign LEDG[8] = reset_val;
 
 reg [641:0] row_data = 642'd0; //Extra 2 are for zero-padding
 reg [641:0] prow_data = 642'd0; //Extra 2 are for zero-padding
@@ -381,21 +384,32 @@ for (index=1; index < 641; index=index+1)
 		Automaton A_inst(result[index], prow_data[index+1:index-1], rule);
 	end
 endgenerate
-//Automaton Tester
 
-wire compute;
-Automaton A(compute, SW[17:15], rule);
-//HexDigit H7(HEX7, compute);
+reg [639:0] prev_random_row = 640'hf9232a25a8c301011f64ff197a07037e15f2b9498b9dec83273c0dae73b1adbf1fa46164a15fa1057184b67f0c22d55ae3bf4f0c5a213cb2da6226b3520b3de83dea4fc9080c12544c4e2afb78206410;
+wire [639:0] random_row;
+
+generate
+for (index=0; index < 20; index=index+1)
+	begin: gen_code_label2
+		Random32 R_inst(random_row[(32*index + 31):(32*index)], prev_random_row[(32*index + 31):(32*index)]);
+	end
+endgenerate
+//Automaton Tester
 
 //state names
 parameter init=4'd0, test1=4'd1, test2=4'd2, test3=4'd3, test4=4'd4, test5=4'd5, test6=4'd6, 
 	new_row=4'd7, new_row2=4'd8, chill=4'd9,
-	init1=4'd10, init2=4'd11, draw_walker1=4'd12, draw_walker2=4'd13 ;
+	chill2=4'd10, init2=4'd11, draw_walker1=4'd12, draw_walker2=4'd13 ;
 always @ (negedge VGA_CTRL_CLK)
 begin
 	// register the m4k output for better timing on VGA
 	// negedge seems to work better than posedge
 	disp_bit <= mem_bit;
+end
+
+always @ (posedge SW[3])
+begin
+
 end
 
 always @ (posedge VGA_CTRL_CLK) //VGA_CTRL_CLK
@@ -405,23 +419,30 @@ begin
 	
 	if (reset)		//synch reset assumes KEY0 is held down 1/60 second
 	begin
+		reset_val <= 1'b1;
 		//clear the screen
 		addr_reg <= {Coord_X[9:0],Coord_Y[8:0]} ;	// [17:0]
 		we <= 1'b1;								//write some memory
 		data_reg <= 1'b0;						//write all zeros (black)		
-		//init random number generators to alternating bits
-		x_rand <= 31'h55555555;
-		y_rand <= 29'h55555555;
+
 		//read SW0:7
 		rule <= SW[7:0];
 		row_data <= 642'd0;
 		prow_data <= 642'd0;
+		if (SW[17]) begin
+			row_data <= {1'b0, prev_random_row, 1'b0}; //The random rows are 640 bits and each row needs to be 642
+		end
+		else begin
+			row_data[320] <= 1'b1;
+		end
 		state <= init;	//first state in regular state machine 
 	end
 	
 	//begin state machine to modify display 
-	else if ( KEY[3] )  // KEY3 is pause
+	else
 	begin
+	
+		reset_val <= 1'b0;
 		case(state)
 			
 			// next three states write the inital dot
@@ -432,7 +453,6 @@ begin
 				//write a white dot in the middle of the screen
 				data_reg <= 1'b1 ;
 				print = 1'b1;
-				row_data[320] <= 1'b1;
 				current_col <= 10'd1;
 				current_row <= 9'd0;
 				current_state <= 8'b10000000;
@@ -447,7 +467,10 @@ begin
 				//data_reg <= compute;
 				if (print == 1'b1) begin
 					addr_reg <= {current_col,current_row};
-					data_reg <= row_data[current_col];
+					data_reg <= row_data[642-current_col];
+					//color_r <= {prow_data[current_col+1:current_col-1]{disp_bit}};
+					//color_g <= {prow_data[current_col+1:current_col-1]{disp_bit}};
+					//color_b <= {prow_data[current_col+1:current_col-1]{disp_bit}};
 				end
 				current_state <= 8'b01000000;
 				state <= test2;
@@ -470,7 +493,7 @@ begin
 					if (current_row >= 9'd480) begin
 						//current_row <= 9'd0;
 						print <= 1'b0;
-						//state <= chill;
+						state <= chill;
 					end
 					else begin
 						//if ( ~KEY[2] )
@@ -496,14 +519,18 @@ begin
 			
 			new_row:
 			begin
-				prow_data <= row_data;
+				if (print == 1'b1) begin
+					prow_data <= row_data;
+				end
 				current_state <= 8'b00001000;
 				state <= new_row2;
 			end
 			
 			new_row2:
 			begin
-				row_data <= result;
+				if (print == 1'b1) begin
+					row_data <= result;
+				end
 				current_state <= 8'b00000100;
 				state <= test1;
 			end
@@ -511,21 +538,48 @@ begin
 			chill:
 			begin
 				//just chill
+				if (~KEY[3])
+				begin
+					state <= chill2;
+				end
+				prev_random_row <= random_row;
 				current_state <= 8'b00000010;
+				//if (state != test1) begin
+					//state <= chill;
+				//end
+			end
+			
+			chill2:
+			begin
+				if (KEY[3])
+				begin
+					print <= 1'b1;
+					current_row <= 9'd0;
+					current_col <= 10'd1;
+					state <= test1;
+				end
+				else begin
+					state <= chill2;
+				end
+				current_state <= 8'b00000001;
+			end
+			
+			default:
+			begin
 				state <= chill;
 			end
 			
 		endcase
 	end // else if ( KEY[3]) 
 	
-	else
-	begin
+	//else
+	//begin
 		//update the x,y random number gens
 		// this allows the pause key to change the pattern
 		// generated
-		x_rand <= {x_rand[29:0], x_low_bit} ;
-		y_rand <= {y_rand[27:0], y_low_bit} ;
-	end
+		//x_rand <= {x_rand[29:0], x_low_bit} ;
+		//y_rand <= {y_rand[27:0], y_low_bit} ;
+	//end
 end // always @ (posedge VGA_CTRL_CLK)
 
 endmodule //top module
@@ -555,6 +609,21 @@ module Automaton(outpixel, inpixels, rule);
 		endcase
 	end
 endmodule
+
+//////////////////////////////////////////////
+// Random Number Generator
+module Random32(out, in);
+	input [31:0] in;
+	output [31:0] out;
+	reg [31:0] out;
+	reg newbit;
+	always @ (in)
+	begin
+		newbit = in[31] ^ in[21] ^ in[1] ^ in[0];
+		out = {in[30:0], newbit};
+	end
+endmodule
+		
 
 //////////////////////////////////////////////
 // Decode one hex digit for LED 7-seg display

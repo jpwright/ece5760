@@ -1,10 +1,11 @@
 
 State Machine - |DE2_TOP|state
-Name state.chill state.new_row2 state.test3 state.test2 state.test1 state.init state.new_row 
-state.init 0 0 0 0 0 0 0 
-state.test1 0 0 0 0 1 1 0 
-state.test2 0 0 0 1 0 1 0 
-state.test3 0 0 1 0 0 1 0 
-state.new_row 0 0 0 0 0 1 1 
-state.new_row2 0 1 0 0 0 1 0 
-state.chill 1 0 0 0 0 1 0 
+Name state.chill2 state.chill state.new_row2 state.test3 state.test2 state.test1 state.init state.new_row 
+state.init 0 0 0 0 0 0 0 0 
+state.test1 0 0 0 0 0 1 1 0 
+state.test2 0 0 0 0 1 0 1 0 
+state.test3 0 0 0 1 0 0 1 0 
+state.new_row 0 0 0 0 0 0 1 1 
+state.new_row2 0 0 1 0 0 0 1 0 
+state.chill 0 1 0 0 0 0 1 0 
+state.chill2 1 0 0 0 0 0 1 0 

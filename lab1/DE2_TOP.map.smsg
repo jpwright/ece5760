@@ -1,1 +1,1 @@
-Warning (10268): Verilog HDL information at VGA_640x480_m4k_DLA.v(401): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at VGA_640x480_m4k_DLA.v(415): always construct contains both blocking and non-blocking assignments

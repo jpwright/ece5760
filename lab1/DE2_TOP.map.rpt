@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_TOP
-Mon Jan 28 16:38:21 2013
+Tue Jan 29 16:04:11 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -17,31 +17,29 @@ Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
   9. Analysis & Synthesis IP Cores Summary
  10. State Machine - |DE2_TOP|state
  11. Registers Removed During Synthesis
- 12. Removed Registers Triggering Further Register Optimizations
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
- 16. Source assignments for vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated
- 17. Parameter Settings for User Entity Instance: Top-level Entity: |DE2_TOP
- 18. Parameter Settings for User Entity Instance: VGA_Audio_PLL:p1|altpll:altpll_component
- 19. Parameter Settings for User Entity Instance: VGA_Controller:u1
- 20. Parameter Settings for User Entity Instance: vga_buffer:display|altsyncram:altsyncram_component
- 21. altpll Parameter Settings by Entity Instance
- 22. altsyncram Parameter Settings by Entity Instance
- 23. Port Connectivity Checks: "Automaton:A"
- 24. Port Connectivity Checks: "HexDigit:H7"
- 25. Port Connectivity Checks: "HexDigit:H6"
- 26. Port Connectivity Checks: "HexDigit:H5"
- 27. Port Connectivity Checks: "HexDigit:H4"
- 28. Port Connectivity Checks: "HexDigit:H3"
- 29. Port Connectivity Checks: "HexDigit:H2"
- 30. Port Connectivity Checks: "HexDigit:H1"
- 31. Port Connectivity Checks: "HexDigit:H0"
- 32. Port Connectivity Checks: "vga_buffer:display"
- 33. Port Connectivity Checks: "VGA_Controller:u1"
- 34. Elapsed Time Per Partition
- 35. Analysis & Synthesis Messages
- 36. Analysis & Synthesis Suppressed Messages
+ 12. General Register Statistics
+ 13. Inverted Register Statistics
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Source assignments for vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated
+ 16. Parameter Settings for User Entity Instance: Top-level Entity: |DE2_TOP
+ 17. Parameter Settings for User Entity Instance: VGA_Audio_PLL:p1|altpll:altpll_component
+ 18. Parameter Settings for User Entity Instance: VGA_Controller:u1
+ 19. Parameter Settings for User Entity Instance: vga_buffer:display|altsyncram:altsyncram_component
+ 20. altpll Parameter Settings by Entity Instance
+ 21. altsyncram Parameter Settings by Entity Instance
+ 22. Port Connectivity Checks: "HexDigit:H7"
+ 23. Port Connectivity Checks: "HexDigit:H6"
+ 24. Port Connectivity Checks: "HexDigit:H5"
+ 25. Port Connectivity Checks: "HexDigit:H4"
+ 26. Port Connectivity Checks: "HexDigit:H3"
+ 27. Port Connectivity Checks: "HexDigit:H2"
+ 28. Port Connectivity Checks: "HexDigit:H1"
+ 29. Port Connectivity Checks: "HexDigit:H0"
+ 30. Port Connectivity Checks: "vga_buffer:display"
+ 31. Port Connectivity Checks: "VGA_Controller:u1"
+ 32. Elapsed Time Per Partition
+ 33. Analysis & Synthesis Messages
+ 34. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -67,15 +65,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Jan 28 16:38:21 2013     ;
+; Analysis & Synthesis Status        ; Successful - Tue Jan 29 16:04:11 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 4,809                                     ;
-;     Total combinational functions  ; 4,785                                     ;
-;     Dedicated logic registers      ; 1,412                                     ;
-; Total registers                    ; 1412                                      ;
+; Total logic elements               ; 6,087                                     ;
+;     Total combinational functions  ; 5,741                                     ;
+;     Dedicated logic registers      ; 2,057                                     ;
+; Total registers                    ; 2057                                      ;
 ; Total pins                         ; 425                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 310,000                                   ;
@@ -218,20 +216,20 @@ applicable agreement for further details.
 +---------------------------------------------+------------------------------------------------+
 ; Resource                                    ; Usage                                          ;
 +---------------------------------------------+------------------------------------------------+
-; Estimated Total logic elements              ; 4,809                                          ;
+; Estimated Total logic elements              ; 6,087                                          ;
 ;                                             ;                                                ;
-; Total combinational functions               ; 4785                                           ;
+; Total combinational functions               ; 5741                                           ;
 ; Logic element usage by number of LUT inputs ;                                                ;
-;     -- 4 input functions                    ; 3986                                           ;
-;     -- 3 input functions                    ; 44                                             ;
-;     -- <=2 input functions                  ; 755                                            ;
+;     -- 4 input functions                    ; 4635                                           ;
+;     -- 3 input functions                    ; 51                                             ;
+;     -- <=2 input functions                  ; 1055                                           ;
 ;                                             ;                                                ;
 ; Logic elements by mode                      ;                                                ;
-;     -- normal mode                          ; 4718                                           ;
+;     -- normal mode                          ; 5674                                           ;
 ;     -- arithmetic mode                      ; 67                                             ;
 ;                                             ;                                                ;
-; Total registers                             ; 1412                                           ;
-;     -- Dedicated logic registers            ; 1412                                           ;
+; Total registers                             ; 2057                                           ;
+;     -- Dedicated logic registers            ; 2057                                           ;
 ;     -- I/O registers                        ; 0                                              ;
 ;                                             ;                                                ;
 ; I/O pins                                    ; 425                                            ;
@@ -240,9 +238,9 @@ applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                              ;
 ;                                             ;                                                ;
 ; Maximum fan-out node                        ; VGA_Audio_PLL:p1|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 1469                                           ;
-; Total fan-out                               ; 24904                                          ;
-; Average fan-out                             ; 3.72                                           ;
+; Maximum fan-out                             ; 2114                                           ;
+; Total fan-out                               ; 29060                                          ;
+; Average fan-out                             ; 3.50                                           ;
 +---------------------------------------------+------------------------------------------------+
 
 
@@ -251,7 +249,7 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_TOP                                  ; 4785 (1810)       ; 1412 (1342)  ; 310000      ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                                                                                       ;              ;
+; |DE2_TOP                                  ; 5741 (2747)       ; 2057 (1987)  ; 310000      ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                                                                                       ;              ;
 ;    |Automaton:gen_code_label[100].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[100].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[101].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[101].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[102].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[102].A_inst                                                                  ;              ;
@@ -892,10 +890,30 @@ applicable agreement for further details.
 ;    |Automaton:gen_code_label[98].A_inst|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[98].A_inst                                                                   ;              ;
 ;    |Automaton:gen_code_label[99].A_inst|  ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[99].A_inst                                                                   ;              ;
 ;    |Automaton:gen_code_label[9].A_inst|   ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[9].A_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[0].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[0].R_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[10].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[10].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[11].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[11].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[12].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[12].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[13].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[13].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[14].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[14].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[15].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[15].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[16].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[16].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[17].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[17].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[18].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[18].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[19].R_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[19].R_inst                                                                   ;              ;
+;    |Random32:gen_code_label2[1].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[1].R_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[2].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[2].R_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[3].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[3].R_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[4].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[4].R_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[5].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[5].R_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[6].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[6].R_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[7].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[7].R_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[8].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[8].R_inst                                                                    ;              ;
+;    |Random32:gen_code_label2[9].R_inst|   ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Random32:gen_code_label2[9].R_inst                                                                    ;              ;
 ;    |Reset_Delay:r0|                       ; 28 (28)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Reset_Delay:r0                                                                                        ;              ;
 ;    |VGA_Audio_PLL:p1|                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1                                                                                      ;              ;
 ;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1|altpll:altpll_component                                                              ;              ;
-;    |VGA_Controller:u1|                    ; 65 (65)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Controller:u1                                                                                     ;              ;
+;    |VGA_Controller:u1|                    ; 64 (64)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Controller:u1                                                                                     ;              ;
 ;    |vga_buffer:display|                   ; 326 (0)           ; 7 (0)        ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display                                                                                    ;              ;
 ;       |altsyncram:altsyncram_component|   ; 326 (0)           ; 7 (0)        ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component                                                    ;              ;
 ;          |altsyncram_m352:auto_generated| ; 326 (0)           ; 7 (7)        ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated                     ;              ;
@@ -928,19 +946,20 @@ The IP Core highlighted in red is outdated. Regenerate the outdated IP with the 
 
 
 Encoding Type:  One-Hot
-+----------------------------------------------------------------------------------------------------------------------+
-; State Machine - |DE2_TOP|state                                                                                       ;
-+----------------+-------------+----------------+-------------+-------------+-------------+------------+---------------+
-; Name           ; state.chill ; state.new_row2 ; state.test3 ; state.test2 ; state.test1 ; state.init ; state.new_row ;
-+----------------+-------------+----------------+-------------+-------------+-------------+------------+---------------+
-; state.init     ; 0           ; 0              ; 0           ; 0           ; 0           ; 0          ; 0             ;
-; state.test1    ; 0           ; 0              ; 0           ; 0           ; 1           ; 1          ; 0             ;
-; state.test2    ; 0           ; 0              ; 0           ; 1           ; 0           ; 1          ; 0             ;
-; state.test3    ; 0           ; 0              ; 1           ; 0           ; 0           ; 1          ; 0             ;
-; state.new_row  ; 0           ; 0              ; 0           ; 0           ; 0           ; 1          ; 1             ;
-; state.new_row2 ; 0           ; 1              ; 0           ; 0           ; 0           ; 1          ; 0             ;
-; state.chill    ; 1           ; 0              ; 0           ; 0           ; 0           ; 1          ; 0             ;
-+----------------+-------------+----------------+-------------+-------------+-------------+------------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |DE2_TOP|state                                                                                                      ;
++----------------+--------------+-------------+----------------+-------------+-------------+-------------+------------+---------------+
+; Name           ; state.chill2 ; state.chill ; state.new_row2 ; state.test3 ; state.test2 ; state.test1 ; state.init ; state.new_row ;
++----------------+--------------+-------------+----------------+-------------+-------------+-------------+------------+---------------+
+; state.init     ; 0            ; 0           ; 0              ; 0           ; 0           ; 0           ; 0          ; 0             ;
+; state.test1    ; 0            ; 0           ; 0              ; 0           ; 0           ; 1           ; 1          ; 0             ;
+; state.test2    ; 0            ; 0           ; 0              ; 0           ; 1           ; 0           ; 1          ; 0             ;
+; state.test3    ; 0            ; 0           ; 0              ; 1           ; 0           ; 0           ; 1          ; 0             ;
+; state.new_row  ; 0            ; 0           ; 0              ; 0           ; 0           ; 0           ; 1          ; 1             ;
+; state.new_row2 ; 0            ; 0           ; 1              ; 0           ; 0           ; 0           ; 1          ; 0             ;
+; state.chill    ; 0            ; 1           ; 0              ; 0           ; 0           ; 0           ; 1          ; 0             ;
+; state.chill2   ; 1            ; 0           ; 0              ; 0           ; 0           ; 0           ; 1          ; 0             ;
++----------------+--------------+-------------+----------------+-------------+-------------+-------------+------------+---------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -948,33 +967,20 @@ Encoding Type:  One-Hot
 +----------------------------------------+----------------------------------------------+
 ; Register name                          ; Reason for Removal                           ;
 +----------------------------------------+----------------------------------------------+
-; VGA_Controller:u1|Cur_Color_R[8,9]     ; Stuck at GND due to stuck port data_in       ;
+; VGA_Controller:u1|Cur_Color_R[2..9]    ; Stuck at GND due to stuck port data_in       ;
 ; VGA_Controller:u1|Cur_Color_B[2..9]    ; Stuck at GND due to stuck port data_in       ;
-; current_state[0]                       ; Stuck at GND due to stuck port data_in       ;
-; VGA_Controller:u1|Cur_Color_R[0..6]    ; Merged with VGA_Controller:u1|Cur_Color_R[7] ;
-; VGA_Controller:u1|Cur_Color_G[0..9]    ; Merged with VGA_Controller:u1|Cur_Color_R[7] ;
-; VGA_Controller:u1|Cur_Color_B[0,1]     ; Merged with VGA_Controller:u1|Cur_Color_R[7] ;
+; VGA_Controller:u1|Cur_Color_R[0]       ; Merged with VGA_Controller:u1|Cur_Color_R[1] ;
+; VGA_Controller:u1|Cur_Color_G[0..9]    ; Merged with VGA_Controller:u1|Cur_Color_R[1] ;
+; VGA_Controller:u1|Cur_Color_B[0,1]     ; Merged with VGA_Controller:u1|Cur_Color_R[1] ;
 ; prow_data[641]                         ; Merged with prow_data[0]                     ;
 ; row_data[641]                          ; Merged with row_data[0]                      ;
 ; row_data[0]                            ; Stuck at GND due to stuck port data_in       ;
 ; prow_data[0]                           ; Stuck at GND due to stuck port data_in       ;
-; state~9                                ; Lost fanout                                  ;
 ; state~10                               ; Lost fanout                                  ;
-; state~12                               ; Lost fanout                                  ;
-; state.chill                            ; Stuck at GND due to stuck port data_in       ;
-; current_state[1]                       ; Stuck at GND due to stuck port data_in       ;
-; Total Number of Removed Registers = 39 ;                                              ;
+; state~11                               ; Lost fanout                                  ;
+; state~13                               ; Lost fanout                                  ;
+; Total Number of Removed Registers = 36 ;                                              ;
 +----------------------------------------+----------------------------------------------+
-
-
-+------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                        ;
-+---------------+---------------------------+----------------------------------------+
-; Register name ; Reason for Removal        ; Registers Removed due to This Register ;
-+---------------+---------------------------+----------------------------------------+
-; state.chill   ; Stuck at GND              ; current_state[1]                       ;
-;               ; due to stuck port data_in ;                                        ;
-+---------------+---------------------------+----------------------------------------+
 
 
 +------------------------------------------------------+
@@ -982,25 +988,124 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1412  ;
-; Number of registers using Synchronous Clear  ; 663   ;
-; Number of registers using Synchronous Load   ; 29    ;
+; Total registers                              ; 2057  ;
+; Number of registers using Synchronous Clear  ; 32    ;
+; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 42    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1383  ;
+; Number of registers using Clock Enable       ; 1986  ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
 
-+--------------------------------------------------+
-; Inverted Register Statistics                     ;
-+----------------------------------------+---------+
-; Inverted Register                      ; Fan out ;
-+----------------------------------------+---------+
-; current_col[0]                         ; 91      ;
-; print                                  ; 6       ;
-; Total number of inverted registers = 2 ;         ;
-+----------------------------------------+---------+
++-----------------------------------------------------+
+; Inverted Register Statistics                        ;
++-------------------------------------------+---------+
+; Inverted Register                         ; Fan out ;
++-------------------------------------------+---------+
+; current_state[0]                          ; 1       ;
+; current_state[1]                          ; 1       ;
+; current_state[2]                          ; 1       ;
+; current_state[3]                          ; 1       ;
+; current_state[4]                          ; 1       ;
+; current_state[5]                          ; 1       ;
+; current_state[6]                          ; 1       ;
+; current_state[7]                          ; 1       ;
+; current_col[0]                            ; 74      ;
+; print                                     ; 8       ;
+; prev_random_row[167]                      ; 2       ;
+; prev_random_row[311]                      ; 2       ;
+; prev_random_row[247]                      ; 2       ;
+; prev_random_row[375]                      ; 2       ;
+; prev_random_row[199]                      ; 2       ;
+; prev_random_row[135]                      ; 2       ;
+; prev_random_row[283]                      ; 2       ;
+; prev_random_row[219]                      ; 2       ;
+; prev_random_row[235]                      ; 2       ;
+; prev_random_row[379]                      ; 2       ;
+; prev_random_row[187]                      ; 2       ;
+; prev_random_row[203]                      ; 2       ;
+; prev_random_row[139]                      ; 2       ;
+; prev_random_row[303]                      ; 2       ;
+; prev_random_row[351]                      ; 2       ;
+; prev_random_row[255]                      ; 2       ;
+; prev_random_row[191]                      ; 2       ;
+; prev_random_row[271]                      ; 2       ;
+; prev_random_row[335]                      ; 2       ;
+; prev_random_row[339]                      ; 2       ;
+; prev_random_row[147]                      ; 2       ;
+; prev_random_row[227]                      ; 2       ;
+; prev_random_row[291]                      ; 2       ;
+; prev_random_row[243]                      ; 2       ;
+; prev_random_row[259]                      ; 2       ;
+; prev_random_row[131]                      ; 2       ;
+; prev_random_row[220]                      ; 2       ;
+; prev_random_row[156]                      ; 2       ;
+; prev_random_row[300]                      ; 2       ;
+; prev_random_row[316]                      ; 2       ;
+; prev_random_row[380]                      ; 2       ;
+; prev_random_row[188]                      ; 2       ;
+; prev_random_row[204]                      ; 2       ;
+; prev_random_row[268]                      ; 2       ;
+; prev_random_row[140]                      ; 2       ;
+; prev_random_row[232]                      ; 2       ;
+; prev_random_row[360]                      ; 2       ;
+; prev_random_row[344]                      ; 2       ;
+; prev_random_row[312]                      ; 2       ;
+; prev_random_row[248]                      ; 2       ;
+; prev_random_row[376]                      ; 2       ;
+; prev_random_row[264]                      ; 2       ;
+; prev_random_row[328]                      ; 2       ;
+; prev_random_row[136]                      ; 2       ;
+; prev_random_row[240]                      ; 2       ;
+; prev_random_row[288]                      ; 3       ;
+; prev_random_row[160]                      ; 3       ;
+; prev_random_row[320]                      ; 3       ;
+; prev_random_row[384]                      ; 3       ;
+; prev_random_row[208]                      ; 2       ;
+; prev_random_row[336]                      ; 2       ;
+; prev_random_row[144]                      ; 2       ;
+; prev_random_row[340]                      ; 2       ;
+; prev_random_row[292]                      ; 2       ;
+; prev_random_row[164]                      ; 2       ;
+; prev_random_row[244]                      ; 2       ;
+; prev_random_row[196]                      ; 2       ;
+; prev_random_row[260]                      ; 2       ;
+; prev_random_row[233]                      ; 2       ;
+; prev_random_row[297]                      ; 2       ;
+; prev_random_row[169]                      ; 2       ;
+; prev_random_row[217]                      ; 2       ;
+; prev_random_row[153]                      ; 2       ;
+; prev_random_row[249]                      ; 2       ;
+; prev_random_row[377]                      ; 2       ;
+; prev_random_row[185]                      ; 2       ;
+; prev_random_row[349]                      ; 2       ;
+; prev_random_row[301]                      ; 2       ;
+; prev_random_row[365]                      ; 2       ;
+; prev_random_row[173]                      ; 2       ;
+; prev_random_row[317]                      ; 2       ;
+; prev_random_row[253]                      ; 2       ;
+; prev_random_row[205]                      ; 2       ;
+; prev_random_row[333]                      ; 2       ;
+; prev_random_row[141]                      ; 2       ;
+; prev_random_row[241]                      ; 2       ;
+; prev_random_row[177]                      ; 2       ;
+; prev_random_row[289]                      ; 3       ;
+; prev_random_row[161]                      ; 3       ;
+; prev_random_row[257]                      ; 3       ;
+; prev_random_row[385]                      ; 3       ;
+; prev_random_row[193]                      ; 3       ;
+; prev_random_row[273]                      ; 2       ;
+; prev_random_row[337]                      ; 2       ;
+; prev_random_row[145]                      ; 2       ;
+; prev_random_row[277]                      ; 3       ;
+; prev_random_row[213]                      ; 3       ;
+; prev_random_row[293]                      ; 2       ;
+; prev_random_row[357]                      ; 2       ;
+; prev_random_row[165]                      ; 2       ;
+; Total number of inverted registers = 315* ;         ;
++-------------------------------------------+---------+
+* Table truncated at 100 items. To change the number of inverted registers reported, set the "Number of Inverted Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
 +-------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1008,12 +1113,10 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered              ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------+----------------------------+
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; |DE2_TOP|addr_reg[4]    ;                            ;
-; 4:1                ; 640 bits  ; 1280 LEs      ; 640 LEs              ; 640 LEs                ; |DE2_TOP|prow_data[636] ;                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; |DE2_TOP|addr_reg[15]   ;                            ;
-; 3:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; |DE2_TOP|state          ;                            ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; |DE2_TOP|state          ;                            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; |DE2_TOP|state          ;                            ;
+; 4:1                ; 640 bits  ; 1280 LEs      ; 640 LEs              ; 640 LEs                ; |DE2_TOP|prow_data[634] ;                            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 4 LEs                ; 2 LEs                  ; |DE2_TOP|addr_reg[15]   ;                            ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; |DE2_TOP|current_row[1] ;                            ;
+; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; |DE2_TOP|current_col[9] ;                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------+----------------------------+
 
 
@@ -1041,7 +1144,7 @@ Encoding Type:  One-Hot
 ; new_row        ; 0111  ; Unsigned Binary                                ;
 ; new_row2       ; 1000  ; Unsigned Binary                                ;
 ; chill          ; 1001  ; Unsigned Binary                                ;
-; init1          ; 1010  ; Unsigned Binary                                ;
+; chill2         ; 1010  ; Unsigned Binary                                ;
 ; init2          ; 1011  ; Unsigned Binary                                ;
 ; draw_walker1   ; 1100  ; Unsigned Binary                                ;
 ; draw_walker2   ; 1101  ; Unsigned Binary                                ;
@@ -1541,15 +1644,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "Automaton:A"                                                                            ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; Port     ; Type   ; Severity ; Details                                                                             ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-; outpixel ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
-+----------+--------+----------+-------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "HexDigit:H7"                                                                                                                               ;
 +------+-------+----------+---------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1643,7 +1737,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; oAddress             ; Output ; Warning  ; Output or bidir port (20 bits) is wider than the port expression (19 bits) it drives; bit(s) "oAddress[19..19]" have no fanouts              ;
 ; oAddress             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
 ; oCoord_Y[9]          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; iRed[9..8]           ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; iRed[9..2]           ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
 ; iBlue[9..2]          ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
 ; iCursor_X            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 ; iCursor_Y            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
@@ -1659,7 +1753,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:36     ;
+; Top            ; 00:00:39     ;
 +----------------+--------------+
 
 
@@ -1669,7 +1763,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Mon Jan 28 16:37:44 2013
+    Info: Processing started: Tue Jan 29 16:03:27 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_m4k -c DE2_TOP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file vga_buffer.v
@@ -1680,15 +1774,14 @@ Info: Found 1 design units, including 1 entities, in source file reset_delay.v
     Info: Found entity 1: Reset_Delay
 Info: Found 1 design units, including 1 entities, in source file vga_audio_pll.v
     Info: Found entity 1: VGA_Audio_PLL
-Warning (10229): Verilog HDL Expression warning at VGA_640x480_m4k_DLA.v(414): truncated literal to match 29 bits
-Info: Found 3 design units, including 3 entities, in source file vga_640x480_m4k_dla.v
+Info: Found 4 design units, including 4 entities, in source file vga_640x480_m4k_dla.v
     Info: Found entity 1: DE2_TOP
     Info: Found entity 2: Automaton
-    Info: Found entity 3: HexDigit
+    Info: Found entity 3: Random32
+    Info: Found entity 4: HexDigit
 Info: Elaborating entity "DE2_TOP" for the top level hierarchy
-Warning (10030): Net "result[641]" at VGA_640x480_m4k_DLA.v(373) has no driver or initial value, using a default initial value '0'
-Warning (10030): Net "result[0]" at VGA_640x480_m4k_DLA.v(373) has no driver or initial value, using a default initial value '0'
-Warning (10034): Output port "LEDG[8]" at VGA_640x480_m4k_DLA.v(33) has no driver
+Warning (10030): Net "result[641]" at VGA_640x480_m4k_DLA.v(376) has no driver or initial value, using a default initial value '0'
+Warning (10030): Net "result[0]" at VGA_640x480_m4k_DLA.v(376) has no driver or initial value, using a default initial value '0'
 Warning (10034): Output port "LEDR[9..8]" at VGA_640x480_m4k_DLA.v(34) has no driver
 Warning (10034): Output port "I2C_SCLK" at VGA_640x480_m4k_DLA.v(98) has no driver
 Warning (10034): Output port "AUD_DACDAT" at VGA_640x480_m4k_DLA.v(129) has no driver
@@ -1807,6 +1900,7 @@ Info: Found 1 design units, including 1 entities, in source file db/mux_bkb.tdf
 Info: Elaborating entity "mux_bkb" for hierarchy "vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated|mux_bkb:mux4"
 Info: Elaborating entity "HexDigit" for hierarchy "HexDigit:H0"
 Info: Elaborating entity "Automaton" for hierarchy "Automaton:gen_code_label[1].A_inst"
+Info: Elaborating entity "Random32" for hierarchy "Random32:gen_code_label2[0].R_inst"
 Warning: 9 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: The following bidir pins have no drivers
     Warning: Bidir "SD_DAT3" has no driver
@@ -1841,11 +1935,8 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX7[1]" is stuck at GND
     Warning (13410): Pin "HEX7[2]" is stuck at GND
     Warning (13410): Pin "HEX7[6]" is stuck at VCC
-    Warning (13410): Pin "LEDG[8]" is stuck at GND
     Warning (13410): Pin "LEDR[8]" is stuck at GND
     Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "LEDR[10]" is stuck at GND
-    Warning (13410): Pin "LEDR[11]" is stuck at GND
     Warning (13410): Pin "UART_TXD" is stuck at GND
     Warning (13410): Pin "IRDA_TXD" is stuck at GND
     Warning (13410): Pin "DRAM_ADDR[0]" is stuck at GND
@@ -1938,6 +2029,12 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "I2C_SCLK" is stuck at GND
     Warning (13410): Pin "TDO" is stuck at GND
     Warning (13410): Pin "VGA_SYNC" is stuck at GND
+    Warning (13410): Pin "VGA_R[2]" is stuck at GND
+    Warning (13410): Pin "VGA_R[3]" is stuck at GND
+    Warning (13410): Pin "VGA_R[4]" is stuck at GND
+    Warning (13410): Pin "VGA_R[5]" is stuck at GND
+    Warning (13410): Pin "VGA_R[6]" is stuck at GND
+    Warning (13410): Pin "VGA_R[7]" is stuck at GND
     Warning (13410): Pin "VGA_R[8]" is stuck at GND
     Warning (13410): Pin "VGA_R[9]" is stuck at GND
     Warning (13410): Pin "VGA_B[2]" is stuck at GND
@@ -1957,13 +2054,13 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "AUD_DACDAT" is stuck at GND
     Warning (13410): Pin "TD_RESET" is stuck at VCC
 Info: 3 registers lost all their fanouts during netlist optimizations. The first 3 are displayed below.
-    Info: Register "state~9" lost all its fanouts during netlist optimizations.
     Info: Register "state~10" lost all its fanouts during netlist optimizations.
-    Info: Register "state~12" lost all its fanouts during netlist optimizations.
+    Info: Register "state~11" lost all its fanouts during netlist optimizations.
+    Info: Register "state~13" lost all its fanouts during netlist optimizations.
 Info: Generated suppressed messages file Z:/ece5760/lab1/DE2_TOP.map.smsg
 Info: Generating hard_block partition "hard_block:auto_generated_inst"
     Info: Adding node "VGA_Audio_PLL:p1|altpll:altpll_component|pll"
-Warning: Design contains 34 input pin(s) that do not drive logic
+Warning: Design contains 33 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "EXT_CLOCK"
     Warning (15610): No output dependent on input pin "SW[8]"
     Warning (15610): No output dependent on input pin "SW[9]"
@@ -1974,7 +2071,6 @@ Warning: Design contains 34 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[14]"
     Warning (15610): No output dependent on input pin "SW[15]"
     Warning (15610): No output dependent on input pin "SW[16]"
-    Warning (15610): No output dependent on input pin "SW[17]"
     Warning (15610): No output dependent on input pin "UART_RXD"
     Warning (15610): No output dependent on input pin "IRDA_RXD"
     Warning (15610): No output dependent on input pin "OTG_INT0"
@@ -1998,18 +2094,18 @@ Warning: Design contains 34 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "TD_DATA[7]"
     Warning (15610): No output dependent on input pin "TD_HS"
     Warning (15610): No output dependent on input pin "TD_VS"
-Info: Implemented 5311 device resources after synthesis - the final resource count might be different
+Info: Implemented 6589 device resources after synthesis - the final resource count might be different
     Info: Implemented 48 input pins
     Info: Implemented 218 output pins
     Info: Implemented 159 bidirectional pins
-    Info: Implemented 4809 logic cells
+    Info: Implemented 6087 logic cells
     Info: Implemented 76 RAM segments
     Info: Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 202 warnings
-    Info: Peak virtual memory: 395 megabytes
-    Info: Processing ended: Mon Jan 28 16:38:22 2013
-    Info: Elapsed time: 00:00:38
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Peak virtual memory: 407 megabytes
+    Info: Processing ended: Tue Jan 29 16:04:11 2013
+    Info: Elapsed time: 00:00:44
+    Info: Total CPU time (on all processors): 00:00:36
 
 
 +------------------------------------------+
