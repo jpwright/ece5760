@@ -1,5 +1,5 @@
 Flow report for DE2_TOP
-Tue Jan 29 16:05:01 2013
+Wed Jan 30 13:23:34 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -38,17 +38,17 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Tue Jan 29 16:04:55 2013     ;
+; Flow Status                        ; Successful - Wed Jan 30 13:23:29 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
 ; Family                             ; Cyclone II                                ;
 ; Device                             ; EP2C35F672C6                              ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 6,052 / 33,216 ( 18 % )                   ;
+; Total logic elements               ; 6,059 / 33,216 ( 18 % )                   ;
 ;     Total combinational functions  ; 5,741 / 33,216 ( 17 % )                   ;
-;     Dedicated logic registers      ; 2,057 / 33,216 ( 6 % )                    ;
-; Total registers                    ; 2057                                      ;
+;     Dedicated logic registers      ; 2,064 / 33,216 ( 6 % )                    ;
+; Total registers                    ; 2064                                      ;
 ; Total pins                         ; 425 / 475 ( 89 % )                        ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 310,000 / 483,840 ( 64 % )                ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/29/2013 16:03:32 ;
+; Start date & time ; 01/30/2013 13:22:01 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_TOP             ;
 +-------------------+---------------------+
@@ -73,9 +73,9 @@ applicable agreement for further details.
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+---------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 132683363511504.135949340805396       ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 132683363511504.135957011901140       ; --            ; --          ; --         ;
 ; IP_TOOL_NAME                        ; RAM: 2-PORT                           ; --            ; --          ; --         ;
-; IP_TOOL_VERSION                     ; 8.0                                   ; --            ; --          ; --         ;
+; IP_TOOL_VERSION                     ; 11.0                                  ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
 ; MISC_FILE                           ; vga_buffer_bb.v                       ; --            ; --          ; --         ;
@@ -93,11 +93,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:40     ; 1.0                     ; 404 MB              ; 00:00:33                           ;
-; Fitter                    ; 00:00:30     ; 1.5                     ; 591 MB              ; 00:00:34                           ;
+; Analysis & Synthesis      ; 00:00:39     ; 1.0                     ; 409 MB              ; 00:00:33                           ;
+; Fitter                    ; 00:00:32     ; 1.7                     ; 591 MB              ; 00:00:33                           ;
 ; Assembler                 ; 00:00:04     ; 1.0                     ; 400 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:10     ; 1.8                     ; 466 MB              ; 00:00:09                           ;
-; Total                     ; 00:01:24     ; --                      ; --                  ; 00:01:19                           ;
+; TimeQuest Timing Analyzer ; 00:00:10     ; 1.9                     ; 466 MB              ; 00:00:09                           ;
+; Total                     ; 00:01:25     ; --                      ; --                  ; 00:01:18                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

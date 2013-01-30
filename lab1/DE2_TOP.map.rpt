@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_TOP
-Tue Jan 29 16:04:11 2013
+Wed Jan 30 13:22:43 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -20,7 +20,7 @@ Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
  12. General Register Statistics
  13. Inverted Register Statistics
  14. Multiplexer Restructuring Statistics (Restructuring Performed)
- 15. Source assignments for vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated
+ 15. Source assignments for vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated
  16. Parameter Settings for User Entity Instance: Top-level Entity: |DE2_TOP
  17. Parameter Settings for User Entity Instance: VGA_Audio_PLL:p1|altpll:altpll_component
  18. Parameter Settings for User Entity Instance: VGA_Controller:u1
@@ -65,15 +65,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Jan 29 16:04:11 2013     ;
+; Analysis & Synthesis Status        ; Successful - Wed Jan 30 13:22:42 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 6,087                                     ;
+; Total logic elements               ; 6,094                                     ;
 ;     Total combinational functions  ; 5,741                                     ;
-;     Dedicated logic registers      ; 2,057                                     ;
-; Total registers                    ; 2057                                      ;
+;     Dedicated logic registers      ; 2,064                                     ;
+; Total registers                    ; 2064                                      ;
 ; Total pins                         ; 425                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 310,000                                   ;
@@ -205,7 +205,7 @@ applicable agreement for further details.
 ; altrom.inc                       ; yes             ; Megafunction                 ; c:/altera/11.0/quartus/libraries/megafunctions/altrom.inc            ;
 ; altram.inc                       ; yes             ; Megafunction                 ; c:/altera/11.0/quartus/libraries/megafunctions/altram.inc            ;
 ; altdpram.inc                     ; yes             ; Megafunction                 ; c:/altera/11.0/quartus/libraries/megafunctions/altdpram.inc          ;
-; db/altsyncram_m352.tdf           ; yes             ; Auto-Generated Megafunction  ; Z:/ece5760/lab1/db/altsyncram_m352.tdf                               ;
+; db/altsyncram_dm32.tdf           ; yes             ; Auto-Generated Megafunction  ; Z:/ece5760/lab1/db/altsyncram_dm32.tdf                               ;
 ; db/decode_2qa.tdf                ; yes             ; Auto-Generated Megafunction  ; Z:/ece5760/lab1/db/decode_2qa.tdf                                    ;
 ; db/mux_bkb.tdf                   ; yes             ; Auto-Generated Megafunction  ; Z:/ece5760/lab1/db/mux_bkb.tdf                                       ;
 +----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------+
@@ -216,7 +216,7 @@ applicable agreement for further details.
 +---------------------------------------------+------------------------------------------------+
 ; Resource                                    ; Usage                                          ;
 +---------------------------------------------+------------------------------------------------+
-; Estimated Total logic elements              ; 6,087                                          ;
+; Estimated Total logic elements              ; 6,094                                          ;
 ;                                             ;                                                ;
 ; Total combinational functions               ; 5741                                           ;
 ; Logic element usage by number of LUT inputs ;                                                ;
@@ -228,8 +228,8 @@ applicable agreement for further details.
 ;     -- normal mode                          ; 5674                                           ;
 ;     -- arithmetic mode                      ; 67                                             ;
 ;                                             ;                                                ;
-; Total registers                             ; 2057                                           ;
-;     -- Dedicated logic registers            ; 2057                                           ;
+; Total registers                             ; 2064                                           ;
+;     -- Dedicated logic registers            ; 2064                                           ;
 ;     -- I/O registers                        ; 0                                              ;
 ;                                             ;                                                ;
 ; I/O pins                                    ; 425                                            ;
@@ -238,8 +238,8 @@ applicable agreement for further details.
 ;     -- PLLs                                 ; 1                                              ;
 ;                                             ;                                                ;
 ; Maximum fan-out node                        ; VGA_Audio_PLL:p1|altpll:altpll_component|_clk0 ;
-; Maximum fan-out                             ; 2114                                           ;
-; Total fan-out                               ; 29060                                          ;
+; Maximum fan-out                             ; 2121                                           ;
+; Total fan-out                               ; 29074                                          ;
 ; Average fan-out                             ; 3.50                                           ;
 +---------------------------------------------+------------------------------------------------+
 
@@ -249,7 +249,7 @@ applicable agreement for further details.
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                            ; Library Name ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
-; |DE2_TOP                                  ; 5741 (2747)       ; 2057 (1987)  ; 310000      ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                                                                                       ;              ;
+; |DE2_TOP                                  ; 5741 (2747)       ; 2064 (1987)  ; 310000      ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                                                                                       ;              ;
 ;    |Automaton:gen_code_label[100].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[100].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[101].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[101].A_inst                                                                  ;              ;
 ;    |Automaton:gen_code_label[102].A_inst| ; 4 (4)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Automaton:gen_code_label[102].A_inst                                                                  ;              ;
@@ -914,13 +914,13 @@ applicable agreement for further details.
 ;    |VGA_Audio_PLL:p1|                     ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1                                                                                      ;              ;
 ;       |altpll:altpll_component|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1|altpll:altpll_component                                                              ;              ;
 ;    |VGA_Controller:u1|                    ; 64 (64)           ; 42 (42)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Controller:u1                                                                                     ;              ;
-;    |vga_buffer:display|                   ; 326 (0)           ; 7 (0)        ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display                                                                                    ;              ;
-;       |altsyncram:altsyncram_component|   ; 326 (0)           ; 7 (0)        ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component                                                    ;              ;
-;          |altsyncram_m352:auto_generated| ; 326 (0)           ; 7 (7)        ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated                     ;              ;
-;             |decode_2qa:decode2|          ; 90 (90)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated|decode_2qa:decode2  ;              ;
-;             |decode_2qa:decode_a|         ; 91 (91)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated|decode_2qa:decode_a ;              ;
-;             |decode_2qa:decode_b|         ; 86 (86)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated|decode_2qa:decode_b ;              ;
-;             |mux_bkb:mux5|                ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated|mux_bkb:mux5        ;              ;
+;    |vga_buffer:display|                   ; 326 (0)           ; 14 (0)       ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display                                                                                    ;              ;
+;       |altsyncram:altsyncram_component|   ; 326 (0)           ; 14 (0)       ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component                                                    ;              ;
+;          |altsyncram_dm32:auto_generated| ; 326 (0)           ; 14 (14)      ; 310000      ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated                     ;              ;
+;             |decode_2qa:decode2|          ; 90 (90)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated|decode_2qa:decode2  ;              ;
+;             |decode_2qa:decode_a|         ; 91 (91)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated|decode_2qa:decode_a ;              ;
+;             |decode_2qa:decode_b|         ; 86 (86)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated|decode_2qa:decode_b ;              ;
+;             |mux_bkb:mux5|                ; 59 (59)           ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated|mux_bkb:mux5        ;              ;
 +-------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -930,18 +930,17 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
 ; Name                                                                                         ; Type ; Mode           ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size   ; MIF  ;
 +----------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
-; vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated|ALTSYNCRAM ; M4K  ; True Dual Port ; 310000       ; 1            ; 310000       ; 1            ; 310000 ; None ;
+; vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated|ALTSYNCRAM ; M4K  ; True Dual Port ; 310000       ; 1            ; 310000       ; 1            ; 310000 ; None ;
 +----------------------------------------------------------------------------------------------+------+----------------+--------------+--------------+--------------+--------------+--------+------+
 
 
-The IP Core highlighted in red is outdated. Regenerate the outdated IP with the current version of the Quartus II software and the MegaWizard interface.
 +-------------------------------------------------------------------------------------------------------------------------------+
 ; Analysis & Synthesis IP Cores Summary                                                                                         ;
 +--------+--------------+---------+--------------+--------------+-----------------------------+---------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance             ; IP Include File                 ;
 +--------+--------------+---------+--------------+--------------+-----------------------------+---------------------------------+
 ; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |DE2_TOP|VGA_Audio_PLL:p1   ; Z:/ece5760/lab1/VGA_Audio_PLL.v ;
-; Altera ; RAM: 2-PORT  ; 8.0     ; N/A          ; N/A          ; |DE2_TOP|vga_buffer:display ; Z:/ece5760/lab1/vga_buffer.v    ;
+; Altera ; RAM: 2-PORT  ; 11.0    ; N/A          ; N/A          ; |DE2_TOP|vga_buffer:display ; Z:/ece5760/lab1/vga_buffer.v    ;
 +--------+--------------+---------+--------------+--------------+-----------------------------+---------------------------------+
 
 
@@ -988,7 +987,7 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 2057  ;
+; Total registers                              ; 2064  ;
 ; Number of registers using Synchronous Clear  ; 32    ;
 ; Number of registers using Synchronous Load   ; 20    ;
 ; Number of registers using Asynchronous Clear ; 42    ;
@@ -1121,7 +1120,7 @@ Encoding Type:  One-Hot
 
 
 +----------------------------------------------------------------------------------------------------------+
-; Source assignments for vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated ;
+; Source assignments for vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                         ;
 +---------------------------------+--------------------+------+--------------------------------------------+
@@ -1562,7 +1561,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WIDTH_A                            ; 1                    ; Signed Integer                      ;
 ; WIDTHAD_A                          ; 19                   ; Signed Integer                      ;
 ; NUMWORDS_A                         ; 310000               ; Signed Integer                      ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                             ;
+; OUTDATA_REG_A                      ; CLOCK0               ; Untyped                             ;
 ; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                             ;
 ; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                             ;
 ; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                             ;
@@ -1575,7 +1574,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                             ;
 ; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                             ;
 ; ADDRESS_REG_B                      ; CLOCK1               ; Untyped                             ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                             ;
+; OUTDATA_REG_B                      ; CLOCK1               ; Untyped                             ;
 ; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                             ;
 ; INDATA_ACLR_B                      ; NONE                 ; Untyped                             ;
 ; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
@@ -1602,7 +1601,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ENABLE_ECC                         ; FALSE                ; Untyped                             ;
 ; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                             ;
 ; DEVICE_FAMILY                      ; Cyclone II           ; Untyped                             ;
-; CBXI_PARAMETER                     ; altsyncram_m352      ; Untyped                             ;
+; CBXI_PARAMETER                     ; altsyncram_dm32      ; Untyped                             ;
 +------------------------------------+----------------------+-------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -1634,11 +1633,11 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     -- OPERATION_MODE                     ; BIDIR_DUAL_PORT                                    ;
 ;     -- WIDTH_A                            ; 1                                                  ;
 ;     -- NUMWORDS_A                         ; 310000                                             ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
+;     -- OUTDATA_REG_A                      ; CLOCK0                                             ;
 ;     -- WIDTH_B                            ; 1                                                  ;
 ;     -- NUMWORDS_B                         ; 310000                                             ;
 ;     -- ADDRESS_REG_B                      ; CLOCK1                                             ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
+;     -- OUTDATA_REG_B                      ; CLOCK1                                             ;
 ;     -- RAM_BLOCK_TYPE                     ; M4K                                                ;
 ;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ;
 +-------------------------------------------+----------------------------------------------------+
@@ -1763,7 +1762,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Tue Jan 29 16:03:27 2013
+    Info: Processing started: Wed Jan 30 13:21:58 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_m4k -c DE2_TOP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file vga_buffer.v
@@ -1877,8 +1876,8 @@ Info: Instantiated megafunction "vga_buffer:display|altsyncram:altsyncram_compon
     Info: Parameter "operation_mode" = "BIDIR_DUAL_PORT"
     Info: Parameter "outdata_aclr_a" = "NONE"
     Info: Parameter "outdata_aclr_b" = "NONE"
-    Info: Parameter "outdata_reg_a" = "UNREGISTERED"
-    Info: Parameter "outdata_reg_b" = "UNREGISTERED"
+    Info: Parameter "outdata_reg_a" = "CLOCK0"
+    Info: Parameter "outdata_reg_b" = "CLOCK1"
     Info: Parameter "power_up_uninitialized" = "FALSE"
     Info: Parameter "ram_block_type" = "M4K"
     Info: Parameter "widthad_a" = "19"
@@ -1888,16 +1887,16 @@ Info: Instantiated megafunction "vga_buffer:display|altsyncram:altsyncram_compon
     Info: Parameter "width_byteena_a" = "1"
     Info: Parameter "width_byteena_b" = "1"
     Info: Parameter "wrcontrol_wraddress_reg_b" = "CLOCK1"
-Info: Found 1 design units, including 1 entities, in source file db/altsyncram_m352.tdf
-    Info: Found entity 1: altsyncram_m352
-Info: Elaborating entity "altsyncram_m352" for hierarchy "vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated"
+Info: Found 1 design units, including 1 entities, in source file db/altsyncram_dm32.tdf
+    Info: Found entity 1: altsyncram_dm32
+Info: Elaborating entity "altsyncram_dm32" for hierarchy "vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated"
 Info: Found 1 design units, including 1 entities, in source file db/decode_2qa.tdf
     Info: Found entity 1: decode_2qa
-Info: Elaborating entity "decode_2qa" for hierarchy "vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated|decode_2qa:decode2"
-Info: Elaborating entity "decode_2qa" for hierarchy "vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated|decode_2qa:decode_a"
+Info: Elaborating entity "decode_2qa" for hierarchy "vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated|decode_2qa:decode2"
+Info: Elaborating entity "decode_2qa" for hierarchy "vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated|decode_2qa:decode_a"
 Info: Found 1 design units, including 1 entities, in source file db/mux_bkb.tdf
     Info: Found entity 1: mux_bkb
-Info: Elaborating entity "mux_bkb" for hierarchy "vga_buffer:display|altsyncram:altsyncram_component|altsyncram_m352:auto_generated|mux_bkb:mux4"
+Info: Elaborating entity "mux_bkb" for hierarchy "vga_buffer:display|altsyncram:altsyncram_component|altsyncram_dm32:auto_generated|mux_bkb:mux4"
 Info: Elaborating entity "HexDigit" for hierarchy "HexDigit:H0"
 Info: Elaborating entity "Automaton" for hierarchy "Automaton:gen_code_label[1].A_inst"
 Info: Elaborating entity "Random32" for hierarchy "Random32:gen_code_label2[0].R_inst"
@@ -2094,17 +2093,17 @@ Warning: Design contains 33 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "TD_DATA[7]"
     Warning (15610): No output dependent on input pin "TD_HS"
     Warning (15610): No output dependent on input pin "TD_VS"
-Info: Implemented 6589 device resources after synthesis - the final resource count might be different
+Info: Implemented 6596 device resources after synthesis - the final resource count might be different
     Info: Implemented 48 input pins
     Info: Implemented 218 output pins
     Info: Implemented 159 bidirectional pins
-    Info: Implemented 6087 logic cells
+    Info: Implemented 6094 logic cells
     Info: Implemented 76 RAM segments
     Info: Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 202 warnings
-    Info: Peak virtual memory: 407 megabytes
-    Info: Processing ended: Tue Jan 29 16:04:11 2013
-    Info: Elapsed time: 00:00:44
+    Info: Peak virtual memory: 411 megabytes
+    Info: Processing ended: Wed Jan 30 13:22:43 2013
+    Info: Elapsed time: 00:00:45
     Info: Total CPU time (on all processors): 00:00:36
 
 
