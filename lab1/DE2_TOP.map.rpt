@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_TOP
-Wed Jan 30 13:22:43 2013
+Thu Jan 31 13:43:41 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Jan 30 13:22:42 2013     ;
+; Analysis & Synthesis Status        ; Successful - Thu Jan 31 13:43:40 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
@@ -239,7 +239,7 @@ applicable agreement for further details.
 ;                                             ;                                                ;
 ; Maximum fan-out node                        ; VGA_Audio_PLL:p1|altpll:altpll_component|_clk0 ;
 ; Maximum fan-out                             ; 2121                                           ;
-; Total fan-out                               ; 29074                                          ;
+; Total fan-out                               ; 29081                                          ;
 ; Average fan-out                             ; 3.50                                           ;
 +---------------------------------------------+------------------------------------------------+
 
@@ -961,25 +961,24 @@ Encoding Type:  One-Hot
 +----------------+--------------+-------------+----------------+-------------+-------------+-------------+------------+---------------+
 
 
-+---------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                    ;
-+----------------------------------------+----------------------------------------------+
-; Register name                          ; Reason for Removal                           ;
-+----------------------------------------+----------------------------------------------+
-; VGA_Controller:u1|Cur_Color_R[2..9]    ; Stuck at GND due to stuck port data_in       ;
-; VGA_Controller:u1|Cur_Color_B[2..9]    ; Stuck at GND due to stuck port data_in       ;
-; VGA_Controller:u1|Cur_Color_R[0]       ; Merged with VGA_Controller:u1|Cur_Color_R[1] ;
-; VGA_Controller:u1|Cur_Color_G[0..9]    ; Merged with VGA_Controller:u1|Cur_Color_R[1] ;
-; VGA_Controller:u1|Cur_Color_B[0,1]     ; Merged with VGA_Controller:u1|Cur_Color_R[1] ;
-; prow_data[641]                         ; Merged with prow_data[0]                     ;
-; row_data[641]                          ; Merged with row_data[0]                      ;
-; row_data[0]                            ; Stuck at GND due to stuck port data_in       ;
-; prow_data[0]                           ; Stuck at GND due to stuck port data_in       ;
-; state~10                               ; Lost fanout                                  ;
-; state~11                               ; Lost fanout                                  ;
-; state~13                               ; Lost fanout                                  ;
-; Total Number of Removed Registers = 36 ;                                              ;
-+----------------------------------------+----------------------------------------------+
++----------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                     ;
++-----------------------------------------+----------------------------------------------+
+; Register name                           ; Reason for Removal                           ;
++-----------------------------------------+----------------------------------------------+
+; VGA_Controller:u1|Cur_Color_G[0..6,8,9] ; Stuck at GND due to stuck port data_in       ;
+; VGA_Controller:u1|Cur_Color_R[0..8]     ; Merged with VGA_Controller:u1|Cur_Color_R[9] ;
+; VGA_Controller:u1|Cur_Color_G[7]        ; Merged with VGA_Controller:u1|Cur_Color_R[9] ;
+; VGA_Controller:u1|Cur_Color_B[0..9]     ; Merged with VGA_Controller:u1|Cur_Color_R[9] ;
+; prow_data[641]                          ; Merged with prow_data[0]                     ;
+; row_data[641]                           ; Merged with row_data[0]                      ;
+; row_data[0]                             ; Stuck at GND due to stuck port data_in       ;
+; prow_data[0]                            ; Stuck at GND due to stuck port data_in       ;
+; state~10                                ; Lost fanout                                  ;
+; state~11                                ; Lost fanout                                  ;
+; state~13                                ; Lost fanout                                  ;
+; Total Number of Removed Registers = 36  ;                                              ;
++-----------------------------------------+----------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -1736,8 +1735,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; oAddress             ; Output ; Warning  ; Output or bidir port (20 bits) is wider than the port expression (19 bits) it drives; bit(s) "oAddress[19..19]" have no fanouts              ;
 ; oAddress             ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
 ; oCoord_Y[9]          ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                          ;
-; iRed[9..2]           ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
-; iBlue[9..2]          ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; iGreen[9..8]         ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
+; iGreen[6..0]         ; Input  ; Info     ; Stuck at GND                                                                                                                                 ;
 ; iCursor_X            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 ; iCursor_Y            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
 ; iCursor_R            ; Input  ; Warning  ; Declared by entity but not connected by instance. If a default value exists, it will be used.  Otherwise, the port will be connected to GND. ;
@@ -1762,7 +1761,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Wed Jan 30 13:21:58 2013
+    Info: Processing started: Thu Jan 31 13:43:02 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off VGA_m4k -c DE2_TOP
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info: Found 1 design units, including 1 entities, in source file vga_buffer.v
@@ -2028,22 +2027,15 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "I2C_SCLK" is stuck at GND
     Warning (13410): Pin "TDO" is stuck at GND
     Warning (13410): Pin "VGA_SYNC" is stuck at GND
-    Warning (13410): Pin "VGA_R[2]" is stuck at GND
-    Warning (13410): Pin "VGA_R[3]" is stuck at GND
-    Warning (13410): Pin "VGA_R[4]" is stuck at GND
-    Warning (13410): Pin "VGA_R[5]" is stuck at GND
-    Warning (13410): Pin "VGA_R[6]" is stuck at GND
-    Warning (13410): Pin "VGA_R[7]" is stuck at GND
-    Warning (13410): Pin "VGA_R[8]" is stuck at GND
-    Warning (13410): Pin "VGA_R[9]" is stuck at GND
-    Warning (13410): Pin "VGA_B[2]" is stuck at GND
-    Warning (13410): Pin "VGA_B[3]" is stuck at GND
-    Warning (13410): Pin "VGA_B[4]" is stuck at GND
-    Warning (13410): Pin "VGA_B[5]" is stuck at GND
-    Warning (13410): Pin "VGA_B[6]" is stuck at GND
-    Warning (13410): Pin "VGA_B[7]" is stuck at GND
-    Warning (13410): Pin "VGA_B[8]" is stuck at GND
-    Warning (13410): Pin "VGA_B[9]" is stuck at GND
+    Warning (13410): Pin "VGA_G[0]" is stuck at GND
+    Warning (13410): Pin "VGA_G[1]" is stuck at GND
+    Warning (13410): Pin "VGA_G[2]" is stuck at GND
+    Warning (13410): Pin "VGA_G[3]" is stuck at GND
+    Warning (13410): Pin "VGA_G[4]" is stuck at GND
+    Warning (13410): Pin "VGA_G[5]" is stuck at GND
+    Warning (13410): Pin "VGA_G[6]" is stuck at GND
+    Warning (13410): Pin "VGA_G[8]" is stuck at GND
+    Warning (13410): Pin "VGA_G[9]" is stuck at GND
     Warning (13410): Pin "ENET_CMD" is stuck at GND
     Warning (13410): Pin "ENET_CS_N" is stuck at VCC
     Warning (13410): Pin "ENET_WR_N" is stuck at VCC
@@ -2100,11 +2092,11 @@ Info: Implemented 6596 device resources after synthesis - the final resource cou
     Info: Implemented 6094 logic cells
     Info: Implemented 76 RAM segments
     Info: Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 202 warnings
-    Info: Peak virtual memory: 411 megabytes
-    Info: Processing ended: Wed Jan 30 13:22:43 2013
-    Info: Elapsed time: 00:00:45
-    Info: Total CPU time (on all processors): 00:00:36
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 195 warnings
+    Info: Peak virtual memory: 402 megabytes
+    Info: Processing ended: Thu Jan 31 13:43:41 2013
+    Info: Elapsed time: 00:00:39
+    Info: Total CPU time (on all processors): 00:00:35
 
 
 +------------------------------------------+

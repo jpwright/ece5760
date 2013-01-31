@@ -1,0 +1,145 @@
+; sram video color test
+; 8 bits/pixel 
+; ==================================
+
+constant ; named constants
+	; ports
+ 	switches 0 ; in port 0
+	keys 1     ; in port 1
+	sync 2     ; in prot 2
+	timer 3     ; put port 3
+	
+	;9 bits of Y in top bits
+	;9 bits of X in low bits -- excludes bit 0 of X
+	vga_addr 0  ; out port 0
+	;8 bits intensity
+	vga_data 1  ; out port 1
+
+	; vga_cntl:
+	; bit 0 low => we
+	; bit 1 low => write low byte
+	; bit 1 high=> write high byte
+	vga_cntl 2  ; out port 2
+	
+	white 255
+	black 0
+	gray_lite 218
+	gray_medium 182
+	gray_dark 145
+
+	forever 1 ; for endless loop 
+	
+	; loop max values
+	N_y 475
+	N_x 630
+
+; ==================================
+
+variable ;data in memory 
+	; adding a number allocates an array
+	temp  ; scratch location 
+	temp2  ; scratch location 
+	count  ; point index
+	count_x
+	count_y
+	rand   ; low order random
+	rand2  ; high order random
+	frame_toggle  ; test variable
+	 
+; ==================================
+
+inline make_vga_addr ; x in top, y in next
+   ; store lower bit of x in temp2
+   ; and store shifted x to temp
+   dup
+   1 band =temp2 ; low order bit
+   1 shr =temp ; 9 high bits
+   ; y on stack, shift it 9 left
+   9 shl
+   temp bor
+endinline
+
+inline vga_point; x in stack-top, y in next, color in 3rd
+   ; format: color ycoord xcoord (in pixels)
+   ; color: red is top 3-bits
+   ; color: green is next 3-bits
+   ; color: blue is bottom 2-bits
+
+   ; store lower bit of x in temp2
+   ; and store shifted x to temp
+   dup
+   1 band =temp2 ; low order bit
+   1 shr =temp ; 9 high bits
+   ; y on stack, shift it 9 left
+   9 shl
+   temp bor out[vga_addr]
+   ; color is top of stack
+   ; if temp2 set shift color to high byte
+   if temp2 then 8 shl endif
+   out[vga_data] 
+   ; now toggle we with low x-bit in bit-1
+   temp2 1 shl out[vga_cntl] 
+   3 out[vga_cntl]
+
+endinline
+
+inline toggle_cntl
+	temp2 1 shl out[vga_cntl] 
+	3 out[vga_cntl]
+endinline
+
+
+; ===================================
+ 
+program      ;   particle animation
+
+main:	
+; at reset: write zeros to the whole screen in hardware
+; clear write controls
+7 out[vga_cntl]
+; start timer
+1 out[timer]
+
+; draw all points on screen once
+
+0 =count_y
+while count_y N_y lt
+do  	
+	0 =count_x
+	while count_x N_x lt
+	do
+		if in[sync] 
+		then
+			;stack: color y-coord x-coord (top)
+ 			if count_x 512 lt
+			then
+				count_x 1 shr count_y count_x vga_point
+			else
+				gray_medium count_y count_x vga_point
+			endif
+    			count_x 1 add =count_x
+		endif
+	endwhile
+    	count_y 1 add =count_y
+endwhile
+
+0 =count_y
+while count_y N_y lt
+do
+	if in[sync] 
+	then
+		black count_y count_y vga_point
+		white N_y count_y sub count_y vga_point
+		count_y 1 add =count_y
+	endif
+endwhile
+
+; stop  timer
+0 out[timer]
+
+; halt
+while forever do endwhile
+
+;==================================
+;===end of code ============================
+;===========================================

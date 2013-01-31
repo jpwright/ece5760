@@ -1,0 +1,266 @@
+; sram video color test
+; 8 bits/pixel 
+; ==================================
+
+constant ; named constants
+	; ports
+ 	switches 0 ; in port 0
+	sram_data 1  ; in port 1
+	sync 2     ; in port 2
+	LEDred 3     ; output port 3
+	
+	;9 bits of Y in top bits
+	;9 bits of X in low bits -- excludes bit 0 of X
+	vga_addr 0  ; out port 0
+	;8 bits intensity
+	vga_data 1  ; out port 1
+
+	; vga_cntl:
+	; bit 0 low => we
+	; bit 1 low => write low byte
+	; bit 1 high=> write high byte
+	vga_cntl 2  ; out port 2
+	
+	white 255
+	black 0
+	gray1 21
+	gray2 42
+	gray3 63
+	gray4	 170
+	gray5 213
+	gray6 234
+	red 240
+
+	forever 1 ; for endless loop 
+	
+	; particle number
+	N 1000
+	
+	; ==================================
+
+variable ;data in memory 
+	; adding a number allocates an array
+	count  ; point index
+	x 1000
+	y 1000
+	rand   ; low order random
+	rand2  ; high order random
+	temp
+	neighbor
+	agg_count 
+	ymax
+; ==================================
+
+inline vga_point; x in stack-top, y in next, color in 3rd
+   ; format: color ycoord xcoord (in pixels)
+   ; store lower bit of x in 4
+   ; and store shifted x to 5
+   dup
+   1 band pop.4 ; low order bit
+   1 shr pop.5 ; 9 high bits
+   ; y on stack, shift it 9 left
+   9 shl
+	; then OR with 9 bits of x
+   push.5 bor out[vga_addr]
+   ; color is top of stack
+   ; if low bit of x is set, shift color to high byte
+   if push.4 then 8 shl endif
+   out[vga_data] 
+   ; now toggle we with low x-bit in bit-1
+   while in[sync] not do endwhile 
+   push.4 1 shl out[vga_cntl] 
+   3 out[vga_cntl]
+endinline
+
+inline vga_read ; x in stack-top, y in next
+   ; input format: ycoord xcoord (in pixels)
+	; output: color
+   ; store lower bit of x in 4
+   ; and store shifted x to 5
+   dup
+   1 band pop.4 ; low order bit
+   1 shr pop.5 ; 9 high bits
+   ; y on stack, shift it 9 left
+   9 shl
+	; then OR with 9 bits of x
+   push.5 bor out[vga_addr]
+	; now set up UB/LB read with low x-bit in bit-1
+	; and with write-enable high (bit 0)
+   push.4 1 shl 1 bor out[vga_cntl] 
+   ; get color 
+	while in[sync] not do endwhile 
+	in[sram_data]
+   ; if low bit of x is set, shift color to low byte
+   if push.4 then 8 shr endif
+   ; color is now on stack
+endinline
+
+
+; ===================================
+function
+	rand_bit
+
+; ===================================
+ 
+program      ;   particle animation
+
+main:	
+; at reset: write zeros to the whole screen in hardware
+; clear write controls
+3 out[vga_cntl]
+
+; draw a white line at the bottom of the screen
+0 =count
+while count 630 lt
+do
+	white 475 count vga_point
+white 475 count vga_point
+	count 1 add =count	
+endwhile
+
+;init the aggregate count
+0 dup =agg_count out[LEDred] 
+
+;init the random number gen
+in[switches] =rand
+
+;init the height of the highest white point
+460 =ymax
+
+0 =count
+while count N lt
+do  
+	count 1 shr =x[count]
+	ymax =y[count]
+	count 1 add =count	
+endwhile
+    	
+while forever 
+do 
+	0 =count
+	
+	; update points
+	while count N lt
+	do 	
+		; debug vga_read
+		;y[count] x[count] vga_read out[LEDred] 
+
+		; === check for frozen neighbors (in sram) ===
+		; === need to check 4 neighbors ===
+		0 =neighbor
+		if y[count] 1 add x[count] 1 add vga_read white eq 
+		then neighbor 1 add =neighbor endif
+
+		if y[count] 1 add x[count] 1 sub vga_read white eq 
+		then neighbor 1 add =neighbor endif
+
+		if y[count] 1 sub x[count] 1 add vga_read white eq 
+		then neighbor 1 add =neighbor endif
+
+		if y[count] 1 sub x[count] 1 sub vga_read white eq 
+		then neighbor 1 add =neighbor endif
+
+		if y[count] x[count] 1 add vga_read white eq 
+		then neighbor 1 add =neighbor endif
+
+		if y[count] x[count] 1 sub vga_read white eq 
+		then neighbor 1 add =neighbor endif
+
+		if y[count] 1 sub x[count] vga_read white eq 
+		then neighbor 1 add =neighbor endif
+
+		if y[count] 1 add x[count] vga_read white eq 
+		then neighbor 1 add =neighbor endif
+
+		if neighbor ; freeze the point and gen a new pt
+		then
+			white y[count] x[count] vga_point
+			agg_count 1 add dup =agg_count out[LEDred]
+			;
+			; gen a new diffusor
+			; make y position adaptive to stay above highest point
+			if y[count] ymax lt then y[count] 20 sub =ymax endif
+			; randomize x (29989 is prime)
+			count rand_bit 127 mul add 511 band =x[count] 
+			ymax =y[count]
+		endif
+
+		; === erase point ===
+		black y[count] x[count] vga_point
+			
+		; === update positions ===
+		;update x positions
+		rand_bit x[count] add =x[count]
+
+		;update y positions
+		rand_bit y[count] add =y[count]
+
+		; screen boundary checks for x
+		if x[count] 635 gt then
+			; and put back inside the box
+			633 =x[count]
+		endif
+
+		if x[count] 5 le then
+			7 =x[count]
+		endif
+
+		; screen boundary check for y
+		if y[count] 475 gt then
+			470 =y[count]
+		endif
+
+		if y[count] 5 le then
+			7 =y[count]
+		endif
+
+		; === write point ===
+		red y[count] x[count] vga_point
+
+		count 1 add =count
+	endwhile ; particle update loop
+	
+endwhile ; forever
+
+;===============================
+; random number generator
+;===============================
+; from "Art of Electronics" page 657
+; entry: uses nothing on stack
+; exit: +1 or -1 on stack
+; 36-bit shift reg:
+; shift left one bit
+; bits 36 and 25 XORed (2nd reg bit 17 and 6)
+; and stored to bit 0
+rand_bit: 
+    ; get high order rand register and copy for xor
+    ; shift left to align bits 17 and 6
+    ; bitwise xor
+    ; move bit 17 to bit 0
+    ; save xor bit for later
+    rand2 dup 11 shl bxor 17 shr =temp
+
+    ; modify rand2 by shifting in the high
+    ; order bit from rand --
+    ; get rand and shift right 17
+    ; get rand2 shl 1-bit and OR with
+    ; bit from rand
+    rand 17 shr rand2 1 shl bor =rand2
+
+    ; modify rand
+    ; shift left to open up 0 bit  
+    ; get the stored xor bit (in temp)
+    ; OR to form new final rand
+    ; dup to store and for output
+    rand 1 shl temp bor dup =rand
+
+    ; construct +/-1 output
+    ; band with 1 to isolate bit 0
+    ; mult by 2 and subtract 1
+    ; so that final output is +1 or -1    
+    1 band 1 shl 1 sub
+
+return
+;===========================================
+;== end of code ============================
+;===========================================

@@ -1,6 +1,0 @@
-<?xml version="1.0" ?>
-<LOG_ROOT>
-	<PROJECT NAME="DE2_TOP">
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|vga_buffer:display|altsyncram:altsyncram_component" CBX_FILE_NAME="altsyncram_m352.tdf"/>
-	</PROJECT>
-</LOG_ROOT>

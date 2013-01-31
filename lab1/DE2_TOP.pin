@@ -294,7 +294,7 @@ ENET_DATA[10]                : C19       : bidir  : 3.3-V LVTTL       :         
 VCCIO4                       : C20       : power  :                   : 3.3V    : 4         :                
 GND*                         : C21       :        :                   :         : 4         :                
 GND*                         : C22       :        :                   :         : 4         :                
-IRDA_TXD                     : C23       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : C23       :        :                   :         : 4         :                
 PS2_DAT                      : C24       : input  : 3.3-V LVTTL       :         : 5         : Y              
 UART_RXD                     : C25       : input  : 3.3-V LVTTL       :         : 5         : Y              
 VCCIO5                       : C26       : power  :                   : 3.3V    : 5         :                
@@ -445,7 +445,7 @@ VGA_B[1]                     : J14       : output : 3.3-V LVTTL       :         
 VCCIO4                       : J15       : power  :                   : 3.3V    : 4         :                
 GND*                         : J16       :        :                   :         : 4         :                
 GND*                         : J17       :        :                   :         : 4         :                
-GND*                         : J18       :        :                   :         : 4         :                
+IRDA_TXD                     : J18       : output : 3.3-V LVTTL       :         : 4         : N              
 VCCIO5                       : J19       : power  :                   : 3.3V    : 5         :                
 GPIO_0[7]                    : J20       : bidir  : 3.3-V LVTTL       :         : 5         : Y              
 GPIO_0[6]                    : J21       : bidir  : 3.3-V LVTTL       :         : 5         : Y              

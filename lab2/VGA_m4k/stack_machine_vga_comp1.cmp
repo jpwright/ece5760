@@ -1,0 +1,187 @@
+; animate 1800 particles on VGA
+; using 36-bit random number generator
+; test of compiler
+; ==================================
+
+constant ; named constants
+	; ports
+ 	switches 0 ; in port 0
+	keys 1     ; in port 1
+	redLEDs 3  ; out port 3
+	gpio 3     ; put port 3
+	vga_addr 0  ; out port 0
+	vga_data 1  ; out port 1
+	vga_we 2    ; out port 2
+	;
+	forever 1 ; for endless loop 
+	N 1800 ; number of particles
+	scale 7 ; scale rand to 0.5 pixels per step
+
+; ==================================
+
+variable ;data in memory 
+	; adding a number allocates an array
+	temp  ; scratch location 
+	x 1800 ; coordinates of point to draw
+	y 1800 ; 1800 elements in the array
+	count  ; point index
+	rand   ; low order random
+	rand2  ; high order random
+	frame_toggle  ; test variable
+	 
+; ==================================
+
+function ; names of subroutines with forward reference
+	rand_bit ; returns a random +/-1
+
+; ==================================
+
+inline make_vga_addr 
+   ; truncate low bits by shift right, then left
+   ; and pop to temp
+   8 shr 9 shl =temp
+   ; y on stack, shift it 8 right
+   8 shr
+   ; add int(x)<<9+int(y) to get address
+   temp add
+endinline
+	
+inline int2fix
+	8 shl
+endinline
+
+inline toggle_we
+	1 out[vga_we] 
+    0 out[vga_we]
+endinline
+
+; ===================================
+ 
+program      ;   particle animation
+
+main:	
+0 out[redLEDs]
+; init point position in pixels
+; step thru all particles
+0 =count
+while 
+    count N lt
+do
+    ; store the 10.8 pos
+    240 int2fix =y[count]
+    400 int2fix =x[count]
+
+    ; index inc
+    count 1 add =count
+endwhile
+
+; clear write enable bit
+0 out[vga_we]
+
+in[switches] ; seed random number gen
+; dup =rand out[redLEDs]
+=rand 
+
+; main drawing loop
+
+while
+    forever ; never exit
+do
+    ; frame rate monitor
+    frame_toggle bnot dup =frame_toggle
+    ; dup makes one copy to store and another to output
+    out[gpio]
+
+    ; update all particles
+    0 =count
+    while
+       count N lt
+    do
+    	 ; erase point
+		y[count] x[count] make_vga_addr out[vga_addr]
+		0 out[vga_data]
+		toggle_we
+
+		;update x positions
+		rand_bit
+		scale shl x[count] add =x[count]
+
+		;update y positions
+		rand_bit
+		scale shl y[count] add =y[count]
+
+		; screen boundary checks for x
+		if x[count] 480 int2fix gt
+		then
+			; and put back inside the box
+			478 int2fix =x[count]
+		endif
+
+		if x[count] 5 8 shl le
+		then
+			7 int2fix =x[count]
+		endif
+
+		; screen boundary check for y
+		if y[count] 480 int2fix gt
+		then
+			478 int2fix =y[count]
+		endif
+
+		if y[count] 5 int2fix le
+		then
+			7 int2fix y[count]
+		endif
+
+
+		; write new point	
+		y[count] x[count] make_vga_addr out[vga_addr]
+		1 out[vga_data]
+		toggle_we 
+      
+		count 1 add =count
+	endwhile ; particle update loop								
+endwhile ; end of infinite main loop
+
+;===============================
+; random number generator
+;===============================
+; from "Art of Electronics" page 657
+; entry: uses nothing on stack
+; exit: +1 or -1 on stack
+; 36-bit shift reg:
+; shift left one bit
+; bits 36 and 25 XORed (2nd reg bit 17 and 6)
+; and stored to bit 0
+rand_bit: 
+    ; get high order rand register and copy for xor
+    ; shift left to align bits 17 and 6
+    ; bitwise xor
+    ; move bit 17 to bit 0
+    ; save xor bit for later
+    rand2 dup 11 shl bxor 17 shr =temp
+
+    ; modify rand2 by shifting in the high
+    ; order bit from rand --
+    ; get rand and shift right 17
+    ; get rand2 shl 1-bit and OR with
+    ; bit from rand
+    rand 17 shr rand2 1 shl bor =rand2
+
+    ; modify rand
+    ; shift left to open up 0 bit  
+    ; get the stored xor bit (in temp)
+    ; OR to form new final rand
+    ; dup to store and for output
+    rand 1 shl temp bor dup =rand
+
+    ; construct +/-1 output
+    ; band with 1 to isolate bit 0
+    ; mult by 2 and subtract 1
+    ; so that final output is +1 or -1    
+    1 band 1 shl 1 sub
+
+    return
+;==================================
+;===end of code ============================
+;===========================================
