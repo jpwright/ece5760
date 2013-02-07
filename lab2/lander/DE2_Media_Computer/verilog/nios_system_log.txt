@@ -1,0 +1,83 @@
+Altera SOPC Builder Version 11.00 Build 157
+Copyright (c) 1999-2009 Altera Corporation.  All rights reserved.
+
+
+No .sopc_builder configuration file(!)
+# 2013.02.07 15:30:08 (*) mk_custom_sdk starting
+# 2013.02.07 15:30:08 (*) Reading project C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.ptf.
+
+# 2013.02.07 15:30:09 (*) Finding all CPUs
+# 2013.02.07 15:30:09 (*) Finding all available components
+# 2013.02.07 15:30:09 (*) Reading C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/.sopc_builder/install.ptf
+
+# 2013.02.07 15:30:09 (*) Found 63 components
+
+# 2013.02.07 15:30:10 (*) Finding all peripherals
+
+# 2013.02.07 15:30:10 (*) Finding software components
+
+# 2013.02.07 15:30:10 (*) (Legacy SDK Generation Skipped)
+# 2013.02.07 15:30:10 (*) (All TCL Script Generation Skipped)
+# 2013.02.07 15:30:10 (*) (No Libraries Built)
+# 2013.02.07 15:30:10 (*) (Contents Generation Skipped)
+# 2013.02.07 15:30:10 (*) mk_custom_sdk finishing
+
+# 2013.02.07 15:30:10 (*) Starting generation for system: nios_system.
+
+.
+.
+.
+.
+.
+.
+
+# 2013.02.07 15:30:12 (*) Running Generator Program for CPU
+
+# 2013.02.07 15:30:12 (*) Starting Nios II generation
+# 2013.02.07 15:30:13 (*)   Checking for plaintext license.
+# 2013.02.07 15:30:13 (*)   Plaintext license not found.
+# 2013.02.07 15:30:13 (*)   Checking for encrypted license (non-evaluation).
+# 2013.02.07 15:30:13 (*)   Encrypted license found.  SOF will not be time-limited.
+# 2013.02.07 15:30:13 (*)   Getting CPU configuration settings
+# 2013.02.07 15:30:13 (*)   Elaborating CPU configuration settings
+# 2013.02.07 15:30:13 (*)   Creating all objects for CPU
+
+# 2013.02.07 15:30:14 (*)     Pipeline frontend
+# 2013.02.07 15:30:16 (*)   Generating HDL from CPU objects
+# 2013.02.07 15:30:19 (*)   Creating encrypted HDL
+# 2013.02.07 15:30:20 (*) Done Nios II generation
+
+# 2013.02.07 15:30:21 (*) Running Generator Program for JTAG_UART
+
+# 2013.02.07 15:30:22 (*) Running Generator Program for Interval_Timer
+
+# 2013.02.07 15:30:23 (*) Running Generator Program for sysid
+
+# 2013.02.07 15:30:25 (*) Running Generator Program for SDRAM
+
+# 2013.02.07 15:30:26 (*) Running Generator Program for nios_system_clock_0
+
+.
+
+# 2013.02.07 15:30:28 (*) Running Test Generator Program for SDRAM
+
+# 2013.02.07 15:30:28 (*) Making arbitration and system (top) modules.
+
+# 2013.02.07 15:30:40 (*) Generating Quartus symbol for top level: nios_system
+
+# 2013.02.07 15:30:40 (*) Symbol C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.bsf already exists, no need to regenerate
+# 2013.02.07 15:30:40 (*) Creating command-line system-generation script: C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system_generation_script
+
+# 2013.02.07 15:30:40 (*) Running setup for HDL simulator: modelsim
+
+
+# 2013.02.07 15:30:40 (*) Completed generation for system: nios_system.
+# 2013.02.07 15:30:40 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+  SOPC Builder database : C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.ptf 
+  System HDL Model : C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.v 
+  System Generation Script : C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system_generation_script 
+
+# 2013.02.07 15:30:40 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+
+
+Press 'Exit' to exit.

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<nios2_config>
+    <system>
+        <system_ptf filepath="true">DE2_Media_Computer\verilog\nios_system.ptf</system_ptf>
+        <system_sof filepath="true">DE2_Media_Computer\verilog\DE2_Media_Computer.sof</system_sof>
+        <cable>USB-Blaster [USB-0]</cable>
+        <processor JTAGHubInstanceID="0">CPU</processor>
+        <terminal JTAGHubInstanceID="0">JTAG_UART</terminal>
+    </system>
+    <program>
+        <type>BSP</type>
+        <options>
+            <source_files>
+                <source_file filepath="true">media_graphics_HAL.c</source_file>
+            </source_files>
+            <bsp_settings_tcl_script filepath="true"/>
+        </options>
+    </program>
+</nios2_config>
