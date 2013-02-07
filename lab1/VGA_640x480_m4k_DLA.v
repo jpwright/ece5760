@@ -1,14 +1,7 @@
 // --------------------------------------------------------------------
-// --------------------------------------------------------------------
 //
-// Major Functions: Diffusion limited aggregation 
+// Major Functions: Cellular Automaton 
 //		state is in m4k blocks
-// --------------------------------------------------------------------
-//
-// Revision History :
-// --------------------------------------------------------------------
-// Bruce R Land, Cornell University, Oct 2009
-// Improved top module written by Adam Shapiro Oct 2009
 // --------------------------------------------------------------------
 
 module DE2_TOP (
@@ -385,6 +378,7 @@ for (index=1; index < 641; index=index+1)
 	end
 endgenerate
 
+//Randomly generated Seed for LFSRs
 reg [639:0] prev_random_row = 640'hf9232a25a8c301011f64ff197a07037e15f2b9498b9dec83273c0dae73b1adbf1fa46164a15fa1057184b67f0c22d55ae3bf4f0c5a213cb2da6226b3520b3de83dea4fc9080c12544c4e2afb78206410;
 wire [639:0] random_row;
 
@@ -407,10 +401,6 @@ begin
 	disp_bit <= mem_bit;
 end
 
-always @ (posedge SW[3])
-begin
-
-end
 
 always @ (posedge VGA_CTRL_CLK) //VGA_CTRL_CLK
 begin
@@ -476,6 +466,7 @@ begin
 				state <= test2;
 			end
 			
+			//wait for write
 			test2:
 			begin
 				we <= 1'b1;
@@ -483,7 +474,7 @@ begin
 				current_state <= 8'b00100000;
 				state <= test3;
 			end
-			
+			//updating pixels
 			test3:
 			begin
 				we <= 1'b0;
@@ -517,6 +508,7 @@ begin
 				
 			end
 			
+			//starting a new row of pixels
 			new_row:
 			begin
 				if (print == 1'b1) begin
@@ -572,23 +564,13 @@ begin
 		endcase
 	end // else if ( KEY[3]) 
 	
-	//else
-	//begin
-		//update the x,y random number gens
-		// this allows the pause key to change the pattern
-		// generated
-		//x_rand <= {x_rand[29:0], x_low_bit} ;
-		//y_rand <= {y_rand[27:0], y_low_bit} ;
-	//end
+	
 end // always @ (posedge VGA_CTRL_CLK)
 
 endmodule //top module
 
 //////////////////////////////////////////////
 // Larger Automaton
-
-//////////////////////////////////////////////
-// Sexy Module
 module Automaton(outpixel, inpixels, rule);
 	input [2:0] inpixels;
 	output outpixel;
