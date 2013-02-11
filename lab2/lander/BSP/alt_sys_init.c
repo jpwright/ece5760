@@ -2,9 +2,9 @@
  * alt_sys_init.c - HAL initialization source
  *
  * Machine generated for CPU 'CPU' in SOPC Builder design 'nios_system'
- * SOPC Builder design path: C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.sopcinfo
+ * SOPC Builder design path: Z:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.sopcinfo
  *
- * Generated: Thu Feb 07 15:11:19 EST 2013
+ * Generated: Mon Feb 11 14:12:13 EST 2013
  */
 
 /*

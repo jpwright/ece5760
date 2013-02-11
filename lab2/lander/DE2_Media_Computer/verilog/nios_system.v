@@ -344,10 +344,10 @@ endmodule
 module Alpha_Blending_avalon_background_sink_arbitrator (
                                                           // inputs:
                                                            Alpha_Blending_avalon_background_sink_ready,
-                                                           VGA_Pixel_Scaler_avalon_scaler_source_data,
-                                                           VGA_Pixel_Scaler_avalon_scaler_source_endofpacket,
-                                                           VGA_Pixel_Scaler_avalon_scaler_source_startofpacket,
-                                                           VGA_Pixel_Scaler_avalon_scaler_source_valid,
+                                                           VGA_Pixel_RGB_Resampler_avalon_rgb_source_data,
+                                                           VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket,
+                                                           VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket,
+                                                           VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid,
                                                            clk,
                                                            reset_n,
 
@@ -366,10 +366,10 @@ module Alpha_Blending_avalon_background_sink_arbitrator (
   output           Alpha_Blending_avalon_background_sink_startofpacket;
   output           Alpha_Blending_avalon_background_sink_valid;
   input            Alpha_Blending_avalon_background_sink_ready;
-  input   [ 29: 0] VGA_Pixel_Scaler_avalon_scaler_source_data;
-  input            VGA_Pixel_Scaler_avalon_scaler_source_endofpacket;
-  input            VGA_Pixel_Scaler_avalon_scaler_source_startofpacket;
-  input            VGA_Pixel_Scaler_avalon_scaler_source_valid;
+  input   [ 29: 0] VGA_Pixel_RGB_Resampler_avalon_rgb_source_data;
+  input            VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket;
+  input            VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket;
+  input            VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid;
   input            clk;
   input            reset_n;
 
@@ -379,19 +379,19 @@ module Alpha_Blending_avalon_background_sink_arbitrator (
   wire             Alpha_Blending_avalon_background_sink_startofpacket;
   wire             Alpha_Blending_avalon_background_sink_valid;
   //mux Alpha_Blending_avalon_background_sink_data, which is an e_mux
-  assign Alpha_Blending_avalon_background_sink_data = VGA_Pixel_Scaler_avalon_scaler_source_data;
+  assign Alpha_Blending_avalon_background_sink_data = VGA_Pixel_RGB_Resampler_avalon_rgb_source_data;
 
   //mux Alpha_Blending_avalon_background_sink_endofpacket, which is an e_mux
-  assign Alpha_Blending_avalon_background_sink_endofpacket = VGA_Pixel_Scaler_avalon_scaler_source_endofpacket;
+  assign Alpha_Blending_avalon_background_sink_endofpacket = VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket;
 
   //assign Alpha_Blending_avalon_background_sink_ready_from_sa = Alpha_Blending_avalon_background_sink_ready so that symbol knows where to group signals which may go to master only, which is an e_assign
   assign Alpha_Blending_avalon_background_sink_ready_from_sa = Alpha_Blending_avalon_background_sink_ready;
 
   //mux Alpha_Blending_avalon_background_sink_startofpacket, which is an e_mux
-  assign Alpha_Blending_avalon_background_sink_startofpacket = VGA_Pixel_Scaler_avalon_scaler_source_startofpacket;
+  assign Alpha_Blending_avalon_background_sink_startofpacket = VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket;
 
   //mux Alpha_Blending_avalon_background_sink_valid, which is an e_mux
-  assign Alpha_Blending_avalon_background_sink_valid = VGA_Pixel_Scaler_avalon_scaler_source_valid;
+  assign Alpha_Blending_avalon_background_sink_valid = VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid;
 
 
 endmodule
@@ -9937,6 +9937,167 @@ endmodule
 // altera message_level Level1 
 // altera message_off 10034 10035 10036 10037 10230 10240 10030 
 
+module selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo_module (
+                                                                                                    // inputs:
+                                                                                                     clear_fifo,
+                                                                                                     clk,
+                                                                                                     data_in,
+                                                                                                     read,
+                                                                                                     reset_n,
+                                                                                                     sync_reset,
+                                                                                                     write,
+
+                                                                                                    // outputs:
+                                                                                                     data_out,
+                                                                                                     empty,
+                                                                                                     fifo_contains_ones_n,
+                                                                                                     full
+                                                                                                  )
+;
+
+  output           data_out;
+  output           empty;
+  output           fifo_contains_ones_n;
+  output           full;
+  input            clear_fifo;
+  input            clk;
+  input            data_in;
+  input            read;
+  input            reset_n;
+  input            sync_reset;
+  input            write;
+
+  wire             data_out;
+  wire             empty;
+  reg              fifo_contains_ones_n;
+  wire             full;
+  reg              full_0;
+  reg              full_1;
+  wire             full_2;
+  reg     [  2: 0] how_many_ones;
+  wire    [  2: 0] one_count_minus_one;
+  wire    [  2: 0] one_count_plus_one;
+  wire             p0_full_0;
+  wire             p0_stage_0;
+  wire             p1_full_1;
+  wire             p1_stage_1;
+  reg              stage_0;
+  reg              stage_1;
+  wire    [  2: 0] updated_one_count;
+  assign data_out = stage_0;
+  assign full = full_1;
+  assign empty = !full_0;
+  assign full_2 = 0;
+  //data_1, which is an e_mux
+  assign p1_stage_1 = ((full_2 & ~clear_fifo) == 0)? data_in :
+    data_in;
+
+  //data_reg_1, which is an e_register
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          stage_1 <= 0;
+      else if (clear_fifo | sync_reset | read | (write & !full_1))
+          if (sync_reset & full_1 & !((full_2 == 0) & read & write))
+              stage_1 <= 0;
+          else 
+            stage_1 <= p1_stage_1;
+    end
+
+
+  //control_1, which is an e_mux
+  assign p1_full_1 = ((read & !write) == 0)? full_0 :
+    0;
+
+  //control_reg_1, which is an e_register
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          full_1 <= 0;
+      else if (clear_fifo | (read ^ write) | (write & !full_0))
+          if (clear_fifo)
+              full_1 <= 0;
+          else 
+            full_1 <= p1_full_1;
+    end
+
+
+  //data_0, which is an e_mux
+  assign p0_stage_0 = ((full_1 & ~clear_fifo) == 0)? data_in :
+    stage_1;
+
+  //data_reg_0, which is an e_register
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          stage_0 <= 0;
+      else if (clear_fifo | sync_reset | read | (write & !full_0))
+          if (sync_reset & full_0 & !((full_1 == 0) & read & write))
+              stage_0 <= 0;
+          else 
+            stage_0 <= p0_stage_0;
+    end
+
+
+  //control_0, which is an e_mux
+  assign p0_full_0 = ((read & !write) == 0)? 1 :
+    full_1;
+
+  //control_reg_0, which is an e_register
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          full_0 <= 0;
+      else if (clear_fifo | (read ^ write) | (write & !full_0))
+          if (clear_fifo & ~write)
+              full_0 <= 0;
+          else 
+            full_0 <= p0_full_0;
+    end
+
+
+  assign one_count_plus_one = how_many_ones + 1;
+  assign one_count_minus_one = how_many_ones - 1;
+  //updated_one_count, which is an e_mux
+  assign updated_one_count = ((((clear_fifo | sync_reset) & !write)))? 0 :
+    ((((clear_fifo | sync_reset) & write)))? |data_in :
+    ((read & (|data_in) & write & (|stage_0)))? how_many_ones :
+    ((write & (|data_in)))? one_count_plus_one :
+    ((read & (|stage_0)))? one_count_minus_one :
+    how_many_ones;
+
+  //counts how many ones in the data pipeline, which is an e_register
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          how_many_ones <= 0;
+      else if (clear_fifo | sync_reset | read | write)
+          how_many_ones <= updated_one_count;
+    end
+
+
+  //this fifo contains ones in the data pipeline, which is an e_register
+  always @(posedge clk or negedge reset_n)
+    begin
+      if (reset_n == 0)
+          fifo_contains_ones_n <= 1;
+      else if (clear_fifo | sync_reset | read | write)
+          fifo_contains_ones_n <= ~(|updated_one_count);
+    end
+
+
+
+endmodule
+
+
+// synthesis translate_off
+`timescale 1ns / 1ps
+// synthesis translate_on
+
+// turn off superfluous verilog processor warnings 
+// altera message_level Level1 
+// altera message_off 10034 10035 10036 10037 10230 10240 10030 
+
 module VGA_Pixel_Buffer_avalon_pixel_dma_master_arbitrator (
                                                              // inputs:
                                                               SRAM_avalon_sram_slave_readdata_from_sa,
@@ -9963,7 +10124,7 @@ module VGA_Pixel_Buffer_avalon_pixel_dma_master_arbitrator (
 
   output  [ 31: 0] VGA_Pixel_Buffer_avalon_pixel_dma_master_address_to_slave;
   output           VGA_Pixel_Buffer_avalon_pixel_dma_master_latency_counter;
-  output  [ 15: 0] VGA_Pixel_Buffer_avalon_pixel_dma_master_readdata;
+  output  [  7: 0] VGA_Pixel_Buffer_avalon_pixel_dma_master_readdata;
   output           VGA_Pixel_Buffer_avalon_pixel_dma_master_readdatavalid;
   output           VGA_Pixel_Buffer_avalon_pixel_dma_master_reset;
   output           VGA_Pixel_Buffer_avalon_pixel_dma_master_waitrequest;
@@ -9979,22 +10140,29 @@ module VGA_Pixel_Buffer_avalon_pixel_dma_master_arbitrator (
   input            d1_SRAM_avalon_sram_slave_end_xfer;
   input            reset_n;
 
+  wire    [  7: 0] SRAM_avalon_sram_slave_readdata_from_sa_part_selected_by_negative_dbs;
   reg     [ 31: 0] VGA_Pixel_Buffer_avalon_pixel_dma_master_address_last_time;
   wire    [ 31: 0] VGA_Pixel_Buffer_avalon_pixel_dma_master_address_to_slave;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_is_granted_some_slave;
   reg              VGA_Pixel_Buffer_avalon_pixel_dma_master_latency_counter;
   reg              VGA_Pixel_Buffer_avalon_pixel_dma_master_read_but_no_slave_selected;
   reg              VGA_Pixel_Buffer_avalon_pixel_dma_master_read_last_time;
-  wire    [ 15: 0] VGA_Pixel_Buffer_avalon_pixel_dma_master_readdata;
+  wire    [  7: 0] VGA_Pixel_Buffer_avalon_pixel_dma_master_readdata;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_readdatavalid;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_reset;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_run;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_waitrequest;
   reg              active_and_waiting_last_time;
+  wire             empty_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo;
+  wire             full_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo;
   wire             latency_load_value;
   wire             p1_VGA_Pixel_Buffer_avalon_pixel_dma_master_latency_counter;
   wire             pre_flush_VGA_Pixel_Buffer_avalon_pixel_dma_master_readdatavalid;
   wire             r_3;
+  wire             read_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo;
+  wire             selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo_output;
+  wire             selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo_output_SRAM_avalon_sram_slave;
+  wire             write_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo;
   //r_3 master_run cascaded wait assignment, which is an e_assign
   assign r_3 = 1 & (VGA_Pixel_Buffer_avalon_pixel_dma_master_qualified_request_SRAM_avalon_sram_slave | ~VGA_Pixel_Buffer_avalon_pixel_dma_master_requests_SRAM_avalon_sram_slave) & (VGA_Pixel_Buffer_avalon_pixel_dma_master_granted_SRAM_avalon_sram_slave | ~VGA_Pixel_Buffer_avalon_pixel_dma_master_qualified_request_SRAM_avalon_sram_slave) & ((~VGA_Pixel_Buffer_avalon_pixel_dma_master_qualified_request_SRAM_avalon_sram_slave | ~VGA_Pixel_Buffer_avalon_pixel_dma_master_read | (1 & VGA_Pixel_Buffer_avalon_pixel_dma_master_read)));
 
@@ -10025,8 +10193,37 @@ module VGA_Pixel_Buffer_avalon_pixel_dma_master_arbitrator (
   assign VGA_Pixel_Buffer_avalon_pixel_dma_master_readdatavalid = VGA_Pixel_Buffer_avalon_pixel_dma_master_read_but_no_slave_selected |
     pre_flush_VGA_Pixel_Buffer_avalon_pixel_dma_master_readdatavalid;
 
+  //Negative Dynamic Bus-sizing mux.
+  //this mux selects the correct half of the 
+  //wide data coming from the slave SRAM/avalon_sram_slave 
+  assign SRAM_avalon_sram_slave_readdata_from_sa_part_selected_by_negative_dbs = ((selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo_output_SRAM_avalon_sram_slave == 0))? SRAM_avalon_sram_slave_readdata_from_sa[7 : 0] :
+    SRAM_avalon_sram_slave_readdata_from_sa[15 : 8];
+
+  //read_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo fifo read, which is an e_mux
+  assign read_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo = VGA_Pixel_Buffer_avalon_pixel_dma_master_read_data_valid_SRAM_avalon_sram_slave;
+
+  //write_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo fifo write, which is an e_mux
+  assign write_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo = VGA_Pixel_Buffer_avalon_pixel_dma_master_read & VGA_Pixel_Buffer_avalon_pixel_dma_master_run & VGA_Pixel_Buffer_avalon_pixel_dma_master_requests_SRAM_avalon_sram_slave;
+
+  assign selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo_output_SRAM_avalon_sram_slave = selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo_output;
+  //selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo, which is an e_fifo_with_registered_outputs
+  selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo_module selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo
+    (
+      .clear_fifo           (1'b0),
+      .clk                  (clk),
+      .data_in              (VGA_Pixel_Buffer_avalon_pixel_dma_master_address_to_slave[0]),
+      .data_out             (selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo_output),
+      .empty                (empty_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo),
+      .fifo_contains_ones_n (),
+      .full                 (full_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo),
+      .read                 (read_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo),
+      .reset_n              (reset_n),
+      .sync_reset           (1'b0),
+      .write                (write_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo)
+    );
+
   //VGA_Pixel_Buffer/avalon_pixel_dma_master readdata mux, which is an e_mux
-  assign VGA_Pixel_Buffer_avalon_pixel_dma_master_readdata = SRAM_avalon_sram_slave_readdata_from_sa;
+  assign VGA_Pixel_Buffer_avalon_pixel_dma_master_readdata = SRAM_avalon_sram_slave_readdata_from_sa_part_selected_by_negative_dbs;
 
   //actual waitrequest port, which is an e_assign
   assign VGA_Pixel_Buffer_avalon_pixel_dma_master_waitrequest = ~VGA_Pixel_Buffer_avalon_pixel_dma_master_run;
@@ -10107,6 +10304,28 @@ module VGA_Pixel_Buffer_avalon_pixel_dma_master_arbitrator (
     end
 
 
+  //selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo read when empty, which is an e_process
+  always @(posedge clk)
+    begin
+      if (empty_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo & read_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo)
+        begin
+          $write("%0d ns: VGA_Pixel_Buffer/avalon_pixel_dma_master negative rdv fifo selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo: read AND empty.\n", $time);
+          $stop;
+        end
+    end
+
+
+  //selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo write when full, which is an e_process
+  always @(posedge clk)
+    begin
+      if (full_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo & write_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo & ~read_selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo)
+        begin
+          $write("%0d ns: VGA_Pixel_Buffer/avalon_pixel_dma_master negative rdv fifo selecto_nrdv_VGA_Pixel_Buffer_avalon_pixel_dma_master_1_SRAM_avalon_sram_slave_fifo: write AND full.\n", $time);
+          $stop;
+        end
+    end
+
+
 
 //////////////// END SIMULATION-ONLY CONTENTS
 
@@ -10139,7 +10358,7 @@ module VGA_Pixel_Buffer_avalon_pixel_source_arbitrator (
 ;
 
   output           VGA_Pixel_Buffer_avalon_pixel_source_ready;
-  input   [ 15: 0] VGA_Pixel_Buffer_avalon_pixel_source_data;
+  input   [  7: 0] VGA_Pixel_Buffer_avalon_pixel_source_data;
   input            VGA_Pixel_Buffer_avalon_pixel_source_endofpacket;
   input            VGA_Pixel_Buffer_avalon_pixel_source_startofpacket;
   input            VGA_Pixel_Buffer_avalon_pixel_source_valid;
@@ -10183,13 +10402,13 @@ module VGA_Pixel_RGB_Resampler_avalon_rgb_sink_arbitrator (
                                                           )
 ;
 
-  output  [ 15: 0] VGA_Pixel_RGB_Resampler_avalon_rgb_sink_data;
+  output  [  7: 0] VGA_Pixel_RGB_Resampler_avalon_rgb_sink_data;
   output           VGA_Pixel_RGB_Resampler_avalon_rgb_sink_endofpacket;
   output           VGA_Pixel_RGB_Resampler_avalon_rgb_sink_ready_from_sa;
   output           VGA_Pixel_RGB_Resampler_avalon_rgb_sink_reset;
   output           VGA_Pixel_RGB_Resampler_avalon_rgb_sink_startofpacket;
   output           VGA_Pixel_RGB_Resampler_avalon_rgb_sink_valid;
-  input   [ 15: 0] VGA_Pixel_Buffer_avalon_pixel_source_data;
+  input   [  7: 0] VGA_Pixel_Buffer_avalon_pixel_source_data;
   input            VGA_Pixel_Buffer_avalon_pixel_source_endofpacket;
   input            VGA_Pixel_Buffer_avalon_pixel_source_startofpacket;
   input            VGA_Pixel_Buffer_avalon_pixel_source_valid;
@@ -10197,7 +10416,7 @@ module VGA_Pixel_RGB_Resampler_avalon_rgb_sink_arbitrator (
   input            clk;
   input            reset_n;
 
-  wire    [ 15: 0] VGA_Pixel_RGB_Resampler_avalon_rgb_sink_data;
+  wire    [  7: 0] VGA_Pixel_RGB_Resampler_avalon_rgb_sink_data;
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_sink_endofpacket;
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_sink_ready_from_sa;
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_sink_reset;
@@ -10235,11 +10454,11 @@ endmodule
 
 module VGA_Pixel_RGB_Resampler_avalon_rgb_source_arbitrator (
                                                               // inputs:
+                                                               Alpha_Blending_avalon_background_sink_ready_from_sa,
                                                                VGA_Pixel_RGB_Resampler_avalon_rgb_source_data,
                                                                VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket,
                                                                VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket,
                                                                VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid,
-                                                               VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa,
                                                                clk,
                                                                reset_n,
 
@@ -10249,127 +10468,17 @@ module VGA_Pixel_RGB_Resampler_avalon_rgb_source_arbitrator (
 ;
 
   output           VGA_Pixel_RGB_Resampler_avalon_rgb_source_ready;
+  input            Alpha_Blending_avalon_background_sink_ready_from_sa;
   input   [ 29: 0] VGA_Pixel_RGB_Resampler_avalon_rgb_source_data;
   input            VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket;
   input            VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket;
   input            VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid;
-  input            VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa;
   input            clk;
   input            reset_n;
 
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_source_ready;
   //mux VGA_Pixel_RGB_Resampler_avalon_rgb_source_ready, which is an e_mux
-  assign VGA_Pixel_RGB_Resampler_avalon_rgb_source_ready = VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa;
-
-
-endmodule
-
-
-// synthesis translate_off
-`timescale 1ns / 1ps
-// synthesis translate_on
-
-// turn off superfluous verilog processor warnings 
-// altera message_level Level1 
-// altera message_off 10034 10035 10036 10037 10230 10240 10030 
-
-module VGA_Pixel_Scaler_avalon_scaler_sink_arbitrator (
-                                                        // inputs:
-                                                         VGA_Pixel_RGB_Resampler_avalon_rgb_source_data,
-                                                         VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket,
-                                                         VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket,
-                                                         VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid,
-                                                         VGA_Pixel_Scaler_avalon_scaler_sink_ready,
-                                                         clk,
-                                                         reset_n,
-
-                                                        // outputs:
-                                                         VGA_Pixel_Scaler_avalon_scaler_sink_data,
-                                                         VGA_Pixel_Scaler_avalon_scaler_sink_endofpacket,
-                                                         VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa,
-                                                         VGA_Pixel_Scaler_avalon_scaler_sink_reset,
-                                                         VGA_Pixel_Scaler_avalon_scaler_sink_startofpacket,
-                                                         VGA_Pixel_Scaler_avalon_scaler_sink_valid
-                                                      )
-;
-
-  output  [ 29: 0] VGA_Pixel_Scaler_avalon_scaler_sink_data;
-  output           VGA_Pixel_Scaler_avalon_scaler_sink_endofpacket;
-  output           VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa;
-  output           VGA_Pixel_Scaler_avalon_scaler_sink_reset;
-  output           VGA_Pixel_Scaler_avalon_scaler_sink_startofpacket;
-  output           VGA_Pixel_Scaler_avalon_scaler_sink_valid;
-  input   [ 29: 0] VGA_Pixel_RGB_Resampler_avalon_rgb_source_data;
-  input            VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket;
-  input            VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket;
-  input            VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid;
-  input            VGA_Pixel_Scaler_avalon_scaler_sink_ready;
-  input            clk;
-  input            reset_n;
-
-  wire    [ 29: 0] VGA_Pixel_Scaler_avalon_scaler_sink_data;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_endofpacket;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_reset;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_startofpacket;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_valid;
-  //mux VGA_Pixel_Scaler_avalon_scaler_sink_data, which is an e_mux
-  assign VGA_Pixel_Scaler_avalon_scaler_sink_data = VGA_Pixel_RGB_Resampler_avalon_rgb_source_data;
-
-  //mux VGA_Pixel_Scaler_avalon_scaler_sink_endofpacket, which is an e_mux
-  assign VGA_Pixel_Scaler_avalon_scaler_sink_endofpacket = VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket;
-
-  //assign VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa = VGA_Pixel_Scaler_avalon_scaler_sink_ready so that symbol knows where to group signals which may go to master only, which is an e_assign
-  assign VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa = VGA_Pixel_Scaler_avalon_scaler_sink_ready;
-
-  //mux VGA_Pixel_Scaler_avalon_scaler_sink_startofpacket, which is an e_mux
-  assign VGA_Pixel_Scaler_avalon_scaler_sink_startofpacket = VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket;
-
-  //mux VGA_Pixel_Scaler_avalon_scaler_sink_valid, which is an e_mux
-  assign VGA_Pixel_Scaler_avalon_scaler_sink_valid = VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid;
-
-  //~VGA_Pixel_Scaler_avalon_scaler_sink_reset assignment, which is an e_assign
-  assign VGA_Pixel_Scaler_avalon_scaler_sink_reset = ~reset_n;
-
-
-endmodule
-
-
-// synthesis translate_off
-`timescale 1ns / 1ps
-// synthesis translate_on
-
-// turn off superfluous verilog processor warnings 
-// altera message_level Level1 
-// altera message_off 10034 10035 10036 10037 10230 10240 10030 
-
-module VGA_Pixel_Scaler_avalon_scaler_source_arbitrator (
-                                                          // inputs:
-                                                           Alpha_Blending_avalon_background_sink_ready_from_sa,
-                                                           VGA_Pixel_Scaler_avalon_scaler_source_data,
-                                                           VGA_Pixel_Scaler_avalon_scaler_source_endofpacket,
-                                                           VGA_Pixel_Scaler_avalon_scaler_source_startofpacket,
-                                                           VGA_Pixel_Scaler_avalon_scaler_source_valid,
-                                                           clk,
-                                                           reset_n,
-
-                                                          // outputs:
-                                                           VGA_Pixel_Scaler_avalon_scaler_source_ready
-                                                        )
-;
-
-  output           VGA_Pixel_Scaler_avalon_scaler_source_ready;
-  input            Alpha_Blending_avalon_background_sink_ready_from_sa;
-  input   [ 29: 0] VGA_Pixel_Scaler_avalon_scaler_source_data;
-  input            VGA_Pixel_Scaler_avalon_scaler_source_endofpacket;
-  input            VGA_Pixel_Scaler_avalon_scaler_source_startofpacket;
-  input            VGA_Pixel_Scaler_avalon_scaler_source_valid;
-  input            clk;
-  input            reset_n;
-
-  wire             VGA_Pixel_Scaler_avalon_scaler_source_ready;
-  //mux VGA_Pixel_Scaler_avalon_scaler_source_ready, which is an e_mux
-  assign VGA_Pixel_Scaler_avalon_scaler_source_ready = Alpha_Blending_avalon_background_sink_ready_from_sa;
+  assign VGA_Pixel_RGB_Resampler_avalon_rgb_source_ready = Alpha_Blending_avalon_background_sink_ready_from_sa;
 
 
 endmodule
@@ -11918,17 +12027,17 @@ module nios_system (
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_read;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_read_data_valid_SRAM_avalon_sram_slave;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_read_data_valid_SRAM_avalon_sram_slave_shift_register;
-  wire    [ 15: 0] VGA_Pixel_Buffer_avalon_pixel_dma_master_readdata;
+  wire    [  7: 0] VGA_Pixel_Buffer_avalon_pixel_dma_master_readdata;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_readdatavalid;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_requests_SRAM_avalon_sram_slave;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_reset;
   wire             VGA_Pixel_Buffer_avalon_pixel_dma_master_waitrequest;
-  wire    [ 15: 0] VGA_Pixel_Buffer_avalon_pixel_source_data;
+  wire    [  7: 0] VGA_Pixel_Buffer_avalon_pixel_source_data;
   wire             VGA_Pixel_Buffer_avalon_pixel_source_endofpacket;
   wire             VGA_Pixel_Buffer_avalon_pixel_source_ready;
   wire             VGA_Pixel_Buffer_avalon_pixel_source_startofpacket;
   wire             VGA_Pixel_Buffer_avalon_pixel_source_valid;
-  wire    [ 15: 0] VGA_Pixel_RGB_Resampler_avalon_rgb_sink_data;
+  wire    [  7: 0] VGA_Pixel_RGB_Resampler_avalon_rgb_sink_data;
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_sink_endofpacket;
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_sink_ready;
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_sink_ready_from_sa;
@@ -11940,18 +12049,6 @@ module nios_system (
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_source_ready;
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket;
   wire             VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid;
-  wire    [ 29: 0] VGA_Pixel_Scaler_avalon_scaler_sink_data;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_endofpacket;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_ready;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_reset;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_startofpacket;
-  wire             VGA_Pixel_Scaler_avalon_scaler_sink_valid;
-  wire    [ 29: 0] VGA_Pixel_Scaler_avalon_scaler_source_data;
-  wire             VGA_Pixel_Scaler_avalon_scaler_source_endofpacket;
-  wire             VGA_Pixel_Scaler_avalon_scaler_source_ready;
-  wire             VGA_Pixel_Scaler_avalon_scaler_source_startofpacket;
-  wire             VGA_Pixel_Scaler_avalon_scaler_source_valid;
   wire    [  9: 0] VGA_R_from_the_VGA_Controller;
   wire             VGA_SYNC_from_the_VGA_Controller;
   wire             VGA_VS_from_the_VGA_Controller;
@@ -12091,18 +12188,18 @@ module nios_system (
 
   Alpha_Blending_avalon_background_sink_arbitrator the_Alpha_Blending_avalon_background_sink
     (
-      .Alpha_Blending_avalon_background_sink_data          (Alpha_Blending_avalon_background_sink_data),
-      .Alpha_Blending_avalon_background_sink_endofpacket   (Alpha_Blending_avalon_background_sink_endofpacket),
-      .Alpha_Blending_avalon_background_sink_ready         (Alpha_Blending_avalon_background_sink_ready),
-      .Alpha_Blending_avalon_background_sink_ready_from_sa (Alpha_Blending_avalon_background_sink_ready_from_sa),
-      .Alpha_Blending_avalon_background_sink_startofpacket (Alpha_Blending_avalon_background_sink_startofpacket),
-      .Alpha_Blending_avalon_background_sink_valid         (Alpha_Blending_avalon_background_sink_valid),
-      .VGA_Pixel_Scaler_avalon_scaler_source_data          (VGA_Pixel_Scaler_avalon_scaler_source_data),
-      .VGA_Pixel_Scaler_avalon_scaler_source_endofpacket   (VGA_Pixel_Scaler_avalon_scaler_source_endofpacket),
-      .VGA_Pixel_Scaler_avalon_scaler_source_startofpacket (VGA_Pixel_Scaler_avalon_scaler_source_startofpacket),
-      .VGA_Pixel_Scaler_avalon_scaler_source_valid         (VGA_Pixel_Scaler_avalon_scaler_source_valid),
-      .clk                                                 (sys_clk),
-      .reset_n                                             (sys_clk_reset_n)
+      .Alpha_Blending_avalon_background_sink_data              (Alpha_Blending_avalon_background_sink_data),
+      .Alpha_Blending_avalon_background_sink_endofpacket       (Alpha_Blending_avalon_background_sink_endofpacket),
+      .Alpha_Blending_avalon_background_sink_ready             (Alpha_Blending_avalon_background_sink_ready),
+      .Alpha_Blending_avalon_background_sink_ready_from_sa     (Alpha_Blending_avalon_background_sink_ready_from_sa),
+      .Alpha_Blending_avalon_background_sink_startofpacket     (Alpha_Blending_avalon_background_sink_startofpacket),
+      .Alpha_Blending_avalon_background_sink_valid             (Alpha_Blending_avalon_background_sink_valid),
+      .VGA_Pixel_RGB_Resampler_avalon_rgb_source_data          (VGA_Pixel_RGB_Resampler_avalon_rgb_source_data),
+      .VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket   (VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket),
+      .VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket (VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket),
+      .VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid         (VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid),
+      .clk                                                     (sys_clk),
+      .reset_n                                                 (sys_clk_reset_n)
     );
 
   Alpha_Blending_avalon_foreground_sink_arbitrator the_Alpha_Blending_avalon_foreground_sink
@@ -13566,12 +13663,12 @@ module nios_system (
 
   VGA_Pixel_RGB_Resampler_avalon_rgb_source_arbitrator the_VGA_Pixel_RGB_Resampler_avalon_rgb_source
     (
+      .Alpha_Blending_avalon_background_sink_ready_from_sa     (Alpha_Blending_avalon_background_sink_ready_from_sa),
       .VGA_Pixel_RGB_Resampler_avalon_rgb_source_data          (VGA_Pixel_RGB_Resampler_avalon_rgb_source_data),
       .VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket   (VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket),
       .VGA_Pixel_RGB_Resampler_avalon_rgb_source_ready         (VGA_Pixel_RGB_Resampler_avalon_rgb_source_ready),
       .VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket (VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket),
       .VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid         (VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid),
-      .VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa       (VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa),
       .clk                                                     (sys_clk),
       .reset_n                                                 (sys_clk_reset_n)
     );
@@ -13590,51 +13687,6 @@ module nios_system (
       .stream_out_ready         (VGA_Pixel_RGB_Resampler_avalon_rgb_source_ready),
       .stream_out_startofpacket (VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket),
       .stream_out_valid         (VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid)
-    );
-
-  VGA_Pixel_Scaler_avalon_scaler_sink_arbitrator the_VGA_Pixel_Scaler_avalon_scaler_sink
-    (
-      .VGA_Pixel_RGB_Resampler_avalon_rgb_source_data          (VGA_Pixel_RGB_Resampler_avalon_rgb_source_data),
-      .VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket   (VGA_Pixel_RGB_Resampler_avalon_rgb_source_endofpacket),
-      .VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket (VGA_Pixel_RGB_Resampler_avalon_rgb_source_startofpacket),
-      .VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid         (VGA_Pixel_RGB_Resampler_avalon_rgb_source_valid),
-      .VGA_Pixel_Scaler_avalon_scaler_sink_data                (VGA_Pixel_Scaler_avalon_scaler_sink_data),
-      .VGA_Pixel_Scaler_avalon_scaler_sink_endofpacket         (VGA_Pixel_Scaler_avalon_scaler_sink_endofpacket),
-      .VGA_Pixel_Scaler_avalon_scaler_sink_ready               (VGA_Pixel_Scaler_avalon_scaler_sink_ready),
-      .VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa       (VGA_Pixel_Scaler_avalon_scaler_sink_ready_from_sa),
-      .VGA_Pixel_Scaler_avalon_scaler_sink_reset               (VGA_Pixel_Scaler_avalon_scaler_sink_reset),
-      .VGA_Pixel_Scaler_avalon_scaler_sink_startofpacket       (VGA_Pixel_Scaler_avalon_scaler_sink_startofpacket),
-      .VGA_Pixel_Scaler_avalon_scaler_sink_valid               (VGA_Pixel_Scaler_avalon_scaler_sink_valid),
-      .clk                                                     (sys_clk),
-      .reset_n                                                 (sys_clk_reset_n)
-    );
-
-  VGA_Pixel_Scaler_avalon_scaler_source_arbitrator the_VGA_Pixel_Scaler_avalon_scaler_source
-    (
-      .Alpha_Blending_avalon_background_sink_ready_from_sa (Alpha_Blending_avalon_background_sink_ready_from_sa),
-      .VGA_Pixel_Scaler_avalon_scaler_source_data          (VGA_Pixel_Scaler_avalon_scaler_source_data),
-      .VGA_Pixel_Scaler_avalon_scaler_source_endofpacket   (VGA_Pixel_Scaler_avalon_scaler_source_endofpacket),
-      .VGA_Pixel_Scaler_avalon_scaler_source_ready         (VGA_Pixel_Scaler_avalon_scaler_source_ready),
-      .VGA_Pixel_Scaler_avalon_scaler_source_startofpacket (VGA_Pixel_Scaler_avalon_scaler_source_startofpacket),
-      .VGA_Pixel_Scaler_avalon_scaler_source_valid         (VGA_Pixel_Scaler_avalon_scaler_source_valid),
-      .clk                                                 (sys_clk),
-      .reset_n                                             (sys_clk_reset_n)
-    );
-
-  VGA_Pixel_Scaler the_VGA_Pixel_Scaler
-    (
-      .clk                      (sys_clk),
-      .reset                    (VGA_Pixel_Scaler_avalon_scaler_sink_reset),
-      .stream_in_data           (VGA_Pixel_Scaler_avalon_scaler_sink_data),
-      .stream_in_endofpacket    (VGA_Pixel_Scaler_avalon_scaler_sink_endofpacket),
-      .stream_in_ready          (VGA_Pixel_Scaler_avalon_scaler_sink_ready),
-      .stream_in_startofpacket  (VGA_Pixel_Scaler_avalon_scaler_sink_startofpacket),
-      .stream_in_valid          (VGA_Pixel_Scaler_avalon_scaler_sink_valid),
-      .stream_out_data          (VGA_Pixel_Scaler_avalon_scaler_source_data),
-      .stream_out_endofpacket   (VGA_Pixel_Scaler_avalon_scaler_source_endofpacket),
-      .stream_out_ready         (VGA_Pixel_Scaler_avalon_scaler_source_ready),
-      .stream_out_startofpacket (VGA_Pixel_Scaler_avalon_scaler_source_startofpacket),
-      .stream_out_valid         (VGA_Pixel_Scaler_avalon_scaler_source_valid)
     );
 
   nios_system_clock_0_in_arbitrator the_nios_system_clock_0_in
@@ -13808,7 +13860,6 @@ endmodule
 `include "Expansion_JP2.v"
 `include "Slider_Switches.v"
 `include "Alpha_Blending.v"
-`include "VGA_Pixel_Scaler.v"
 `include "VGA_Dual_Clock_FIFO.v"
 `include "Green_LEDs.v"
 `include "AV_Config.v"

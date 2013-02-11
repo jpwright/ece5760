@@ -2,9 +2,9 @@
  * system.h - SOPC Builder system and BSP software package information
  *
  * Machine generated for CPU 'CPU' in SOPC Builder design 'nios_system'
- * SOPC Builder design path: C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.sopcinfo
+ * SOPC Builder design path: Z:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.sopcinfo
  *
- * Generated: Thu Feb 07 15:31:04 EST 2013
+ * Generated: Mon Feb 11 14:21:59 EST 2013
  */
 
 /*
@@ -544,7 +544,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1360268935u
+#define SYSID_TIMESTAMP 1360610397u
 #define SYSID_TYPE "altera_avalon_sysid"
 
 #endif /* __SYSTEM_H_ */

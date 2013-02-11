@@ -19,7 +19,7 @@
    {
       datum _sortIndex
       {
-         value = "23";
+         value = "22";
          type = "int";
       }
       datum sopceditor_expanded
@@ -32,7 +32,7 @@
    {
       datum _sortIndex
       {
-         value = "26";
+         value = "25";
          type = "int";
       }
       datum sopceditor_expanded
@@ -63,7 +63,7 @@
    {
       datum _sortIndex
       {
-         value = "28";
+         value = "27";
          type = "int";
       }
       datum megawizard_uipreferences
@@ -76,7 +76,7 @@
    {
       datum _sortIndex
       {
-         value = "27";
+         value = "26";
          type = "int";
       }
       datum sopceditor_expanded
@@ -289,7 +289,7 @@
    {
       datum _sortIndex
       {
-         value = "22";
+         value = "21";
          type = "int";
       }
       datum sopceditor_expanded
@@ -302,7 +302,7 @@
    {
       datum _sortIndex
       {
-         value = "25";
+         value = "24";
          type = "int";
       }
       datum sopceditor_expanded
@@ -315,7 +315,7 @@
    {
       datum _sortIndex
       {
-         value = "24";
+         value = "23";
          type = "int";
       }
       datum sopceditor_expanded
@@ -333,7 +333,7 @@
       }
       datum sopceditor_expanded
       {
-         value = "0";
+         value = "1";
          type = "boolean";
       }
    }
@@ -342,19 +342,6 @@
       datum _sortIndex
       {
          value = "20";
-         type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "0";
-         type = "boolean";
-      }
-   }
-   element VGA_Pixel_Scaler
-   {
-      datum _sortIndex
-      {
-         value = "21";
          type = "int";
       }
       datum sopceditor_expanded
@@ -470,45 +457,6 @@
          type = "long";
       }
    }
-   element Expansion_JP2.avalon_parallel_port_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "268435568";
-         type = "long";
-      }
-   }
-   element HEX7_HEX4.avalon_parallel_port_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "268435504";
-         type = "long";
-      }
-   }
-   element Expansion_JP1.avalon_parallel_port_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "268435552";
-         type = "long";
-      }
-   }
    element HEX3_HEX0.avalon_parallel_port_slave
    {
       datum _lockedAddress
@@ -535,6 +483,58 @@
          type = "long";
       }
    }
+   element Expansion_JP2.avalon_parallel_port_slave
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "268435568";
+         type = "long";
+      }
+   }
+   element Expansion_JP1.avalon_parallel_port_slave
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "268435552";
+         type = "long";
+      }
+   }
+   element HEX7_HEX4.avalon_parallel_port_slave
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "268435504";
+         type = "long";
+      }
+   }
+   element Red_LEDs.avalon_parallel_port_slave
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "268435456";
+         type = "long";
+      }
+   }
    element Pushbuttons.avalon_parallel_port_slave
    {
       datum _lockedAddress
@@ -558,19 +558,6 @@
       datum baseAddress
       {
          value = "268435472";
-         type = "long";
-      }
-   }
-   element Red_LEDs.avalon_parallel_port_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "268435456";
          type = "long";
       }
    }
@@ -628,7 +615,7 @@
    {
       datum _sortIndex
       {
-         value = "29";
+         value = "28";
          type = "int";
       }
    }
@@ -736,8 +723,8 @@
  <parameter name="maxAdditionalLatency" value="0" />
  <parameter name="projectName">DE2_Media_Computer.qpf</parameter>
  <parameter name="sopcBorderPoints" value="true" />
- <parameter name="systemHash" value="4365889535" />
- <parameter name="timeStamp" value="1360268935077" />
+ <parameter name="systemHash" value="3882902598" />
+ <parameter name="timeStamp" value="1360610396932" />
  <module kind="clock_source" version="11.0" enabled="1" name="clk">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -1142,7 +1129,7 @@
   <parameter name="back_start_address" value="134217728" />
   <parameter name="image_width" value="640" />
   <parameter name="image_height" value="480" />
-  <parameter name="color_space" value="16-bit RGB" />
+  <parameter name="color_space" value="8-bit RGB" />
   <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
  </module>
@@ -1174,23 +1161,9 @@
    version="11.0"
    enabled="1"
    name="VGA_Pixel_RGB_Resampler">
-  <parameter name="input_type" value="16-bit RGB" />
+  <parameter name="input_type" value="8-bit RGB" />
   <parameter name="output_type" value="30-bit RGB" />
   <parameter name="alpha" value="255" />
-  <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="50000000" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
- </module>
- <module
-   kind="altera_up_avalon_video_scaler"
-   version="11.0"
-   enabled="1"
-   name="VGA_Pixel_Scaler">
-  <parameter name="width_scaling" value="2" />
-  <parameter name="height_scaling" value="2" />
-  <parameter name="width_in" value="320" />
-  <parameter name="height_in" value="240" />
-  <parameter name="color_bits" value="10" />
-  <parameter name="color_planes" value="3" />
   <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
  </module>
@@ -1238,7 +1211,7 @@
    version="11.0"
    enabled="1"
    name="Alpha_Blending">
-  <parameter name="mode" value="Simple" />
+  <parameter name="mode" value="Normal" />
   <parameter name="AUTO_CLOCK_RESET_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
  </module>
@@ -1490,11 +1463,6 @@
  <connection
    kind="avalon_streaming"
    version="11.0"
-   start="VGA_Pixel_RGB_Resampler.avalon_rgb_source"
-   end="VGA_Pixel_Scaler.avalon_scaler_sink" />
- <connection
-   kind="avalon_streaming"
-   version="11.0"
    start="VGA_Dual_Clock_FIFO.avalon_dc_buffer_source"
    end="VGA_Controller.avalon_vga_sink" />
  <connection
@@ -1631,11 +1599,6 @@
    kind="clock"
    version="11.0"
    start="External_Clocks.sys_clk"
-   end="VGA_Pixel_Scaler.clock_reset" />
- <connection
-   kind="clock"
-   version="11.0"
-   start="External_Clocks.sys_clk"
    end="VGA_Char_Buffer.clock_reset" />
  <connection
    kind="clock"
@@ -1673,11 +1636,6 @@
  <connection
    kind="avalon_streaming"
    version="11.0"
-   start="VGA_Pixel_Scaler.avalon_scaler_source"
-   end="Alpha_Blending.avalon_background_sink" />
- <connection
-   kind="avalon_streaming"
-   version="11.0"
    start="VGA_Char_Buffer.avalon_char_source"
    end="Alpha_Blending.avalon_foreground_sink" />
  <connection
@@ -1690,4 +1648,9 @@
    version="11.0"
    start="External_Clocks.sys_clk"
    end="Alpha_Blending.clock_reset" />
+ <connection
+   kind="avalon_streaming"
+   version="11.0"
+   start="VGA_Pixel_RGB_Resampler.avalon_rgb_source"
+   end="Alpha_Blending.avalon_background_sink" />
 </system>

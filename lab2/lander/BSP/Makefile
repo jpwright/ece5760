@@ -101,7 +101,7 @@ ACDS_VERSION := 11.0
 # BUILD_NUMBER: 157
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.sopcinfo
+SOPC_FILE := Z:/ece5760/lab2/lander/DE2_Media_Computer/verilog/nios_system.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

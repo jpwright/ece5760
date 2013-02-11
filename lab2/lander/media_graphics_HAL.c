@@ -3,6 +3,7 @@
 #include "sys/alt_stdio.h"
 
 void draw_landscape(alt_up_pixel_buffer_dma_dev *);
+void draw_sprite(pixel_buffer_dev, int x, int y);
 
 /********************************************************************************
  * This program demonstrates use of the character and pixel buffer HAL code for
@@ -11,13 +12,43 @@ void draw_landscape(alt_up_pixel_buffer_dma_dev *);
  *		-- draws a big A on the screen, for ALTERA
  *		-- "bounces" a colored box around the screen 
 ********************************************************************************/
-int main(void)
-{
+int main(void){
 	alt_up_pixel_buffer_dma_dev *pixel_buffer_dev;
 	alt_up_char_buffer_dev *char_buffer_dev;
 
 	/* used for drawing coordinates */
-	int x1, y1, x2, y2, deltax_1, deltax_2, deltay_1, deltay_2, delay = 0;
+	int x1, y1, x2, y2, deltax, deltay, delay = 0;
+	float g = 0.5;
+	int sprite[30][30] = {{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 2, 2, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0},
+						{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}};
 
 	/* create a message to be displayed on the VGA display */
 	char text_top_row[40] = "ECE5760\0";
@@ -45,7 +76,7 @@ int main(void)
 	alt_up_char_buffer_string (char_buffer_dev, text_bottom_row, 35, 30);
 
 	/* now draw a background box for the text */
-	alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 34*4, 28*4, 50*4, 32*4, 0x187F, 0);
+	
 
 	/* now draw the landscape */
 	draw_landscape (pixel_buffer_dev);
@@ -53,13 +84,17 @@ int main(void)
 	/* now draw a red rectangle with diagonal green lines */
 	x1 = 20; y1 = 20;
 	x2 = 50; y2 = 50;
-	alt_up_pixel_buffer_dma_draw_rectangle(pixel_buffer_dev, x1, y1, x2, y2, 0xF800, 0);
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y1, x2, y2, 0x07e0, 0);
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y2, x2, y1, 0x07e0, 0);
-	alt_up_pixel_buffer_dma_swap_buffers(pixel_buffer_dev);
+	alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, x1, y1, x2, y2, 0xff, 0);
+	//alt_up_pixel_buffer_dma_draw_rectangle(pixel_buffer_dev, x1, y1, x2, y2, 0xF800, 0);
+	//alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y1, x2, y2, 0x07e0, 0);
+	//alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y2, x2, y1, 0x07e0, 0);
+	//alt_up_pixel_buffer_dma_swap_buffers(pixel_buffer_dev);
 
 	/* set the direction in which the box will move */
-	deltax_1 = deltax_2 = deltay_1 = deltay_2 = 1;
+	deltax = 0;
+	deltay = 1;
+	
+	
 
 	while(1)
 	{
@@ -83,71 +118,62 @@ int main(void)
 				/* The delay is inserted to slow down the animation from 60 frames per second 
 				 * to 30. Every other refresh cycle the code below will execute. We first erase 
 				 * the box with Erase Rectangle */
-				alt_up_pixel_buffer_dma_draw_rectangle(pixel_buffer_dev, x1, y1, x2, y2, 0, 0);
-				alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y1, x2, y2, 0, 0);
-				alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y2, x2, y1, 0, 0);
+				alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, x1, y1, x2, y2, 0, 0);
+				//alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y1, x2, y2, 0, 0);
+				//alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y2, x2, y1, 0, 0);
 
 				//Right Thruster
 				if ((*pushbuttons) & 0x02)
 				{
-					alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 0, 0, 50, 50, 0x187F, 0);
+					alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 0, 0, 50, 50, 3, 0);
+					deltax = deltax + 1;
 				}
 				
 				// move the rectangle
-				x1 = x1 + deltax_1;
-				x2 = x2 + deltax_2;
-				y1 = y1 + deltay_1;
-				y2 = y2 + deltay_2;
-				if ((deltax_1 > 0) && (x1 >= alt_up_pixel_buffer_dma_x_res(pixel_buffer_dev) - 1))
+				x1 = x1 + deltax;
+				//x2 = x2 + deltax;
+				y1 = y1 + deltay;
+				//y2 = y2 + deltay;
+				
+				
+				if ((deltax > 0) && (x1 >= alt_up_pixel_buffer_dma_x_res(pixel_buffer_dev) - 31))
 				{
-					x1 = alt_up_pixel_buffer_dma_x_res(pixel_buffer_dev) - 1;
-					deltax_1 = -deltax_1;
+					x1 = alt_up_pixel_buffer_dma_x_res(pixel_buffer_dev) - 31;
+					deltax = 0;
 				}
-				else if ((deltax_1 < 0) && (x1 <= 0))
+				else if ((deltax < 0) && (x1 <= 0))
 				{
 					x1 = 0;
-					deltax_1 = -deltax_1;
+					deltax = 0;
 				}
-				if ((deltax_2 > 0) && (x2 >= alt_up_pixel_buffer_dma_x_res(pixel_buffer_dev) - 1))
+
+				if ((deltay > 0) && (y1 >= alt_up_pixel_buffer_dma_y_res(pixel_buffer_dev) - 31))
 				{
-					x2 = alt_up_pixel_buffer_dma_x_res(pixel_buffer_dev) - 1;
-					deltax_2 = -deltax_2;
+					y1 = alt_up_pixel_buffer_dma_y_res(pixel_buffer_dev) - 31;
+					deltay = 0;
 				}
-				else if ((deltax_2 < 0) && (x2 <= 0))
-				{
-					x2 = 0;
-					deltax_2 = -deltax_2;
-				}
-				if ((deltay_1 > 0) && (y1 >= alt_up_pixel_buffer_dma_y_res(pixel_buffer_dev) - 1))
-				{
-					y1 = alt_up_pixel_buffer_dma_y_res(pixel_buffer_dev) - 1;
-					deltay_1 = -deltay_1;
-				}
-				else if ((deltay_1 < 0) && (y1 <= 0))
+				else if ((deltay < 0) && (y1 <= 0))
 				{
 					y1 = 0;
-					deltay_1 = -deltay_1;
+					deltay = -deltay;
 				}
-				if ((deltay_2 > 0) && (y2 >= alt_up_pixel_buffer_dma_y_res(pixel_buffer_dev) - 1))
-				{
-					y2 = alt_up_pixel_buffer_dma_y_res(pixel_buffer_dev) - 1;
-					deltay_2 = -deltay_2;
-				}
-				else if ((deltay_2 < 0) && (y2 <= 0))
-				{
-					y2 = 0;
-					deltay_2 = -deltay_2;
-				}
-
+				
+				x2 = x1 + 30;
+				y2 = y1 + 30;
+				
 				// redraw Rectangle with diagonal lines
-				alt_up_pixel_buffer_dma_draw_rectangle(pixel_buffer_dev, x1, y1, x2, y2, 0xF800, 0);
-				alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y1, x2, y2, 0x07e0, 0);
-				alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y2, x2, y1, 0x07e0, 0);
-
+				//alt_up_pixel_buffer_dma_draw_rectangle(pixel_buffer_dev, x1, y1, x2, y2, 0xF800, 0);
+				//alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y1, x2, y2, 0x07e0, 0);
+				//alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y2, x2, y1, 0x07e0, 0);
+				alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, x1, y1, x2, y2, 0x60, 0);
+				draw_sprite(pixel_buffer_dev, x1, y1);
+				
 				// redraw the box in the foreground 
-				alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 34*4, 28*4, 50*4, 32*4, 0x187F, 0);
+				alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 34*4, 28*4, 50*4, 32*4, 0xf0, 0);
 
 				draw_landscape (pixel_buffer_dev);
+				
+				deltay = deltay + g;
 			}
 
 			/* Execute a swap buffer command. This will allow us to check if the screen has 
@@ -158,13 +184,26 @@ int main(void)
 }
 
 /* draws a landscape */
-void draw_landscape(alt_up_pixel_buffer_dma_dev *pixel_buffer_dev )
-{
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 4, 200, 150, 200, 0xffff, 0);
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 150, 200, 220, 150, 0xffff, 0);
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 220, 150, 260, 200, 0xffff, 0);
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 260, 200, 310, 200, 0xffff, 0);
+void draw_landscape(alt_up_pixel_buffer_dma_dev *pixel_buffer_dev ){
+	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 4, 430, 150, 430, 0xffff, 0);
+	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 150, 430, 300, 400, 0xffff, 0);
+	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 300, 400, 480, 430, 0xffff, 0);
+	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 480, 430, 636, 430, 0xffff, 0);
 
 }
+
+
+void draw_sprite(pixel_buffer_dev, int x, int y) {
+	int i = 0;
+	int j = 0;
+	for(i = 0; i < 30; i++) {
+		for(j = 0; j < 30; j++) {
+			if (sprite[i][j] == 1) {
+				alt_up_pixel_buffer_dma_draw(pixel_buffer_dev, x+i, y+i, 0xff);
+			}
+		}
+	}
+}
+
 
 

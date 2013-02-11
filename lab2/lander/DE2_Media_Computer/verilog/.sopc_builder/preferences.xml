@@ -4,17 +4,18 @@
  <systemtable filter="Default">
   <columns>
    <opcodeName visible="0" />
-   <connections preferredWidth="63" />
+   <connections preferredWidth="111" />
    <irq preferredWidth="34" />
    <export visible="0" />
   </columns>
  </systemtable>
  <clocktable>
   <columns>
-   <clockname preferredWidth="269" />
-   <clocksource preferredWidth="268" />
-   <frequency preferredWidth="249" />
+   <clockname preferredWidth="46" />
+   <clocksource preferredWidth="46" />
+   <frequency preferredWidth="45" />
   </columns>
  </clocktable>
- <window width="1296" height="1000" x="-8" y="-8" />
+ <window width="640" height="984" x="640" y="0" />
+ <library expandedCategories="Project,Library" />
 </preferences>

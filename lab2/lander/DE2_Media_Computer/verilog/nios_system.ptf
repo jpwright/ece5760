@@ -2344,7 +2344,7 @@ SYSTEM nios_system
          Has_Clock = "1";
          View 
          {
-            Settings_Summary = "System ID (at last Generate):<br> <b>00000000</b>    (unique ID tag) <br> <b>51140E87</b> (timestamp: Thu Feb 7, 2013 @3:28 PM)";
+            Settings_Summary = "System ID (at last Generate):<br> <b>00000000</b>    (unique ID tag) <br> <b>5119445D</b> (timestamp: Mon Feb 11, 2013 @2:19 PM)";
             MESSAGES 
             {
             }
@@ -2353,7 +2353,7 @@ SYSTEM nios_system
       WIZARD_SCRIPT_ARGUMENTS 
       {
          id = "0u";
-         timestamp = "1360268935u";
+         timestamp = "1360610397u";
          regenerate_values = "0";
          MAKE 
          {
@@ -2362,7 +2362,7 @@ SYSTEM nios_system
                verifysysid 
                {
                   All_Depends_On = "0";
-                  Command = "nios2-download $(JTAG_CABLE)                                --sidp=0x10002020 --id=0 --timestamp=1360268935";
+                  Command = "nios2-download $(JTAG_CABLE)                                --sidp=0x10002020 --id=0 --timestamp=1360610397";
                   Is_Phony = "1";
                   Target_File = "dummy_verifysysid_file";
                }
@@ -5253,7 +5253,7 @@ SYSTEM nios_system
             PORT master_readdata
             {
                type = "readdata";
-               width = "16";
+               width = "8";
                direction = "input";
                Is_Enabled = "1";
             }
@@ -5267,7 +5267,7 @@ SYSTEM nios_system
             Do_Stream_Reads = "0";
             Do_Stream_Writes = "0";
             Max_Address_Width = "32";
-            Data_Width = "16";
+            Data_Width = "8";
             Address_Width = "32";
             Maximum_Burst_Size = "1";
             Register_Incoming_Signals = "0";
@@ -5328,7 +5328,7 @@ SYSTEM nios_system
             PORT stream_data
             {
                type = "data";
-               width = "16";
+               width = "8";
                direction = "output";
                Is_Enabled = "1";
             }
@@ -5945,7 +5945,7 @@ SYSTEM nios_system
             PORT stream_in_data
             {
                type = "data";
-               width = "16";
+               width = "8";
                direction = "input";
                Is_Enabled = "1";
             }
@@ -6029,146 +6029,6 @@ SYSTEM nios_system
       HDL_INFO 
       {
          Simulation_HDL_Files = "__PROJECT_DIRECTORY__/VGA_Pixel_RGB_Resampler.v";
-      }
-      WIZARD_SCRIPT_ARGUMENTS 
-      {
-      }
-   }
-   MODULE VGA_Pixel_Scaler
-   {
-      SLAVE avalon_scaler_sink
-      {
-         PORT_WIRING 
-         {
-            PORT clk
-            {
-               type = "clk";
-               width = "1";
-               direction = "input";
-               Is_Enabled = "1";
-            }
-            PORT reset
-            {
-               type = "reset";
-               width = "1";
-               direction = "input";
-               Is_Enabled = "1";
-            }
-            PORT stream_in_startofpacket
-            {
-               type = "startofpacket";
-               width = "1";
-               direction = "input";
-               Is_Enabled = "1";
-            }
-            PORT stream_in_endofpacket
-            {
-               type = "endofpacket";
-               width = "1";
-               direction = "input";
-               Is_Enabled = "1";
-            }
-            PORT stream_in_valid
-            {
-               type = "valid";
-               width = "1";
-               direction = "input";
-               Is_Enabled = "1";
-            }
-            PORT stream_in_ready
-            {
-               type = "ready";
-               width = "1";
-               direction = "output";
-               Is_Enabled = "1";
-            }
-            PORT stream_in_data
-            {
-               type = "data";
-               width = "30";
-               direction = "input";
-               Is_Enabled = "1";
-            }
-         }
-         SYSTEM_BUILDER_INFO 
-         {
-            Bus_Type = "atlantic";
-            Accepts_Internal_Connections = "1";
-            MASTERED_BY VGA_Pixel_RGB_Resampler/avalon_rgb_source
-            {
-               priority = "0";
-            }
-            Address_Group = "0";
-            Base_Address = "0x00000000";
-         }
-      }
-      MASTER avalon_scaler_source
-      {
-         SYSTEM_BUILDER_INFO 
-         {
-            Bus_Type = "atlantic";
-         }
-         PORT_WIRING 
-         {
-            PORT stream_out_ready
-            {
-               type = "ready";
-               width = "1";
-               direction = "input";
-               Is_Enabled = "1";
-            }
-            PORT stream_out_startofpacket
-            {
-               type = "startofpacket";
-               width = "1";
-               direction = "output";
-               Is_Enabled = "1";
-            }
-            PORT stream_out_endofpacket
-            {
-               type = "endofpacket";
-               width = "1";
-               direction = "output";
-               Is_Enabled = "1";
-            }
-            PORT stream_out_valid
-            {
-               type = "valid";
-               width = "1";
-               direction = "output";
-               Is_Enabled = "1";
-            }
-            PORT stream_out_data
-            {
-               type = "data";
-               width = "30";
-               direction = "output";
-               Is_Enabled = "1";
-            }
-         }
-      }
-      class = "no_legacy_module";
-      class_version = "7.08110";
-      gtf_class_name = "altera_up_avalon_video_scaler";
-      gtf_class_version = "11.0";
-      SYSTEM_BUILDER_INFO 
-      {
-         Do_Not_Generate = "1";
-         Instantiate_In_System_Module = "1";
-         Is_Bridge = "0";
-         Is_Enabled = "1";
-         Clock_Source = "sys_clk";
-         Has_Clock = "1";
-         View 
-         {
-            MESSAGES 
-            {
-            }
-         }
-      }
-      HDL_INFO 
-      {
-         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/VGA_Pixel_Scaler.v";
       }
       WIZARD_SCRIPT_ARGUMENTS 
       {
@@ -6685,7 +6545,7 @@ SYSTEM nios_system
          {
             Bus_Type = "atlantic";
             Accepts_Internal_Connections = "1";
-            MASTERED_BY VGA_Pixel_Scaler/avalon_scaler_source
+            MASTERED_BY VGA_Pixel_RGB_Resampler/avalon_rgb_source
             {
                priority = "0";
             }
