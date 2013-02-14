@@ -260,7 +260,7 @@ assign GPIO_1[18]	= 1'bZ;
 nios_system NiosII (
 	// 1) global signals:
 	.clk									(CLOCK_50),
-	.clk_27									(CLOCK_27),
+	.clk_27								(CLOCK_27),
 	.reset_n								(KEY[0]),
 	.sys_clk								(),
 	.vga_clk								(),

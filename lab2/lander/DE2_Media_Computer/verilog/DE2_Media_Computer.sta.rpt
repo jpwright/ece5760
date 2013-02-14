@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE2_Media_Computer
-Mon Feb 11 14:33:49 2013
+Thu Feb 14 14:00:34 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -79,23 +79,23 @@ applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.89        ;
+; Average used               ; 2.14        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;   9.5%      ;
+;     2-4 processors         ;  13.3%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------+
-; SDC File List                                                                                                                            ;
-+------------------------------------------------------------------------------------------------------+--------+--------------------------+
-; SDC File Path                                                                                        ; Status ; Read at                  ;
-+------------------------------------------------------------------------------------------------------+--------+--------------------------+
-; CPU.sdc                                                                                              ; OK     ; Mon Feb 11 14:33:40 2013 ;
-; c:/altera/11.0/ip/altera/sopc_builder_ip/altera_avalon_clock_adapter/altera_avalon_clock_adapter.sdc ; OK     ; Mon Feb 11 14:33:41 2013 ;
-+------------------------------------------------------------------------------------------------------+--------+--------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SDC File List                                                                                                                                        ;
++------------------------------------------------------------------------------------------------------------------+--------+--------------------------+
+; SDC File Path                                                                                                    ; Status ; Read at                  ;
++------------------------------------------------------------------------------------------------------------------+--------+--------------------------+
+; CPU.sdc                                                                                                          ; OK     ; Thu Feb 14 14:00:26 2013 ;
+; ../../../../../altera/11.0/ip/altera/sopc_builder_ip/altera_avalon_clock_adapter/altera_avalon_clock_adapter.sdc ; OK     ; Thu Feb 14 14:00:28 2013 ;
++------------------------------------------------------------------------------------------------------------------+--------+--------------------------+
 
 
 +-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -313,7 +313,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Mon Feb 11 14:33:29 2013
+    Info: Processing started: Thu Feb 14 14:00:22 2013
 Info: Command: quartus_sta DE2_Media_Computer -c DE2_Media_Computer
 Info: qsta_default_script.tcl version: #1
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -374,7 +374,7 @@ Info: Evaluating HDL-embedded SDC commands
         Info: create_clock -period 10MHz -name altera_reserved_tck [get_ports {altera_reserved_tck}]
         Info: set_clock_groups -asynchronous -group {altera_reserved_tck}
 Info: Reading SDC File: 'CPU.sdc'
-Info: Reading SDC File: 'c:/altera/11.0/ip/altera/sopc_builder_ip/altera_avalon_clock_adapter/altera_avalon_clock_adapter.sdc'
+Info: Reading SDC File: '../../../../../altera/11.0/ip/altera/sopc_builder_ip/altera_avalon_clock_adapter/altera_avalon_clock_adapter.sdc'
 Warning: Node: CLOCK_50 was determined to be a clock but was found without an associated clock assignment.
 Warning: PLL cross checking found inconsistent PLL clock settings:
     Warning: Node: NiosII|the_External_Clocks|DE_Clock_Generator_System|pll|clk[0] was found missing 1 generated clock that corresponds to a base clock with a period of: 20.000
@@ -706,8 +706,8 @@ Info: Design is not fully constrained for setup requirements
 Info: Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 13 warnings
     Info: Peak virtual memory: 573 megabytes
-    Info: Processing ended: Mon Feb 11 14:33:49 2013
-    Info: Elapsed time: 00:00:20
-    Info: Total CPU time (on all processors): 00:00:18
+    Info: Processing ended: Thu Feb 14 14:00:34 2013
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:16
 
 

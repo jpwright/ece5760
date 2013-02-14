@@ -4,18 +4,19 @@
  <systemtable filter="Default">
   <columns>
    <opcodeName visible="0" />
-   <connections preferredWidth="111" />
+   <connections preferredWidth="95" />
    <irq preferredWidth="34" />
    <export visible="0" />
   </columns>
  </systemtable>
  <clocktable>
   <columns>
-   <clockname preferredWidth="46" />
-   <clocksource preferredWidth="46" />
-   <frequency preferredWidth="45" />
+   <clockname preferredWidth="205" />
+   <clocksource preferredWidth="205" />
+   <frequency preferredWidth="205" />
   </columns>
  </clocktable>
- <window width="640" height="984" x="640" y="0" />
- <library expandedCategories="Project,Library" />
+ <window width="1296" height="1000" x="-8" y="-8" />
+ <library
+   expandedCategories="Project,Library/Memories and Memory Controllers,Library,Library/Memories and Memory Controllers/On-Chip" />
 </preferences>

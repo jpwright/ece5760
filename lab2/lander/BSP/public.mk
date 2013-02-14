@@ -85,6 +85,10 @@ ACDS_VERSION := 11.0
 # used to generate this makefile. 
 # BUILD_NUMBER: 157
 
+# Quartus Generated JDI File. Required for resolving node instance ID's with 
+# design component names. 
+JDI_FILE := C:/ece5760/lab2/lander/DE2_Media_Computer/verilog/DE2_Media_Computer.jdi
+
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
 ALT_CFLAGS += -EL

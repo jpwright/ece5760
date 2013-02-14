@@ -137,10 +137,10 @@ ACDS_VERSION := 11.0
 # Define path to the application ELF. 
 # It may be used by the makefile fragments so is defined before including them. 
 # 
-ELF := Z:/ece5760/lab2/lander/media_graphics_HAL.elf
+ELF := C:/ece5760/lab2/lander/media_graphics_HAL.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS += Z:/ece5760/lab2/lander/media_graphics_HAL.c
+C_SRCS += C:/ece5760/lab2/lander/media_graphics_HAL.c
 CXX_SRCS :=
 ASM_SRCS :=
 
