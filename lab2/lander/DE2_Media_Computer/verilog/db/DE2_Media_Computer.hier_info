@@ -6,7 +6,7 @@ KEY[0] => KEY[0].IN1
 KEY[1] => KEY[1].IN1
 KEY[2] => KEY[2].IN1
 KEY[3] => KEY[3].IN1
-SW[0] => SW[0].IN1
+SW[0] => SW[0].IN2
 SW[1] => SW[1].IN1
 SW[2] => SW[2].IN1
 SW[3] => SW[3].IN1
@@ -144,6 +144,34 @@ LCD_DATA[5] <> nios_system:NiosII.LCD_DATA_to_and_from_the_Char_LCD_16x2
 LCD_DATA[6] <> nios_system:NiosII.LCD_DATA_to_and_from_the_Char_LCD_16x2
 LCD_DATA[7] <> nios_system:NiosII.LCD_DATA_to_and_from_the_Char_LCD_16x2
 I2C_SDAT <> nios_system:NiosII.I2C_SDAT_to_and_from_the_AV_Config
+
+
+|DE2_Media_Computer|HexDigit:H0
+num[0] => Decoder0.IN3
+num[1] => Decoder0.IN2
+num[2] => Decoder0.IN1
+num[3] => Decoder0.IN0
+
+
+|DE2_Media_Computer|HexDigit:H1
+num[0] => Decoder0.IN3
+num[1] => Decoder0.IN2
+num[2] => Decoder0.IN1
+num[3] => Decoder0.IN0
+
+
+|DE2_Media_Computer|HexDigit:H2
+num[0] => Decoder0.IN3
+num[1] => Decoder0.IN2
+num[2] => Decoder0.IN1
+num[3] => Decoder0.IN0
+
+
+|DE2_Media_Computer|HexDigit:H3
+num[0] => Decoder0.IN3
+num[1] => Decoder0.IN2
+num[2] => Decoder0.IN1
+num[3] => Decoder0.IN0
 
 
 |DE2_Media_Computer|nios_system:NiosII

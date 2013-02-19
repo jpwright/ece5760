@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for DE2_Media_Computer
-Thu Feb 14 14:00:34 2013
+Tue Feb 19 17:03:16 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -79,12 +79,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 2.14        ;
+; Average used               ; 2.50        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     1 processor            ; 100.0%      ;
-;     2-4 processors         ;  13.3%      ;
+;     2-4 processors         ;  20.0%      ;
 +----------------------------+-------------+
 
 
@@ -93,8 +93,8 @@ applicable agreement for further details.
 +------------------------------------------------------------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                                                                    ; Status ; Read at                  ;
 +------------------------------------------------------------------------------------------------------------------+--------+--------------------------+
-; CPU.sdc                                                                                                          ; OK     ; Thu Feb 14 14:00:26 2013 ;
-; ../../../../../altera/11.0/ip/altera/sopc_builder_ip/altera_avalon_clock_adapter/altera_avalon_clock_adapter.sdc ; OK     ; Thu Feb 14 14:00:28 2013 ;
+; CPU.sdc                                                                                                          ; OK     ; Tue Feb 19 17:03:08 2013 ;
+; ../../../../../altera/11.0/ip/altera/sopc_builder_ip/altera_avalon_clock_adapter/altera_avalon_clock_adapter.sdc ; OK     ; Tue Feb 19 17:03:09 2013 ;
 +------------------------------------------------------------------------------------------------------------------+--------+--------------------------+
 
 
@@ -160,7 +160,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
-; CLOCK_27   ; AUD_XCK     ; 3.368 ;       ;       ; 3.368 ;
+; CLOCK_27   ; AUD_XCK     ; 3.369 ;       ;       ; 3.369 ;
 ; CLOCK_50   ; DRAM_CLK    ; 1.154 ;       ;       ; 1.154 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 3.389 ; 3.389 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -171,7 +171,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
-; CLOCK_27   ; AUD_XCK     ; 3.368 ;       ;       ; 3.368 ;
+; CLOCK_27   ; AUD_XCK     ; 3.369 ;       ;       ; 3.369 ;
 ; CLOCK_50   ; DRAM_CLK    ; 1.154 ;       ;       ; 1.154 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 3.389 ; 3.389 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -224,7 +224,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
-; CLOCK_27   ; AUD_XCK     ; 1.783 ;       ;       ; 1.783 ;
+; CLOCK_27   ; AUD_XCK     ; 1.784 ;       ;       ; 1.784 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.404 ;       ;       ; 0.404 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 1.794 ; 1.794 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -235,7 +235,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
-; CLOCK_27   ; AUD_XCK     ; 1.783 ;       ;       ; 1.783 ;
+; CLOCK_27   ; AUD_XCK     ; 1.784 ;       ;       ; 1.784 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.404 ;       ;       ; 0.404 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 1.794 ; 1.794 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -258,7 +258,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
-; CLOCK_27   ; AUD_XCK     ; 3.368 ;       ;       ; 3.368 ;
+; CLOCK_27   ; AUD_XCK     ; 3.369 ;       ;       ; 3.369 ;
 ; CLOCK_50   ; DRAM_CLK    ; 1.154 ;       ;       ; 1.154 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 3.389 ; 3.389 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -269,7 +269,7 @@ No paths to report.
 +------------+-------------+-------+-------+-------+-------+
 ; Input Port ; Output Port ; RR    ; RF    ; FR    ; FF    ;
 +------------+-------------+-------+-------+-------+-------+
-; CLOCK_27   ; AUD_XCK     ; 1.783 ;       ;       ; 1.783 ;
+; CLOCK_27   ; AUD_XCK     ; 1.784 ;       ;       ; 1.784 ;
 ; CLOCK_50   ; DRAM_CLK    ; 0.404 ;       ;       ; 0.404 ;
 ; CLOCK_50   ; VGA_CLK     ;       ; 1.794 ; 1.794 ;       ;
 +------------+-------------+-------+-------+-------+-------+
@@ -301,9 +301,9 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 ; Illegal Clocks                  ; 0     ; 0    ;
 ; Unconstrained Clocks            ; 1     ; 1    ;
 ; Unconstrained Input Ports       ; 136   ; 136  ;
-; Unconstrained Input Port Paths  ; 143   ; 143  ;
-; Unconstrained Output Ports      ; 277   ; 277  ;
-; Unconstrained Output Port Paths ; 418   ; 418  ;
+; Unconstrained Input Port Paths  ; 187   ; 187  ;
+; Unconstrained Output Ports      ; 249   ; 249  ;
+; Unconstrained Output Port Paths ; 474   ; 474  ;
 +---------------------------------+-------+------+
 
 
@@ -313,7 +313,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Thu Feb 14 14:00:22 2013
+    Info: Processing started: Tue Feb 19 17:03:03 2013
 Info: Command: quartus_sta DE2_Media_Computer -c DE2_Media_Computer
 Info: qsta_default_script.tcl version: #1
 Info: Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -705,9 +705,9 @@ Info: The selected device family is not supported by the report_metastability co
 Info: Design is not fully constrained for setup requirements
 Info: Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 573 megabytes
-    Info: Processing ended: Thu Feb 14 14:00:34 2013
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:16
+    Info: Peak virtual memory: 590 megabytes
+    Info: Processing ended: Tue Feb 19 17:03:16 2013
+    Info: Elapsed time: 00:00:13
+    Info: Total CPU time (on all processors): 00:00:17
 
 

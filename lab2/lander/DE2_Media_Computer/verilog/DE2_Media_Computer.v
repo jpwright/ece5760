@@ -232,6 +232,69 @@ output				I2C_SCLK;
 /*****************************************************************************
  *                         Finite State Machine(s)                           *
  *****************************************************************************/
+ reg[3:0] seconds_ones;
+ reg[3:0] seconds_tens;
+ reg[3:0] seconds_hundreds;
+ reg[3:0] seconds_thousands;
+ 
+ reg[26:0] counter_ones;
+
+ 
+//every 1 seconds
+always@(posedge CLOCK_50 or negedge KEY[0])
+begin
+	if(!KEY[0])
+	begin
+		seconds_ones		<=	0;
+		seconds_tens		<= 0;
+		seconds_hundreds 	<= 0;
+		seconds_thousands <= 0;
+		counter_ones		<=	0;
+	end
+	else
+	begin
+		if(counter_ones == 49999999 )
+		begin
+			seconds_ones	<=	seconds_ones+1;
+		   counter_ones	<=	0;		
+		end
+		
+		else
+		    counter_ones	<=	counter_ones+1;	
+		
+		
+		if (seconds_ones == 10)
+		begin
+			seconds_ones <= 0;
+			seconds_tens <= seconds_tens+1;
+		end
+		
+		if (seconds_tens == 10)
+		begin
+			seconds_tens <=0;
+			seconds_hundreds <= seconds_hundreds+1;
+		end
+		
+		if (seconds_hundreds == 10)
+		begin
+			seconds_hundreds <= 0;
+			seconds_thousands <= seconds_thousands+1;
+		end
+		
+			
+	end
+end
+
+
+HexDigit H0(HEX0, seconds_ones);
+HexDigit H1(HEX1, seconds_tens);
+HexDigit H2(HEX2, seconds_hundreds);
+HexDigit H3(HEX3, seconds_thousands);
+
+assign HEX4 = 7'h7F;
+assign HEX5 = 7'h7F;
+assign HEX6 = 7'h7F;
+assign HEX7 = 7'h7F;
 
 
 /*****************************************************************************
@@ -261,7 +324,7 @@ nios_system NiosII (
 	// 1) global signals:
 	.clk									(CLOCK_50),
 	.clk_27								(CLOCK_27),
-	.reset_n								(KEY[0]),
+	.reset_n								(SW[0]),
 	.sys_clk								(),
 	.vga_clk								(),
 	.sdram_clk								(DRAM_CLK),
@@ -296,23 +359,23 @@ nios_system NiosII (
 	.LEDG_from_the_Green_LEDs				(LEDG),
 
 	// the_HEX3_HEX0
-	.HEX0_from_the_HEX3_HEX0				(HEX0),
-	.HEX1_from_the_HEX3_HEX0				(HEX1),
-	.HEX2_from_the_HEX3_HEX0				(HEX2),
-	.HEX3_from_the_HEX3_HEX0				(HEX3),
+	//.HEX0_from_the_HEX3_HEX0				(HEX0),
+	//.HEX1_from_the_HEX3_HEX0				(HEX1),
+	//.HEX2_from_the_HEX3_HEX0				(HEX2),
+	//.HEX3_from_the_HEX3_HEX0				(HEX3),
 	
 	// the_HEX7_HEX4
-	.HEX4_from_the_HEX7_HEX4				(HEX4),
-	.HEX5_from_the_HEX7_HEX4				(HEX5),
-	.HEX6_from_the_HEX7_HEX4				(HEX6),
-	.HEX7_from_the_HEX7_HEX4				(HEX7),
+	//.HEX4_from_the_HEX7_HEX4				(HEX4),
+	//.HEX5_from_the_HEX7_HEX4				(HEX5),
+	//.HEX6_from_the_HEX7_HEX4				(HEX6),
+	//.HEX7_from_the_HEX7_HEX4				(HEX7),
 
 	// the_PS2_Port
 	.PS2_CLK_to_and_from_the_PS2_Port		(PS2_CLK),
 	.PS2_DAT_to_and_from_the_PS2_Port		(PS2_DAT),
 	
 	// the_Pushbuttons
-	.KEY_to_the_Pushbuttons					({KEY[3:1], 1'b1}),
+	.KEY_to_the_Pushbuttons					(KEY[3:0]),
 
 	// the_Red_LEDs
 	.LEDR_from_the_Red_LEDs					(LEDR),
@@ -357,3 +420,27 @@ nios_system NiosII (
 
 endmodule
 
+//////////////////////////////////////////////
+// Decode one hex digit for LED 7-seg display
+module HexDigit(segs, num);
+	input [3:0] num	;		//the hex digit to be displayed
+	output [6:0] segs ;		//actual LED segments
+	reg [6:0] segs ;
+	always @ (num)
+	begin
+		case (num)
+				4'h0: segs = 7'b1000000;
+				4'h1: segs = 7'b1111001;
+				4'h2: segs = 7'b0100100;
+				4'h3: segs = 7'b0110000;
+				4'h4: segs = 7'b0011001;
+				4'h5: segs = 7'b0010010;
+				4'h6: segs = 7'b0000010;
+				4'h7: segs = 7'b1111000;
+				4'h8: segs = 7'b0000000;
+				4'h9: segs = 7'b0010000;
+				default segs = 7'b1111111;
+		endcase
+	end
+endmodule
+///////////////////////////////////////////////
