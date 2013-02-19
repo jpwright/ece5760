@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>Feb 14, 2013 3:36:08 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1360874168947</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>Feb 18, 2013 5:24:04 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1361226244029</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\ece5760\lab2\lander\BSP</BspGeneratedLocation>
         <BspSettingsFile>C:\ece5760\lab2\lander\BSP\settings.bsp</BspSettingsFile>
         <SopcDesignFile>C:\ece5760\lab2\lander\DE2_Media_Computer\verilog\nios_system.sopcinfo</SopcDesignFile>

@@ -1,44 +1,25 @@
- #include "altera_up_avalon_video_pixel_buffer_dma.h"
+#include "altera_up_avalon_video_pixel_buffer_dma.h"
 #include "altera_up_avalon_video_character_buffer_with_dma.h"
 #include "sys/alt_stdio.h"
 #include "sprites.h"
 #include <math.h>
 
+#define PI 3.14159265
+
+/*Landscape Coordinates */
+int x_land_0 = 0;
+int	x_land_1 = 200;
+int	x_land_2 = 250;
+int	x_land_3 = 450;
+int	x_land_f = 640;
+int	y_land_1 = 350;
+int	y_land_2 = 400;
+int	y_land_f = 480;
+
 void draw_landscape(alt_up_pixel_buffer_dma_dev *);
 void draw_sprite(alt_up_pixel_buffer_dma_dev *, unsigned int x, unsigned int y, unsigned int theta, int thrusting);
 
-/*
-int sprite[30][30]={{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255, 255, 255,   0,   0,   0, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0,   0, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0, 240,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0, 240,   0, 240,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 240, 240,   0,   0, 240,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0, 240,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0, 240,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0, 240, 240, 240,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0, 255, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0, 255,   0, 255,   0, 255, 255,   0,   0,   0,   0,   0,   0,   0, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0, 255, 255,   0, 255,   0,   0,   0,   0, 255, 255, 255,   0, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0, 255,   0,   0, 255, 255, 255,   0,   0,   0,   0, 255, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0, 255,   0,   0,   0,   0,   0, 255, 255, 255,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0, 255, 255,   0,   0, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0, 255,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0},
-						{  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0}};
-*/
+
 
 /********************************************************************************
  * This program demonstrates use of the character and pixel buffer HAL code for
@@ -65,11 +46,6 @@ int main(void){
 	
 	int initx = 320;
 	int inity = 10;
-	
-
-	/* create a message to be displayed on the VGA display */
-	//char text_top_row[40] = "ECE5760\0";
-	//char text_bottom_row[40] = "Bruce is cool.\0";
 
 	/* initialize the pixel buffer HAL */
 	pixel_buffer_dev = alt_up_pixel_buffer_dma_open_dev ("/dev/VGA_Pixel_Buffer");
@@ -165,8 +141,8 @@ int main(void){
 					if ((*pushbuttons) & 0x04)
 					{
 						//alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 0, 0, 50, 50, 3, 0);
-						deltay = (deltay - thrust*cos((theta*5.0)-90.0));
-						deltax = (deltax - thrust*sin((theta*5.0)-90.0));
+						deltay = (deltay - thrust*cos(((theta*5.0)-90.0)*PI/180));
+						deltax = (deltax - thrust*sin(((theta*5.0)-90.0)*PI/180));
 						thrusting = 1;
 					} else {
 						thrusting = 0;
@@ -182,7 +158,7 @@ int main(void){
 				y1 = y1 + deltay;
 				//y2 = y2 + deltay;
 				
-				
+				//Dead if you go off right side of the screen
 				if ((deltax > 0.0) && (x1 >= alt_up_pixel_buffer_dma_x_res(pixel_buffer_dev) - 31.0))
 				{
 					x1 = alt_up_pixel_buffer_dma_x_res(pixel_buffer_dev) - 31.0;
@@ -190,6 +166,7 @@ int main(void){
 					stillAlive = 0;
 					deadWait = 1;
 				}
+				//Dead if you go off the left side of the screen
 				else if ((deltax < 0.0) && (x1 <= 0.0))
 				{
 					x1 = 0.0;
@@ -198,13 +175,23 @@ int main(void){
 					deadWait = 1;
 				}
 
-				if ((deltay > 0.0) && (y1 >= alt_up_pixel_buffer_dma_y_res(pixel_buffer_dev) - 31.0))
+				//Dead if you hit the landscape
+				if (
+					(deltay > 0.0) && 
+					(
+						( 
+							(y1 >= y_land_2 - 31.0) && (x1 > x_land_0) && (x1 < x_land_1)
+						)
+
+					)
+					)
 				{
 					y1 = alt_up_pixel_buffer_dma_y_res(pixel_buffer_dev) - 31.0;
 					deltay = 0.0;
 					stillAlive = 0;
 					deadWait = 1;
 				}
+				//Dead if you go off the top of the screen
 				else if ((deltay < 0.0) && (y1 <= 0.0))
 				{
 					y1 = 0.0;
@@ -267,10 +254,17 @@ int main(void){
 
 /* draws a landscape */
 void draw_landscape(alt_up_pixel_buffer_dma_dev *pixel_buffer_dev ){
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 4, 430, 150, 430, 0xffff, 0);
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 150, 430, 300, 400, 0xffff, 0);
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 300, 400, 480, 430, 0xffff, 0);
-	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, 480, 430, 636, 430, 0xffff, 0);
+	//Line segment 1: (x_land_0, y_land_2) <-> (x_land_1, y_land_2)
+	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x_land_0, y_land_2, x_land_1, y_land_2, 0xffff, 0);
+	
+	//Line segment 2: (x_land_1, y_land_2) <-> (x_land_2, y_land_1)
+	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x_land_1, y_land_2, x_land_2, y_land_1, 0xffff, 0);
+	
+	//Line segment 3: (x_land_2, y_land_1) <-> (x_land_3, y_land_1)
+	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x_land_2, y_land_1, x_land_3, y_land_1, 0xffff, 0);
+	
+	//Line Segment 4: (x_land_3, y_land_1) <-> (x_land_f, y_land_f)
+	alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x_land_3, y_land_1, x_land_f, y_land_f, 0xffff, 0);
 
 }
 
@@ -286,10 +280,13 @@ void draw_sprite(alt_up_pixel_buffer_dma_dev *pixel_buffer_dev , unsigned int x,
 	int j = 0;
 	for(i = 0; i < 30; i++) {
 		for(j = 0; j < 30; j++) {
-			if (landers[theta][i][j]) {
-			//alt_up_pixel_buffer_dma_draw(alt_up_pixel_buffer_dma_dev *pixel_buffer, unsigned int color, unsigned int x, unsigned int y);
-				//alt_up_pixel_buffer_dma_draw_hline(pixel_buffer_dev, x, x, y, 0xffff, 0);
-				alt_up_pixel_buffer_dma_draw(pixel_buffer_dev, (int)((landers[theta][i][j] << 8) + landers[theta][i][j]), x+j, y+i );
+			char color = landers[theta][i][j];
+			if (color) {
+				if ((!thrusting) && (color == (char)252))
+				{
+					color = 0;
+				}
+				alt_up_pixel_buffer_dma_draw(pixel_buffer_dev, (int)((color << 8) + color), x+j, y+i );
 			}
 		}
 	}
