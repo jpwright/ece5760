@@ -2,6 +2,7 @@
 #include "altera_up_avalon_video_character_buffer_with_dma.h"
 #include "sys/alt_stdio.h"
 #include "sprites.h"
+#include "explosion.h"
 #include <math.h>
 
 #define PI 3.14159265
@@ -17,7 +18,7 @@ int	y_land_2 = 400;
 int	y_land_f = 480;
 
 void draw_landscape(alt_up_pixel_buffer_dma_dev *);
-void draw_sprite(alt_up_pixel_buffer_dma_dev *, unsigned int x, unsigned int y, unsigned int theta, int thrusting);
+void draw_sprite(alt_up_pixel_buffer_dma_dev *, unsigned int x, unsigned int y, unsigned int theta, int thrusting, int stillAlive);
 void draw_fuel_guage(alt_up_pixel_buffer_dma_dev *, float fuel);
 
 char you_died[40] = "You died!\0";
@@ -102,7 +103,7 @@ int main(void){
 	deltax = initial_x_velocity;
 	deltay = 0;
 	
-	float slope_b = ((float)y_land_2-(float)y_land_1)/((float)x_land_2-(float)x_land_1);
+	float slope_b = ((float)y_land_2-(float)y_land_1)/((float)x_land_1-(float)x_land_2);
 	float slope_d = ((float)y_land_f-(float)y_land_1)/((float)x_land_f-(float)x_land_3);
 
 	while(1)
@@ -112,7 +113,9 @@ int main(void){
 		int * pushbuttons = (int *) PUSHBUTTONS_BASE; /* points to pushbuttons */
 		*(green_leds) = *(pushbuttons); /* Green LEDG[k] is set equal to PB[k] */
 
+		//RESEST PARAMETERS
 		if ((*pushbuttons) & 0x01){
+			alt_up_pixel_buffer_dma_clear_screen(pixel_buffer_dev, 0);
 			stillAlive = 1;
 			char you_alive[40] = "                \0";
 			alt_up_char_buffer_string (char_buffer_dev, you_alive, 5, 0);
@@ -142,12 +145,29 @@ int main(void){
 				/* The delay is inserted to slow down the animation from 60 frames per second 
 				 * to 30. Every other refresh cycle the code below will execute. We first erase 
 				 * the box with Erase Rectangle */
-				alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, (int)x1, (int)y1, (int)x2, (int)y2, 0, 0);
+				alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, (int)x1-3, (int)y1-3, (int)x2+3, (int)y2+3, 0, 0);
 				//alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y1, x2, y2, 0, 0);
 				//alt_up_pixel_buffer_dma_draw_line(pixel_buffer_dev, x1, y2, x2, y1, 0, 0);
-
+				draw_sprite(pixel_buffer_dev, (int)x1, (int)y1, (int)theta, thrusting, stillAlive);
+				draw_fuel_guage(pixel_buffer_dev, fuel);
 				//Right Thruster
 				if (stillAlive) {
+					//Main Thruster
+					if ((*pushbuttons) & 0x04)
+					{
+						if(hasFuel){
+							fuel = fuel - 0.65;
+							//draw_fuel_guage(pixel_buffer_dev, fuel);
+						
+							//alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 0, 0, 50, 50, 3, 0);
+							deltay = (deltay - thrust*cos(((theta*5.0)-90.0)*PI/180));
+							deltax = (deltax - thrust*sin(((theta*5.0)-90.0)*PI/180));
+							thrusting = 1;
+						}
+					} else {
+						thrusting = 0;
+					}
+					
 					if ((*pushbuttons) & 0x02)
 					{
 						//alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 0, 0, 50, 50, 3, 0);
@@ -165,22 +185,8 @@ int main(void){
 							theta = theta - turning;
 						}
 					}
+
 					
-					//Main Thruster
-					if ((*pushbuttons) & 0x04)
-					{
-						if(hasFuel){
-							fuel = fuel - 0.65;
-							draw_fuel_guage(pixel_buffer_dev, fuel);
-						
-							//alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 0, 0, 50, 50, 3, 0);
-							deltay = (deltay - thrust*cos(((theta*5.0)-90.0)*PI/180));
-							deltax = (deltax - thrust*sin(((theta*5.0)-90.0)*PI/180));
-							thrusting = 1;
-						}
-					} else {
-						thrusting = 0;
-					}
 				} else {
 					deltax = 0.0;
 					deltay = 0.0;
@@ -208,10 +214,14 @@ int main(void){
 				}
 
 				//Calculate slopes to sprite box to determine collision state
-				float slope_bottom_left_b  = ((float)y_land_2-((float)y1 + 25.0))/(((float)x1 + 5.0 ) - (float)x_land_1);
-				float slope_bottom_right_b = ((float)y_land_2-((float)y1 + 25.0))/(((float)x1 + 25.0) - (float)x_land_1);
+				/* float slope_bottom_left_b  = (((float)y1 + 25.0)-(float)y_land_2)/(((float)x1 + 5.0 ) - (float)x_land_2);
+				float slope_bottom_right_b = (((float)y1 + 25.0)-(float)y_land_2)/(((float)x1 + 25.0) - (float)x_land_2); */
 				float slope_bottom_left_d  = ((float)y_land_f-((float)y1 + 25.0))/((float)x_land_f - ((float)x1 + 5.0));
 				float slope_bottom_right_d = ((float)y_land_f-((float)y1 + 25.0))/( (float)x_land_f - ((float)x1 + 25.0));
+				
+				
+				float m = ((float)y_land_1 - (float)y_land_2)/((float)x_land_2 - (float)x_land_1);
+				float b = ((float)y_land_2) - ((float)x_land_1)*m;
 				
 				flat_area_1 = 0;
 				flat_area_2 = 0;
@@ -230,10 +240,19 @@ int main(void){
 							//Intersection with Slope a (flat line)
 							(y1 >= y_land_2 - 25.0) && flat_area_1
 						)
-						||
+					 	/* ||
 						(
 							//Intersection with Slope b
-							((x1+5.0) > x_land_1) && ((x1+25.0) < x_land_2) && ( (slope_bottom_left_b < slope_b) || (slope_bottom_right_b < slope_b) )
+							((x1+5.0) > x_land_1) && ((x1+25.0) < x_land_2) && ( ( abs(slope_bottom_left_b) > abs(slope_b)) ||  (abs(slope_bottom_right_b) < abs(slope_b)) )
+						)  */
+						||
+						(
+						//test
+							((x1+5.0) > x_land_1) && ((x1+25.0) < x_land_2) && ((y1+25.0)> m*(x1+25.0)+b)
+						)
+						||
+						(
+							((x1+5.0) < x_land_2) && (y1+25.0>y_land_1) && ((x1+25.0) > x_land_2)
 						)
 						||
 						(
@@ -252,7 +271,7 @@ int main(void){
 					
 					
 					//Are we in a flat landing area?
-					if ((flat_area_1 || flat_area_2) && deltay < 5.0 && deltax < 3.0 && theta == 18)
+					if ((flat_area_1 || flat_area_2) && deltay < 1.0 && deltax < 2.5 && theta == 18)
 					{
 						deltay = 0.0;
 						deltax = 0.0;
@@ -278,7 +297,7 @@ int main(void){
 				else if (fuel <= 0.0)
 				{
 					hasFuel = 0;
-					fuel = 100.0;
+					//fuel = 100.0;
 					alt_up_char_buffer_string (char_buffer_dev, no_fuel, 5, 0);
 					thrusting = 0;
 				}
@@ -296,7 +315,8 @@ int main(void){
 				
 				// redraw the box in the foreground 
 				//%%%%//alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 34*4, 28*4, 50*4, 32*4, 0xf0, 0);
-				draw_sprite(pixel_buffer_dev, (int)x1, (int)y1, (int)theta, thrusting);
+				
+				//draw_sprite(pixel_buffer_dev, (int)x1, (int)y1, (int)theta, thrusting);
 				draw_landscape (pixel_buffer_dev);
 				
 				deltay = deltay + g;
@@ -347,12 +367,16 @@ int groundCollision(unsigned int x, unsigned int y) {
 }
 
 
-void draw_sprite(alt_up_pixel_buffer_dma_dev *pixel_buffer_dev , unsigned int x, unsigned int y, unsigned int theta, int thrusting) {
+void draw_sprite(alt_up_pixel_buffer_dma_dev *pixel_buffer_dev , unsigned int x, unsigned int y, unsigned int theta, int thrusting, int stillAlive) {
 	int i = 0;
 	int j = 0;
 	for(i = 0; i < 30; i++) {
 		for(j = 0; j < 30; j++) {
 			char color = landers[theta][i][j];
+			if(!stillAlive){
+				color = explode[i][j];
+			}
+			//char color = landers[theta][i][j];
 			if (color) {
 				if ((!thrusting) && (color > (char)0) && (color < (char)5))
 				{
@@ -366,9 +390,9 @@ void draw_sprite(alt_up_pixel_buffer_dma_dev *pixel_buffer_dev , unsigned int x,
 
 void draw_fuel_guage(alt_up_pixel_buffer_dma_dev *pixel_buffer_dev, float fuel) {
 	//Draw the surrounding rectangle
-	alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 20, 20, 124, 44, 0xFFFF, 0);
+	alt_up_pixel_buffer_dma_draw_rectangle(pixel_buffer_dev, 20, 20, 124, 34, 0xFFFF, 0);
 	//Draw the empty fuel guage
-	alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 22, 22, 122, 42, 0x0000, 0);
+	alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 22+(int)(fuel), 22, 122, 32, 0x0000, 0);
 	
 	int color = 0x0000;
 	if (fuel > 66.0)
@@ -378,9 +402,10 @@ void draw_fuel_guage(alt_up_pixel_buffer_dma_dev *pixel_buffer_dev, float fuel) 
 	else
 		color = 0xe0e0;
 		
-		alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 22, 22, 22+(int)fuel, 42, color, 0);
+		alt_up_pixel_buffer_dma_draw_box(pixel_buffer_dev, 22, 22, 22+(int)fuel, 32, color, 0);
 
 }
+
 
 
 
