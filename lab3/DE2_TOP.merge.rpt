@@ -1,0 +1,185 @@
+Partition Merge report for DE2_TOP
+Tue Oct 13 18:10:06 2009
+Quartus II Version 6.1 Build 201 11/27/2006 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Partition Merge Summary
+  3. Partition Merge Netlist Types Used
+  4. Partition Merge Partition Statistics
+  5. Partition Merge Resource Usage Summary
+  6. Partition Merge DSP Block Usage Summary
+  7. Partition Merge Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2006 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++------------------------------------------------------------------------------+
+; Partition Merge Summary                                                      ;
++------------------------------------+-----------------------------------------+
+; Partition Merge Status             ; Successful - Tue Oct 13 18:10:06 2009   ;
+; Quartus II Version                 ; 6.1 Build 201 11/27/2006 SJ Web Edition ;
+; Revision Name                      ; DE2_TOP                                 ;
+; Top-level Entity Name              ; DE2_TOP                                 ;
+; Family                             ; Cyclone II                              ;
+; Total logic elements               ; 296                                     ;
+;     Total combinational functions  ; 296                                     ;
+;     Dedicated logic registers      ; 277                                     ;
+; Total registers                    ; 277                                     ;
+; Total pins                         ; 425                                     ;
+; Total virtual pins                 ; 0                                       ;
+; Total memory bits                  ; 0                                       ;
+; Embedded Multiplier 9-bit elements ; 2                                       ;
+; Total PLLs                         ; 1                                       ;
++------------------------------------+-----------------------------------------+
+
+
++---------------------------------------------------------------------------------------+
+; Partition Merge Netlist Types Used                                                    ;
++----------------+------------------------+------------------------+--------------------+
+; Partition Name ; Netlist Type Used      ; Netlist Type Requested ; Partition Contents ;
++----------------+------------------------+------------------------+--------------------+
+; Top            ; Post-Synthesis Netlist ; Post-Synthesis Netlist ;                    ;
++----------------+------------------------+------------------------+--------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Partition Merge Partition Statistics                                                                                                                                                                                                                                                                            ;
++----------------+-------------------------------+-------------+-----------------+-----------------+-------------+--------------+------------------------+-------------------------+-------------------------+--------------------------+---------------------------+------------------------+--------------------+
+; Partition Name ; Total combinational functions ; normal mode ; arithmetic mode ; Total registers ; Input Ports ; Output Ports ; Registered Input Ports ; Registered Output Ports ; Unconnected Input Ports ; Unconnected Output Ports ; Driven Ground Input Ports ; Driven VCC Input Ports ; Partition Contents ;
++----------------+-------------------------------+-------------+-----------------+-----------------+-------------+--------------+------------------------+-------------------------+-------------------------+--------------------------+---------------------------+------------------------+--------------------+
+; Top            ; 298                           ; 233         ; 65              ; 277             ; 48          ; 377          ; 1                      ; 0                       ; N/A                     ; N/A                      ; N/A                       ; N/A                    ;                    ;
++----------------+-------------------------------+-------------+-----------------+-----------------+-------------+--------------+------------------------+-------------------------+-------------------------+--------------------------+---------------------------+------------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------+
+; Partition Merge Resource Usage Summary                                                       ;
++---------------------------------------------+------------------------------------------------+
+; Resource                                    ; Usage                                          ;
++---------------------------------------------+------------------------------------------------+
+; Estimated Total logic elements              ; 296                                            ;
+;                                             ;                                                ;
+; Total combinational functions               ; 296                                            ;
+; Logic element usage by number of LUT inputs ;                                                ;
+;     -- 4 input functions                    ; 187                                            ;
+;     -- 3 input functions                    ; 37                                             ;
+;     -- <=2 input functions                  ; 72                                             ;
+;                                             ;                                                ;
+; Logic elements by mode                      ;                                                ;
+;     -- normal mode                          ; 231                                            ;
+;     -- arithmetic mode                      ; 65                                             ;
+;                                             ;                                                ;
+; Total registers                             ; 277                                            ;
+;     -- Dedicated logic registers            ; 277                                            ;
+;     -- I/O registers                        ; 0                                              ;
+;                                             ;                                                ;
+; I/O pins                                    ; 425                                            ;
+; Embedded Multiplier 9-bit elements          ; 2                                              ;
+; Total PLLs                                  ; 1                                              ;
+; Maximum fan-out node                        ; VGA_Audio_PLL:p1|altpll:altpll_component|_clk0 ;
+; Maximum fan-out                             ; 145                                            ;
+; Total fan-out                               ; 1847                                           ;
+; Average fan-out                             ; 1.85                                           ;
++---------------------------------------------+------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Partition Merge DSP Block Usage Summary             ;
++---------------------------------------+-------------+
+; Statistic                             ; Number Used ;
++---------------------------------------+-------------+
+; Simple Multipliers (9-bit)            ; 0           ;
+; Simple Multipliers (18-bit)           ; 1           ;
+; Embedded Multiplier Blocks            ; --          ;
+; Embedded Multiplier 9-bit elements    ; 2           ;
+; Signed Embedded Multipliers           ; 1           ;
+; Unsigned Embedded Multipliers         ; 0           ;
+; Mixed Sign Embedded Multipliers       ; 0           ;
+; Variable Sign Embedded Multipliers    ; 0           ;
+; Dedicated Input Shift Register Chains ; 0           ;
++---------------------------------------+-------------+
+Note: number of Embedded Multiplier Blocks used is only available after a successful fit.
+
+
++--------------------------+
+; Partition Merge Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Partition Merge
+    Info: Version 6.1 Build 201 11/27/2006 SJ Web Edition
+    Info: Processing started: Tue Oct 13 18:10:05 2009
+Info: Command: quartus_cdb --read_settings_files=off --write_settings_files=off Audio_Filter_18_bit -c DE2_TOP --merge=on
+Info: Using synthesis netlist for partition "Top"
+Info: Netlist merging resolved 1 partition(s) out of the 1 partition(s) found
+Warning: Design contains 44 input pin(s) that do not drive logic
+    Warning: No output dependent on input pin "EXT_CLOCK"
+    Warning: No output dependent on input pin "KEY[1]"
+    Warning: No output dependent on input pin "KEY[2]"
+    Warning: No output dependent on input pin "KEY[3]"
+    Warning: No output dependent on input pin "SW[0]"
+    Warning: No output dependent on input pin "SW[1]"
+    Warning: No output dependent on input pin "SW[2]"
+    Warning: No output dependent on input pin "SW[3]"
+    Warning: No output dependent on input pin "SW[4]"
+    Warning: No output dependent on input pin "SW[5]"
+    Warning: No output dependent on input pin "SW[6]"
+    Warning: No output dependent on input pin "SW[7]"
+    Warning: No output dependent on input pin "SW[8]"
+    Warning: No output dependent on input pin "SW[9]"
+    Warning: No output dependent on input pin "SW[10]"
+    Warning: No output dependent on input pin "SW[11]"
+    Warning: No output dependent on input pin "SW[12]"
+    Warning: No output dependent on input pin "SW[13]"
+    Warning: No output dependent on input pin "SW[14]"
+    Warning: No output dependent on input pin "SW[15]"
+    Warning: No output dependent on input pin "SW[16]"
+    Warning: No output dependent on input pin "SW[17]"
+    Warning: No output dependent on input pin "UART_RXD"
+    Warning: No output dependent on input pin "IRDA_RXD"
+    Warning: No output dependent on input pin "OTG_INT0"
+    Warning: No output dependent on input pin "OTG_INT1"
+    Warning: No output dependent on input pin "OTG_DREQ0"
+    Warning: No output dependent on input pin "OTG_DREQ1"
+    Warning: No output dependent on input pin "PS2_DAT"
+    Warning: No output dependent on input pin "PS2_CLK"
+    Warning: No output dependent on input pin "TDI"
+    Warning: No output dependent on input pin "TCK"
+    Warning: No output dependent on input pin "TCS"
+    Warning: No output dependent on input pin "ENET_INT"
+    Warning: No output dependent on input pin "TD_DATA[0]"
+    Warning: No output dependent on input pin "TD_DATA[1]"
+    Warning: No output dependent on input pin "TD_DATA[2]"
+    Warning: No output dependent on input pin "TD_DATA[3]"
+    Warning: No output dependent on input pin "TD_DATA[4]"
+    Warning: No output dependent on input pin "TD_DATA[5]"
+    Warning: No output dependent on input pin "TD_DATA[6]"
+    Warning: No output dependent on input pin "TD_DATA[7]"
+    Warning: No output dependent on input pin "TD_HS"
+    Warning: No output dependent on input pin "TD_VS"
+Info: Quartus II Partition Merge was successful. 0 errors, 45 warnings
+    Info: Allocated 96 megabytes of memory during processing
+    Info: Processing ended: Tue Oct 13 18:10:06 2009
+    Info: Elapsed time: 00:00:01
+
+

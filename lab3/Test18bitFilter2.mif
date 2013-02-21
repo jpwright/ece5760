@@ -1,0 +1,84 @@
+DEPTH = 256;
+WIDTH = 18;
+  
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+   
+CONTENT
+BEGIN
+[00..FF]	:	00000;
+00	:	06000;	% reset: in AudioIn % 
+01	:	07082;	% : mult b1 % 
+02	:	01081;	% : store sum % 
+03	:	0208b;	% : load x2 % 
+04	:	07083;	% : mult b2 % 
+05	:	00081;	% : add sum % 
+06	:	01081;	% : store sum % 
+07	:	0208c;	% : load x3 % 
+08	:	07084;	% : mult b3 % 
+09	:	00081;	% : add sum % 
+0a	:	01081;	% : store sum % 
+0b	:	0208d;	% : load x4 % 
+0c	:	07085;	% : mult b4 % 
+0d	:	00081;	% : add sum % 
+0e	:	01081;	% : store sum % 
+0f	:	0208e;	% : load x5 % 
+10	:	07086;	% : mult b5 % 
+11	:	00081;	% : add sum % 
+12	:	01081;	% : store sum % 
+13	:	0208f;	% : load y2 % 
+14	:	07087;	% : mult a2 % 
+15	:	00081;	% : add sum % 
+16	:	01081;	% : store sum % 
+17	:	02090;	% : load y3 % 
+18	:	07088;	% : mult a3 % 
+19	:	00081;	% : add sum % 
+1a	:	01081;	% : store sum % 
+1b	:	02091;	% : load y4 % 
+1c	:	07089;	% : mult a4 % 
+1d	:	00081;	% : add sum % 
+1e	:	01081;	% : store sum % 
+1f	:	02092;	% : load y5 % 
+20	:	0708a;	% : mult a5 % 
+21	:	00081;	% : add sum % 
+22	:	01081;	% : store sum % 
+23	:	08080;	% : shl scale % 
+24	:	05000;	% : out AudioOut % 
+25	:	01081;	% : store sum % 
+26	:	02091;	% : load y4 % 
+27	:	01092;	% : store y5 % 
+28	:	02090;	% : load y3 % 
+29	:	01091;	% : store y4 % 
+2a	:	0208f;	% : load y2 % 
+2b	:	01090;	% : store y3 % 
+2c	:	02081;	% : load sum % 
+2d	:	0108f;	% : store y2 % 
+2e	:	0208d;	% : load x4 % 
+2f	:	0108e;	% : store x5 % 
+30	:	0208c;	% : load x3 % 
+31	:	0108d;	% : store x4 % 
+32	:	0208b;	% : load x2 % 
+33	:	0108c;	% : store x3 % 
+34	:	06000;	% : in AudioIn % 
+35	:	0108b;	% : store x2 % 
+36	:	03036;	% halt: jump halt % 
+80	:	1;	% scale  % 
+81	:	0;	% sum  % 
+82	:	8A2;	% b1  % 
+83	:	0;	% b2  % 
+84	:	3EEBC;	% b3  % 
+85	:	0;	% b4  % 
+86	:	8A2;	% b5  % 
+87	:	F8A2;	% a2  % 
+88	:	2F0BE;	% a3  % 
+89	:	9BBB;	% a4  % 
+8a	:	3CB2A;	% a5  % 
+8b	:	0;	% x2  % 
+8c	:	0;	% x3  % 
+8d	:	0;	% x4  % 
+8e	:	0;	% x5  % 
+8f	:	0;	% y2  % 
+90	:	0;	% y3  % 
+91	:	0;	% y4  % 
+92	:	0;	% y5  % 
+END ;	

@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DE2_TOP">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6sos_18bit_fp:filter6|fpmult:f_c_x_v|unsigned_mult:mm|lpm_mult:Mult0" CBX_FILE_NAME="mult_s5t.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

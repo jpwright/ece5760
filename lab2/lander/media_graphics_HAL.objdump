@@ -1843,7 +1843,7 @@ int main(void){
 					
 					
 					//Are we in a flat landing area?
-					if ((flat_area_1 || flat_area_2) && deltay < 1.0 && deltax < 2.5 && theta == 18)
+					if ((flat_area_1 || flat_area_2) && deltay < 2.0 && deltax < 3.0 && theta == 18)
      c08:	d8c01217 	ldw	r3,72(sp)
      c0c:	1804c03a 	cmpne	r2,r3,zero
      c10:	1000031e 	bne	r2,zero,c20 <main+0x7c4>
@@ -1851,11 +1851,11 @@ int main(void){
      c18:	1805003a 	cmpeq	r2,r3,zero
      c1c:	10005b1e 	bne	r2,zero,d8c <main+0x930>
      c20:	d9001817 	ldw	r4,96(sp)
-     c24:	014fe034 	movhi	r5,16256
+     c24:	01500034 	movhi	r5,16384
      c28:	00036c40 	call	36c4 <__ltsf2>
      c2c:	1000570e 	bge	r2,zero,d8c <main+0x930>
      c30:	d9001917 	ldw	r4,100(sp)
-     c34:	01500834 	movhi	r5,16416
+     c34:	01501034 	movhi	r5,16448
      c38:	00036c40 	call	36c4 <__ltsf2>
      c3c:	1000530e 	bge	r2,zero,d8c <main+0x930>
      c40:	d9001517 	ldw	r4,84(sp)
@@ -12829,7 +12829,7 @@ int alt_get_fd (alt_dev* dev)
     8294:	20000726 	beq	r4,zero,82b4 <__call_exitprocs+0x1a0>
     8298:	b9000015 	stw	r4,0(r23)
     829c:	8809883a 	mov	r4,r17
-    82a0:	00000000 	call	0 <__reset>
+    82a0:	00000000 	call	0 <__alt_mem_SDRAM>
     82a4:	bc400017 	ldw	r17,0(r23)
     82a8:	883fb71e 	bne	r17,zero,8188 <__call_exitprocs+0x74>
     82ac:	003fc506 	br	81c4 <__call_exitprocs+0xb0>

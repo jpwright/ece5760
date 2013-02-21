@@ -1,0 +1,6 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="DE2_TOP">
+		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR2:filter2|signed_mult:f1_c_x_v|lpm_mult:Mult0" CBX_FILE_NAME="mult_ao01.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

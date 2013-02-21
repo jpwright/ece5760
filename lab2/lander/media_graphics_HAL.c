@@ -271,7 +271,7 @@ int main(void){
 					
 					
 					//Are we in a flat landing area?
-					if ((flat_area_1 || flat_area_2) && deltay < 1.0 && deltax < 2.5 && theta == 18)
+					if ((flat_area_1 || flat_area_2) && deltay < 2.0 && deltax < 3.0 && theta == 18)
 					{
 						deltay = 0.0;
 						deltax = 0.0;
