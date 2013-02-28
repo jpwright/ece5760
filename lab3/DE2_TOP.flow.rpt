@@ -1,5 +1,5 @@
 Flow report for DE2_TOP
-Thu Feb 21 14:15:27 2013
+Thu Feb 28 14:40:35 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -38,21 +38,21 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Thu Feb 21 14:15:23 2013     ;
+; Flow Status                        ; Successful - Thu Feb 28 14:40:31 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
 ; Family                             ; Cyclone II                                ;
 ; Device                             ; EP2C35F672C6                              ;
 ; Timing Models                      ; Final                                     ;
-; Total logic elements               ; 920 / 33,216 ( 3 % )                      ;
-;     Total combinational functions  ; 827 / 33,216 ( 2 % )                      ;
-;     Dedicated logic registers      ; 459 / 33,216 ( 1 % )                      ;
-; Total registers                    ; 459                                       ;
+; Total logic elements               ; 430 / 33,216 ( 1 % )                      ;
+;     Total combinational functions  ; 427 / 33,216 ( 1 % )                      ;
+;     Dedicated logic registers      ; 274 / 33,216 ( 1 % )                      ;
+; Total registers                    ; 274                                       ;
 ; Total pins                         ; 425 / 475 ( 89 % )                        ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 1 / 70 ( 1 % )                            ;
+; Embedded Multiplier 9-bit elements ; 28 / 70 ( 40 % )                          ;
 ; Total PLLs                         ; 1 / 4 ( 25 % )                            ;
 +------------------------------------+-------------------------------------------+
 
@@ -62,22 +62,26 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 02/21/2013 14:15:01 ;
+; Start date & time ; 02/28/2013 14:40:09 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_TOP             ;
 +-------------------+---------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------+
-; Flow Non-Default Global Settings                                                                                 ;
-+-------------------------------------+---------------------------------+---------------+-------------+------------+
-; Assignment Name                     ; Value                           ; Default Value ; Entity Name ; Section Id ;
-+-------------------------------------+---------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 132683363511504.136147410104224 ; --            ; --          ; --         ;
-; PARTITION_COLOR                     ; 14622752                        ; --            ; --          ; Top        ;
-; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING           ; --            ; --          ; Top        ;
-; PARTITION_NETLIST_TYPE              ; SOURCE                          ; --            ; --          ; Top        ;
-+-------------------------------------+---------------------------------+---------------+-------------+------------+
++------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                       ;
++-------------------------------------+---------------------------------------+---------------+-------------+------------+
+; Assignment Name                     ; Value                                 ; Default Value ; Entity Name ; Section Id ;
++-------------------------------------+---------------------------------------+---------------+-------------+------------+
+; COMPILER_SIGNATURE_ID               ; 132683363511504.136208040900188       ; --            ; --          ; --         ;
+; MAX_CORE_JUNCTION_TEMP              ; 85                                    ; --            ; --          ; --         ;
+; MIN_CORE_JUNCTION_TEMP              ; 0                                     ; --            ; --          ; --         ;
+; PARTITION_COLOR                     ; 14622752                              ; --            ; --          ; Top        ;
+; PARTITION_FITTER_PRESERVATION_LEVEL ; PLACEMENT_AND_ROUTING                 ; --            ; --          ; Top        ;
+; PARTITION_NETLIST_TYPE              ; SOURCE                                ; --            ; --          ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                   ; --            ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW ; --            ; --          ; --         ;
++-------------------------------------+---------------------------------------+---------------+-------------+------------+
 
 
 +-------------------------------------------------------------------------------------------------------------------------------+
@@ -85,11 +89,11 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 361 MB              ; 00:00:06                           ;
-; Fitter                    ; 00:00:11     ; 1.0                     ; 488 MB              ; 00:00:10                           ;
+; Analysis & Synthesis      ; 00:00:07     ; 1.0                     ; 391 MB              ; 00:00:06                           ;
+; Fitter                    ; 00:00:10     ; 1.0                     ; 487 MB              ; 00:00:10                           ;
 ; Assembler                 ; 00:00:03     ; 1.0                     ; 382 MB              ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 364 MB              ; 00:00:03                           ;
-; Total                     ; 00:00:25     ; --                      ; --                  ; 00:00:21                           ;
+; TimeQuest Timing Analyzer ; 00:00:03     ; 1.0                     ; 361 MB              ; 00:00:03                           ;
+; Total                     ; 00:00:23     ; --                      ; --                  ; 00:00:21                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

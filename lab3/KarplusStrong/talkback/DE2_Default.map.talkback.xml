@@ -1,0 +1,499 @@
+
+<!--
+This XML file (created on Fri Sep 14 09:00:08 2007) contains limited information
+from the compilation of logic designs using Quartus II software (BUT NOT THE
+LOGIC DESIGN FILES) that will be transmitted to Altera Corporation through
+operation of the "TalkBack" feature.  To enable/disable this feature, run
+qtb_install.exe located in your quartus/bin folder.  For more information, go
+to www.altera.com/products/software/download/dnl-download_license.html
+-->
+<talkback>
+<ver>6.0</ver>
+<schema>quartus_version_6.0_build_202.xsd</schema>
+<license>
+	<host_id>00123f4b0b3f</host_id>
+	<nic_id>00123f4b0b3f</nic_id>
+	<cdrive_id>882dfa9e</cdrive_id>
+</license>
+<tool>
+	<name>Quartus II</name>
+	<version>6.0</version>
+	<build>Build 202</build>
+	<service_pack_label>1</service_pack_label>
+	<binary_type>32</binary_type>
+	<module>quartus_map</module>
+	<edition>Web Edition</edition>
+	<eval>Licensed</eval>
+	<compilation_end_time>Fri Sep 14 09:00:08 2007</compilation_end_time>
+</tool>
+<machine>
+	<os>Windows XP</os>
+	<cpu>
+		<proc_count>2</proc_count>
+		<cpu_freq units="MHz">3391</cpu_freq>
+	</cpu>
+	<ram units="MB">1023</ram>
+</machine>
+<project>C:/DE2/KarplusStrong/DE2_Default</project>
+<revision>DE2_Default</revision>
+<compilation_summary>
+	<flow_status>Successful - Fri Sep 14 09:00:07 2007</flow_status>
+	<quartus_ii_version>6.0 Build 202 06/20/2006 SP 1 SJ Web Edition</quartus_ii_version>
+	<revision_name>DE2_Default</revision_name>
+	<top_level_entity_name>DE2_Default</top_level_entity_name>
+	<family>Cyclone II</family>
+	<device>EP2C35F672C6</device>
+	<timing_models>Final</timing_models>
+	<met_timing_requirements>N/A</met_timing_requirements>
+	<total_logic_elements>511</total_logic_elements>
+	<total_registers>467</total_registers>
+	<total_pins>429</total_pins>
+	<total_virtual_pins>0</total_virtual_pins>
+	<total_memory_bits>8,396</total_memory_bits>
+	<embedded_multiplier_9_bit_elements>2</embedded_multiplier_9_bit_elements>
+	<total_plls>1</total_plls>
+</compilation_summary>
+<lpm_params>
+	<lpm_data type="lpm_mult" num_inst="1">
+		<inst name="signed_mult:gainfactor|lpm_mult:Mult0">
+			<param name="LPM_WIDTHA" value="16"></param>
+			<param name="LPM_WIDTHB" value="18"></param>
+			<param name="LPM_WIDTHP" value="34"></param>
+			<param name="LPM_REPRESENTATION" value="SIGNED"></param>
+			<param name="INPUT_A_IS_CONSTANT" value="YES"></param>
+			<param name="INPUT_B_IS_CONSTANT" value="NO"></param>
+			<param name="USE_EAB" value="OFF"></param>
+			<param name="DEDICATED_MULTIPLIER_CIRCUITRY" value="AUTO"></param>
+			<param name="INPUT_A_FIXED_VALUE" value="Bx"></param>
+			<param name="INPUT_B_FIXED_VALUE" value="Bx"></param>
+		</inst>
+	</lpm_data>
+</lpm_params>
+<dsp_block_usage_summary>
+	<row>
+		<statistic>Simple Multipliers (9-bit)</statistic>
+		<number_used>0</number_used>
+	</row>
+	<row>
+		<statistic>Simple Multipliers (18-bit)</statistic>
+		<number_used>1</number_used>
+	</row>
+	<row>
+		<statistic>Embedded Multiplier Blocks</statistic>
+	</row>
+	<row>
+		<statistic>Embedded Multiplier 9-bit elements</statistic>
+		<number_used>2</number_used>
+	</row>
+	<row>
+		<statistic>Signed Embedded Multipliers</statistic>
+		<number_used>1</number_used>
+	</row>
+	<row>
+		<statistic>Unsigned Embedded Multipliers</statistic>
+		<number_used>0</number_used>
+	</row>
+	<row>
+		<statistic>Mixed Sign Embedded Multipliers</statistic>
+		<number_used>0</number_used>
+	</row>
+	<row>
+		<statistic>Variable Sign Embedded Multipliers</statistic>
+		<number_used>0</number_used>
+	</row>
+	<row>
+		<statistic>Dedicated Input Shift Register Chains</statistic>
+		<number_used>0</number_used>
+	</row>
+</dsp_block_usage_summary>
+<mep_data>
+	<command_line>quartus_map --read_settings_files=on --write_settings_files=off DE2_Default -c DE2_Default</command_line>
+</mep_data>
+<software_data>
+	<smart_recompile>off</smart_recompile>
+</software_data>
+<messages>
+	<warning>Warning: Design contains 42 input pin(s) that do not drive logic</warning>
+	<warning>Warning: No output dependent on input pin &quot;TD_VS&quot;</warning>
+	<warning>Warning: No output dependent on input pin &quot;TD_HS&quot;</warning>
+	<warning>Warning: No output dependent on input pin &quot;TD_DATA[7]&quot;</warning>
+	<warning>Warning: No output dependent on input pin &quot;TD_DATA[6]&quot;</warning>
+	<info>Info: Generated suppressed messages file C:/DE2/KarplusStrong/DE2_Default.map.smsg</info>
+	<info>Info: Quartus II Analysis &amp; Synthesis was successful. 0 errors, 479 warnings</info>
+	<info>Info: Elapsed time: 00:00:13</info>
+	<info>Info: Processing ended: Fri Sep 14 09:00:07 2007</info>
+	<info>Info: Implemented 1118 device resources after synthesis - the final resource count might be different</info>
+</messages>
+<analysis___synthesis_settings>
+	<row>
+		<option>Device</option>
+		<setting>EP2C35F672C6</setting>
+	</row>
+	<row>
+		<option>Top-level entity name</option>
+		<setting>DE2_Default</setting>
+		<default_value>DE2_Default</default_value>
+	</row>
+	<row>
+		<option>Family name</option>
+		<setting>Cyclone II</setting>
+		<default_value>Stratix</default_value>
+	</row>
+	<row>
+		<option>Use smart compilation</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Restructure Multiplexers</option>
+		<setting>Auto</setting>
+		<default_value>Auto</default_value>
+	</row>
+	<row>
+		<option>Create Debugging Nodes for IP Cores</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Preserve fewer node names</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Disable OpenCore Plus hardware evaluation</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Verilog Version</option>
+		<setting>Verilog_2001</setting>
+		<default_value>Verilog_2001</default_value>
+	</row>
+	<row>
+		<option>VHDL Version</option>
+		<setting>VHDL93</setting>
+		<default_value>VHDL93</default_value>
+	</row>
+	<row>
+		<option>State Machine Processing</option>
+		<setting>Auto</setting>
+		<default_value>Auto</default_value>
+	</row>
+	<row>
+		<option>Extract Verilog State Machines</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Extract VHDL State Machines</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Add Pass-Through Logic to Inferred RAMs</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>DSP Block Balancing</option>
+		<setting>Auto</setting>
+		<default_value>Auto</default_value>
+	</row>
+	<row>
+		<option>Maximum DSP Block Usage</option>
+		<setting>Unlimited</setting>
+		<default_value>Unlimited</default_value>
+	</row>
+	<row>
+		<option>NOT Gate Push-Back</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Power-Up Don&apos;t Care</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Remove Redundant Logic Cells</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Remove Duplicate Registers</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Ignore CARRY Buffers</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Ignore CASCADE Buffers</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Ignore GLOBAL Buffers</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Ignore ROW GLOBAL Buffers</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Ignore LCELL Buffers</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Ignore SOFT Buffers</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Limit AHDL Integers to 32 Bits</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Optimization Technique -- Cyclone II</option>
+		<setting>Balanced</setting>
+		<default_value>Balanced</default_value>
+	</row>
+	<row>
+		<option>Carry Chain Length -- Stratix/Stratix GX/Cyclone/MAX II/Cyclone II</option>
+		<setting>70</setting>
+		<default_value>70</default_value>
+	</row>
+	<row>
+		<option>Auto Carry Chains</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Auto Open-Drain Pins</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Remove Duplicate Logic</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Perform WYSIWYG Primitive Resynthesis</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Perform gate-level register retiming</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Allow register retiming to trade off Tsu/Tco with Fmax</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Auto ROM Replacement</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Auto RAM Replacement</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Auto Shift Register Replacement</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Auto Clock Enable Replacement</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Allow Synchronous Control Signals</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Force Use of Synchronous Clear Signals</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Auto Resource Sharing</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Allow Any RAM Size For Recognition</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Allow Any ROM Size For Recognition</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Allow Any Shift Register Size For Recognition</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Maximum Number of M4K Memory Blocks</option>
+		<setting>Unlimited</setting>
+		<default_value>Unlimited</default_value>
+	</row>
+	<row>
+		<option>Ignore translate_off and translate_on Synthesis Directives</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Show Parameter Settings Tables in Synthesis Report</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Ignore Maximum Fan-Out Assignments</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Retiming Meta-Stability Register Sequence Length</option>
+		<setting>2</setting>
+		<default_value>2</default_value>
+	</row>
+	<row>
+		<option>PowerPlay Power Optimization</option>
+		<setting>Normal compilation</setting>
+		<default_value>Normal compilation</default_value>
+	</row>
+	<row>
+		<option>HDL message level</option>
+		<setting>Level2</setting>
+		<default_value>Level2</default_value>
+	</row>
+</analysis___synthesis_settings>
+<general_register_statistics>
+	<row>
+		<statistic>Total registers</statistic>
+		<value>467</value>
+	</row>
+	<row>
+		<statistic>Number of registers using Synchronous Clear</statistic>
+		<value>64</value>
+	</row>
+	<row>
+		<statistic>Number of registers using Synchronous Load</statistic>
+		<value>16</value>
+	</row>
+	<row>
+		<statistic>Number of registers using Asynchronous Clear</statistic>
+		<value>193</value>
+	</row>
+	<row>
+		<statistic>Number of registers using Asynchronous Load</statistic>
+		<value>0</value>
+	</row>
+	<row>
+		<statistic>Number of registers using Clock Enable</statistic>
+		<value>282</value>
+	</row>
+	<row>
+		<statistic>Number of registers using Preset</statistic>
+		<value>0</value>
+	</row>
+</general_register_statistics>
+<signaltap_ii_logic_analyzer_settings>
+	<row>
+		<instance_index>0</instance_index>
+		<instance_name>auto_signaltap_0</instance_name>
+		<trigger_input_width>4</trigger_input_width>
+		<data_input_width>4</data_input_width>
+		<sample_depth>128</sample_depth>
+		<trigger_levels>1</trigger_levels>
+		<advanced_trigger_levels>0</advanced_trigger_levels>
+		<trigger_in_used>no</trigger_in_used>
+		<trigger_out_used>no</trigger_out_used>
+		<power_up_trigger_enabled>no</power_up_trigger_enabled>
+		<incremental_trigger_inputs>0</incremental_trigger_inputs>
+		<incremental_data_inputs>0</incremental_data_inputs>
+	</row>
+</signaltap_ii_logic_analyzer_settings>
+<ip_cores>
+	<ip type="ampp">
+			<corename>sld_signaltap.vhd</corename>
+		<vendor_id>6AF7</vendor_id>
+		<product_id>BCEC</product_id>
+		<pof>on</pof>
+		<to>on</to>
+		<edo_vho_vo>on</edo_vho_vo>
+		<source_view>off</source_view>
+	</ip>
+	<ip type="ampp">
+			<corename>sld_ela_control.vhd</corename>
+		<vendor_id>6AF7</vendor_id>
+		<product_id>BCEC</product_id>
+		<pof>on</pof>
+		<to>on</to>
+		<edo_vho_vo>on</edo_vho_vo>
+		<source_view>off</source_view>
+	</ip>
+	<ip type="ampp">
+			<corename>sld_mbpmg.vhd</corename>
+		<vendor_id>6AF7</vendor_id>
+		<product_id>BCEC</product_id>
+		<pof>on</pof>
+		<to>on</to>
+		<edo_vho_vo>on</edo_vho_vo>
+		<source_view>off</source_view>
+	</ip>
+	<ip type="ampp">
+			<corename>sld_acquisition_buffer.vhd</corename>
+		<vendor_id>6AF7</vendor_id>
+		<product_id>BCEC</product_id>
+		<pof>on</pof>
+		<to>on</to>
+		<edo_vho_vo>on</edo_vho_vo>
+		<source_view>off</source_view>
+	</ip>
+	<ip type="ampp">
+			<corename>sld_rom_sr.vhd</corename>
+		<vendor_id>6AF7</vendor_id>
+		<product_id>BCE1</product_id>
+		<pof>on</pof>
+		<to>on</to>
+		<edo_vho_vo>on</edo_vho_vo>
+		<source_view>off</source_view>
+	</ip>
+	<ip type="ampp">
+			<corename>sld_hub.vhd</corename>
+		<vendor_id>6AF7</vendor_id>
+		<product_id>BCE1</product_id>
+		<pof>on</pof>
+		<to>on</to>
+		<edo_vho_vo>on</edo_vho_vo>
+		<source_view>off</source_view>
+	</ip>
+	<ip type="ampp">
+			<corename>sld_dffex.vhd</corename>
+		<vendor_id>6AF7</vendor_id>
+		<product_id>BCE1</product_id>
+		<pof>on</pof>
+		<to>on</to>
+		<edo_vho_vo>on</edo_vho_vo>
+		<source_view>off</source_view>
+	</ip>
+</ip_cores>
+</talkback>

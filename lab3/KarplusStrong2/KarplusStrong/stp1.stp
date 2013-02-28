@@ -1,0 +1,63 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: EP2C35 (0x020B40DD)" sof_file="">
+  <display_tree>
+    <display_branch instance="auto_signaltap_0" signal_set="signal_set: 2006/11/06 08:27:29  #0" trigger="trigger: 2006/11/06 08:27:29  #1"/>
+  </display_tree>
+  <instance compilation_mode="full" entity_name="sld_signaltap" is_auto_node="yes" is_expanded="true" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="4"/>
+    <signal_set is_expanded="true" name="signal_set: 2006/11/06 08:27:29  #0">
+      <clock name="CLOCK_50" polarity="posedge"/>
+      <config ram_type="M4K" reserved_data_nodes="0" reserved_trigger_nodes="0" sample_depth="128" trigger_in_enable="no" trigger_out_enable="no"/>
+      <top_entity/>
+      <signal_vec>
+        <trigger_input_vec>
+          <wire connection_status="true" name="KEY[0]" tap_mode="classic" type="input pin"/>
+          <wire connection_status="true" name="KEY[1]" tap_mode="classic" type="input pin"/>
+          <wire connection_status="true" name="KEY[2]" tap_mode="classic" type="input pin"/>
+          <wire connection_status="true" name="KEY[3]" tap_mode="classic" type="input pin"/>
+        </trigger_input_vec>
+        <data_input_vec>
+          <wire connection_status="true" name="KEY[0]" tap_mode="classic" type="input pin"/>
+          <wire connection_status="true" name="KEY[1]" tap_mode="classic" type="input pin"/>
+          <wire connection_status="true" name="KEY[2]" tap_mode="classic" type="input pin"/>
+          <wire connection_status="true" name="KEY[3]" tap_mode="classic" type="input pin"/>
+        </data_input_vec>
+      </signal_vec>
+      <presentation>
+        <data_view>
+          <bus is_signal_inverted="no" link="all" name="KEY" order="msb_to_lsb" radix="hex" state="collapse" type="input pin">
+            <net is_signal_inverted="no" name="KEY[3]"/>
+            <net is_signal_inverted="no" name="KEY[2]"/>
+            <net is_signal_inverted="no" name="KEY[1]"/>
+            <net is_signal_inverted="no" name="KEY[0]"/>
+          </bus>
+        </data_view>
+        <setup_view>
+          <bus is_signal_inverted="no" link="all" name="KEY" order="msb_to_lsb" radix="hex" state="collapse" type="input pin">
+            <net is_signal_inverted="no" name="KEY[3]"/>
+            <net is_signal_inverted="no" name="KEY[2]"/>
+            <net is_signal_inverted="no" name="KEY[1]"/>
+            <net is_signal_inverted="no" name="KEY[0]"/>
+          </bus>
+        </setup_view>
+      </presentation>
+      <trigger is_expanded="true" name="trigger: 2006/11/06 08:27:29  #1" position="pre" power_up_trigger_mode="false" segment_size="1" trigger_in="dont_care" trigger_out="active high" trigger_type="circular">
+        <power_up_trigger position="pre" segment_size="1" trigger_in="dont_care" trigger_out="active high" trigger_type="circular"/>
+        <events>
+          <level enabled="yes" type="basic">
+            <power_up enabled="yes">
+            </power_up>
+            <op_node/>
+          </level>
+        </events>
+      </trigger>
+    </signal_set>
+    <position_info>
+      <single attribute="active tab" value="1"/>
+    </position_info>
+  </instance>
+  <mnemonics/>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <multi attribute="window position" size="9" value="999,570,398,124,356,50,124,0,0"/>
+  </global_info>
+</session>

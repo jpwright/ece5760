@@ -1,0 +1,170 @@
+
+<!--
+This XML file (created on Fri Sep 14 09:00:45 2007) contains limited information
+from the compilation of logic designs using Quartus II software (BUT NOT THE
+LOGIC DESIGN FILES) that will be transmitted to Altera Corporation through
+operation of the "TalkBack" feature.  To enable/disable this feature, run
+qtb_install.exe located in your quartus/bin folder.  For more information, go
+to www.altera.com/products/software/download/dnl-download_license.html
+-->
+<talkback>
+<ver>6.0</ver>
+<schema>quartus_version_6.0_build_202.xsd</schema>
+<license>
+	<host_id>00123f4b0b3f</host_id>
+	<nic_id>00123f4b0b3f</nic_id>
+	<cdrive_id>882dfa9e</cdrive_id>
+</license>
+<tool>
+	<name>Quartus II</name>
+	<version>6.0</version>
+	<build>Build 202</build>
+	<service_pack_label>1</service_pack_label>
+	<binary_type>32</binary_type>
+	<module>quartus_tan</module>
+	<edition>Web Edition</edition>
+	<eval>Licensed</eval>
+	<compilation_end_time>Fri Sep 14 09:00:45 2007</compilation_end_time>
+</tool>
+<machine>
+	<os>Windows XP</os>
+	<cpu>
+		<proc_count>2</proc_count>
+		<cpu_freq units="MHz">3391</cpu_freq>
+	</cpu>
+	<ram units="MB">1023</ram>
+</machine>
+<project>C:/DE2/KarplusStrong/DE2_Default</project>
+<revision>DE2_Default</revision>
+<compilation_summary>
+	<flow_status>Successful - Fri Sep 14 09:00:45 2007</flow_status>
+	<quartus_ii_version>6.0 Build 202 06/20/2006 SP 1 SJ Web Edition</quartus_ii_version>
+	<revision_name>DE2_Default</revision_name>
+	<top_level_entity_name>DE2_Default</top_level_entity_name>
+	<family>Cyclone II</family>
+	<device>EP2C35F672C6</device>
+	<timing_models>Final</timing_models>
+	<met_timing_requirements>Yes</met_timing_requirements>
+	<total_logic_elements>605 / 33,216 ( 2 % )</total_logic_elements>
+	<total_registers>467</total_registers>
+	<total_pins>429 / 475 ( 90 % )</total_pins>
+	<total_virtual_pins>0</total_virtual_pins>
+	<total_memory_bits>8,396 / 483,840 ( 2 % )</total_memory_bits>
+	<embedded_multiplier_9_bit_elements>2 / 70 ( 3 % )</embedded_multiplier_9_bit_elements>
+	<total_plls>1 / 4 ( 25 % )</total_plls>
+</compilation_summary>
+<mep_data>
+	<command_line>quartus_tan --read_settings_files=off --write_settings_files=off DE2_Default -c DE2_Default --timing_analysis_only</command_line>
+</mep_data>
+<software_data>
+	<smart_recompile>off</smart_recompile>
+</software_data>
+<messages>
+	<warning>Warning: Found 3 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew</warning>
+	<warning>Warning: Found pins functioning as undefined clocks and/or memory enables</warning>
+	<warning>Warning: Clock latency analysis for PLL offsets is supported for the current device family, but is not enabled</warning>
+	<info>Info: Quartus II Timing Analyzer was successful. 0 errors, 3 warnings</info>
+	<info>Info: Elapsed time: 00:00:02</info>
+	<info>Info: Processing ended: Fri Sep 14 09:00:45 2007</info>
+	<info>Info: All timing requirements were met. See Report window for more details.</info>
+	<info>Info: th for register &quot;sld_hub:sld_hub_inst|sld_jtag_state_machine:jtag_state_machine|state[10]&quot; (data pin = &quot;altera_internal_jtag~TMSUTAP&quot;, clock pin = &quot;altera_internal_jtag~TCKUTAP&quot;) is 1.644 ns</info>
+</messages>
+<clock_settings_summary>
+	<row>
+		<clock_node_name>VGA_Audio_PLL:p1|altpll:altpll_component|_clk1</clock_node_name>
+		<type>PLL output</type>
+		<fmax_requirement units="MHz">18.0</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<based_on>CLOCK_27</based_on>
+		<multiply_base_fmax_by>2</multiply_base_fmax_by>
+		<divide_base_fmax_by>3</divide_base_fmax_by>
+		<offset units="ns">-2.384</offset>
+	</row>
+	<row>
+		<clock_node_name>VGA_Audio_PLL:p1|altpll:altpll_component|_clk2</clock_node_name>
+		<type>PLL output</type>
+		<fmax_requirement units="MHz">25.2</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<based_on>CLOCK_27</based_on>
+		<multiply_base_fmax_by>14</multiply_base_fmax_by>
+		<divide_base_fmax_by>15</divide_base_fmax_by>
+		<offset units="ns">-12.306</offset>
+	</row>
+	<row>
+		<clock_node_name>CLOCK_27</clock_node_name>
+		<type>User Pin</type>
+		<fmax_requirement units="MHz">27.0</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<multiply_base_fmax_by>N/A</multiply_base_fmax_by>
+		<divide_base_fmax_by>N/A</divide_base_fmax_by>
+		<offset>N/A</offset>
+	</row>
+	<row>
+		<clock_node_name>CLOCK_50</clock_node_name>
+		<type>User Pin</type>
+		<fmax_requirement>None</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<multiply_base_fmax_by>N/A</multiply_base_fmax_by>
+		<divide_base_fmax_by>N/A</divide_base_fmax_by>
+		<offset>N/A</offset>
+	</row>
+	<row>
+		<clock_node_name>altera_internal_jtag~TCKUTAP</clock_node_name>
+		<type>User Pin</type>
+		<fmax_requirement>None</fmax_requirement>
+		<early_latency units="ns">0.000</early_latency>
+		<late_latency units="ns">0.000</late_latency>
+		<multiply_base_fmax_by>N/A</multiply_base_fmax_by>
+		<divide_base_fmax_by>N/A</divide_base_fmax_by>
+		<offset>N/A</offset>
+	</row>
+</clock_settings_summary>
+<performance>
+	<nonclk>
+		<type>Worst-case tsu</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>7.231 ns</actual>
+	</nonclk>
+	<nonclk>
+		<type>Worst-case tco</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>14.493 ns</actual>
+	</nonclk>
+	<nonclk>
+		<type>Worst-case tpd</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>2.612 ns</actual>
+	</nonclk>
+	<nonclk>
+		<type>Worst-case th</type>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>1.644 ns</actual>
+	</nonclk>
+	<clk>
+		<name>VGA_Audio_PLL:p1|altpll:altpll_component|_clk1</name>
+		<slack>53.009 ns</slack>
+		<required>18.00 MHz ( period = 55.555 ns )</required>
+		<actual>392.77 MHz ( period = 2.546 ns )</actual>
+	</clk>
+	<clk>
+		<name>CLOCK_50</name>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>117.83 MHz ( period = 8.487 ns )</actual>
+	</clk>
+	<clk>
+		<name>altera_internal_jtag~TCKUTAP</name>
+		<slack>N/A</slack>
+		<required>None</required>
+		<actual>119.16 MHz ( period = 8.392 ns )</actual>
+	</clk>
+</performance>
+</talkback>

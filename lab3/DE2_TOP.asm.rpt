@@ -1,5 +1,5 @@
 Assembler report for DE2_TOP
-Thu Feb 21 14:15:23 2013
+Thu Feb 28 14:40:31 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------+
 ; Assembler Summary                                             ;
 +-----------------------+---------------------------------------+
-; Assembler Status      ; Successful - Thu Feb 21 14:15:23 2013 ;
+; Assembler Status      ; Successful - Thu Feb 28 14:40:31 2013 ;
 ; Revision Name         ; DE2_TOP                               ;
 ; Top-level Entity Name ; DE2_TOP                               ;
 ; Family                ; Cyclone II                            ;
@@ -96,7 +96,7 @@ applicable agreement for further details.
 +----------------+--------------------------------------+
 ; Device         ; EP2C35F672C6                         ;
 ; JTAG usercode  ; 0xFFFFFFFF                           ;
-; Checksum       ; 0x0039EB93                           ;
+; Checksum       ; 0x00356399                           ;
 +----------------+--------------------------------------+
 
 
@@ -107,7 +107,7 @@ applicable agreement for further details.
 +--------------------+----------------------------------+
 ; Device             ; EPCS16                           ;
 ; JTAG usercode      ; 0x00000000                       ;
-; Checksum           ; 0x1C67F883                       ;
+; Checksum           ; 0x1C6CE093                       ;
 ; Compression Ratio  ; 3                                ;
 +--------------------+----------------------------------+
 
@@ -118,13 +118,13 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Assembler
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Thu Feb 21 14:15:20 2013
+    Info: Processing started: Thu Feb 28 14:40:28 2013
 Info: Command: quartus_asm --read_settings_files=off --write_settings_files=off Audio_Filter_18_bit -c DE2_TOP
 Info: Writing out detailed assembly data for power analysis
 Info: Assembler is generating device programming files
 Info: Quartus II 64-Bit Assembler was successful. 0 errors, 0 warnings
     Info: Peak virtual memory: 382 megabytes
-    Info: Processing ended: Thu Feb 21 14:15:23 2013
+    Info: Processing ended: Thu Feb 28 14:40:31 2013
     Info: Elapsed time: 00:00:03
     Info: Total CPU time (on all processors): 00:00:02
 

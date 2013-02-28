@@ -1,0 +1,116 @@
+
+<!--
+This XML file (created on Mon Nov 06 08:26:37 2006) contains limited information
+from the compilation of logic designs using Quartus II software (BUT NOT THE
+LOGIC DESIGN FILES) that will be transmitted to Altera Corporation through
+operation of the "TalkBack" feature.  To enable/disable this feature, run
+qtb_install.exe located in your quartus/bin folder.  For more information, go
+to www.altera.com/products/software/download/dnl-download_license.html
+-->
+<talkback>
+<ver>6.0</ver>
+<schema>quartus_version_6.0_build_202.xsd</schema>
+<machine>
+	<os>Windows XP</os>
+	<cpu>
+		<proc_count>2</proc_count>
+		<cpu_freq units="MHz">3391</cpu_freq>
+	</cpu>
+	<ram units="MB">1023</ram>
+</machine>
+<tool>
+	<name>Quartus II</name>
+	<version>6.0</version>
+	<build>Build 202</build>
+	<service_pack_label>1</service_pack_label>
+	<binary_type>32</binary_type>
+	<module>quartus</module>
+	<edition>Web Edition</edition>
+	<eval>Licensed</eval>
+	<compilation_end_time>Mon Nov 06 08:26:37 2006</compilation_end_time>
+</tool>
+<license>
+	<host_id>00123f4b0b3f</host_id>
+	<nic_id>00123f4b0b3f</nic_id>
+	<cdrive_id>882dfa9e</cdrive_id>
+</license>
+<internal_error>
+	<executable>quartus.exe</executable>
+	<sub_system>ERR</sub_system>
+	<callstack>Stack Trace:
+02911ada: SDR_TX_TRIGGER::is_power_up_trigger_view() + 0x0 (sld_sdr)
+05cddb06: sld_sed_dll_get_template_classes() + 0x45f67 (sld_sed)
+7c1d35e8: Ordinal6231() + 0x36 (MFC71)
+05ca022d: sld_sed_dll_get_template_classes() + 0x868e (sld_sed)
+7c1d3caa: Ordinal2051() + 0x13a (MFC71)
+1001f8e0: AFC_EDITOR_DOC::DoSave() + 0x4d6 (GCL_AFC)
+1000b7fb: AFC_EDITOR_DOC::DoFileSave() + 0x41 (GCL_AFC)
+7c144aae: Ordinal5582() + 0x28 (MFC71)
+1000bbe4: AFC_DOC_TEMPLATE::SaveAllModified() + 0x133 (GCL_AFC)
+7c144c14: Ordinal5581() + 0x27 (MFC71)
+10018d90: AFC_APP::save_all_before_task() + 0xce (GCL_AFC)
+0042e27d: Pjm_Init() + 0x22de1 (quartus)
+0042eb39: Pjm_Init() + 0x2369d (quartus)
+008211e6: NTF_NOTIFY_TARGET::on_ntf_notify() + 0x1c (CCL_NTF)
+100109f3: AFC_NOTIFY_MGR::broadcast_notify() + 0x56 (GCL_AFC)
+004119cf: Pjm_Init() + 0x6533 (quartus)
+00416c42: Pjm_Init() + 0xb7a6 (quartus)
+7c1746cc: Ordinal5713() + 0x37 (MFC71)
+7c171915: Ordinal4261() + 0xbc (MFC71)
+10012458: AFC_APP::OnCmdMsg() + 0x68 (GCL_AFC)
+7c171e1a: Ordinal4265() + 0x8e (MFC71)
+05c93190: 0x3190 (sld_sed)
+7c175cd8: Ordinal4282() + 0x5e (MFC71)
+7c175e4f: Ordinal4277() + 0x29 (MFC71)
+100064ab: AFC_CHILD_FRAME::OnWndMsg() + 0x8a (GCL_AFC)
+7c16e0b0: Ordinal6275() + 0x22 (MFC71)
+7c16e14f: Ordinal1028() + 0x7d (MFC71)
+4c0c0c15: Ordinal19356() + 0x55 (OT803AS)
+0040ed47: Pjm_Init() + 0x38ab (quartus)
+7c16e0b0: Ordinal6275() + 0x22 (MFC71)
+4c0c0f6b: Ordinal19369() + 0x8b (OT803AS)
+
+End-trace
+</callstack>
+	<error>Fatal error detected: Access Violation</error>
+	<date>Mon Nov 06 08:26:11 2006</date>
+	<version>Quartus II Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Web Edition</version>
+	<full_error>Fatal error detected: Access Violation
+Stack Trace:
+02911ada: SDR_TX_TRIGGER::is_power_up_trigger_view() + 0x0 (sld_sdr)
+05cddb06: sld_sed_dll_get_template_classes() + 0x45f67 (sld_sed)
+7c1d35e8: Ordinal6231() + 0x36 (MFC71)
+05ca022d: sld_sed_dll_get_template_classes() + 0x868e (sld_sed)
+7c1d3caa: Ordinal2051() + 0x13a (MFC71)
+1001f8e0: AFC_EDITOR_DOC::DoSave() + 0x4d6 (GCL_AFC)
+1000b7fb: AFC_EDITOR_DOC::DoFileSave() + 0x41 (GCL_AFC)
+7c144aae: Ordinal5582() + 0x28 (MFC71)
+1000bbe4: AFC_DOC_TEMPLATE::SaveAllModified() + 0x133 (GCL_AFC)
+7c144c14: Ordinal5581() + 0x27 (MFC71)
+10018d90: AFC_APP::save_all_before_task() + 0xce (GCL_AFC)
+0042e27d: Pjm_Init() + 0x22de1 (quartus)
+0042eb39: Pjm_Init() + 0x2369d (quartus)
+008211e6: NTF_NOTIFY_TARGET::on_ntf_notify() + 0x1c (CCL_NTF)
+100109f3: AFC_NOTIFY_MGR::broadcast_notify() + 0x56 (GCL_AFC)
+004119cf: Pjm_Init() + 0x6533 (quartus)
+00416c42: Pjm_Init() + 0xb7a6 (quartus)
+7c1746cc: Ordinal5713() + 0x37 (MFC71)
+7c171915: Ordinal4261() + 0xbc (MFC71)
+10012458: AFC_APP::OnCmdMsg() + 0x68 (GCL_AFC)
+7c171e1a: Ordinal4265() + 0x8e (MFC71)
+05c93190: 0x3190 (sld_sed)
+7c175cd8: Ordinal4282() + 0x5e (MFC71)
+7c175e4f: Ordinal4277() + 0x29 (MFC71)
+100064ab: AFC_CHILD_FRAME::OnWndMsg() + 0x8a (GCL_AFC)
+7c16e0b0: Ordinal6275() + 0x22 (MFC71)
+7c16e14f: Ordinal1028() + 0x7d (MFC71)
+4c0c0c15: Ordinal19356() + 0x55 (OT803AS)
+0040ed47: Pjm_Init() + 0x38ab (quartus)
+7c16e0b0: Ordinal6275() + 0x22 (MFC71)
+4c0c0f6b: Ordinal19369() + 0x8b (OT803AS)
+
+End-trace
+
+Quartus II Version 6.0 Build 202 06/20/2006 Service Pack 1 SJ Web Edition </full_error>
+</internal_error>
+</talkback>

@@ -358,6 +358,85 @@ IIR6_18bit_parallel filter3(
      .reset(reset) 
 ) ; //end filter 
 
+wire signed [15:0] boundary = 16'b0;
+
+
+generate
+
+genvar index_x;
+genvar index_y;
+genvar left, right, up, down, value;
+
+for (index_x=0; index_x < 10; index_x=index_x+1)
+begin: gen_code_label_x 
+	for (index_y=1; index_y < 10; index_y=index_y+1)
+	begin: gen_code_label_y 
+	
+	//x node index
+	if(index_x ==0)
+		left = index_x + 1; 
+		right = index_x + 1;
+	else if (index_x == 9)
+		left = index_x - 1;
+		right = boundary(index_x);
+	else
+		left = index_x - 1;
+		right = index_x + 1;
+	end
+	
+	
+	//y node index
+	if(index_y ==0)
+		up = index_y + 1; 
+		down = index_y + 1;
+	else if (index_x == 9)
+		up = boundary(index_y);
+		down = index_y - 1;
+	else
+		up = index_y + 1;
+		down = index_y - 1;
+	end
+	
+	node A_inst(left, right, up, down, prev, prev2, value);
+	
+	end
+end
+
+endgenerate
+
+
+
+endmodule
+
+module node(left, right, up, down, set, value);
+
+	output wire signed[15:0] value;
+
+	input wire signed[15:0] left;
+	input wire signed[15:0] right;
+	input wire signed[15:0] up;
+	input wire signed[15:0] down;
+	input wire signed[15:0] prev;
+	input wire signed[15:0] prev2;
+	
+	reg[15:0] prev_reg;
+	reg[15:0] prev2_reg;
+	
+
+	
+	always@(set)
+	
+	end
+	
+	prev = prev_reg;
+	prev2 = 	prev2_reg;
+	
+	//Math Here
+	assign value <= ((((left + right + up + down - (prev<<<2))>>>2) + (prev<<<1) - (prev2>>>4))<<<4);
+	
+	prev2_reg = prev;
+	prev_reg = value;
+	
 endmodule
 
 ///////////////////////////////////////////////////////////////////

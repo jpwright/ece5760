@@ -1,0 +1,14 @@
+Fitter Status : Successful - Fri Sep 14 09:00:28 2007
+Quartus II Version : 6.0 Build 202 06/20/2006 SP 1 SJ Web Edition
+Revision Name : DE2_Default
+Top-level Entity Name : DE2_Default
+Family : Cyclone II
+Device : EP2C35F672C6
+Timing Models : Final
+Total logic elements : 605 / 33,216 ( 2 % )
+Total registers : 467
+Total pins : 429 / 475 ( 90 % )
+Total virtual pins : 0
+Total memory bits : 8,396 / 483,840 ( 2 % )
+Embedded Multiplier 9-bit elements : 2 / 70 ( 3 % )
+Total PLLs : 1 / 4 ( 25 % )

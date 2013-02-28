@@ -297,14 +297,14 @@ wire signed [15:0] filter2_out, filter4_out, filter6_out ;
 // original signal in R channel
 // filtered signal in L channel
 assign audio_outR = audio_inR ; 
-assign audio_outL = filter6_out ;
+assign audio_outL = filter2_out ;
 
 
 //Filter: cutoff=0.100000
 //Filter: cutoff=0.200000
 IIR2sos_18bit_fp filter2(
      .audio_out (filter2_out),
-     .audio_in (audio_inR),
+     .audio_in (audio_inL),
      .b11 (18'h10300),
      .b12 (18'h0),
      .b13 (18'h30300),
@@ -316,52 +316,6 @@ IIR2sos_18bit_fp filter2(
      .reset(reset)
 ) ; //end filter
 
-//Filter: cutoff=0.100000
-//Filter: cutoff=0.200000
-IIR4sos_18bit_fp filter4(
-     .audio_out (filter4_out),
-     .audio_in (audio_inR),
-     .b11 (18'h10300),
-     .b12 (18'h10500),
-     .b13 (18'h10300),
-     .a12 (18'h1037A),
-     .a13 (18'h30185),
-     .b21 (18'h10300),
-     .b22 (18'h30500),
-     .b23 (18'h10300),
-     .a22 (18'h103BC),
-     .a23 (18'h301B0),
-     .gain(18'hF749),
-     .state_clk(AUD_CTRL_CLK),
-     .lr_clk(AUD_DACLRCK),
-     .reset(reset)
-) ; //end filter
-
-//Filter: cutoff=0.100000
-//Filter: cutoff=0.200000
-IIR6sos_18bit_fp filter6(
-     .audio_out (filter6_out),
-     .audio_in (audio_inR),
-     .b11 (18'h10300),
-     .b12 (18'h2E112),
-     .b13 (18'h301FF),
-     .a12 (18'h1038E),
-     .a13 (18'h30173),
-     .b21 (18'h10300),
-     .b22 (18'h10500),
-     .b23 (18'h10300),
-     .a22 (18'h1037F),
-     .a23 (18'h301A3),
-     .b31 (18'h10300),
-     .b32 (18'h303FF),
-     .b33 (18'h101FF),
-     .a32 (18'h103CB),
-     .a33 (18'h301C9),
-     .gain(18'hF17B),
-     .state_clk(AUD_CTRL_CLK),
-     .lr_clk(AUD_DACLRCK),
-     .reset(reset)
-) ; //end filter
 
 endmodule
 
