@@ -1,19 +1,5 @@
 <?xml version="1.0" ?>
 <LOG_ROOT>
 	<PROJECT NAME="DE2_TOP">
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:a3out|lpm_mult:Mult0" CBX_FILE_NAME="mult_e5t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:a7out|lpm_mult:Mult0" CBX_FILE_NAME="mult_95t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:b3in|lpm_mult:Mult0" CBX_FILE_NAME="mult_75t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR2_18bit_parallel:filter2|signed_mult:b1in|lpm_mult:Mult0" CBX_FILE_NAME="mult_45t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:a4out|lpm_mult:Mult0" CBX_FILE_NAME="mult_c5t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:b4in|lpm_mult:Mult0" CBX_FILE_NAME="mult_75t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR2_18bit_parallel:filter2|signed_mult:a2out|lpm_mult:Mult0" CBX_FILE_NAME="mult_a5t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:a5out|lpm_mult:Mult0" CBX_FILE_NAME="mult_a5t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:b1in|lpm_mult:Mult0" CBX_FILE_NAME="mult_o3t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR2_18bit_parallel:filter2|signed_mult:a3out|lpm_mult:Mult0" CBX_FILE_NAME="mult_85t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR2_18bit_parallel:filter2|signed_mult:b3in|lpm_mult:Mult0" CBX_FILE_NAME="mult_45t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:a2out|lpm_mult:Mult0" CBX_FILE_NAME="mult_c5t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:a6out|lpm_mult:Mult0" CBX_FILE_NAME="mult_65t.tdf"/>
-		<CBX_INST_ENTRY INSTANCE_NAME="|DE2_TOP|IIR6_18bit_parallel:filter3|signed_mult:b2in|lpm_mult:Mult0" CBX_FILE_NAME="mult_s3t.tdf"/>
 	</PROJECT>
 </LOG_ROOT>
