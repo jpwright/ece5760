@@ -47,7 +47,27 @@ for x = 0:quarterGridNodes1D-1
     end
 end
 
+v = normpdf([0 0; 0 1; 0 2; 0 3; 1 0; 1 1; 1 2; 1 3; 2 0; 2 1;2 2; 2 3; 3 0; 3 1; 3 2; 3 3 ],[0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0], [1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1]);
+for x = 0:quarterGridNodes1D-1
+    for y = 0:quarterGridNodes1D-1
+        fprintf(fileID, 'always@(negedge SW[0]\n');
+        fprintf(fileID, 'begin\n');
+        
+        if(x<4) && (y<4)
+            %%%%%%finish later
+            fprintf(fileID, strcat('\tvalue_', int2str(x), '_', int2str(y), ' <=0;\n'));
+        else
+            fprintf(fileID, strcat('\tvalue_', int2str(x), '_', int2str(y), ' <= 0;\n'));
+        end
+        fprintf(fileID, strcat('\tprev_', int2str(x), '_' , int2str(y), ' <= 0;\n'));
+        fprintf(fileID, strcat('\tprev2_', int2str(x), '_' , int2str(y), ' <= 0;\n'));
+        fprintf(fileID, 'end\n');
+        
+    end
+end
+
 fclose(fileID);
+
 % module node(left, right, up, down, set, value);
 % 
 % 	output wire signed[15:0] value;

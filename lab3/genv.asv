@@ -7,36 +7,36 @@ for x = 0:quarterGridNodes1D-1
     for y = 0:quarterGridNodes1D-1
 
         if(x == 0)
-			left = strcat'value_' + int2str(x + 1) + '_' + int2str(y); 
-			right = 'value_' + int2str(x + 1) + '_' + int2str(y); 
+			left = strcat('value_' , int2str(x + 1) , '_' , int2str(y)); 
+			right = strcat('value_' , int2str(x + 1) , '_' , int2str(y)); 
         elseif (x == quarterGridNodes1D-1)
-			left = 'value_' + int2str(x - 1) + '_' + int2str(y); 
+			left = strcat('value_' , int2str(x - 1) , '_' , int2str(y)); 
 			right = '0'; 
         else
-			left = 'value_' + int2str(x - 1) + '_' + int2str(y);
-			right = 'value_' + int2str(x + 1) + '_' + int2str(y);
+			left = strcat('value_' , int2str(x - 1) , '_' , int2str(y));
+			right = strcat('value_' , int2str(x + 1) , '_' , int2str(y));
         end
 		
         if(y == 0)
-			up = 'value_' + int2str(x) + '_' + int2str(y+1); 
-			down = 'value_' + int2str(x) + '_' + int2str(y+1);
+			up = strcat('value_' , int2str(x) , '_' , int2str(y+1)); 
+			down = strcat('value_' , int2str(x) , '_' , int2str(y+1));
         elseif (y == quarterGridNodes1D-1)
 			up = 0;
-			down = 'value_' + int2str(x) + '_' + int2str(y-1); 
+			down = strcat('value_' , int2str(x) , '_' , int2str(y-1)); 
         else
-			up = 'value_' + int2str(x) + '_' + int2str(y+1); 
-			down = 'value_' + int2str(x) + '_' + int2str(y-1); 
+			up = strcat('value_' , int2str(x) , '_' , int2str(y+1)); 
+			down = strcat('value_' , int2str(x) , '_' , int2str(y-1)); 
         end
 		
 %         fprintf('module node_' + x + '_' + y+'(value);');
 		fprintf(fileID, strcat('\treg signed[15:0] value_', int2str(x), '_', int2str(y), ';\n'));
-        fprintf(fileID, strcat('\treg signed[15:0] prev_', int2str(x), '_' + int2str(y), ';\n'));
-        fprintf(fileID, strcat('\treg signed[15:0] prev2_', int2str(x), '_' + int2str(y), ';\n'));
+        fprintf(fileID, strcat('\treg signed[15:0] prev_', int2str(x), '_' , int2str(y), ';\n'));
+        fprintf(fileID, strcat('\treg signed[15:0] prev2_', int2str(x), '_' , int2str(y), ';\n'));
         
         fprintf(fileID, '\talways@(posedge clk50)\n'); %%%%%%%CHECK ON THE CLOCK SPEED
         fprintf(fileID, '\tbegin\n');
         
-        fprintf(fileID, strcat('\t\tvalue_', int2str(x), '_', int2str(y), ' = ((((', left, '+', right, '+', up, '+', down, '- (prev_', int2str(x), '_', int2str(y), '<<<2))>>>2) + (prev', int2str(x), '_', int2str(y), '<<<1) - (prev2', int2str(x), '_', int2str(y), '>>>4))<<<4);\n'));
+        fprintf(fileID, strcat('\t\tvalue_', int2str(x), '_', int2str(y), ' = ((((', left, '+', right, '+', up, '+', down, '- (prev_', int2str(x), '_', int2str(y), '<<<2))>>>2) + (prev_', int2str(x), '_', int2str(y), '<<<1) - (prev2_', int2str(x), '_', int2str(y), '>>>4))<<<4);\n'));
         
         fprintf(fileID, strcat('\t\tprev2_', int2str(x), '_' , int2str(y),' = prev_', int2str(x), '_', int2str(y), '\n'));
         fprintf(fileID, strcat('\t\tprev_', int2str(x),'_' , int2str(y), ' = value_', int2str(x), '_', int2str(y),';\n'));
@@ -47,7 +47,26 @@ for x = 0:quarterGridNodes1D-1
     end
 end
 
+
+for x = 0:quarterGridNodes1D-1
+    for y = 0:quarterGridNodes1D-1
+        fprintf(fileID, 'always@(negedge SW[0]\n');
+        fprintf(fileID, 'begin\n');
+        
+        if(x<4) && (y<4)
+            fprintf(fileID, strcat('\tvalue_', int2str(x), '_', int2str(y), ' <= 0;\n'));
+        else
+            fprintf(fileID, strcat('\tvalue_', int2str(x), '_', int2str(y), ' <= 0;\n'));
+        end
+        fprintf(fileID, strcat('\tprev_', int2str(x), '_' , int2str(y), ' <= 0;\n'));
+        fprintf(fileID, strcat('\tprev2_', int2str(x), '_' , int2str(y), ' <= 0;\n'));
+        fprintf(fileID, 'end\n');
+        
+    end
+end
+
 fclose(fileID);
+
 % module node(left, right, up, down, set, value);
 % 
 % 	output wire signed[15:0] value;
