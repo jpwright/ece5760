@@ -14,6 +14,11 @@
 // -- syntax cleanup and module name improvement
 // --------------------------------------------------------------------
 
+// ( ?° ?? ?°)
+//
+// ^ Bruce
+
+
 module DE2_TOP (
     // Clock Input
     input         CLOCK_27,    // 27 MHz

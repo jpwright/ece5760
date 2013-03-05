@@ -1,4 +1,4 @@
-quarterGridNodes1D = 10; %length of one dimension of the quarter grid
+quarterGridNodes1D = 4; %length of one dimension of the quarter grid
 fileName = 'nodes.v';
 format long
 fileID = fopen(fileName, 'wt'); 
@@ -65,7 +65,7 @@ for x = 0:quarterGridNodes1D-1
 			right = strcat('value_' , int2str(x + 1) , '_' , int2str(y)); 
         elseif (x == quarterGridNodes1D-1)
 			left = strcat('value_' , int2str(x - 1) , '_' , int2str(y)); 
-			right = '0'; 
+			right = '16''b0'; 
         else
 			left = strcat('value_' , int2str(x - 1) , '_' , int2str(y));
 			right = strcat('value_' , int2str(x + 1) , '_' , int2str(y));
@@ -75,7 +75,7 @@ for x = 0:quarterGridNodes1D-1
 			up = strcat('value_' , int2str(x) , '_' , int2str(y+1)); 
 			down = strcat('value_' , int2str(x) , '_' , int2str(y+1));
         elseif (y == quarterGridNodes1D-1)
-			up = '0';
+			up = '16''b0';
 			down = strcat('value_' , int2str(x) , '_' , int2str(y-1)); 
         else
 			up = strcat('value_' , int2str(x) , '_' , int2str(y+1)); 
@@ -98,11 +98,11 @@ for x = 0:quarterGridNodes1D-1
         %initial gaussian distribution about the center node
         if(x<4) && (y<4)
             val = normpdf([x,y],0,1);
-            num = val(1)*val(2);
+            num = val(1)*val(2)*4;
             if num <.0001
                 num = 0;
             end
-            num = num*(2^15);
+            num = min(num, 1)*(2^15);
             numBin = dec2bin(round(num));
             fprintf(fileID, strcat('\t\t\t\tvalue_', int2str(x), '_', int2str(y), ' = 16''b0 ', numBin ,';\n'));
         else
@@ -122,20 +122,20 @@ for x = 0:quarterGridNodes1D-1
         
         fprintf(fileID, strcat('\t\t\t\tvalue_', int2str(x), '_', int2str(y), ' = '));
         fprintf(fileID, '(');
-        for q = 1:15
-            fprintf(fileID, strcat('(((', left, '+', right, '+', up, '+', down, '- (prev_', int2str(x), '_', int2str(y), '<<<2))>>>2) + (prev_', int2str(x), '_', int2str(y), '<<<1) - ('));
-            for k=1:15
-                fprintf(fileID, strcat('(prev2_', int2str(x), '_', int2str(y), '>>>4)'));
-                if (k<15)
+        for q = 4:4
+            fprintf(fileID, strcat('(((', left, '+', right, '+', up, '+', down, '- (prev_', int2str(x), '_', int2str(y), '<<<2))>>>2) + (prev_', int2str(x), '_', int2str(y), '<<<1) - '));
+            for k=4:4
+                fprintf(fileID, strcat('(prev2_', int2str(x), '_', int2str(y), '>>>', int2str(k), ')'));
+                if (k<4)
                     fprintf(fileID, ' + ');
                 end
             end
-            fprintf(fileID, ')>>>4)');
-            if (q<15)
+            fprintf(fileID, strcat(')>>>', int2str(q), ')'));
+            if (q<4)
                 fprintf(fileID, ' + \n');
             end
         end
-        fprintf(fileID, ');\n');
+        fprintf(fileID, ';\n');
         
         fprintf(fileID, strcat('\t\t\t\tprev2_', int2str(x), '_' , int2str(y),' = prev_', int2str(x), '_', int2str(y), ';\n'));
         fprintf(fileID, strcat('\t\t\t\tprev_', int2str(x),'_' , int2str(y), ' = value_', int2str(x), '_', int2str(y),';\n'));
