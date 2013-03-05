@@ -2,77 +2,77 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow Model Setup 'AUDIO_DAC_ADC:u4|LRCK_1X'
-Slack : -10.865
-TNS   : -1384.695
-
-Type  : Slow Model Setup 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : -3.147
-TNS   : -281.679
-
 Type  : Slow Model Setup 'CLOCK_50'
-Slack : -2.846
-TNS   : -86.466
+Slack : -12.468
+TNS   : -10472.902
 
 Type  : Slow Model Setup 'I2C_AV_Config:u3|mI2C_CTRL_CLK'
-Slack : -2.736
-TNS   : -85.752
+Slack : -2.681
+TNS   : -91.467
+
+Type  : Slow Model Setup 'AUDIO_DAC_ADC:u4|LRCK_1X'
+Slack : -1.292
+TNS   : -5.395
 
 Type  : Slow Model Setup 'p1|altpll_component|pll|clk[1]'
-Slack : -0.136
-TNS   : -0.272
+Slack : -0.140
+TNS   : -0.280
+
+Type  : Slow Model Setup 'AUDIO_DAC_ADC:u4|oAUD_BCK'
+Slack : -0.073
+TNS   : -0.111
 
 Type  : Slow Model Hold 'CLOCK_50'
-Slack : -2.539
-TNS   : -2.539
-
-Type  : Slow Model Hold 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : -1.482
-TNS   : -20.306
+Slack : -2.536
+TNS   : -2.536
 
 Type  : Slow Model Hold 'p1|altpll_component|pll|clk[1]'
-Slack : -0.089
-TNS   : -0.178
+Slack : -0.085
+TNS   : -0.170
+
+Type  : Slow Model Hold 'AUDIO_DAC_ADC:u4|oAUD_BCK'
+Slack : 0.391
+TNS   : 0.000
 
 Type  : Slow Model Hold 'I2C_AV_Config:u3|mI2C_CTRL_CLK'
 Slack : 0.391
 TNS   : 0.000
 
 Type  : Slow Model Hold 'AUDIO_DAC_ADC:u4|LRCK_1X'
-Slack : 0.963
+Slack : 0.572
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'p1|altpll_component|pll|clk[1]'
-Slack : -4.215
-TNS   : -58.920
+Slack : -3.707
+TNS   : -51.898
 
 Type  : Slow Model Recovery 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : -0.925
-TNS   : -2.116
+Slack : -2.005
+TNS   : -8.020
 
 Type  : Slow Model Removal 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : 1.167
+Slack : 2.775
 TNS   : 0.000
 
 Type  : Slow Model Removal 'p1|altpll_component|pll|clk[1]'
-Slack : 3.945
+Slack : 3.482
 TNS   : 0.000
-
-Type  : Slow Model Minimum Pulse Width 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : -1.423
-TNS   : -293.216
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK_50'
 Slack : -1.380
-TNS   : -39.380
-
-Type  : Slow Model Minimum Pulse Width 'AUDIO_DAC_ADC:u4|LRCK_1X'
-Slack : -0.500
-TNS   : -158.000
+TNS   : -1691.380
 
 Type  : Slow Model Minimum Pulse Width 'I2C_AV_Config:u3|mI2C_CTRL_CLK'
 Slack : -0.500
 TNS   : -44.000
+
+Type  : Slow Model Minimum Pulse Width 'AUDIO_DAC_ADC:u4|LRCK_1X'
+Slack : -0.500
+TNS   : -13.000
+
+Type  : Slow Model Minimum Pulse Width 'AUDIO_DAC_ADC:u4|oAUD_BCK'
+Slack : -0.500
+TNS   : -4.000
 
 Type  : Slow Model Minimum Pulse Width 'CLOCK_27'
 Slack : 18.518
@@ -82,36 +82,36 @@ Type  : Slow Model Minimum Pulse Width 'p1|altpll_component|pll|clk[1]'
 Slack : 26.777
 TNS   : 0.000
 
-Type  : Fast Model Setup 'AUDIO_DAC_ADC:u4|LRCK_1X'
-Slack : -3.158
-TNS   : -369.495
-
-Type  : Fast Model Setup 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : -1.144
-TNS   : -94.758
-
 Type  : Fast Model Setup 'CLOCK_50'
-Slack : -0.835
-TNS   : -20.952
+Slack : -5.048
+TNS   : -3816.678
 
 Type  : Fast Model Setup 'I2C_AV_Config:u3|mI2C_CTRL_CLK'
-Slack : -0.642
-TNS   : -17.565
+Slack : -0.650
+TNS   : -19.832
 
 Type  : Fast Model Setup 'p1|altpll_component|pll|clk[1]'
-Slack : -0.191
-TNS   : -0.382
+Slack : -0.195
+TNS   : -0.390
+
+Type  : Fast Model Setup 'AUDIO_DAC_ADC:u4|LRCK_1X'
+Slack : -0.185
+TNS   : -0.359
+
+Type  : Fast Model Setup 'AUDIO_DAC_ADC:u4|oAUD_BCK'
+Slack : 0.505
+TNS   : 0.000
 
 Type  : Fast Model Hold 'CLOCK_50'
-Slack : -1.582
-TNS   : -1.582
-
-Type  : Fast Model Hold 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : -1.126
-TNS   : -44.170
+Slack : -1.576
+TNS   : -1.576
 
 Type  : Fast Model Hold 'p1|altpll_component|pll|clk[1]'
-Slack : 0.076
+Slack : 0.080
+TNS   : 0.000
+
+Type  : Fast Model Hold 'AUDIO_DAC_ADC:u4|oAUD_BCK'
+Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'I2C_AV_Config:u3|mI2C_CTRL_CLK'
@@ -119,40 +119,40 @@ Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Hold 'AUDIO_DAC_ADC:u4|LRCK_1X'
-Slack : 0.430
+Slack : 0.332
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'p1|altpll_component|pll|clk[1]'
-Slack : -2.580
-TNS   : -36.072
+Slack : -2.350
+TNS   : -32.900
 
 Type  : Fast Model Recovery 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : -0.320
-TNS   : -0.512
+Slack : -0.835
+TNS   : -3.340
 
 Type  : Fast Model Removal 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : 0.944
+Slack : 1.715
 TNS   : 0.000
 
 Type  : Fast Model Removal 'p1|altpll_component|pll|clk[1]'
-Slack : 2.441
+Slack : 2.235
 TNS   : 0.000
-
-Type  : Fast Model Minimum Pulse Width 'AUDIO_DAC_ADC:u4|oAUD_BCK'
-Slack : -1.519
-TNS   : -311.648
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK_50'
 Slack : -1.380
-TNS   : -39.380
-
-Type  : Fast Model Minimum Pulse Width 'AUDIO_DAC_ADC:u4|LRCK_1X'
-Slack : -0.500
-TNS   : -158.000
+TNS   : -1691.380
 
 Type  : Fast Model Minimum Pulse Width 'I2C_AV_Config:u3|mI2C_CTRL_CLK'
 Slack : -0.500
 TNS   : -44.000
+
+Type  : Fast Model Minimum Pulse Width 'AUDIO_DAC_ADC:u4|LRCK_1X'
+Slack : -0.500
+TNS   : -13.000
+
+Type  : Fast Model Minimum Pulse Width 'AUDIO_DAC_ADC:u4|oAUD_BCK'
+Slack : -0.500
+TNS   : -4.000
 
 Type  : Fast Model Minimum Pulse Width 'CLOCK_27'
 Slack : 18.518

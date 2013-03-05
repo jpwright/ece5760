@@ -152,7 +152,7 @@ module DE2_TOP (
    assign HEX6 = 7'h7F;
    assign HEX7 = 7'h7F;
    assign LEDR = 18'h0;
-   assign LEDG = 9'h0;
+   //assign LEDG = 9'h0;
    
    //Set all GPIO to tri-state.
    assign GPIO_0 = 36'hzzzzzzzzz;
@@ -283,417 +283,354 @@ AUDIO_DAC_ADC 			u4	(	//	Audio Side
 wire reset; 
 // reset control
 assign reset = ~KEY[0];
+assign restart = ~KEY[1];
 
 /// audio stuff /////////////////////////////////////////////////
 // output to audio DAC
 wire signed [15:0] audio_outL, audio_outR ;
 // input from audio ADC
-wire signed [15:0] audio_inL, audio_inR ;
+//wire signed [15:0] audio_inL, audio_inR ;
 // filter outputs
-wire signed [15:0] filter1_out, filter2_out, filter3_out ;
+//wire signed [15:0] filter1_out, filter2_out, filter3_out ;
+wire signed[15:0] nodes_out;
 
 // make some output
 // original signal in R channel
 // filtered signal in L channel
-assign audio_outR = filter3_out ; 
-assign audio_outL = filter2_out ;
+assign audio_outR = nodes_out ; 
+assign audio_outL = nodes_out ;
 
+//green LEDs for button debugging
+assign LEDG[0] = ~KEY[0];
+assign LEDG[1] = ~KEY[0];
+assign LEDG[2] = ~KEY[1];
+assign LEDG[3] = ~KEY[1];
+assign LEDG[4] = ~KEY[2];
+assign LEDG[5] = ~KEY[2];
+assign LEDG[6] = ~KEY[3];
+assign LEDG[7] = ~KEY[3];
+
+nodes drum (.restart(restart), .clk50(CLOCK_50), .audio_out(nodes_out));
 /// Define filters //////////////////////////////////////////////
 //Filter: cutoff=0.100000 
 //Filter: cutoff=0.200000 
-IIR4_18bit_parallel filter1( 
-     .audio_out (filter1_out), 
-     .audio_in (audio_inR), 
-     .scale (3'd2), 
-     .b1 (18'h149), 
-     .b2 (18'h0), 
-     .b3 (18'h3FD6E), 
-     .b4 (18'h0), 
-     .b5 (18'h149), 
-     .a2 (18'hCD98), 
-     .a3 (18'h2F54E), 
-     .a4 (18'hA42E), 
-     .a5 (18'h3D6F5), 
-     .state_clk(AUD_CTRL_CLK), 
-     .lr_clk(AUD_DACLRCK),  
-     .reset(reset) 
-) ; //end filter 
+//IIR4_18bit_parallel filter1( 
+//     .audio_out (filter1_out), 
+//     .audio_in (audio_inR), 
+//     .scale (3'd2), 
+//     .b1 (18'h149), 
+//     .b2 (18'h0), 
+//     .b3 (18'h3FD6E), 
+//     .b4 (18'h0), 
+//     .b5 (18'h149), 
+//     .a2 (18'hCD98), 
+//     .a3 (18'h2F54E), 
+//     .a4 (18'hA42E), 
+//     .a5 (18'h3D6F5), 
+//     .state_clk(AUD_CTRL_CLK), 
+//     .lr_clk(AUD_DACLRCK),  
+//     .reset(reset) 
+//) ; //end filter 
 
 //Filter: cutoff=0.100000 
 //Filter: cutoff=0.200000 
-IIR2_18bit_parallel filter2( 
-     .audio_out (filter2_out), 
-     .audio_in (audio_inR), 
-     .scale (3'd2), 
-     .b1 (18'h8C0), 
-     .b2 (18'h0), 
-     .b3 (18'h3F740), 
-     .a2 (18'h63AE), 
-     .a3 (18'h3D181), 
-     .state_clk(AUD_CTRL_CLK), 
-     .lr_clk(AUD_DACLRCK), 
-     .reset(reset) 
-) ; //end filter 
+//IIR2_18bit_parallel filter2( 
+//     .audio_out (filter2_out), 
+//     .audio_in (audio_inR), 
+//     .scale (3'd2), 
+//     .b1 (18'h8C0), 
+//     .b2 (18'h0), 
+//     .b3 (18'h3F740), 
+//     .a2 (18'h63AE), 
+//     .a3 (18'h3D181), 
+//     .state_clk(AUD_CTRL_CLK), 
+//     .lr_clk(AUD_DACLRCK), 
+//     .reset(reset) 
+//) ; //end filter 
 
 //Filter: cutoff=0.250000 
-IIR6_18bit_parallel filter3( 
-     .audio_out (filter3_out), 
-     .audio_in (audio_inR), 
-     .scale (3'd2), 
-     .b1 (18'h11), 
-     .b2 (18'h67), 
-     .b3 (18'h102), 
-     .b4 (18'h158), 
-     .b5 (18'h102), 
-     .b6 (18'h67), 
-     .b7 (18'h11), 
-     .a2 (18'hBEA0), 
-     .a3 (18'h2F74B), 
-     .a4 (18'hD09F), 
-     .a5 (18'h39EE5), 
-     .a6 (18'h1908), 
-     .a7 (18'h3FD3A), 
-     .state_clk(AUD_CTRL_CLK), 
-     .lr_clk(AUD_DACLRCK), 
-     .reset(reset) 
-) ; //end filter 
-
-wire signed [15:0] boundary = 16'b0;
+//IIR6_18bit_parallel filter3( 
+//     .audio_out (filter3_out), 
+//     .audio_in (audio_inR), 
+//     .scale (3'd2), 
+//     .b1 (18'h11), 
+//     .b2 (18'h67), 
+//     .b3 (18'h102), 
+//     .b4 (18'h158), 
+//     .b5 (18'h102), 
+//     .b6 (18'h67), 
+//     .b7 (18'h11), 
+//     .a2 (18'hBEA0), 
+//     .a3 (18'h2F74B), 
+//     .a4 (18'hD09F), 
+//     .a5 (18'h39EE5), 
+//     .a6 (18'h1908), 
+//     .a7 (18'h3FD3A), 
+//     .state_clk(AUD_CTRL_CLK), 
+//     .lr_clk(AUD_DACLRCK), 
+//     .reset(reset) 
+//) ; //end filter 
 
 
-generate
 
-	genvar index_x;
-	genvar index_y;
-	genvar left;
-	genvar right;
-	genvar up;
-	genvar down;
-	genvar value;
-
-	for (index_x=0; index_x < 10; index_x=index_x+1)
-	begin: gen_code_label_x 
-		for (index_y=1; index_y < 10; index_y=index_y+1)
-		begin: gen_code_label_y 
-		
-//		//x node index
-//		if(index_x ==0)
-//			left = index_x + 1; 
-//			right = index_x + 1;
-//		else if (index_x == 9)
-//			left = index_x - 1;
-//			right = boundary(index_x);
-//		else
-//			left = index_x - 1;
-//			right = index_x + 1;
-//		end
-//		
-//		
-//		//y node index
-//		if(index_y ==0)
-//			up = index_y + 1; 
-//			down = index_y + 1;
-//		else if (index_x == 9)
-//			up = boundary(index_y);
-//			down = index_y - 1;
-//		else
-//			up = index_y + 1;
-//			down = index_y - 1;
-//		end
-		
-		node A_inst(index_x, index_x+1, index_y, index_y, 2'b1);
-		
-		end
-	end
-
-endgenerate
 
 
 
 endmodule
 
-module node(left, right, up, down, set, value);
 
-	output wire signed[15:0] value;
-
-	input wire signed[15:0] left;
-	input wire signed[15:0] right;
-	input wire signed[15:0] up;
-	input wire signed[15:0] down;
-	input wire signed[15:0] prev;
-	input wire signed[15:0] prev2;
-	
-	reg[15:0] prev_reg;
-	reg[15:0] prev2_reg;
-	
-
-	
-	always@(set)
-	
-	end
-	
-	prev = prev_reg;
-	prev2 = 	prev2_reg;
-	
-	//Math Here
-	assign value <= ((((left + right + up + down - (prev<<<2))>>>2) + (prev<<<1) - (prev2>>>4))<<<4);
-	
-	prev2_reg = prev;
-	prev_reg = value;
-	
-endmodule
 
 ///////////////////////////////////////////////////////////////////
 /// Second order IIR filter ///////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
-module IIR2_18bit_parallel (audio_out, audio_in, 
-			scale, 
-			b1, b2, b3, 
-			a2, a3, 
-			state_clk, lr_clk, reset) ;
-// The filter is a "Direct Form II Transposed"
-// 
-//    a(1)*y(n) = b(1)*x(n) + b(2)*x(n-1) + ... + b(nb+1)*x(n-nb)
-//                          - a(2)*y(n-1) - ... - a(na+1)*y(n-na)
-// 
-//    If a(1) is not equal to 1, FILTER normalizes the filter
-//    coefficients by a(1). 
-// Structure:
+//module IIR2_18bit_parallel (audio_out, audio_in, 
+//			scale, 
+//			b1, b2, b3, 
+//			a2, a3, 
+//			state_clk, lr_clk, reset) ;
+//// The filter is a "Direct Form II Transposed"
+//// 
+////    a(1)*y(n) = b(1)*x(n) + b(2)*x(n-1) + ... + b(nb+1)*x(n-nb)
+////                          - a(2)*y(n-1) - ... - a(na+1)*y(n-na)
+//// 
+////    If a(1) is not equal to 1, FILTER normalizes the filter
+////    coefficients by a(1). 
+//// Structure:
+////
+////    in >____________>_________________>_______
+////            |                |                |
+////           b3                b2               b1
+////            |                |                |
+////            + -> reg:f1_n2-- + -> reg:f1_n1-> + -> scale --> f1_n0 --> out  
+////            |                |                                 |
+////           a3                a2                                | 
+////            |__________<_____|_________________________<_______| 
+////                                
+////
+//// one audio sample, 16 bit, 2's complement
+//output wire signed [15:0] audio_out ;
+//// one audio sample, 16 bit, 2's complement
+//input wire signed [15:0] audio_in ;
+//// shift factor for output
+//input wire [2:0] scale ;
+//// filter coefficients
+//input wire signed [17:0] b1, b2, b3, a2, a3 ;
+//input wire state_clk, lr_clk, reset ;
 //
-//    in >____________>_________________>_______
-//            |                |                |
-//           b3                b2               b1
-//            |                |                |
-//            + -> reg:f1_n2-- + -> reg:f1_n1-> + -> scale --> f1_n0 --> out  
-//            |                |                                 |
-//           a3                a2                                | 
-//            |__________<_____|_________________________<_______| 
-//                                
+///// filter vars //////////////////////////////////////////////////
+//wire signed [17:0] b1_in, b2_in, b3_in, a2_out, a3_out ;
 //
-// one audio sample, 16 bit, 2's complement
-output wire signed [15:0] audio_out ;
-// one audio sample, 16 bit, 2's complement
-input wire signed [15:0] audio_in ;
-// shift factor for output
-input wire [2:0] scale ;
-// filter coefficients
-input wire signed [17:0] b1, b2, b3, a2, a3 ;
-input wire state_clk, lr_clk, reset ;
-
-/// filter vars //////////////////////////////////////////////////
-wire signed [17:0] b1_in, b2_in, b3_in, a2_out, a3_out ;
-
-// history pipeline regs
-reg signed [17:0] f1_n1, f1_n2 ; 
-// history pipeline inputs
-wire signed [17:0] f1_n1_input, f1_n2_input, f1_n0 ; 
-
-// convert input to 18-bits and mult by filter coeff
-signed_mult b1in (b1_in, b1, {audio_in, 2'b0});
-signed_mult b2in (b2_in, b2, {audio_in, 2'b0});
-signed_mult b3in (b3_in, b3, {audio_in, 2'b0});
-signed_mult a2out (a2_out, a2, f1_n0);
-signed_mult a3out (a3_out, a3, f1_n0);
-
-// add operations
-assign f1_n1_input =  b2_in + f1_n2 + a2_out ;
-assign f1_n2_input =  b3_in + a3_out ;
-
-// scale the output and turncate for audio codec
-assign f1_n0 = (f1_n1 + b1_in) << scale ;
-assign audio_out = f1_n0[17:2] ;
+//// history pipeline regs
+//reg signed [17:0] f1_n1, f1_n2 ; 
+//// history pipeline inputs
+//wire signed [17:0] f1_n1_input, f1_n2_input, f1_n0 ; 
+//
+//// convert input to 18-bits and mult by filter coeff
+//signed_mult b1in (b1_in, b1, {audio_in, 2'b0});
+//signed_mult b2in (b2_in, b2, {audio_in, 2'b0});
+//signed_mult b3in (b3_in, b3, {audio_in, 2'b0});
+//signed_mult a2out (a2_out, a2, f1_n0);
+//signed_mult a3out (a3_out, a3, f1_n0);
+//
+//// add operations
+//assign f1_n1_input =  b2_in + f1_n2 + a2_out ;
+//assign f1_n2_input =  b3_in + a3_out ;
+//
+//// scale the output and turncate for audio codec
+//assign f1_n0 = (f1_n1 + b1_in) << scale ;
+//assign audio_out = f1_n0[17:2] ;
 
 ///////////////////////////////////////////////////////////////////
 
 //Run the filter state machine at audio sample rate
 //audio cycle
-always @ (posedge lr_clk) 
-begin
-	if (reset)
-	begin
-		f1_n1 <= 0;
-		f1_n2 <= 0;	
-	end
-
-	else 
-	begin
-		f1_n1 <= f1_n1_input ;
-		f1_n2 <= f1_n2_input ;		
-	end
-end	
-endmodule
+//always @ (posedge lr_clk) 
+//begin
+//	if (reset)
+//	begin
+//		f1_n1 <= 0;
+//		f1_n2 <= 0;	
+//	end
+//
+//	else 
+//	begin
+//		f1_n1 <= f1_n1_input ;
+//		f1_n2 <= f1_n2_input ;		
+//	end
+//end	
+//endmodule
 
 ///////////////////////////////////////////////////////////////////
 /// Fourth order IIR filter ///////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
-module IIR4_18bit_parallel (audio_out, audio_in, 
-			scale, 
-			b1, b2, b3, b4, b5, 
-			a2, a3, a4, a5, 
-			state_clk, lr_clk, reset) ;
-// The filter is a "Direct Form II Transposed"
-// 
-//    a(1)*y(n) = b(1)*x(n) + b(2)*x(n-1) + ... + b(nb+1)*x(n-nb)
-//                          - a(2)*y(n-1) - ... - a(na+1)*y(n-na)
-// 
-//    If a(1) is not equal to 1, FILTER normalizes the filter
-//    coefficients by a(1). 
+//module IIR4_18bit_parallel (audio_out, audio_in, 
+//			scale, 
+//			b1, b2, b3, b4, b5, 
+//			a2, a3, a4, a5, 
+//			state_clk, lr_clk, reset) ;
+//// The filter is a "Direct Form II Transposed"
+//// 
+////    a(1)*y(n) = b(1)*x(n) + b(2)*x(n-1) + ... + b(nb+1)*x(n-nb)
+////                          - a(2)*y(n-1) - ... - a(na+1)*y(n-na)
+//// 
+////    If a(1) is not equal to 1, FILTER normalizes the filter
+////    coefficients by a(1). 
+////
+//// one audio sample, 16 bit, 2's complement
+//output wire signed [15:0] audio_out ;
+//// one audio sample, 16 bit, 2's complement
+//input wire signed [15:0] audio_in ;
+//// shift factor for output
+//input wire [2:0] scale ;
+//// filter coefficients
+//input wire signed [17:0] b1, b2, b3, b4, b5, a2, a3, a4, a5 ;
+//input wire state_clk, lr_clk, reset ;
 //
-// one audio sample, 16 bit, 2's complement
-output wire signed [15:0] audio_out ;
-// one audio sample, 16 bit, 2's complement
-input wire signed [15:0] audio_in ;
-// shift factor for output
-input wire [2:0] scale ;
-// filter coefficients
-input wire signed [17:0] b1, b2, b3, b4, b5, a2, a3, a4, a5 ;
-input wire state_clk, lr_clk, reset ;
-
-/// filter vars //////////////////////////////////////////////////
-wire signed [17:0] b1_in, b2_in, b3_in, b4_in, b5_in ;
-wire signed [17:0] a2_out, a3_out, a4_out, a5_out ;
-
-// history pipeline regs
-reg signed [17:0] f1_n1, f1_n2, f1_n3, f1_n4 ; 
-// history pipeline inputs
-wire signed [17:0] f1_n1_input, f1_n2_input, f1_n3_input, f1_n4_input, f1_n0 ; 
-
-// convert input to 18-bits and mult by filter coeff
-signed_mult b1in (b1_in, b1, {audio_in, 2'b0});
-signed_mult b2in (b2_in, b2, {audio_in, 2'b0});
-signed_mult b3in (b3_in, b3, {audio_in, 2'b0});
-signed_mult b4in (b4_in, b4, {audio_in, 2'b0});
-signed_mult b5in (b5_in, b5, {audio_in, 2'b0});
-signed_mult a2out (a2_out, a2, f1_n0);
-signed_mult a3out (a3_out, a3, f1_n0);
-signed_mult a4out (a4_out, a4, f1_n0);
-signed_mult a5out (a5_out, a5, f1_n0);
-
-// add operations
-assign f1_n1_input = b2_in + f1_n2 + a2_out ;
-assign f1_n2_input = b3_in + f1_n3 + a3_out ;
-assign f1_n3_input = b4_in + f1_n4 + a4_out ;
-assign f1_n4_input = b5_in + a5_out ;
-
-// scale the output and turncate for audio codec
-assign f1_n0 = (f1_n1 + b1_in) << scale ;
-assign audio_out = f1_n0[17:2] ;
+///// filter vars //////////////////////////////////////////////////
+//wire signed [17:0] b1_in, b2_in, b3_in, b4_in, b5_in ;
+//wire signed [17:0] a2_out, a3_out, a4_out, a5_out ;
+//
+//// history pipeline regs
+//reg signed [17:0] f1_n1, f1_n2, f1_n3, f1_n4 ; 
+//// history pipeline inputs
+//wire signed [17:0] f1_n1_input, f1_n2_input, f1_n3_input, f1_n4_input, f1_n0 ; 
+//
+//// convert input to 18-bits and mult by filter coeff
+//signed_mult b1in (b1_in, b1, {audio_in, 2'b0});
+//signed_mult b2in (b2_in, b2, {audio_in, 2'b0});
+//signed_mult b3in (b3_in, b3, {audio_in, 2'b0});
+//signed_mult b4in (b4_in, b4, {audio_in, 2'b0});
+//signed_mult b5in (b5_in, b5, {audio_in, 2'b0});
+//signed_mult a2out (a2_out, a2, f1_n0);
+//signed_mult a3out (a3_out, a3, f1_n0);
+//signed_mult a4out (a4_out, a4, f1_n0);
+//signed_mult a5out (a5_out, a5, f1_n0);
+//
+//// add operations
+//assign f1_n1_input = b2_in + f1_n2 + a2_out ;
+//assign f1_n2_input = b3_in + f1_n3 + a3_out ;
+//assign f1_n3_input = b4_in + f1_n4 + a4_out ;
+//assign f1_n4_input = b5_in + a5_out ;
+//
+//// scale the output and turncate for audio codec
+//assign f1_n0 = (f1_n1 + b1_in) << scale ;
+//assign audio_out = f1_n0[17:2] ;
 
 ///////////////////////////////////////////////////////////////////
 
 //Run the filter state machine at audio sample rate
 //audio cycle
-always @ (posedge lr_clk) 
-begin
-	if (reset)
-	begin
-		f1_n1 <= 0;
-		f1_n2 <= 0;	
-		f1_n3 <= 0;
-		f1_n4 <= 0;	
-	end
-
-	else 
-	begin
-		f1_n1 <= f1_n1_input ;
-		f1_n2 <= f1_n2_input ;	
-		f1_n3 <= f1_n3_input ;
-		f1_n4 <= f1_n4_input ;		
-	end
-end	
-endmodule
+//always @ (posedge lr_clk) 
+//begin
+//	if (reset)
+//	begin
+//		f1_n1 <= 0;
+//		f1_n2 <= 0;	
+//		f1_n3 <= 0;
+//		f1_n4 <= 0;	
+//	end
+//
+//	else 
+//	begin
+//		f1_n1 <= f1_n1_input ;
+//		f1_n2 <= f1_n2_input ;	
+//		f1_n3 <= f1_n3_input ;
+//		f1_n4 <= f1_n4_input ;		
+//	end
+//end	
+//endmodule
 
 
 ///////////////////////////////////////////////////////////////////
 /// Sixth order IIR filter ///////////////////////////////////////
 ///////////////////////////////////////////////////////////////////
-module IIR6_18bit_parallel (audio_out, audio_in, 
-			scale, 
-			b1, b2, b3, b4, b5, b6, b7,
-			a2, a3, a4, a5, a6, a7,
-			state_clk, lr_clk, reset) ;
-// The filter is a "Direct Form II Transposed"
-// 
-//    a(1)*y(n) = b(1)*x(n) + b(2)*x(n-1) + ... + b(nb+1)*x(n-nb)
-//                          - a(2)*y(n-1) - ... - a(na+1)*y(n-na)
-// 
-//    If a(1) is not equal to 1, FILTER normalizes the filter
-//    coefficients by a(1). 
+//module IIR6_18bit_parallel (audio_out, audio_in, 
+//			scale, 
+//			b1, b2, b3, b4, b5, b6, b7,
+//			a2, a3, a4, a5, a6, a7,
+//			state_clk, lr_clk, reset) ;
+//// The filter is a "Direct Form II Transposed"
+//// 
+////    a(1)*y(n) = b(1)*x(n) + b(2)*x(n-1) + ... + b(nb+1)*x(n-nb)
+////                          - a(2)*y(n-1) - ... - a(na+1)*y(n-na)
+//// 
+////    If a(1) is not equal to 1, FILTER normalizes the filter
+////    coefficients by a(1). 
+////
+//// one audio sample, 16 bit, 2's complement
+//output wire signed [15:0] audio_out ;
+//// one audio sample, 16 bit, 2's complement
+//input wire signed [15:0] audio_in ;
+//// shift factor for output
+//input wire [2:0] scale ;
+//// filter coefficients
+//input wire signed [17:0] b1, b2, b3, b4, b5, b6, b7, a2, a3, a4, a5, a6, a7 ;
+//input wire state_clk, lr_clk, reset ;
 //
-// one audio sample, 16 bit, 2's complement
-output wire signed [15:0] audio_out ;
-// one audio sample, 16 bit, 2's complement
-input wire signed [15:0] audio_in ;
-// shift factor for output
-input wire [2:0] scale ;
-// filter coefficients
-input wire signed [17:0] b1, b2, b3, b4, b5, b6, b7, a2, a3, a4, a5, a6, a7 ;
-input wire state_clk, lr_clk, reset ;
-
-/// filter vars //////////////////////////////////////////////////
-wire signed [17:0] b1_in, b2_in, b3_in, b4_in, b5_in, b6_in, b7_in ;
-wire signed [17:0] a2_out, a3_out, a4_out, a5_out, a6_out, a7_out ;
-
-// history pipeline regs
-reg signed [17:0] f1_n1, f1_n2, f1_n3, f1_n4, f1_n5, f1_n6 ; 
-// history pipeline inputs
-wire signed [17:0] f1_n1_input, f1_n2_input, f1_n3_input, 
-					f1_n4_input, f1_n5_input, f1_n6_input, f1_n0 ; 
-
-// convert input to 18-bits and mult by filter coeff
-signed_mult b1in (b1_in, b1, {audio_in, 2'b0});
-signed_mult b2in (b2_in, b2, {audio_in, 2'b0});
-signed_mult b3in (b3_in, b3, {audio_in, 2'b0});
-signed_mult b4in (b4_in, b4, {audio_in, 2'b0});
-signed_mult b5in (b5_in, b5, {audio_in, 2'b0});
-signed_mult b6in (b6_in, b6, {audio_in, 2'b0});
-signed_mult b7in (b7_in, b7, {audio_in, 2'b0});
-signed_mult a2out (a2_out, a2, f1_n0);
-signed_mult a3out (a3_out, a3, f1_n0);
-signed_mult a4out (a4_out, a4, f1_n0);
-signed_mult a5out (a5_out, a5, f1_n0);
-signed_mult a6out (a6_out, a6, f1_n0);
-signed_mult a7out (a7_out, a7, f1_n0);
-
-// add operations
-assign f1_n1_input = b2_in + f1_n2 + a2_out ;
-assign f1_n2_input = b3_in + f1_n3 + a3_out ;
-assign f1_n3_input = b4_in + f1_n4 + a4_out ;
-assign f1_n4_input = b5_in + f1_n5 + a5_out ;
-assign f1_n5_input = b6_in + f1_n6 + a6_out ;
-assign f1_n6_input = b7_in + a7_out ;
-
-// scale the output and turncate for audio codec
-assign f1_n0 = (f1_n1 + b1_in) << scale ;
-assign audio_out = f1_n0[17:2] ;
+///// filter vars //////////////////////////////////////////////////
+//wire signed [17:0] b1_in, b2_in, b3_in, b4_in, b5_in, b6_in, b7_in ;
+//wire signed [17:0] a2_out, a3_out, a4_out, a5_out, a6_out, a7_out ;
+//
+//// history pipeline regs
+//reg signed [17:0] f1_n1, f1_n2, f1_n3, f1_n4, f1_n5, f1_n6 ; 
+//// history pipeline inputs
+//wire signed [17:0] f1_n1_input, f1_n2_input, f1_n3_input, 
+//					f1_n4_input, f1_n5_input, f1_n6_input, f1_n0 ; 
+//
+//// convert input to 18-bits and mult by filter coeff
+//signed_mult b1in (b1_in, b1, {audio_in, 2'b0});
+//signed_mult b2in (b2_in, b2, {audio_in, 2'b0});
+//signed_mult b3in (b3_in, b3, {audio_in, 2'b0});
+//signed_mult b4in (b4_in, b4, {audio_in, 2'b0});
+//signed_mult b5in (b5_in, b5, {audio_in, 2'b0});
+//signed_mult b6in (b6_in, b6, {audio_in, 2'b0});
+//signed_mult b7in (b7_in, b7, {audio_in, 2'b0});
+//signed_mult a2out (a2_out, a2, f1_n0);
+//signed_mult a3out (a3_out, a3, f1_n0);
+//signed_mult a4out (a4_out, a4, f1_n0);
+//signed_mult a5out (a5_out, a5, f1_n0);
+//signed_mult a6out (a6_out, a6, f1_n0);
+//signed_mult a7out (a7_out, a7, f1_n0);
+//
+//// add operations
+//assign f1_n1_input = b2_in + f1_n2 + a2_out ;
+//assign f1_n2_input = b3_in + f1_n3 + a3_out ;
+//assign f1_n3_input = b4_in + f1_n4 + a4_out ;
+//assign f1_n4_input = b5_in + f1_n5 + a5_out ;
+//assign f1_n5_input = b6_in + f1_n6 + a6_out ;
+//assign f1_n6_input = b7_in + a7_out ;
+//
+//// scale the output and turncate for audio codec
+//assign f1_n0 = (f1_n1 + b1_in) << scale ;
+//assign audio_out = f1_n0[17:2] ;
 
 ///////////////////////////////////////////////////////////////////
 
 //Run the filter state machine at audio sample rate
 //audio cycle
-always @ (posedge lr_clk) 
-begin
-	if (reset)
-	begin
-		f1_n1 <= 0;
-		f1_n2 <= 0;	
-		f1_n3 <= 0;
-		f1_n4 <= 0;
-		f1_n5 <= 0;
-		f1_n6 <= 0;	
-	end
-
-	else 
-	begin
-		f1_n1 <= f1_n1_input ;
-		f1_n2 <= f1_n2_input ;	
-		f1_n3 <= f1_n3_input ;
-		f1_n4 <= f1_n4_input ;
-		f1_n5 <= f1_n5_input ;
-		f1_n6 <= f1_n6_input ;		
-	end
-end	
-endmodule
+//always @ (posedge lr_clk) 
+//begin
+//	if (reset)
+//	begin
+//		f1_n1 <= 0;
+//		f1_n2 <= 0;	
+//		f1_n3 <= 0;
+//		f1_n4 <= 0;
+//		f1_n5 <= 0;
+//		f1_n6 <= 0;	
+//	end
+//
+//	else 
+//	begin
+//		f1_n1 <= f1_n1_input ;
+//		f1_n2 <= f1_n2_input ;	
+//		f1_n3 <= f1_n3_input ;
+//		f1_n4 <= f1_n4_input ;
+//		f1_n5 <= f1_n5_input ;
+//		f1_n6 <= f1_n6_input ;		
+//	end
+//end	
+//endmodule
 ///////////////////////////////////////////////////
 //// signed mult of 2.16 format 2'comp ////////////
 ///////////////////////////////////////////////////
@@ -727,21 +664,21 @@ endmodule
 // 9			512 -- 10.5 mSec (useful for music/voice)
 // 10			1024 -- 21 mSec (useful for music/voice)
 // 11			2048 -- 42 mSec
-module average (out, in, dk_const, clk);
-
-	output reg signed [15:0] out ;
-	input wire signed [15:0] in ;
-	input wire [3:0] dk_const ;
-	input wire clk;
-	
-	wire signed  [17:0] new_out ;
-	//first order lowpass of absolute value of input
-	assign new_out = out - (out>>>dk_const) + ((in[15]?-in:in)>>>dk_const) ;
-	always @(posedge clk)
-	begin
-		 out <= new_out ;
-	end
-endmodule
+//module average (out, in, dk_const, clk);
+//
+//	output reg signed [15:0] out ;
+//	input wire signed [15:0] in ;
+//	input wire [3:0] dk_const ;
+//	input wire clk;
+//	
+//	wire signed  [17:0] new_out ;
+//	//first order lowpass of absolute value of input
+//	assign new_out = out - (out>>>dk_const) + ((in[15]?-in:in)>>>dk_const) ;
+//	always @(posedge clk)
+//	begin
+//		 out <= new_out ;
+//	end
+//endmodule
 //////////////////////////////////////////////////
 
 /* matlab program to generate the filter header 
