@@ -1,0 +1,31 @@
+# Reading C:/altera/11.0/modelsim_ae/tcl/vsim/pref.tcl 
+# do DE2_TOP_run_msim_gate_verilog.do 
+# if {[file exists gate_work]} {
+# 	vdel -lib gate_work -all
+# }
+# vlib gate_work
+# vmap work gate_work
+# Copying C:\altera\11.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\11.0\modelsim_ae\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+. {DE2_TOP.vo}
+# Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DE2_TOP
+# 
+# Top level modules:
+# 	DE2_TOP
+# 
+# vlog -vlog01compat -work work +incdir+C:/ece5760/lab3 {C:/ece5760/lab3/Audio_Filter_18bit_parallel.v}
+# Model Technology ModelSim ALTERA vlog 6.6d Compiler 2010.11 Nov  2 2010
+# -- Compiling module DE2_TOP
+# ** Error: C:/ece5760/lab3/Audio_Filter_18bit_parallel.v(299): 'audio_outL' already declared in this scope (DE2_TOP).
+# ** Error: C:/ece5760/lab3/Audio_Filter_18bit_parallel.v(299): 'audio_outR' already declared in this scope (DE2_TOP).
+# -- Compiling module node
+# -- Compiling module signed_mult
+# ** Error: C:/altera/11.0/modelsim_ae/win32aloem/vlog failed.
+# Error in macro ./DE2_TOP_run_msim_gate_verilog.do line 10
+# C:/altera/11.0/modelsim_ae/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+C:/ece5760/lab3 {C:/ece5760/lab3/Audio_Filter_18bit_parallel.v}"

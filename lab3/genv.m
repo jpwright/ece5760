@@ -1,5 +1,5 @@
 quarterGridNodes1D = 4; %length of one dimension of the quarter grid
-fileName = 'nodes.v';
+fileName = 'nodes_old.v';
 format long
 fileID = fopen(fileName, 'wt'); 
 
@@ -122,9 +122,9 @@ for x = 0:quarterGridNodes1D-1
         
         fprintf(fileID, strcat('\t\t\t\tvalue_', int2str(x), '_', int2str(y), ' = '));
         fprintf(fileID, '(');
-        for q = 4:4
+        for q = 1:4
             fprintf(fileID, strcat('(((', left, '+', right, '+', up, '+', down, '- (prev_', int2str(x), '_', int2str(y), '<<<2))>>>2) + (prev_', int2str(x), '_', int2str(y), '<<<1) - '));
-            for k=4:4
+            for k=1:4
                 fprintf(fileID, strcat('(prev2_', int2str(x), '_', int2str(y), '>>>', int2str(k), ')'));
                 if (k<4)
                     fprintf(fileID, ' + ');
@@ -150,33 +150,3 @@ fprintf(fileID, '\tassign audio_out = value_0_0[15:0];\n');
 fprintf(fileID,'endmodule\n');
 fclose(fileID);
 
-% module node(left, right, up, down, set, value);
-% 
-% 	output wire signed[15:0] value;
-% 
-% 	input wire signed[15:0] left;
-% 	input wire signed[15:0] right;
-% 	input wire signed[15:0] up;
-% 	input wire signed[15:0] down;
-% 	input wire signed[15:0] prev;
-% 	input wire signed[15:0] prev2;
-% 	
-% 	reg[15:0] prev_reg;
-% 	reg[15:0] prev2_reg;
-% 	
-% 
-% 	
-% 	always@(set)
-% 	
-% 	end
-% 	
-% 	prev = prev_reg;
-% 	prev2 = prev2_reg;
-% 	
-% 	//Math Here
-% 	assign value <= ((((left + right + up + down - (prev<<<2))>>>2) + (prev<<<1) - (prev2>>>4))<<<4);
-% 	
-% 	prev2_reg = prev;
-% 	prev_reg = value;
-% 	
-% endmodule

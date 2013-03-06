@@ -1,344 +1,267 @@
 module nodes (restart, clk50, audio_out);
 	output wire signed [15:0] audio_out;
-	input wire clk50, restart;
+	input clk50, restart;
 
 
 
-	reg signed[15:0] value_0_0;
-	reg signed[15:0] prev_0_0;
-	reg signed[15:0] prev2_0_0;
-	always@(posedge clk50)
+	wire signed[17:0] vwire_0_0;
+	reg signed[17:0] left_0_0;
+	reg signed[17:0] right_0_0;
+	reg signed[17:0] up_0_0;
+	reg signed[17:0] down_0_0;
+	node n0_0(.left(left_1_0), .right(right_0_0), .up(up_0_0), .down(down_0_1), .clk(clk50), .reset(restart), .resetval(18'b000010100010111110), .value(vwire_0_0));
+
+	wire signed[17:0] vwire_0_1;
+	reg signed[17:0] left_0_1;
+	reg signed[17:0] right_0_1;
+	reg signed[17:0] up_0_1;
+	reg signed[17:0] down_0_1;
+	node n0_1(.left(left_1_1), .right(right_0_1), .up(up_0_1), .down(down_0_1), .clk(clk50), .reset(restart), .resetval(18'b000001100010110110), .value(vwire_0_1));
+
+	wire signed[17:0] vwire_0_2;
+	reg signed[17:0] left_0_2;
+	reg signed[17:0] right_0_2;
+	reg signed[17:0] up_0_2;
+	reg signed[17:0] down_0_2;
+	node n0_2(.left(left_1_2), .right(right_0_2), .up(up_0_2), .down(down_0_2), .clk(clk50), .reset(restart), .resetval(18'b000000010110000100), .value(vwire_0_2));
+
+	wire signed[17:0] vwire_0_3;
+	reg signed[17:0] left_0_3;
+	reg signed[17:0] right_0_3;
+	reg signed[17:0] up_0_3;
+	reg signed[17:0] down_0_3;
+	node n0_3(.left(left_1_3), .right(right_0_3), .up(up_0_3), .down(down_0_3), .clk(clk50), .reset(restart), .resetval(18'b000000000001110100), .value(vwire_0_3));
+
+	wire signed[17:0] vwire_0_4;
+	reg signed[17:0] left_0_4;
+	reg signed[17:0] right_0_4;
+	reg signed[17:0] up_0_4;
+	reg signed[17:0] down_0_4;
+	node n0_4(.left(left_1_4), .right(right_0_4), .up(18'b0), .down(down_0_4), .clk(clk50), .reset(restart), .resetval(18'b00), .value(vwire_0_4));
+
+	wire signed[17:0] vwire_1_0;
+	reg signed[17:0] left_1_0;
+	reg signed[17:0] right_1_0;
+	reg signed[17:0] up_1_0;
+	reg signed[17:0] down_1_0;
+	node n1_0(.left(left_1_0), .right(right_1_0), .up(up_1_0), .down(down_1_1), .clk(clk50), .reset(restart), .resetval(18'b000001100010110110), .value(vwire_1_0));
+
+	wire signed[17:0] vwire_1_1;
+	reg signed[17:0] left_1_1;
+	reg signed[17:0] right_1_1;
+	reg signed[17:0] up_1_1;
+	reg signed[17:0] down_1_1;
+	node n1_1(.left(left_1_1), .right(right_1_1), .up(up_1_1), .down(down_1_1), .clk(clk50), .reset(restart), .resetval(18'b000000111011111101), .value(vwire_1_1));
+
+	wire signed[17:0] vwire_1_2;
+	reg signed[17:0] left_1_2;
+	reg signed[17:0] right_1_2;
+	reg signed[17:0] up_1_2;
+	reg signed[17:0] down_1_2;
+	node n1_2(.left(left_1_2), .right(right_1_2), .up(up_1_2), .down(down_1_2), .clk(clk50), .reset(restart), .resetval(18'b000000001101011000), .value(vwire_1_2));
+
+	wire signed[17:0] vwire_1_3;
+	reg signed[17:0] left_1_3;
+	reg signed[17:0] right_1_3;
+	reg signed[17:0] up_1_3;
+	reg signed[17:0] down_1_3;
+	node n1_3(.left(left_1_3), .right(right_1_3), .up(up_1_3), .down(down_1_3), .clk(clk50), .reset(restart), .resetval(18'b000000000001000110), .value(vwire_1_3));
+
+	wire signed[17:0] vwire_1_4;
+	reg signed[17:0] left_1_4;
+	reg signed[17:0] right_1_4;
+	reg signed[17:0] up_1_4;
+	reg signed[17:0] down_1_4;
+	node n1_4(.left(left_1_4), .right(right_1_4), .up(18'b0), .down(down_1_4), .clk(clk50), .reset(restart), .resetval(18'b00), .value(vwire_1_4));
+
+	wire signed[17:0] vwire_2_0;
+	reg signed[17:0] left_2_0;
+	reg signed[17:0] right_2_0;
+	reg signed[17:0] up_2_0;
+	reg signed[17:0] down_2_0;
+	node n2_0(.left(left_2_0), .right(right_2_0), .up(up_2_0), .down(down_2_1), .clk(clk50), .reset(restart), .resetval(18'b000000010110000100), .value(vwire_2_0));
+
+	wire signed[17:0] vwire_2_1;
+	reg signed[17:0] left_2_1;
+	reg signed[17:0] right_2_1;
+	reg signed[17:0] up_2_1;
+	reg signed[17:0] down_2_1;
+	node n2_1(.left(left_2_1), .right(right_2_1), .up(up_2_1), .down(down_2_1), .clk(clk50), .reset(restart), .resetval(18'b000000001101011000), .value(vwire_2_1));
+
+	wire signed[17:0] vwire_2_2;
+	reg signed[17:0] left_2_2;
+	reg signed[17:0] right_2_2;
+	reg signed[17:0] up_2_2;
+	reg signed[17:0] down_2_2;
+	node n2_2(.left(left_2_2), .right(right_2_2), .up(up_2_2), .down(down_2_2), .clk(clk50), .reset(restart), .resetval(18'b000000000010111111), .value(vwire_2_2));
+
+	wire signed[17:0] vwire_2_3;
+	reg signed[17:0] left_2_3;
+	reg signed[17:0] right_2_3;
+	reg signed[17:0] up_2_3;
+	reg signed[17:0] down_2_3;
+	node n2_3(.left(left_2_3), .right(right_2_3), .up(up_2_3), .down(down_2_3), .clk(clk50), .reset(restart), .resetval(18'b000000000000010000), .value(vwire_2_3));
+
+	wire signed[17:0] vwire_2_4;
+	reg signed[17:0] left_2_4;
+	reg signed[17:0] right_2_4;
+	reg signed[17:0] up_2_4;
+	reg signed[17:0] down_2_4;
+	node n2_4(.left(left_2_4), .right(right_2_4), .up(18'b0), .down(down_2_4), .clk(clk50), .reset(restart), .resetval(18'b00), .value(vwire_2_4));
+
+	wire signed[17:0] vwire_3_0;
+	reg signed[17:0] left_3_0;
+	reg signed[17:0] right_3_0;
+	reg signed[17:0] up_3_0;
+	reg signed[17:0] down_3_0;
+	node n3_0(.left(left_3_0), .right(right_3_0), .up(up_3_0), .down(down_3_1), .clk(clk50), .reset(restart), .resetval(18'b000000000001110100), .value(vwire_3_0));
+
+	wire signed[17:0] vwire_3_1;
+	reg signed[17:0] left_3_1;
+	reg signed[17:0] right_3_1;
+	reg signed[17:0] up_3_1;
+	reg signed[17:0] down_3_1;
+	node n3_1(.left(left_3_1), .right(right_3_1), .up(up_3_1), .down(down_3_1), .clk(clk50), .reset(restart), .resetval(18'b000000000001000110), .value(vwire_3_1));
+
+	wire signed[17:0] vwire_3_2;
+	reg signed[17:0] left_3_2;
+	reg signed[17:0] right_3_2;
+	reg signed[17:0] up_3_2;
+	reg signed[17:0] down_3_2;
+	node n3_2(.left(left_3_2), .right(right_3_2), .up(up_3_2), .down(down_3_2), .clk(clk50), .reset(restart), .resetval(18'b000000000000010000), .value(vwire_3_2));
+
+	wire signed[17:0] vwire_3_3;
+	reg signed[17:0] left_3_3;
+	reg signed[17:0] right_3_3;
+	reg signed[17:0] up_3_3;
+	reg signed[17:0] down_3_3;
+	node n3_3(.left(left_3_3), .right(right_3_3), .up(up_3_3), .down(down_3_3), .clk(clk50), .reset(restart), .resetval(18'b000000000000000000), .value(vwire_3_3));
+
+	wire signed[17:0] vwire_3_4;
+	reg signed[17:0] left_3_4;
+	reg signed[17:0] right_3_4;
+	reg signed[17:0] up_3_4;
+	reg signed[17:0] down_3_4;
+	node n3_4(.left(left_3_4), .right(right_3_4), .up(18'b0), .down(down_3_4), .clk(clk50), .reset(restart), .resetval(18'b00), .value(vwire_3_4));
+
+	wire signed[17:0] vwire_4_0;
+	reg signed[17:0] left_4_0;
+	reg signed[17:0] right_4_0;
+	reg signed[17:0] up_4_0;
+	reg signed[17:0] down_4_0;
+	node n4_0(.left(left_4_0), .right(18'b0), .up(up_4_0), .down(down_4_1), .clk(clk50), .reset(restart), .resetval(18'b00), .value(vwire_4_0));
+
+	wire signed[17:0] vwire_4_1;
+	reg signed[17:0] left_4_1;
+	reg signed[17:0] right_4_1;
+	reg signed[17:0] up_4_1;
+	reg signed[17:0] down_4_1;
+	node n4_1(.left(left_4_1), .right(18'b0), .up(up_4_1), .down(down_4_1), .clk(clk50), .reset(restart), .resetval(18'b00), .value(vwire_4_1));
+
+	wire signed[17:0] vwire_4_2;
+	reg signed[17:0] left_4_2;
+	reg signed[17:0] right_4_2;
+	reg signed[17:0] up_4_2;
+	reg signed[17:0] down_4_2;
+	node n4_2(.left(left_4_2), .right(18'b0), .up(up_4_2), .down(down_4_2), .clk(clk50), .reset(restart), .resetval(18'b00), .value(vwire_4_2));
+
+	wire signed[17:0] vwire_4_3;
+	reg signed[17:0] left_4_3;
+	reg signed[17:0] right_4_3;
+	reg signed[17:0] up_4_3;
+	reg signed[17:0] down_4_3;
+	node n4_3(.left(left_4_3), .right(18'b0), .up(up_4_3), .down(down_4_3), .clk(clk50), .reset(restart), .resetval(18'b00), .value(vwire_4_3));
+
+	wire signed[17:0] vwire_4_4;
+	reg signed[17:0] left_4_4;
+	reg signed[17:0] right_4_4;
+	reg signed[17:0] up_4_4;
+	reg signed[17:0] down_4_4;
+	node n4_4(.left(left_4_4), .right(18'b0), .up(18'b0), .down(down_4_4), .clk(clk50), .reset(restart), .resetval(18'b00), .value(vwire_4_4));
+
+	always @ (negedge clk50)
 	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_0_0 = 16'b0101000101111101;
-				prev2_0_0 = 0;
-				prev_0_0 = 0;
-			end
-			1'b0:
-			begin
-				value_0_0 =((((value_1_0+value_1_0+value_0_1+value_0_1- (prev_0_0<<<2))>>>2) + (prev_0_0<<<1) -(prev2_0_0>>>4))>>>4);
-				prev2_0_0 = prev_0_0;
-				prev_0_0 = value_0_0;
-			end
-		endcase
+		left_1_0 <= vwire_0_0;
+		down_0_1 <= vwire_0_0;
+		left_1_1 <= vwire_0_1;
+		up_0_0 <= vwire_0_1;
+		down_0_2 <= vwire_0_1;
+		left_1_2 <= vwire_0_2;
+		up_0_1 <= vwire_0_2;
+		down_0_3 <= vwire_0_2;
+		left_1_3 <= vwire_0_3;
+		up_0_2 <= vwire_0_3;
+		down_0_4 <= vwire_0_3;
+		left_1_4 <= vwire_0_4;
+		up_0_3 <= vwire_0_4;
+		right_0_0 <= vwire_1_0;
+		left_2_0 <= vwire_1_0;
+		down_1_1 <= vwire_1_0;
+		right_0_1 <= vwire_1_1;
+		left_2_1 <= vwire_1_1;
+		up_1_0 <= vwire_1_1;
+		down_1_2 <= vwire_1_1;
+		right_0_2 <= vwire_1_2;
+		left_2_2 <= vwire_1_2;
+		up_1_1 <= vwire_1_2;
+		down_1_3 <= vwire_1_2;
+		right_0_3 <= vwire_1_3;
+		left_2_3 <= vwire_1_3;
+		up_1_2 <= vwire_1_3;
+		down_1_4 <= vwire_1_3;
+		right_0_4 <= vwire_1_4;
+		left_2_4 <= vwire_1_4;
+		up_1_3 <= vwire_1_4;
+		right_1_0 <= vwire_2_0;
+		left_3_0 <= vwire_2_0;
+		down_2_1 <= vwire_2_0;
+		right_1_1 <= vwire_2_1;
+		left_3_1 <= vwire_2_1;
+		up_2_0 <= vwire_2_1;
+		down_2_2 <= vwire_2_1;
+		right_1_2 <= vwire_2_2;
+		left_3_2 <= vwire_2_2;
+		up_2_1 <= vwire_2_2;
+		down_2_3 <= vwire_2_2;
+		right_1_3 <= vwire_2_3;
+		left_3_3 <= vwire_2_3;
+		up_2_2 <= vwire_2_3;
+		down_2_4 <= vwire_2_3;
+		right_1_4 <= vwire_2_4;
+		left_3_4 <= vwire_2_4;
+		up_2_3 <= vwire_2_4;
+		right_2_0 <= vwire_3_0;
+		left_4_0 <= vwire_3_0;
+		down_3_1 <= vwire_3_0;
+		right_2_1 <= vwire_3_1;
+		left_4_1 <= vwire_3_1;
+		up_3_0 <= vwire_3_1;
+		down_3_2 <= vwire_3_1;
+		right_2_2 <= vwire_3_2;
+		left_4_2 <= vwire_3_2;
+		up_3_1 <= vwire_3_2;
+		down_3_3 <= vwire_3_2;
+		right_2_3 <= vwire_3_3;
+		left_4_3 <= vwire_3_3;
+		up_3_2 <= vwire_3_3;
+		down_3_4 <= vwire_3_3;
+		right_2_4 <= vwire_3_4;
+		left_4_4 <= vwire_3_4;
+		up_3_3 <= vwire_3_4;
+		right_3_0 <= vwire_4_0;
+		down_4_1 <= vwire_4_0;
+		right_3_1 <= vwire_4_1;
+		up_4_0 <= vwire_4_1;
+		down_4_2 <= vwire_4_1;
+		right_3_2 <= vwire_4_2;
+		up_4_1 <= vwire_4_2;
+		down_4_3 <= vwire_4_2;
+		right_3_3 <= vwire_4_3;
+		up_4_2 <= vwire_4_3;
+		down_4_4 <= vwire_4_3;
+		right_3_4 <= vwire_4_4;
+		up_4_3 <= vwire_4_4;
 	end
 
-	reg signed[15:0] value_0_1;
-	reg signed[15:0] prev_0_1;
-	reg signed[15:0] prev2_0_1;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_0_1 = 16'b011000101101101;
-				prev2_0_1 = 0;
-				prev_0_1 = 0;
-			end
-			1'b0:
-			begin
-				value_0_1 =((((value_1_1+value_1_1+value_0_2+value_0_0- (prev_0_1<<<2))>>>2) + (prev_0_1<<<1) -(prev2_0_1>>>4))>>>4);
-				prev2_0_1 = prev_0_1;
-				prev_0_1 = value_0_1;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_0_2;
-	reg signed[15:0] prev_0_2;
-	reg signed[15:0] prev2_0_2;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_0_2 = 16'b0101100000111;
-				prev2_0_2 = 0;
-				prev_0_2 = 0;
-			end
-			1'b0:
-			begin
-				value_0_2 =((((value_1_2+value_1_2+value_0_3+value_0_1- (prev_0_2<<<2))>>>2) + (prev_0_2<<<1) -(prev2_0_2>>>4))>>>4);
-				prev2_0_2 = prev_0_2;
-				prev_0_2 = value_0_2;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_0_3;
-	reg signed[15:0] prev_0_3;
-	reg signed[15:0] prev2_0_3;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_0_3 = 16'b011101000;
-				prev2_0_3 = 0;
-				prev_0_3 = 0;
-			end
-			1'b0:
-			begin
-				value_0_3 =((((value_1_3+value_1_3+16'b0+value_0_2- (prev_0_3<<<2))>>>2) + (prev_0_3<<<1) -(prev2_0_3>>>4))>>>4);
-				prev2_0_3 = prev_0_3;
-				prev_0_3 = value_0_3;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_1_0;
-	reg signed[15:0] prev_1_0;
-	reg signed[15:0] prev2_1_0;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_1_0 = 16'b011000101101101;
-				prev2_1_0 = 0;
-				prev_1_0 = 0;
-			end
-			1'b0:
-			begin
-				value_1_0 =((((value_0_0+value_2_0+value_1_1+value_1_1- (prev_1_0<<<2))>>>2) + (prev_1_0<<<1) -(prev2_1_0>>>4))>>>4);
-				prev2_1_0 = prev_1_0;
-				prev_1_0 = value_1_0;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_1_1;
-	reg signed[15:0] prev_1_1;
-	reg signed[15:0] prev2_1_1;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_1_1 = 16'b01110111111010;
-				prev2_1_1 = 0;
-				prev_1_1 = 0;
-			end
-			1'b0:
-			begin
-				value_1_1 =((((value_0_1+value_2_1+value_1_2+value_1_0- (prev_1_1<<<2))>>>2) + (prev_1_1<<<1) -(prev2_1_1>>>4))>>>4);
-				prev2_1_1 = prev_1_1;
-				prev_1_1 = value_1_1;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_1_2;
-	reg signed[15:0] prev_1_2;
-	reg signed[15:0] prev2_1_2;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_1_2 = 16'b011010110000;
-				prev2_1_2 = 0;
-				prev_1_2 = 0;
-			end
-			1'b0:
-			begin
-				value_1_2 =((((value_0_2+value_2_2+value_1_3+value_1_1- (prev_1_2<<<2))>>>2) + (prev_1_2<<<1) -(prev2_1_2>>>4))>>>4);
-				prev2_1_2 = prev_1_2;
-				prev_1_2 = value_1_2;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_1_3;
-	reg signed[15:0] prev_1_3;
-	reg signed[15:0] prev2_1_3;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_1_3 = 16'b010001101;
-				prev2_1_3 = 0;
-				prev_1_3 = 0;
-			end
-			1'b0:
-			begin
-				value_1_3 =((((value_0_3+value_2_3+16'b0+value_1_2- (prev_1_3<<<2))>>>2) + (prev_1_3<<<1) -(prev2_1_3>>>4))>>>4);
-				prev2_1_3 = prev_1_3;
-				prev_1_3 = value_1_3;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_2_0;
-	reg signed[15:0] prev_2_0;
-	reg signed[15:0] prev2_2_0;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_2_0 = 16'b0101100000111;
-				prev2_2_0 = 0;
-				prev_2_0 = 0;
-			end
-			1'b0:
-			begin
-				value_2_0 =((((value_1_0+value_3_0+value_2_1+value_2_1- (prev_2_0<<<2))>>>2) + (prev_2_0<<<1) -(prev2_2_0>>>4))>>>4);
-				prev2_2_0 = prev_2_0;
-				prev_2_0 = value_2_0;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_2_1;
-	reg signed[15:0] prev_2_1;
-	reg signed[15:0] prev2_2_1;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_2_1 = 16'b011010110000;
-				prev2_2_1 = 0;
-				prev_2_1 = 0;
-			end
-			1'b0:
-			begin
-				value_2_1 =((((value_1_1+value_3_1+value_2_2+value_2_0- (prev_2_1<<<2))>>>2) + (prev_2_1<<<1) -(prev2_2_1>>>4))>>>4);
-				prev2_2_1 = prev_2_1;
-				prev_2_1 = value_2_1;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_2_2;
-	reg signed[15:0] prev_2_2;
-	reg signed[15:0] prev2_2_2;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_2_2 = 16'b0101111110;
-				prev2_2_2 = 0;
-				prev_2_2 = 0;
-			end
-			1'b0:
-			begin
-				value_2_2 =((((value_1_2+value_3_2+value_2_3+value_2_1- (prev_2_2<<<2))>>>2) + (prev_2_2<<<1) -(prev2_2_2>>>4))>>>4);
-				prev2_2_2 = prev_2_2;
-				prev_2_2 = value_2_2;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_2_3;
-	reg signed[15:0] prev_2_3;
-	reg signed[15:0] prev2_2_3;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_2_3 = 16'b011111;
-				prev2_2_3 = 0;
-				prev_2_3 = 0;
-			end
-			1'b0:
-			begin
-				value_2_3 =((((value_1_3+value_3_3+16'b0+value_2_2- (prev_2_3<<<2))>>>2) + (prev_2_3<<<1) -(prev2_2_3>>>4))>>>4);
-				prev2_2_3 = prev_2_3;
-				prev_2_3 = value_2_3;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_3_0;
-	reg signed[15:0] prev_3_0;
-	reg signed[15:0] prev2_3_0;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_3_0 = 16'b011101000;
-				prev2_3_0 = 0;
-				prev_3_0 = 0;
-			end
-			1'b0:
-			begin
-				value_3_0 =((((value_2_0+16'b0+value_3_1+value_3_1- (prev_3_0<<<2))>>>2) + (prev_3_0<<<1) -(prev2_3_0>>>4))>>>4);
-				prev2_3_0 = prev_3_0;
-				prev_3_0 = value_3_0;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_3_1;
-	reg signed[15:0] prev_3_1;
-	reg signed[15:0] prev2_3_1;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_3_1 = 16'b010001101;
-				prev2_3_1 = 0;
-				prev_3_1 = 0;
-			end
-			1'b0:
-			begin
-				value_3_1 =((((value_2_1+16'b0+value_3_2+value_3_0- (prev_3_1<<<2))>>>2) + (prev_3_1<<<1) -(prev2_3_1>>>4))>>>4);
-				prev2_3_1 = prev_3_1;
-				prev_3_1 = value_3_1;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_3_2;
-	reg signed[15:0] prev_3_2;
-	reg signed[15:0] prev2_3_2;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_3_2 = 16'b011111;
-				prev2_3_2 = 0;
-				prev_3_2 = 0;
-			end
-			1'b0:
-			begin
-				value_3_2 =((((value_2_2+16'b0+value_3_3+value_3_1- (prev_3_2<<<2))>>>2) + (prev_3_2<<<1) -(prev2_3_2>>>4))>>>4);
-				prev2_3_2 = prev_3_2;
-				prev_3_2 = value_3_2;
-			end
-		endcase
-	end
-
-	reg signed[15:0] value_3_3;
-	reg signed[15:0] prev_3_3;
-	reg signed[15:0] prev2_3_3;
-	always@(posedge clk50)
-	begin
-		case(restart)
-			1'b1 :
-			begin
-				value_3_3 = 16'b00;
-				prev2_3_3 = 0;
-				prev_3_3 = 0;
-			end
-			1'b0:
-			begin
-				value_3_3 =((((value_2_3+16'b0+16'b0+value_3_2- (prev_3_3<<<2))>>>2) + (prev_3_3<<<1) -(prev2_3_3>>>4))>>>4);
-				prev2_3_3 = prev_3_3;
-				prev_3_3 = value_3_3;
-			end
-		endcase
-	end
-
-	assign audio_out = value_0_0[15:0];
+	assign audio_out = vwire_0_0;
 endmodule

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_TOP
-Tue Mar 05 17:56:16 2013
+Wed Mar 06 01:08:43 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -23,11 +23,36 @@ Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
  15. Parameter Settings for User Entity Instance: I2C_AV_Config:u3
  16. Parameter Settings for User Entity Instance: AUDIO_DAC_ADC:u4
  17. altpll Parameter Settings by Entity Instance
- 18. Port Connectivity Checks: "AUDIO_DAC_ADC:u4"
- 19. Port Connectivity Checks: "I2C_AV_Config:u3|I2C_Controller:u0"
- 20. Port Connectivity Checks: "VGA_Audio_PLL:p1"
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+ 18. Port Connectivity Checks: "nodes:drum|node:n4_4"
+ 19. Port Connectivity Checks: "nodes:drum|node:n4_3"
+ 20. Port Connectivity Checks: "nodes:drum|node:n4_2"
+ 21. Port Connectivity Checks: "nodes:drum|node:n4_1"
+ 22. Port Connectivity Checks: "nodes:drum|node:n4_0"
+ 23. Port Connectivity Checks: "nodes:drum|node:n3_4"
+ 24. Port Connectivity Checks: "nodes:drum|node:n3_3"
+ 25. Port Connectivity Checks: "nodes:drum|node:n3_2"
+ 26. Port Connectivity Checks: "nodes:drum|node:n3_1"
+ 27. Port Connectivity Checks: "nodes:drum|node:n3_0"
+ 28. Port Connectivity Checks: "nodes:drum|node:n2_4"
+ 29. Port Connectivity Checks: "nodes:drum|node:n2_3"
+ 30. Port Connectivity Checks: "nodes:drum|node:n2_2"
+ 31. Port Connectivity Checks: "nodes:drum|node:n2_1"
+ 32. Port Connectivity Checks: "nodes:drum|node:n2_0"
+ 33. Port Connectivity Checks: "nodes:drum|node:n1_4"
+ 34. Port Connectivity Checks: "nodes:drum|node:n1_3"
+ 35. Port Connectivity Checks: "nodes:drum|node:n1_2"
+ 36. Port Connectivity Checks: "nodes:drum|node:n1_1"
+ 37. Port Connectivity Checks: "nodes:drum|node:n1_0"
+ 38. Port Connectivity Checks: "nodes:drum|node:n0_4"
+ 39. Port Connectivity Checks: "nodes:drum|node:n0_3"
+ 40. Port Connectivity Checks: "nodes:drum|node:n0_2"
+ 41. Port Connectivity Checks: "nodes:drum|node:n0_1"
+ 42. Port Connectivity Checks: "nodes:drum|node:n0_0"
+ 43. Port Connectivity Checks: "AUDIO_DAC_ADC:u4"
+ 44. Port Connectivity Checks: "I2C_AV_Config:u3|I2C_Controller:u0"
+ 45. Port Connectivity Checks: "VGA_Audio_PLL:p1"
+ 46. Elapsed Time Per Partition
+ 47. Analysis & Synthesis Messages
 
 
 
@@ -53,15 +78,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Mar 05 17:56:15 2013     ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 06 01:08:43 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 1,783                                     ;
-;     Total combinational functions  ; 1,759                                     ;
-;     Dedicated logic registers      ; 519                                       ;
-; Total registers                    ; 519                                       ;
+; Total logic elements               ; 1,913                                     ;
+;     Total combinational functions  ; 1,451                                     ;
+;     Dedicated logic registers      ; 986                                       ;
+; Total registers                    ; 986                                       ;
 ; Total pins                         ; 425                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0                                         ;
@@ -189,20 +214,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 1,783    ;
+; Estimated Total logic elements              ; 1,913    ;
 ;                                             ;          ;
-; Total combinational functions               ; 1759     ;
+; Total combinational functions               ; 1451     ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 71       ;
-;     -- 3 input functions                    ; 1061     ;
-;     -- <=2 input functions                  ; 627      ;
+;     -- 4 input functions                    ; 73       ;
+;     -- 3 input functions                    ; 1252     ;
+;     -- <=2 input functions                  ; 126      ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 577      ;
-;     -- arithmetic mode                      ; 1182     ;
+;     -- normal mode                          ; 168      ;
+;     -- arithmetic mode                      ; 1283     ;
 ;                                             ;          ;
-; Total registers                             ; 519      ;
-;     -- Dedicated logic registers            ; 519      ;
+; Total registers                             ; 986      ;
+;     -- Dedicated logic registers            ; 986      ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 425      ;
@@ -210,9 +235,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1        ;
 ;                                             ;          ;
 ; Maximum fan-out node                        ; CLOCK_50 ;
-; Maximum fan-out                             ; 444      ;
-; Total fan-out                               ; 5862     ;
-; Average fan-out                             ; 2.17     ;
+; Maximum fan-out                             ; 908      ;
+; Total fan-out                               ; 7068     ;
+; Average fan-out                             ; 2.47     ;
 +---------------------------------------------+----------+
 
 
@@ -221,14 +246,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |DE2_TOP                        ; 1759 (0)          ; 519 (0)      ; 0           ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                          ;              ;
-;    |AUDIO_DAC_ADC:u4|           ; 30 (30)           ; 31 (31)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|AUDIO_DAC_ADC:u4                         ;              ;
+; |DE2_TOP                        ; 1451 (1)          ; 986 (0)      ; 0           ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                          ;              ;
+;    |AUDIO_DAC_ADC:u4|           ; 31 (31)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|AUDIO_DAC_ADC:u4                         ;              ;
 ;    |I2C_AV_Config:u3|           ; 93 (49)           ; 61 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|I2C_AV_Config:u3                         ;              ;
 ;       |I2C_Controller:u0|       ; 44 (44)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|I2C_AV_Config:u3|I2C_Controller:u0       ;              ;
 ;    |Reset_Delay:r0|             ; 28 (28)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Reset_Delay:r0                           ;              ;
 ;    |VGA_Audio_PLL:p1|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1                         ;              ;
 ;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1|altpll:altpll_component ;              ;
-;    |nodes:drum|                 ; 1608 (1608)       ; 406 (406)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum                               ;              ;
+;    |nodes:drum|                 ; 1298 (0)          ; 870 (435)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum                               ;              ;
+;       |node:n0_0|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_0                     ;              ;
+;       |node:n0_1|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_1                     ;              ;
+;       |node:n0_2|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_2                     ;              ;
+;       |node:n0_3|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_3                     ;              ;
+;       |node:n0_4|               ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_4                     ;              ;
+;       |node:n1_0|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_0                     ;              ;
+;       |node:n1_1|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_1                     ;              ;
+;       |node:n1_2|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_2                     ;              ;
+;       |node:n1_3|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_3                     ;              ;
+;       |node:n1_4|               ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_4                     ;              ;
+;       |node:n2_0|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_0                     ;              ;
+;       |node:n2_1|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_1                     ;              ;
+;       |node:n2_2|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_2                     ;              ;
+;       |node:n2_3|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_3                     ;              ;
+;       |node:n2_4|               ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_4                     ;              ;
+;       |node:n3_0|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_0                     ;              ;
+;       |node:n3_1|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_1                     ;              ;
+;       |node:n3_2|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_2                     ;              ;
+;       |node:n3_3|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_3                     ;              ;
+;       |node:n3_4|               ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_4                     ;              ;
+;       |node:n4_0|               ; 40 (40)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_0                     ;              ;
+;       |node:n4_1|               ; 40 (40)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_1                     ;              ;
+;       |node:n4_2|               ; 40 (40)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_2                     ;              ;
+;       |node:n4_3|               ; 40 (40)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_3                     ;              ;
+;       |node:n4_4|               ; 18 (18)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_4                     ;              ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -259,107 +309,107 @@ Encoding Type:  One-Hot
 +---------------------------------------------------------+----------------------------------------+
 ; Register name                                           ; Reason for Removal                     ;
 +---------------------------------------------------------+----------------------------------------+
-; nodes:drum|prev_2_3[12..15]                             ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|value_3_0[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev_3_0[12..15]                             ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|value_3_1[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev_3_1[12..15]                             ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|value_3_2[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev_3_2[12..15]                             ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|value_3_3[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev_3_3[12..15]                             ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|value_2_3[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev_1_3[12..15]                             ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|value_1_3[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev_0_3[12..15]                             ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|value_0_3[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev2_2_3[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev2_3_0[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev2_3_1[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev2_3_2[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev2_3_3[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev2_1_3[12..15]                            ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev2_0_3[12..15]                            ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n4_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n3_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n2_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n1_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
+; nodes:drum|node:n0_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
 ; I2C_AV_Config:u3|mI2C_DATA[7,8,13..17,19,23]            ; Stuck at GND due to stuck port data_in ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD[7,8,13..17,19,23] ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|prev_2_3[7]                                  ; Merged with nodes:drum|value_2_3[7]    ;
-; nodes:drum|prev_2_3[6]                                  ; Merged with nodes:drum|value_2_3[6]    ;
-; nodes:drum|prev_2_3[5]                                  ; Merged with nodes:drum|value_2_3[5]    ;
-; nodes:drum|value_2_3[11]                                ; Merged with nodes:drum|prev_2_3[11]    ;
-; nodes:drum|value_2_3[10]                                ; Merged with nodes:drum|prev_2_3[10]    ;
-; nodes:drum|value_2_3[9]                                 ; Merged with nodes:drum|prev_2_3[9]     ;
-; nodes:drum|value_2_3[8]                                 ; Merged with nodes:drum|prev_2_3[8]     ;
-; nodes:drum|prev_3_0[11]                                 ; Merged with nodes:drum|value_3_0[11]   ;
-; nodes:drum|prev_3_0[10]                                 ; Merged with nodes:drum|value_3_0[10]   ;
-; nodes:drum|prev_3_0[9]                                  ; Merged with nodes:drum|value_3_0[9]    ;
-; nodes:drum|prev_3_0[8]                                  ; Merged with nodes:drum|value_3_0[8]    ;
-; nodes:drum|prev_3_0[4]                                  ; Merged with nodes:drum|value_3_0[4]    ;
-; nodes:drum|prev_3_0[2]                                  ; Merged with nodes:drum|value_3_0[2]    ;
-; nodes:drum|prev_3_0[1]                                  ; Merged with nodes:drum|value_3_0[1]    ;
-; nodes:drum|prev_3_0[0]                                  ; Merged with nodes:drum|value_3_0[0]    ;
-; nodes:drum|value_0_3[0]                                 ; Merged with nodes:drum|prev_0_3[0]     ;
-; nodes:drum|prev_3_1[11]                                 ; Merged with nodes:drum|value_3_1[11]   ;
-; nodes:drum|prev_3_1[10]                                 ; Merged with nodes:drum|value_3_1[10]   ;
-; nodes:drum|prev_3_1[9]                                  ; Merged with nodes:drum|value_3_1[9]    ;
-; nodes:drum|value_1_1[0]                                 ; Merged with nodes:drum|prev_1_1[0]     ;
-; nodes:drum|prev_3_1[8]                                  ; Merged with nodes:drum|value_3_1[8]    ;
-; nodes:drum|prev_3_1[6]                                  ; Merged with nodes:drum|value_3_1[6]    ;
-; nodes:drum|prev_3_1[5]                                  ; Merged with nodes:drum|value_3_1[5]    ;
-; nodes:drum|prev_3_1[4]                                  ; Merged with nodes:drum|value_3_1[4]    ;
-; nodes:drum|prev_3_1[1]                                  ; Merged with nodes:drum|value_3_1[1]    ;
-; nodes:drum|value_1_2[0]                                 ; Merged with nodes:drum|prev_1_2[0]     ;
-; nodes:drum|prev_3_2[11]                                 ; Merged with nodes:drum|value_3_2[11]   ;
-; nodes:drum|prev_3_2[10]                                 ; Merged with nodes:drum|value_3_2[10]   ;
-; nodes:drum|prev_3_2[9]                                  ; Merged with nodes:drum|value_3_2[9]    ;
-; nodes:drum|prev_3_2[8]                                  ; Merged with nodes:drum|value_3_2[8]    ;
-; nodes:drum|prev_3_2[7]                                  ; Merged with nodes:drum|value_3_2[7]    ;
-; nodes:drum|prev_3_2[6]                                  ; Merged with nodes:drum|value_3_2[6]    ;
-; nodes:drum|prev_3_2[5]                                  ; Merged with nodes:drum|value_3_2[5]    ;
-; nodes:drum|value_2_1[0]                                 ; Merged with nodes:drum|prev_2_1[0]     ;
-; nodes:drum|value_2_2[0]                                 ; Merged with nodes:drum|prev_2_2[0]     ;
-; nodes:drum|prev_3_3[11]                                 ; Merged with nodes:drum|value_3_3[11]   ;
-; nodes:drum|prev_3_3[10]                                 ; Merged with nodes:drum|value_3_3[10]   ;
-; nodes:drum|prev_3_3[9]                                  ; Merged with nodes:drum|value_3_3[9]    ;
-; nodes:drum|prev_3_3[8]                                  ; Merged with nodes:drum|value_3_3[8]    ;
-; nodes:drum|prev_3_3[7]                                  ; Merged with nodes:drum|value_3_3[7]    ;
-; nodes:drum|prev_3_3[6]                                  ; Merged with nodes:drum|value_3_3[6]    ;
-; nodes:drum|prev_3_3[5]                                  ; Merged with nodes:drum|value_3_3[5]    ;
-; nodes:drum|prev_3_3[4]                                  ; Merged with nodes:drum|value_3_3[4]    ;
-; nodes:drum|prev_3_3[3]                                  ; Merged with nodes:drum|value_3_3[3]    ;
-; nodes:drum|prev_3_3[2]                                  ; Merged with nodes:drum|value_3_3[2]    ;
-; nodes:drum|prev_3_3[1]                                  ; Merged with nodes:drum|value_3_3[1]    ;
-; nodes:drum|prev_3_3[0]                                  ; Merged with nodes:drum|value_3_3[0]    ;
-; nodes:drum|value_2_2[7]                                 ; Merged with nodes:drum|prev_2_2[7]     ;
-; nodes:drum|value_2_2[9]                                 ; Merged with nodes:drum|prev_2_2[9]     ;
-; nodes:drum|value_2_2[10]                                ; Merged with nodes:drum|prev_2_2[10]    ;
-; nodes:drum|prev_2_2[12..15]                             ; Merged with nodes:drum|prev_2_2[11]    ;
-; nodes:drum|value_2_2[11..15]                            ; Merged with nodes:drum|prev_2_2[11]    ;
-; nodes:drum|value_2_1[1]                                 ; Merged with nodes:drum|prev_2_1[1]     ;
-; nodes:drum|value_2_1[2]                                 ; Merged with nodes:drum|prev_2_1[2]     ;
-; nodes:drum|value_2_1[3]                                 ; Merged with nodes:drum|prev_2_1[3]     ;
-; nodes:drum|value_2_1[6]                                 ; Merged with nodes:drum|prev_2_1[6]     ;
-; nodes:drum|value_2_1[8]                                 ; Merged with nodes:drum|prev_2_1[8]     ;
-; nodes:drum|prev_2_1[12..15]                             ; Merged with nodes:drum|prev_2_1[11]    ;
-; nodes:drum|value_2_1[11..15]                            ; Merged with nodes:drum|prev_2_1[11]    ;
-; nodes:drum|value_2_0[3]                                 ; Merged with nodes:drum|prev_2_0[3]     ;
-; nodes:drum|value_2_0[4]                                 ; Merged with nodes:drum|prev_2_0[4]     ;
-; nodes:drum|value_2_0[5]                                 ; Merged with nodes:drum|prev_2_0[5]     ;
-; nodes:drum|value_2_0[6]                                 ; Merged with nodes:drum|prev_2_0[6]     ;
-; nodes:drum|value_2_0[7]                                 ; Merged with nodes:drum|prev_2_0[7]     ;
-; nodes:drum|value_2_0[10]                                ; Merged with nodes:drum|prev_2_0[10]    ;
-; nodes:drum|prev_2_0[12..15]                             ; Merged with nodes:drum|prev_2_0[11]    ;
-; nodes:drum|value_2_0[12..15]                            ; Merged with nodes:drum|prev_2_0[11]    ;
-; nodes:drum|value_1_3[1]                                 ; Merged with nodes:drum|prev_1_3[1]     ;
-; nodes:drum|value_1_3[4]                                 ; Merged with nodes:drum|prev_1_3[4]     ;
-; nodes:drum|value_1_3[5]                                 ; Merged with nodes:drum|prev_1_3[5]     ;
-; nodes:drum|value_1_3[6]                                 ; Merged with nodes:drum|prev_1_3[6]     ;
-; nodes:drum|value_1_3[8]                                 ; Merged with nodes:drum|prev_1_3[8]     ;
-; nodes:drum|value_1_3[9]                                 ; Merged with nodes:drum|prev_1_3[9]     ;
-; nodes:drum|value_1_3[10]                                ; Merged with nodes:drum|prev_1_3[10]    ;
-; nodes:drum|value_1_3[11]                                ; Merged with nodes:drum|prev_1_3[11]    ;
-; nodes:drum|value_1_2[1]                                 ; Merged with nodes:drum|prev_1_2[1]     ;
-; nodes:drum|value_1_2[2]                                 ; Merged with nodes:drum|prev_1_2[2]     ;
-; Total Number of Removed Registers = 346                 ;                                        ;
+; nodes:drum|right_3_4[0]                                 ; Merged with nodes:drum|up_4_3[0]       ;
+; nodes:drum|right_3_4[1]                                 ; Merged with nodes:drum|up_4_3[1]       ;
+; nodes:drum|right_3_4[2]                                 ; Merged with nodes:drum|up_4_3[2]       ;
+; nodes:drum|right_3_4[3]                                 ; Merged with nodes:drum|up_4_3[3]       ;
+; nodes:drum|right_3_4[4]                                 ; Merged with nodes:drum|up_4_3[4]       ;
+; nodes:drum|right_3_4[5]                                 ; Merged with nodes:drum|up_4_3[5]       ;
+; nodes:drum|right_3_4[6]                                 ; Merged with nodes:drum|up_4_3[6]       ;
+; nodes:drum|right_3_4[7]                                 ; Merged with nodes:drum|up_4_3[7]       ;
+; nodes:drum|right_3_4[8]                                 ; Merged with nodes:drum|up_4_3[8]       ;
+; nodes:drum|right_3_4[9]                                 ; Merged with nodes:drum|up_4_3[9]       ;
+; nodes:drum|right_3_4[10]                                ; Merged with nodes:drum|up_4_3[10]      ;
+; nodes:drum|right_3_4[11]                                ; Merged with nodes:drum|up_4_3[11]      ;
+; nodes:drum|right_3_4[12]                                ; Merged with nodes:drum|up_4_3[12]      ;
+; nodes:drum|right_3_4[13]                                ; Merged with nodes:drum|up_4_3[13]      ;
+; nodes:drum|right_3_4[14]                                ; Merged with nodes:drum|up_4_3[14]      ;
+; nodes:drum|right_3_4[15]                                ; Merged with nodes:drum|up_4_3[15]      ;
+; nodes:drum|right_3_4[16]                                ; Merged with nodes:drum|up_4_3[16]      ;
+; nodes:drum|right_3_4[17]                                ; Merged with nodes:drum|up_4_3[17]      ;
+; nodes:drum|up_4_2[0]                                    ; Merged with nodes:drum|down_4_4[0]     ;
+; nodes:drum|right_3_3[0]                                 ; Merged with nodes:drum|down_4_4[0]     ;
+; nodes:drum|up_4_2[1]                                    ; Merged with nodes:drum|down_4_4[1]     ;
+; nodes:drum|right_3_3[1]                                 ; Merged with nodes:drum|down_4_4[1]     ;
+; nodes:drum|up_4_2[2]                                    ; Merged with nodes:drum|down_4_4[2]     ;
+; nodes:drum|right_3_3[2]                                 ; Merged with nodes:drum|down_4_4[2]     ;
+; nodes:drum|up_4_2[3]                                    ; Merged with nodes:drum|down_4_4[3]     ;
+; nodes:drum|right_3_3[3]                                 ; Merged with nodes:drum|down_4_4[3]     ;
+; nodes:drum|up_4_2[4]                                    ; Merged with nodes:drum|down_4_4[4]     ;
+; nodes:drum|right_3_3[4]                                 ; Merged with nodes:drum|down_4_4[4]     ;
+; nodes:drum|up_4_2[5]                                    ; Merged with nodes:drum|down_4_4[5]     ;
+; nodes:drum|right_3_3[5]                                 ; Merged with nodes:drum|down_4_4[5]     ;
+; nodes:drum|up_4_2[6]                                    ; Merged with nodes:drum|down_4_4[6]     ;
+; nodes:drum|right_3_3[6]                                 ; Merged with nodes:drum|down_4_4[6]     ;
+; nodes:drum|up_4_2[7]                                    ; Merged with nodes:drum|down_4_4[7]     ;
+; nodes:drum|right_3_3[7]                                 ; Merged with nodes:drum|down_4_4[7]     ;
+; nodes:drum|up_4_2[8]                                    ; Merged with nodes:drum|down_4_4[8]     ;
+; nodes:drum|right_3_3[8]                                 ; Merged with nodes:drum|down_4_4[8]     ;
+; nodes:drum|up_4_2[9]                                    ; Merged with nodes:drum|down_4_4[9]     ;
+; nodes:drum|right_3_3[9]                                 ; Merged with nodes:drum|down_4_4[9]     ;
+; nodes:drum|up_4_2[10]                                   ; Merged with nodes:drum|down_4_4[10]    ;
+; nodes:drum|right_3_3[10]                                ; Merged with nodes:drum|down_4_4[10]    ;
+; nodes:drum|up_4_2[11]                                   ; Merged with nodes:drum|down_4_4[11]    ;
+; nodes:drum|right_3_3[11]                                ; Merged with nodes:drum|down_4_4[11]    ;
+; nodes:drum|up_4_2[12]                                   ; Merged with nodes:drum|down_4_4[12]    ;
+; nodes:drum|right_3_3[12]                                ; Merged with nodes:drum|down_4_4[12]    ;
+; nodes:drum|up_4_2[13]                                   ; Merged with nodes:drum|down_4_4[13]    ;
+; nodes:drum|right_3_3[13]                                ; Merged with nodes:drum|down_4_4[13]    ;
+; nodes:drum|up_4_2[14]                                   ; Merged with nodes:drum|down_4_4[14]    ;
+; nodes:drum|right_3_3[14]                                ; Merged with nodes:drum|down_4_4[14]    ;
+; Total Number of Removed Registers = 1940                ;                                        ;
 +---------------------------------------------------------+----------------------------------------+
 * Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
@@ -369,62 +419,6 @@ Encoding Type:  One-Hot
 +--------------------------------+---------------------------+-------------------------------------------+
 ; Register name                  ; Reason for Removal        ; Registers Removed due to This Register    ;
 +--------------------------------+---------------------------+-------------------------------------------+
-; nodes:drum|prev_2_3[15]        ; Stuck at GND              ; nodes:drum|prev2_2_3[15]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_2_3[14]        ; Stuck at GND              ; nodes:drum|prev2_2_3[14]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_2_3[13]        ; Stuck at GND              ; nodes:drum|prev2_2_3[13]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_2_3[12]        ; Stuck at GND              ; nodes:drum|prev2_2_3[12]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_0[15]        ; Stuck at GND              ; nodes:drum|prev2_3_0[15]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_0[14]        ; Stuck at GND              ; nodes:drum|prev2_3_0[14]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_0[13]        ; Stuck at GND              ; nodes:drum|prev2_3_0[13]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_0[12]        ; Stuck at GND              ; nodes:drum|prev2_3_0[12]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_1[15]        ; Stuck at GND              ; nodes:drum|prev2_3_1[15]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_1[14]        ; Stuck at GND              ; nodes:drum|prev2_3_1[14]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_1[13]        ; Stuck at GND              ; nodes:drum|prev2_3_1[13]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_1[12]        ; Stuck at GND              ; nodes:drum|prev2_3_1[12]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_2[15]        ; Stuck at GND              ; nodes:drum|prev2_3_2[15]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_2[14]        ; Stuck at GND              ; nodes:drum|prev2_3_2[14]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_2[13]        ; Stuck at GND              ; nodes:drum|prev2_3_2[13]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_2[12]        ; Stuck at GND              ; nodes:drum|prev2_3_2[12]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_3[15]        ; Stuck at GND              ; nodes:drum|prev2_3_3[15]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_3[14]        ; Stuck at GND              ; nodes:drum|prev2_3_3[14]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_3[13]        ; Stuck at GND              ; nodes:drum|prev2_3_3[13]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_3_3[12]        ; Stuck at GND              ; nodes:drum|prev2_3_3[12]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_1_3[12]        ; Stuck at GND              ; nodes:drum|prev2_1_3[12]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_1_3[13]        ; Stuck at GND              ; nodes:drum|prev2_1_3[13]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_1_3[14]        ; Stuck at GND              ; nodes:drum|prev2_1_3[14]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_1_3[15]        ; Stuck at GND              ; nodes:drum|prev2_1_3[15]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_0_3[12]        ; Stuck at GND              ; nodes:drum|prev2_0_3[12]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_0_3[13]        ; Stuck at GND              ; nodes:drum|prev2_0_3[13]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_0_3[14]        ; Stuck at GND              ; nodes:drum|prev2_0_3[14]                  ;
-;                                ; due to stuck port data_in ;                                           ;
-; nodes:drum|prev_0_3[15]        ; Stuck at GND              ; nodes:drum|prev2_0_3[15]                  ;
-;                                ; due to stuck port data_in ;                                           ;
 ; I2C_AV_Config:u3|mI2C_DATA[23] ; Stuck at GND              ; I2C_AV_Config:u3|I2C_Controller:u0|SD[23] ;
 ;                                ; due to stuck port data_in ;                                           ;
 ; I2C_AV_Config:u3|mI2C_DATA[19] ; Stuck at GND              ; I2C_AV_Config:u3|I2C_Controller:u0|SD[19] ;
@@ -451,9 +445,9 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 519   ;
-; Number of registers using Synchronous Clear  ; 37    ;
-; Number of registers using Synchronous Load   ; 6     ;
+; Total registers                              ; 986   ;
+; Number of registers using Synchronous Clear  ; 190   ;
+; Number of registers using Synchronous Load   ; 276   ;
 ; Number of registers using Asynchronous Clear ; 57    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 50    ;
@@ -907,6 +901,317 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------+------------------------------------------+
 
 
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n4_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n4_3" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n4_2" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n4_1" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n4_0" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n3_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n3_3" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n3_2"  ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; resetval[17..5] ; Input ; Info     ; Stuck at GND ;
+; resetval[3..0]  ; Input ; Info     ; Stuck at GND ;
+; resetval[4]     ; Input ; Info     ; Stuck at VCC ;
++-----------------+-------+----------+--------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n3_1"  ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; resetval[2..1]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..7] ; Input ; Info     ; Stuck at GND ;
+; resetval[5..3]  ; Input ; Info     ; Stuck at GND ;
+; resetval[6]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[0]     ; Input ; Info     ; Stuck at GND ;
++-----------------+-------+----------+--------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n3_0"  ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; resetval[6..4]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..7] ; Input ; Info     ; Stuck at GND ;
+; resetval[1..0]  ; Input ; Info     ; Stuck at GND ;
+; resetval[3]     ; Input ; Info     ; Stuck at GND ;
+; resetval[2]     ; Input ; Info     ; Stuck at VCC ;
++-----------------+-------+----------+--------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n2_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n2_3"  ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; resetval[17..5] ; Input ; Info     ; Stuck at GND ;
+; resetval[3..0]  ; Input ; Info     ; Stuck at GND ;
+; resetval[4]     ; Input ; Info     ; Stuck at VCC ;
++-----------------+-------+----------+--------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n2_2"  ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; resetval[5..0]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..8] ; Input ; Info     ; Stuck at GND ;
+; resetval[7]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[6]     ; Input ; Info     ; Stuck at GND ;
++-----------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n2_1"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; resetval[9..8]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[4..3]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..10] ; Input ; Info     ; Stuck at GND ;
+; resetval[2..0]   ; Input ; Info     ; Stuck at GND ;
+; resetval[7]      ; Input ; Info     ; Stuck at GND ;
+; resetval[6]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[5]      ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n2_0"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; resetval[8..7]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..11] ; Input ; Info     ; Stuck at GND ;
+; resetval[6..3]   ; Input ; Info     ; Stuck at GND ;
+; resetval[1..0]   ; Input ; Info     ; Stuck at GND ;
+; resetval[10]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[9]      ; Input ; Info     ; Stuck at GND ;
+; resetval[2]      ; Input ; Info     ; Stuck at VCC ;
++------------------+-------+----------+--------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n1_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n1_3"  ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; resetval[2..1]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..7] ; Input ; Info     ; Stuck at GND ;
+; resetval[5..3]  ; Input ; Info     ; Stuck at GND ;
+; resetval[6]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[0]     ; Input ; Info     ; Stuck at GND ;
++-----------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n1_2"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; resetval[9..8]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[4..3]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..10] ; Input ; Info     ; Stuck at GND ;
+; resetval[2..0]   ; Input ; Info     ; Stuck at GND ;
+; resetval[7]      ; Input ; Info     ; Stuck at GND ;
+; resetval[6]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[5]      ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n1_1"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; resetval[11..9]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[7..2]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..12] ; Input ; Info     ; Stuck at GND ;
+; resetval[8]      ; Input ; Info     ; Stuck at GND ;
+; resetval[1]      ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at VCC ;
++------------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n1_0"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; resetval[12..11] ; Input ; Info     ; Stuck at VCC ;
+; resetval[5..4]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[2..1]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..13] ; Input ; Info     ; Stuck at GND ;
+; resetval[10..8]  ; Input ; Info     ; Stuck at GND ;
+; resetval[7]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[6]      ; Input ; Info     ; Stuck at GND ;
+; resetval[3]      ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n0_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++---------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n0_3"  ;
++-----------------+-------+----------+--------------+
+; Port            ; Type  ; Severity ; Details      ;
++-----------------+-------+----------+--------------+
+; resetval[6..4]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..7] ; Input ; Info     ; Stuck at GND ;
+; resetval[1..0]  ; Input ; Info     ; Stuck at GND ;
+; resetval[3]     ; Input ; Info     ; Stuck at GND ;
+; resetval[2]     ; Input ; Info     ; Stuck at VCC ;
++-----------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n0_2"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; resetval[8..7]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..11] ; Input ; Info     ; Stuck at GND ;
+; resetval[6..3]   ; Input ; Info     ; Stuck at GND ;
+; resetval[1..0]   ; Input ; Info     ; Stuck at GND ;
+; resetval[10]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[9]      ; Input ; Info     ; Stuck at GND ;
+; resetval[2]      ; Input ; Info     ; Stuck at VCC ;
++------------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n0_1"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; resetval[12..11] ; Input ; Info     ; Stuck at VCC ;
+; resetval[5..4]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[2..1]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..13] ; Input ; Info     ; Stuck at GND ;
+; resetval[10..8]  ; Input ; Info     ; Stuck at GND ;
+; resetval[7]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[6]      ; Input ; Info     ; Stuck at GND ;
+; resetval[3]      ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n0_0"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; resetval[5..1]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..14] ; Input ; Info     ; Stuck at GND ;
+; resetval[10..8]  ; Input ; Info     ; Stuck at GND ;
+; resetval[13]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[12]     ; Input ; Info     ; Stuck at GND ;
+; resetval[11]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[7]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[6]      ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
+
+
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "AUDIO_DAC_ADC:u4"                                                                                                                 ;
 +----------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------+
@@ -944,7 +1249,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -954,7 +1259,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Tue Mar 05 17:56:10 2013
+    Info: Processing started: Wed Mar 06 01:08:37 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Audio_Filter_18_bit -c DE2_TOP
 Info: Found 1 design units, including 1 entities, in source file nodes.v
     Info: Found entity 1: nodes
@@ -968,16 +1273,19 @@ Info: Found 1 design units, including 1 entities, in source file reset_delay.v
     Info: Found entity 1: Reset_Delay
 Info: Found 1 design units, including 1 entities, in source file vga_audio_pll.v
     Info: Found entity 1: VGA_Audio_PLL
-Info: Found 2 design units, including 2 entities, in source file audio_filter_18bit_parallel.v
+Info: Found 3 design units, including 3 entities, in source file audio_filter_18bit_parallel.v
     Info: Found entity 1: DE2_TOP
-    Info: Found entity 2: signed_mult
-Warning (10236): Verilog HDL Implicit Net warning at Audio_Filter_18bit_parallel.v(275): created implicit net for "audio_inL"
-Warning (10236): Verilog HDL Implicit Net warning at Audio_Filter_18bit_parallel.v(276): created implicit net for "audio_inR"
-Warning (10236): Verilog HDL Implicit Net warning at Audio_Filter_18bit_parallel.v(291): created implicit net for "restart"
+    Info: Found entity 2: node
+    Info: Found entity 3: signed_mult
+Warning (10236): Verilog HDL Implicit Net warning at Audio_Filter_18bit_parallel.v(279): created implicit net for "audio_inL"
+Warning (10236): Verilog HDL Implicit Net warning at Audio_Filter_18bit_parallel.v(280): created implicit net for "audio_inR"
+Warning (10236): Verilog HDL Implicit Net warning at Audio_Filter_18bit_parallel.v(295): created implicit net for "restart"
 Info: Elaborating entity "DE2_TOP" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Audio_Filter_18bit_parallel.v(288): object "reset" assigned a value but never read
+Warning (10036): Verilog HDL or VHDL warning at Audio_Filter_18bit_parallel.v(292): object "reset" assigned a value but never read
 Warning (10034): Output port "LEDG[8]" at Audio_Filter_18bit_parallel.v(41) has no driver
+Warning (10034): Output port "LEDR[17..16]" at Audio_Filter_18bit_parallel.v(42) has no driver
 Warning (10665): Bidirectional port "AUD_DACLRCK" at Audio_Filter_18bit_parallel.v(136) has a one-way connection to bidirectional port "AUD_ADCLRCK"
+Warning (10665): Bidirectional port "AUD_DACLRCK" at Audio_Filter_18bit_parallel.v(136) has a one-way connection to bidirectional port "GPIO_0[0]"
 Info: Elaborating entity "Reset_Delay" for hierarchy "Reset_Delay:r0"
 Warning (10230): Verilog HDL assignment warning at Reset_Delay.v(10): truncated value with size 32 to match size of target (20)
 Info: Elaborating entity "VGA_Audio_PLL" for hierarchy "VGA_Audio_PLL:p1"
@@ -1057,6 +1365,9 @@ Warning (10230): Verilog HDL assignment warning at AUDIO_DAC_ADC.v(113): truncat
 Warning (10230): Verilog HDL assignment warning at AUDIO_DAC_ADC.v(121): truncated value with size 32 to match size of target (7)
 Warning (10230): Verilog HDL assignment warning at AUDIO_DAC_ADC.v(140): truncated value with size 32 to match size of target (4)
 Info: Elaborating entity "nodes" for hierarchy "nodes:drum"
+Warning (10230): Verilog HDL assignment warning at nodes.v(266): truncated value with size 18 to match size of target (16)
+Info: Elaborating entity "node" for hierarchy "nodes:drum|node:n0_0"
+Warning (10230): Verilog HDL assignment warning at Audio_Filter_18bit_parallel.v(366): truncated value with size 21 to match size of target (18)
 Warning: 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: The following nodes have both tri-state and non-tri-state drivers
     Warning: Inserted always-enabled tri-state buffer between "AUD_DACLRCK" and its non-tri-state driver.
@@ -1064,6 +1375,41 @@ Warning: The following nodes have both tri-state and non-tri-state drivers
 Warning: The following bidir pins have no drivers
     Warning: Bidir "SD_DAT3" has no driver
     Warning: Bidir "SD_CMD" has no driver
+    Warning: Bidir "GPIO_0[1]" has no driver
+    Warning: Bidir "GPIO_0[2]" has no driver
+    Warning: Bidir "GPIO_0[3]" has no driver
+    Warning: Bidir "GPIO_0[4]" has no driver
+    Warning: Bidir "GPIO_0[5]" has no driver
+    Warning: Bidir "GPIO_0[6]" has no driver
+    Warning: Bidir "GPIO_0[7]" has no driver
+    Warning: Bidir "GPIO_0[8]" has no driver
+    Warning: Bidir "GPIO_0[9]" has no driver
+    Warning: Bidir "GPIO_0[10]" has no driver
+    Warning: Bidir "GPIO_0[11]" has no driver
+    Warning: Bidir "GPIO_0[12]" has no driver
+    Warning: Bidir "GPIO_0[13]" has no driver
+    Warning: Bidir "GPIO_0[14]" has no driver
+    Warning: Bidir "GPIO_0[15]" has no driver
+    Warning: Bidir "GPIO_0[16]" has no driver
+    Warning: Bidir "GPIO_0[17]" has no driver
+    Warning: Bidir "GPIO_0[18]" has no driver
+    Warning: Bidir "GPIO_0[19]" has no driver
+    Warning: Bidir "GPIO_0[20]" has no driver
+    Warning: Bidir "GPIO_0[21]" has no driver
+    Warning: Bidir "GPIO_0[22]" has no driver
+    Warning: Bidir "GPIO_0[23]" has no driver
+    Warning: Bidir "GPIO_0[24]" has no driver
+    Warning: Bidir "GPIO_0[25]" has no driver
+    Warning: Bidir "GPIO_0[26]" has no driver
+    Warning: Bidir "GPIO_0[27]" has no driver
+    Warning: Bidir "GPIO_0[28]" has no driver
+    Warning: Bidir "GPIO_0[29]" has no driver
+    Warning: Bidir "GPIO_0[30]" has no driver
+    Warning: Bidir "GPIO_0[31]" has no driver
+    Warning: Bidir "GPIO_0[32]" has no driver
+    Warning: Bidir "GPIO_0[33]" has no driver
+    Warning: Bidir "GPIO_0[34]" has no driver
+    Warning: Bidir "GPIO_0[35]" has no driver
 Info: One or more bidirs are fed by always enabled tri-state buffers
     Info: Fan-out of permanently enabled tri-state buffer feeding bidir "AUD_DACLRCK" is moved to its source
 Info: Registers with preset signals will power-up high
@@ -1072,6 +1418,7 @@ Warning: TRI or OPNDRN buffers permanently enabled
     Warning: Node "AUD_ADCLRCK~synth"
     Warning: Node "AUD_DACLRCK~synth"
     Warning: Node "AUD_BCLK~synth"
+    Warning: Node "GPIO_0[0]~synth"
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[0]" is stuck at VCC
     Warning (13410): Pin "HEX0[1]" is stuck at VCC
@@ -1130,22 +1477,6 @@ Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX7[5]" is stuck at VCC
     Warning (13410): Pin "HEX7[6]" is stuck at VCC
     Warning (13410): Pin "LEDG[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[0]" is stuck at GND
-    Warning (13410): Pin "LEDR[1]" is stuck at GND
-    Warning (13410): Pin "LEDR[2]" is stuck at GND
-    Warning (13410): Pin "LEDR[3]" is stuck at GND
-    Warning (13410): Pin "LEDR[4]" is stuck at GND
-    Warning (13410): Pin "LEDR[5]" is stuck at GND
-    Warning (13410): Pin "LEDR[6]" is stuck at GND
-    Warning (13410): Pin "LEDR[7]" is stuck at GND
-    Warning (13410): Pin "LEDR[8]" is stuck at GND
-    Warning (13410): Pin "LEDR[9]" is stuck at GND
-    Warning (13410): Pin "LEDR[10]" is stuck at GND
-    Warning (13410): Pin "LEDR[11]" is stuck at GND
-    Warning (13410): Pin "LEDR[12]" is stuck at GND
-    Warning (13410): Pin "LEDR[13]" is stuck at GND
-    Warning (13410): Pin "LEDR[14]" is stuck at GND
-    Warning (13410): Pin "LEDR[15]" is stuck at GND
     Warning (13410): Pin "LEDR[16]" is stuck at GND
     Warning (13410): Pin "LEDR[17]" is stuck at GND
     Warning (13410): Pin "UART_TXD" is stuck at GND
@@ -1327,16 +1658,16 @@ Warning: Design contains 42 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "TD_DATA[7]"
     Warning (15610): No output dependent on input pin "TD_HS"
     Warning (15610): No output dependent on input pin "TD_VS"
-Info: Implemented 2209 device resources after synthesis - the final resource count might be different
+Info: Implemented 2339 device resources after synthesis - the final resource count might be different
     Info: Implemented 48 input pins
     Info: Implemented 218 output pins
     Info: Implemented 159 bidirectional pins
-    Info: Implemented 1783 logic cells
+    Info: Implemented 1913 logic cells
     Info: Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 279 warnings
-    Info: Peak virtual memory: 362 megabytes
-    Info: Processing ended: Tue Mar 05 17:56:16 2013
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 303 warnings
+    Info: Peak virtual memory: 374 megabytes
+    Info: Processing ended: Wed Mar 06 01:08:43 2013
     Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:05
+    Info: Total CPU time (on all processors): 00:00:06
 
 

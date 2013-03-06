@@ -156,11 +156,11 @@ module DE2_TOP (
    assign HEX5 = 7'h7F;
    assign HEX6 = 7'h7F;
    assign HEX7 = 7'h7F;
-   assign LEDR = 18'h0;
+   //assign LEDR = 18'h0;
    //assign LEDG = 9'h0;
    
    //Set all GPIO to tri-state.
-   assign GPIO_0 = 36'hzzzzzzzzz;
+   //assign GPIO_0 = 36'hzzzzzzzzz;
    assign GPIO_1 = 36'hzzzzzzzzz;
 
    //Disable audio codec.
@@ -257,9 +257,13 @@ assign	TD_RESET	=	1'b1;	//	Allow 27 MHz
 assign	AUD_ADCLRCK	=	AUD_DACLRCK;
 assign	AUD_XCK		=	AUD_CTRL_CLK;
 
+assign GPIO_0[0] = AUD_DACLRCK;
+
 Reset_Delay			r0	(	.iCLK(CLOCK_50),.oRESET(DLY_RST)	);
 
 VGA_Audio_PLL 		p1	(	.areset(~DLY_RST),.inclk0(CLOCK_27),.c0(VGA_CTRL_CLK),.c1(AUD_CTRL_CLK),.c2(VGA_CLK)	);
+
+//AUD_CTRL_CLK = 18 MHz
 
 I2C_AV_Config 		u3	(	//	Host Side
 							.iCLK(CLOCK_50),
@@ -315,75 +319,81 @@ assign LEDG[5] = ~KEY[2];
 assign LEDG[6] = ~KEY[3];
 assign LEDG[7] = ~KEY[3];
 
+assign LEDR[15:0] = nodes_out;
+
+
+
 nodes drum (.restart(restart), .clk50(CLOCK_50), .audio_out(nodes_out));
-/// Define filters //////////////////////////////////////////////
-//Filter: cutoff=0.100000 
-//Filter: cutoff=0.200000 
-//IIR4_18bit_parallel filter1( 
-//     .audio_out (filter1_out), 
-//     .audio_in (audio_inR), 
-//     .scale (3'd2), 
-//     .b1 (18'h149), 
-//     .b2 (18'h0), 
-//     .b3 (18'h3FD6E), 
-//     .b4 (18'h0), 
-//     .b5 (18'h149), 
-//     .a2 (18'hCD98), 
-//     .a3 (18'h2F54E), 
-//     .a4 (18'hA42E), 
-//     .a5 (18'h3D6F5), 
-//     .state_clk(AUD_CTRL_CLK), 
-//     .lr_clk(AUD_DACLRCK),  
-//     .reset(reset) 
-//) ; //end filter 
-
-//Filter: cutoff=0.100000 
-//Filter: cutoff=0.200000 
-//IIR2_18bit_parallel filter2( 
-//     .audio_out (filter2_out), 
-//     .audio_in (audio_inR), 
-//     .scale (3'd2), 
-//     .b1 (18'h8C0), 
-//     .b2 (18'h0), 
-//     .b3 (18'h3F740), 
-//     .a2 (18'h63AE), 
-//     .a3 (18'h3D181), 
-//     .state_clk(AUD_CTRL_CLK), 
-//     .lr_clk(AUD_DACLRCK), 
-//     .reset(reset) 
-//) ; //end filter 
-
-//Filter: cutoff=0.250000 
-//IIR6_18bit_parallel filter3( 
-//     .audio_out (filter3_out), 
-//     .audio_in (audio_inR), 
-//     .scale (3'd2), 
-//     .b1 (18'h11), 
-//     .b2 (18'h67), 
-//     .b3 (18'h102), 
-//     .b4 (18'h158), 
-//     .b5 (18'h102), 
-//     .b6 (18'h67), 
-//     .b7 (18'h11), 
-//     .a2 (18'hBEA0), 
-//     .a3 (18'h2F74B), 
-//     .a4 (18'hD09F), 
-//     .a5 (18'h39EE5), 
-//     .a6 (18'h1908), 
-//     .a7 (18'h3FD3A), 
-//     .state_clk(AUD_CTRL_CLK), 
-//     .lr_clk(AUD_DACLRCK), 
-//     .reset(reset) 
-//) ; //end filter 
-
-
-
-
-
 
 endmodule
 
+module node(left, right, up, down, clk, reset, resetval, value);
 
+	output reg signed[17:0] value;
+
+	input signed[17:0] left;
+	input signed[17:0] right;
+	input signed[17:0] up;
+	input signed[17:0] down;
+	
+	input clk;
+	input reset; //When this is high, initialize to resetval
+	input wire signed[17:0] resetval; //the initial Gaussian shape
+	
+	reg signed[17:0] prev;
+	reg signed[17:0] prev2;
+	
+	reg signed[20:0] newval;
+	
+	
+	always @ (posedge clk)
+	begin
+//		case(clk)
+//			1'b1:
+//			begin
+				case(reset)
+					1'b1 :
+					begin
+						newval = newval;
+						value = resetval;
+						prev2 = 0;
+						prev = 0;
+					end
+					1'b0:
+					begin
+						//newval = ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>1) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>2) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>3) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>4);
+						newval = ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>1);
+						value = newval;
+						prev2 = prev2;
+						prev = prev;
+					end
+				endcase
+//			end
+//			1'b0:
+//			begin
+//				case(reset)
+//					1'b1:
+//					begin
+//						newval = newval;
+//						value = resetval;
+//						prev2 = 0;
+//						prev = 0;
+//					end
+//					1'b0:
+//					begin
+//						newval = newval;
+//						prev2 = prev;
+//						prev = value;
+//						value = newval;
+//					end
+//				endcase
+//			end
+//		endcase
+	end
+	
+	
+	
+endmodule
 
 ///////////////////////////////////////////////////////////////////
 /// Second order IIR filter ///////////////////////////////////////

@@ -364,7 +364,7 @@ VGA_R[8]                     : F11       : output : 3.3-V LVTTL       :         
 VGA_B[2]                     : F12       : output : 3.3-V LVTTL       :         : 3         : Y              
 GND*                         : F13       :        :                   :         : 4         :                
 TDO                          : F14       : output : 3.3-V LVTTL       :         : 4         : Y              
-GND*                         : F15       :        :                   :         : 4         :                
+IRDA_TXD                     : F15       : output : 3.3-V LVTTL       :         : 4         : N              
 GND*                         : F16       :        :                   :         : 4         :                
 GND*                         : F17       :        :                   :         : 4         :                
 GND*                         : F18       :        :                   :         : 4         :                
@@ -417,7 +417,7 @@ VGA_R[7]                     : H12       : output : 3.3-V LVTTL       :         
 GND                          : H13       : gnd    :                   :         :           :                
 GND                          : H14       : gnd    :                   :         :           :                
 GND*                         : H15       :        :                   :         : 4         :                
-IRDA_TXD                     : H16       : output : 3.3-V LVTTL       :         : 4         : N              
+GND*                         : H16       :        :                   :         : 4         :                
 GND*                         : H17       :        :                   :         : 4         :                
 VCCIO4                       : H18       : power  :                   : 3.3V    : 4         :                
 GPIO_0[22]                   : H19       : bidir  : 3.3-V LVTTL       :         : 5         : Y              

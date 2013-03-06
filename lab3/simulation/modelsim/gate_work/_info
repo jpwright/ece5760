@@ -1,0 +1,54 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\ece5760\lab3\simulation\modelsim
+vDE2_TOP
+I?DX[kb8A@l5_`73<jZR:c2
+V2Uj6RdID>QBMQP=@M=]ad3
+Z1 dC:\ece5760\lab3\simulation\modelsim
+w1362543096
+8DE2_TOP.vo
+FDE2_TOP.vo
+L0 31
+Z2 OV;L;6.6d;45
+r1
+31
+Z3 o-vlog01compat -work work -O0
+n@d@e2_@t@o@p
+!s100 n^;c4:GFd3;I]P:fDHP6^1
+!s85 0
+!s101 -O0
+!s92 -vlog01compat -work work +incdir+. -O0
+vnode
+!s100 ?2N:OX0jW[YzgAZzUM7JJ2
+IAzoPK6LRM:?UUFk5LN?ca1
+V2U2`EZBCbT14<eAIkSUzi2
+R1
+w0
+Z4 8C:/ece5760/lab3/Audio_Filter_18bit_parallel.v
+Z5 FC:/ece5760/lab3/Audio_Filter_18bit_parallel.v
+L0 330
+R2
+r1
+!s85 0
+31
+!s101 -O0
+R3
+Z6 !s92 -vlog01compat -work work +incdir+C:/ece5760/lab3 -O0
+vsigned_mult
+!s100 VK7i3@YRRMIYBndniY;<g0
+Ik]J1ef?e<Z3^U>9c;3[dc2
+V@LiR?j>k9?mljNcKn]WSW0
+R1
+w0
+R4
+R5
+L0 652
+R2
+r1
+!s85 0
+31
+!s101 -O0
+R3
+R6
