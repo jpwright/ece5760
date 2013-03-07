@@ -308,7 +308,8 @@ wire signed[15:0] nodes_out;
 // filtered signal in L channel
 assign audio_outR = nodes_out ; 
 assign audio_outL = nodes_out ;
-
+assign GPIO_0[18:1] = nodes_out;
+//assign GPIO_35 = GND;
 //green LEDs for button debugging
 assign LEDG[0] = ~KEY[0];
 assign LEDG[1] = ~KEY[0];
@@ -323,11 +324,11 @@ assign LEDR[15:0] = nodes_out;
 
 
 
-nodes drum (.restart(restart), .clk50(CLOCK_50), .audio_out(nodes_out));
+nodes drum (.restart(restart), .clk(AUD_DACLRCK), .audio_out(nodes_out), .sw(SW[17:0]));
 
 endmodule
 
-module node(left, right, up, down, clk, reset, resetval, value);
+module node(left, right, up, down, clk, reset, resetval, value, sw);
 
 	output reg signed[17:0] value;
 
@@ -336,6 +337,8 @@ module node(left, right, up, down, clk, reset, resetval, value);
 	input signed[17:0] up;
 	input signed[17:0] down;
 	
+	input [17:0] sw;
+	
 	input clk;
 	input reset; //When this is high, initialize to resetval
 	input wire signed[17:0] resetval; //the initial Gaussian shape
@@ -343,52 +346,42 @@ module node(left, right, up, down, clk, reset, resetval, value);
 	reg signed[17:0] prev;
 	reg signed[17:0] prev2;
 	
-	reg signed[20:0] newval;
+	reg signed[63:0] newval;
+	reg signed[31:0] neighbors;
+	reg signed[31:0] prevgain;
+	reg signed[31:0] rhocoeff;
+	reg signed[17:0] rhocoeff2;
 	
+	//assign newval = (((left+right+up+down - (prev + prev + prev + prev))/8) + (prev + prev) - prev2 + (prev2/256)) - 	((((left+right+up+down - (prev + prev + prev + prev))/8) + (prev + prev) - prev2 + (prev2/256))/256);
 	
 	always @ (posedge clk)
 	begin
-//		case(clk)
-//			1'b1:
-//			begin
-				case(reset)
-					1'b1 :
-					begin
-						newval = newval;
-						value = resetval;
-						prev2 = 0;
-						prev = 0;
-					end
-					1'b0:
-					begin
-						//newval = ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>1) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>2) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>3) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>4);
-						newval = ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>1);
-						value = newval;
-						prev2 = prev2;
-						prev = prev;
-					end
-				endcase
-//			end
-//			1'b0:
-//			begin
-//				case(reset)
-//					1'b1:
-//					begin
-//						newval = newval;
-//						value = resetval;
-//						prev2 = 0;
-//						prev = 0;
-//					end
-//					1'b0:
-//					begin
-//						newval = newval;
-//						prev2 = prev;
-//						prev = value;
-//						value = newval;
-//					end
-//				endcase
-//			end
-//		endcase
+		case(reset)
+			1'b1 :
+			begin
+				value <= resetval;
+				prev2 <= resetval;
+				prev <= resetval;
+			end
+			1'b0:
+			begin
+				//newval = ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>1) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>2) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>3) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>4);
+				
+				//newval = ((((left+right+up+down - (prev<<2))>>>2) + (prev<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>1);
+				//newval = (((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) - prev2 + (prev2>>>4)) - 	((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) - prev2 + (prev2>>>4))>>>4);
+				//////newval = (((left+right+up+down - (prev + prev + prev + prev))>>>3) + (prev + prev) - prev2 + (prev2>>>8)) - 	((((left+right+up+down - (prev + prev + prev + prev))>>>3) + (prev + prev) - prev2 + (prev2>>>8))>>>8);
+				//newval = (((20'd0 - (prev + prev + prev + prev))>>>3) + (prev + prev) - prev2 + (prev2>>>8)) - 	((((20'd0 - (prev + prev + prev + prev))>>>3) + (prev + prev) - prev2 + (prev2>>>8))>>>8);
+				neighbors = left+right+up+down;
+				prevgain = prev+prev+prev+prev;
+				rhocoeff = (neighbors-prevgain)>>>sw[3:0];
+				rhocoeff2 = {rhocoeff[31:30], rhocoeff[15:0]};
+				newval = (rhocoeff2 + (prev + prev) - prev2 + (prev2>>>sw[17:4])) - ((rhocoeff2 + (prev + prev) - prev2 + (prev2>>>sw[17:4]))>>>sw[17:4]);
+				//newval = (((left+right+up+down - (prev + prev + prev + prev))/8) + (prev + prev) - prev2 + (prev2/128)) - 	((((left+right+up+down - (prev + prev + prev + prev))/8) + (prev + prev) - prev2 + (prev2/128))/128);
+				value = {newval[63:62], newval[15:0]};
+				prev2 = prev;
+				prev = value;
+			end
+		endcase
 	end
 	
 	

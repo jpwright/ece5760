@@ -5,10 +5,10 @@ fileID = fopen(fileName, 'wt');
 
 
 
-fprintf(fileID, 'module nodes (restart, clk50, audio_out);\n');
+fprintf(fileID, 'module nodes (restart, clk, audio_out);\n');
 
 fprintf(fileID, '\toutput wire signed [15:0] audio_out;\n');
-fprintf(fileID, '\tinput clk50, restart;\n\n');
+fprintf(fileID, '\tinput clk, restart;\n\n');
 
 fprintf(fileID, '\n\n');
 
@@ -24,25 +24,25 @@ for x = 0:quarterGridNodes1D-1
         fprintf(fileID, strcat('\treg signed[17:0] down_', int2str(x), '_', int2str(y), ';\n'));
         
         if(x == 0)
-			left = strcat('right_' , int2str(x) , '_' , int2str(y)); 
-			right = strcat('right_' , int2str(x) , '_' , int2str(y)); 
-        elseif (x == quarterGridNodes1D-1)
-			left = strcat('left_' , int2str(x) , '_' , int2str(y)); 
+			left = strcat('left_' , int2str(x+1) , '_' , int2str(y)); 
+			right = strcat('right_' , int2str(x+1) , '_' , int2str(y)); 
+        elseif (x == quarterGridNodes1D-1) 
+			left = strcat('left_' , int2str(x-1) , '_' , int2str(y)); 
 			right = '18''b0'; 
         else
-			left = strcat('left_' , int2str(x) , '_' , int2str(y));
-			right = strcat('right_' , int2str(x) , '_' , int2str(y));
+			left = strcat('left_' , int2str(x-1) , '_' , int2str(y));
+			right = strcat('right_' , int2str(x+1) , '_' , int2str(y));
         end
 		
         if(y == 0)
-			up = strcat('up_' , int2str(x) , '_' , int2str(y)); 
-			down = strcat('up_' , int2str(x) , '_' , int2str(y));
+			up = strcat('up_' , int2str(x) , '_' , int2str(y+1)); 
+			down = strcat('down_' , int2str(x) , '_' , int2str(y+1));
         elseif (y == quarterGridNodes1D-1)
 			up = '18''b0';
-			down = strcat('down_' , int2str(x) , '_' , int2str(y)); 
+			down = strcat('down_' , int2str(x) , '_' , int2str(y-1)); 
         else
-			up = strcat('up_' , int2str(x) , '_' , int2str(y)); 
-			down = strcat('down_' , int2str(x) , '_' , int2str(y)); 
+			up = strcat('up_' , int2str(x) , '_' , int2str(y+1)); 
+			down = strcat('down_' , int2str(x) , '_' , int2str(y-1)); 
         end
         
         value = strcat('vwire_', int2str(x) , '_' , int2str(y));
@@ -59,11 +59,11 @@ for x = 0:quarterGridNodes1D-1
         end
         resetval = ['18''b00', resetnum];
         
-        fprintf(fileID, ['\tnode n', int2str(x), '_', int2str(y), '(.left(', left, '), .right(', right, '), .up(', up, '), .down(', down, '), .clk(clk50), .reset(restart), .resetval(', resetval, '), .value(', value, '));\n\n']);
+        fprintf(fileID, ['\tnode n', int2str(x), '_', int2str(y), '(.left(', left, '), .right(', right, '), .up(', up, '), .down(', down, '), .clk(clk), .reset(restart), .resetval(', resetval, '), .value(', value, '));\n\n']);
     end
 end
 
-% fprintf(fileID, '\n\talways @ (posedge clk50)\n');
+% fprintf(fileID, '\n\talways @ (posedge clk)\n');
 % fprintf(fileID, '\tbegin\n');
 % 
 % for x = 0:quarterGridNodes1D-1
@@ -73,7 +73,7 @@ end
 % end
 
 %fprintf(fileID, '\tend\n');
-fprintf(fileID, '\talways @ (negedge clk50)\n');
+fprintf(fileID, '\talways @ (negedge clk)\n');
 fprintf(fileID, '\tbegin\n');
 
 for x = 0:quarterGridNodes1D-1

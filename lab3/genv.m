@@ -5,10 +5,10 @@ fileID = fopen(fileName, 'wt');
 
 
 
-fprintf(fileID, 'module nodes (restart, clk50, audio_out);\n');
+fprintf(fileID, 'module nodes (restart, clk_audio, audio_out);\n');
 
 fprintf(fileID, '\toutput wire signed [15:0] audio_out;\n');
-fprintf(fileID, '\tinput wire clk50, restart;\n\n');
+fprintf(fileID, '\tinput wire clk_audio, restart;\n\n');
 
 
 % for x = 0:quarterGridNodes1D-1
@@ -57,7 +57,7 @@ fprintf(fileID, '\tinput wire clk50, restart;\n\n');
 
 fprintf(fileID, '\n\n');
 
-v = normpdf([0 0; 0 1; 0 2; 0 3; 1 0; 1 1; 1 2; 1 3; 2 0; 2 1;2 2; 2 3; 3 0; 3 1; 3 2; 3 3 ],[0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0], [1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1]);
+%v = normpdf([0 0; 0 1; 0 2; 0 3; 1 0; 1 1; 1 2; 1 3; 2 0; 2 1;2 2; 2 3; 3 0; 3 1; 3 2; 3 3 ],[0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0; 0 0], [1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1; 1 1]);
 for x = 0:quarterGridNodes1D-1
     for y = 0:quarterGridNodes1D-1
         if(x == 0)
@@ -88,7 +88,7 @@ for x = 0:quarterGridNodes1D-1
         fprintf(fileID, strcat('\treg signed[15:0] prev2_', int2str(x), '_' , int2str(y), ';\n'));
 
         %fprintf(fileID, '\talways@(negedge restart)\n');
-        fprintf(fileID, '\talways@(posedge clk50)\n'); %%%%%%%CHECK ON THE CLOCK SPEED
+        fprintf(fileID, '\talways@(posedge clk_audio)\n'); %%%%%%%CHECK ON THE CLOCK SPEED
         fprintf(fileID, '\tbegin\n');
         fprintf(fileID, '\t\tcase(restart)\n');
         fprintf(fileID, '\t\t\t1''b1 :\n');

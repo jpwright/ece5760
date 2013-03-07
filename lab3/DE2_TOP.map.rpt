@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_TOP
-Wed Mar 06 01:08:43 2013
+Wed Mar 06 22:28:18 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -15,44 +15,47 @@ Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
   9. State Machine - |DE2_TOP|I2C_AV_Config:u3|mSetup_ST
- 10. Registers Removed During Synthesis
- 11. Removed Registers Triggering Further Register Optimizations
- 12. General Register Statistics
- 13. Inverted Register Statistics
- 14. Parameter Settings for User Entity Instance: VGA_Audio_PLL:p1|altpll:altpll_component
- 15. Parameter Settings for User Entity Instance: I2C_AV_Config:u3
- 16. Parameter Settings for User Entity Instance: AUDIO_DAC_ADC:u4
- 17. altpll Parameter Settings by Entity Instance
- 18. Port Connectivity Checks: "nodes:drum|node:n4_4"
- 19. Port Connectivity Checks: "nodes:drum|node:n4_3"
- 20. Port Connectivity Checks: "nodes:drum|node:n4_2"
- 21. Port Connectivity Checks: "nodes:drum|node:n4_1"
- 22. Port Connectivity Checks: "nodes:drum|node:n4_0"
- 23. Port Connectivity Checks: "nodes:drum|node:n3_4"
- 24. Port Connectivity Checks: "nodes:drum|node:n3_3"
- 25. Port Connectivity Checks: "nodes:drum|node:n3_2"
- 26. Port Connectivity Checks: "nodes:drum|node:n3_1"
- 27. Port Connectivity Checks: "nodes:drum|node:n3_0"
- 28. Port Connectivity Checks: "nodes:drum|node:n2_4"
- 29. Port Connectivity Checks: "nodes:drum|node:n2_3"
- 30. Port Connectivity Checks: "nodes:drum|node:n2_2"
- 31. Port Connectivity Checks: "nodes:drum|node:n2_1"
- 32. Port Connectivity Checks: "nodes:drum|node:n2_0"
- 33. Port Connectivity Checks: "nodes:drum|node:n1_4"
- 34. Port Connectivity Checks: "nodes:drum|node:n1_3"
- 35. Port Connectivity Checks: "nodes:drum|node:n1_2"
- 36. Port Connectivity Checks: "nodes:drum|node:n1_1"
- 37. Port Connectivity Checks: "nodes:drum|node:n1_0"
- 38. Port Connectivity Checks: "nodes:drum|node:n0_4"
- 39. Port Connectivity Checks: "nodes:drum|node:n0_3"
- 40. Port Connectivity Checks: "nodes:drum|node:n0_2"
- 41. Port Connectivity Checks: "nodes:drum|node:n0_1"
- 42. Port Connectivity Checks: "nodes:drum|node:n0_0"
- 43. Port Connectivity Checks: "AUDIO_DAC_ADC:u4"
- 44. Port Connectivity Checks: "I2C_AV_Config:u3|I2C_Controller:u0"
- 45. Port Connectivity Checks: "VGA_Audio_PLL:p1"
- 46. Elapsed Time Per Partition
- 47. Analysis & Synthesis Messages
+ 10. Logic Cells Representing Combinational Loops
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Parameter Settings for User Entity Instance: VGA_Audio_PLL:p1|altpll:altpll_component
+ 17. Parameter Settings for User Entity Instance: I2C_AV_Config:u3
+ 18. Parameter Settings for User Entity Instance: AUDIO_DAC_ADC:u4
+ 19. altpll Parameter Settings by Entity Instance
+ 20. Port Connectivity Checks: "nodes:drum|node:n4_4"
+ 21. Port Connectivity Checks: "nodes:drum|node:n4_3"
+ 22. Port Connectivity Checks: "nodes:drum|node:n4_2"
+ 23. Port Connectivity Checks: "nodes:drum|node:n4_1"
+ 24. Port Connectivity Checks: "nodes:drum|node:n4_0"
+ 25. Port Connectivity Checks: "nodes:drum|node:n3_4"
+ 26. Port Connectivity Checks: "nodes:drum|node:n3_3"
+ 27. Port Connectivity Checks: "nodes:drum|node:n3_2"
+ 28. Port Connectivity Checks: "nodes:drum|node:n3_1"
+ 29. Port Connectivity Checks: "nodes:drum|node:n3_0"
+ 30. Port Connectivity Checks: "nodes:drum|node:n2_4"
+ 31. Port Connectivity Checks: "nodes:drum|node:n2_3"
+ 32. Port Connectivity Checks: "nodes:drum|node:n2_2"
+ 33. Port Connectivity Checks: "nodes:drum|node:n2_1"
+ 34. Port Connectivity Checks: "nodes:drum|node:n2_0"
+ 35. Port Connectivity Checks: "nodes:drum|node:n1_4"
+ 36. Port Connectivity Checks: "nodes:drum|node:n1_3"
+ 37. Port Connectivity Checks: "nodes:drum|node:n1_2"
+ 38. Port Connectivity Checks: "nodes:drum|node:n1_1"
+ 39. Port Connectivity Checks: "nodes:drum|node:n1_0"
+ 40. Port Connectivity Checks: "nodes:drum|node:n0_4"
+ 41. Port Connectivity Checks: "nodes:drum|node:n0_3"
+ 42. Port Connectivity Checks: "nodes:drum|node:n0_2"
+ 43. Port Connectivity Checks: "nodes:drum|node:n0_1"
+ 44. Port Connectivity Checks: "nodes:drum|node:n0_0"
+ 45. Port Connectivity Checks: "AUDIO_DAC_ADC:u4"
+ 46. Port Connectivity Checks: "I2C_AV_Config:u3|I2C_Controller:u0"
+ 47. Port Connectivity Checks: "VGA_Audio_PLL:p1"
+ 48. Elapsed Time Per Partition
+ 49. Analysis & Synthesis Messages
+ 50. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -78,15 +81,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 06 01:08:43 2013     ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 06 22:28:17 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 1,913                                     ;
-;     Total combinational functions  ; 1,451                                     ;
-;     Dedicated logic registers      ; 986                                       ;
-; Total registers                    ; 986                                       ;
+; Total logic elements               ; 12,741                                    ;
+;     Total combinational functions  ; 12,290                                    ;
+;     Dedicated logic registers      ; 1,390                                     ;
+; Total registers                    ; 1390                                      ;
 ; Total pins                         ; 425                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0                                         ;
@@ -105,6 +108,7 @@ applicable agreement for further details.
 ; Family name                                                                ; Cyclone II         ; Stratix            ;
 ; Use smart compilation                                                      ; On                 ; Off                ;
 ; Preserve fewer node names                                                  ; Off                ; On                 ;
+; Optimization Technique                                                     ; Speed              ; Balanced           ;
 ; Maximum processors allowed for parallel compilation                        ; 1                  ; 1                  ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -134,7 +138,6 @@ applicable agreement for further details.
 ; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
 ; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
 ; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
-; Optimization Technique                                                     ; Balanced           ; Balanced           ;
 ; Carry Chain Length                                                         ; 70                 ; 70                 ;
 ; Auto Carry Chains                                                          ; On                 ; On                 ;
 ; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
@@ -209,36 +212,36 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------------------+------------------------------------------------------------------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 1,913    ;
-;                                             ;          ;
-; Total combinational functions               ; 1451     ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 73       ;
-;     -- 3 input functions                    ; 1252     ;
-;     -- <=2 input functions                  ; 126      ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 168      ;
-;     -- arithmetic mode                      ; 1283     ;
-;                                             ;          ;
-; Total registers                             ; 986      ;
-;     -- Dedicated logic registers            ; 986      ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 425      ;
-; Total PLLs                                  ; 1        ;
-;     -- PLLs                                 ; 1        ;
-;                                             ;          ;
-; Maximum fan-out node                        ; CLOCK_50 ;
-; Maximum fan-out                             ; 908      ;
-; Total fan-out                               ; 7068     ;
-; Average fan-out                             ; 2.47     ;
-+---------------------------------------------+----------+
++------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                            ;
++---------------------------------------------+--------------------------+
+; Resource                                    ; Usage                    ;
++---------------------------------------------+--------------------------+
+; Estimated Total logic elements              ; 12,741                   ;
+;                                             ;                          ;
+; Total combinational functions               ; 12290                    ;
+; Logic element usage by number of LUT inputs ;                          ;
+;     -- 4 input functions                    ; 5117                     ;
+;     -- 3 input functions                    ; 6270                     ;
+;     -- <=2 input functions                  ; 903                      ;
+;                                             ;                          ;
+; Logic elements by mode                      ;                          ;
+;     -- normal mode                          ; 7825                     ;
+;     -- arithmetic mode                      ; 4465                     ;
+;                                             ;                          ;
+; Total registers                             ; 1390                     ;
+;     -- Dedicated logic registers            ; 1390                     ;
+;     -- I/O registers                        ; 0                        ;
+;                                             ;                          ;
+; I/O pins                                    ; 425                      ;
+; Total PLLs                                  ; 1                        ;
+;     -- PLLs                                 ; 1                        ;
+;                                             ;                          ;
+; Maximum fan-out node                        ; AUDIO_DAC_ADC:u4|LRCK_1X ;
+; Maximum fan-out                             ; 1294                     ;
+; Total fan-out                               ; 44426                    ;
+; Average fan-out                             ; 3.15                     ;
++---------------------------------------------+--------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -246,39 +249,39 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |DE2_TOP                        ; 1451 (1)          ; 986 (0)      ; 0           ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                          ;              ;
-;    |AUDIO_DAC_ADC:u4|           ; 31 (31)           ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|AUDIO_DAC_ADC:u4                         ;              ;
+; |DE2_TOP                        ; 12290 (1)         ; 1390 (0)     ; 0           ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                          ;              ;
+;    |AUDIO_DAC_ADC:u4|           ; 31 (31)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|AUDIO_DAC_ADC:u4                         ;              ;
 ;    |I2C_AV_Config:u3|           ; 93 (49)           ; 61 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|I2C_AV_Config:u3                         ;              ;
 ;       |I2C_Controller:u0|       ; 44 (44)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|I2C_AV_Config:u3|I2C_Controller:u0       ;              ;
-;    |Reset_Delay:r0|             ; 28 (28)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Reset_Delay:r0                           ;              ;
+;    |Reset_Delay:r0|             ; 29 (29)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Reset_Delay:r0                           ;              ;
 ;    |VGA_Audio_PLL:p1|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1                         ;              ;
 ;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1|altpll:altpll_component ;              ;
-;    |nodes:drum|                 ; 1298 (0)          ; 870 (435)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum                               ;              ;
-;       |node:n0_0|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_0                     ;              ;
-;       |node:n0_1|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_1                     ;              ;
-;       |node:n0_2|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_2                     ;              ;
-;       |node:n0_3|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_3                     ;              ;
-;       |node:n0_4|               ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_4                     ;              ;
-;       |node:n1_0|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_0                     ;              ;
-;       |node:n1_1|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_1                     ;              ;
-;       |node:n1_2|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_2                     ;              ;
-;       |node:n1_3|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_3                     ;              ;
-;       |node:n1_4|               ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_4                     ;              ;
-;       |node:n2_0|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_0                     ;              ;
-;       |node:n2_1|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_1                     ;              ;
-;       |node:n2_2|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_2                     ;              ;
-;       |node:n2_3|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_3                     ;              ;
-;       |node:n2_4|               ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_4                     ;              ;
-;       |node:n3_0|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_0                     ;              ;
-;       |node:n3_1|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_1                     ;              ;
-;       |node:n3_2|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_2                     ;              ;
-;       |node:n3_3|               ; 61 (61)           ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_3                     ;              ;
-;       |node:n3_4|               ; 36 (36)           ; 16 (16)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_4                     ;              ;
-;       |node:n4_0|               ; 40 (40)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_0                     ;              ;
-;       |node:n4_1|               ; 40 (40)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_1                     ;              ;
-;       |node:n4_2|               ; 40 (40)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_2                     ;              ;
-;       |node:n4_3|               ; 40 (40)           ; 17 (17)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_3                     ;              ;
-;       |node:n4_4|               ; 18 (18)           ; 15 (15)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_4                     ;              ;
+;    |nodes:drum|                 ; 12136 (0)         ; 1275 (425)   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum                               ;              ;
+;       |node:n0_0|               ; 496 (496)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_0                     ;              ;
+;       |node:n0_1|               ; 484 (484)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_1                     ;              ;
+;       |node:n0_2|               ; 474 (474)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_2                     ;              ;
+;       |node:n0_3|               ; 473 (473)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_3                     ;              ;
+;       |node:n0_4|               ; 458 (458)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_4                     ;              ;
+;       |node:n1_0|               ; 502 (502)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_0                     ;              ;
+;       |node:n1_1|               ; 503 (503)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_1                     ;              ;
+;       |node:n1_2|               ; 498 (498)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_2                     ;              ;
+;       |node:n1_3|               ; 497 (497)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_3                     ;              ;
+;       |node:n1_4|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_4                     ;              ;
+;       |node:n2_0|               ; 498 (498)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_0                     ;              ;
+;       |node:n2_1|               ; 498 (498)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_1                     ;              ;
+;       |node:n2_2|               ; 497 (497)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_2                     ;              ;
+;       |node:n2_3|               ; 497 (497)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_3                     ;              ;
+;       |node:n2_4|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_4                     ;              ;
+;       |node:n3_0|               ; 494 (494)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_0                     ;              ;
+;       |node:n3_1|               ; 496 (496)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_1                     ;              ;
+;       |node:n3_2|               ; 496 (496)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_2                     ;              ;
+;       |node:n3_3|               ; 497 (497)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_3                     ;              ;
+;       |node:n3_4|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_4                     ;              ;
+;       |node:n4_0|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_0                     ;              ;
+;       |node:n4_1|               ; 473 (473)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_1                     ;              ;
+;       |node:n4_2|               ; 473 (473)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_2                     ;              ;
+;       |node:n4_3|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_3                     ;              ;
+;       |node:n4_4|               ; 457 (457)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_4                     ;              ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -288,7 +291,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------+
 ; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance           ; IP Include File                 ;
 +--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------+
-; Altera ; ALTPLL       ; N/A     ; N/A          ; N/A          ; |DE2_TOP|VGA_Audio_PLL:p1 ; C:/ece5760/lab3/VGA_Audio_PLL.v ;
+; Altera ; ALTPLL       ; 11.0    ; N/A          ; N/A          ; |DE2_TOP|VGA_Audio_PLL:p1 ; C:/ece5760/lab3/VGA_Audio_PLL.v ;
 +--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------+
 
 
@@ -304,113 +307,223 @@ Encoding Type:  One-Hot
 +----------------+----------------+----------------+----------------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                               ;
-+---------------------------------------------------------+----------------------------------------+
-; Register name                                           ; Reason for Removal                     ;
-+---------------------------------------------------------+----------------------------------------+
-; nodes:drum|node:n4_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n4_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n4_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n4_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n4_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n4_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n4_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n4_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n4_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n4_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n3_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n2_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n1_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_4|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_4|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_3|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_3|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_2|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_2|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_1|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_1|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_0|prev[0..17]                        ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|node:n0_0|prev2[1..17]                       ; Stuck at GND due to stuck port data_in ;
-; I2C_AV_Config:u3|mI2C_DATA[7,8,13..17,19,23]            ; Stuck at GND due to stuck port data_in ;
-; I2C_AV_Config:u3|I2C_Controller:u0|SD[7,8,13..17,19,23] ; Stuck at GND due to stuck port data_in ;
-; nodes:drum|right_3_4[0]                                 ; Merged with nodes:drum|up_4_3[0]       ;
-; nodes:drum|right_3_4[1]                                 ; Merged with nodes:drum|up_4_3[1]       ;
-; nodes:drum|right_3_4[2]                                 ; Merged with nodes:drum|up_4_3[2]       ;
-; nodes:drum|right_3_4[3]                                 ; Merged with nodes:drum|up_4_3[3]       ;
-; nodes:drum|right_3_4[4]                                 ; Merged with nodes:drum|up_4_3[4]       ;
-; nodes:drum|right_3_4[5]                                 ; Merged with nodes:drum|up_4_3[5]       ;
-; nodes:drum|right_3_4[6]                                 ; Merged with nodes:drum|up_4_3[6]       ;
-; nodes:drum|right_3_4[7]                                 ; Merged with nodes:drum|up_4_3[7]       ;
-; nodes:drum|right_3_4[8]                                 ; Merged with nodes:drum|up_4_3[8]       ;
-; nodes:drum|right_3_4[9]                                 ; Merged with nodes:drum|up_4_3[9]       ;
-; nodes:drum|right_3_4[10]                                ; Merged with nodes:drum|up_4_3[10]      ;
-; nodes:drum|right_3_4[11]                                ; Merged with nodes:drum|up_4_3[11]      ;
-; nodes:drum|right_3_4[12]                                ; Merged with nodes:drum|up_4_3[12]      ;
-; nodes:drum|right_3_4[13]                                ; Merged with nodes:drum|up_4_3[13]      ;
-; nodes:drum|right_3_4[14]                                ; Merged with nodes:drum|up_4_3[14]      ;
-; nodes:drum|right_3_4[15]                                ; Merged with nodes:drum|up_4_3[15]      ;
-; nodes:drum|right_3_4[16]                                ; Merged with nodes:drum|up_4_3[16]      ;
-; nodes:drum|right_3_4[17]                                ; Merged with nodes:drum|up_4_3[17]      ;
-; nodes:drum|up_4_2[0]                                    ; Merged with nodes:drum|down_4_4[0]     ;
-; nodes:drum|right_3_3[0]                                 ; Merged with nodes:drum|down_4_4[0]     ;
-; nodes:drum|up_4_2[1]                                    ; Merged with nodes:drum|down_4_4[1]     ;
-; nodes:drum|right_3_3[1]                                 ; Merged with nodes:drum|down_4_4[1]     ;
-; nodes:drum|up_4_2[2]                                    ; Merged with nodes:drum|down_4_4[2]     ;
-; nodes:drum|right_3_3[2]                                 ; Merged with nodes:drum|down_4_4[2]     ;
-; nodes:drum|up_4_2[3]                                    ; Merged with nodes:drum|down_4_4[3]     ;
-; nodes:drum|right_3_3[3]                                 ; Merged with nodes:drum|down_4_4[3]     ;
-; nodes:drum|up_4_2[4]                                    ; Merged with nodes:drum|down_4_4[4]     ;
-; nodes:drum|right_3_3[4]                                 ; Merged with nodes:drum|down_4_4[4]     ;
-; nodes:drum|up_4_2[5]                                    ; Merged with nodes:drum|down_4_4[5]     ;
-; nodes:drum|right_3_3[5]                                 ; Merged with nodes:drum|down_4_4[5]     ;
-; nodes:drum|up_4_2[6]                                    ; Merged with nodes:drum|down_4_4[6]     ;
-; nodes:drum|right_3_3[6]                                 ; Merged with nodes:drum|down_4_4[6]     ;
-; nodes:drum|up_4_2[7]                                    ; Merged with nodes:drum|down_4_4[7]     ;
-; nodes:drum|right_3_3[7]                                 ; Merged with nodes:drum|down_4_4[7]     ;
-; nodes:drum|up_4_2[8]                                    ; Merged with nodes:drum|down_4_4[8]     ;
-; nodes:drum|right_3_3[8]                                 ; Merged with nodes:drum|down_4_4[8]     ;
-; nodes:drum|up_4_2[9]                                    ; Merged with nodes:drum|down_4_4[9]     ;
-; nodes:drum|right_3_3[9]                                 ; Merged with nodes:drum|down_4_4[9]     ;
-; nodes:drum|up_4_2[10]                                   ; Merged with nodes:drum|down_4_4[10]    ;
-; nodes:drum|right_3_3[10]                                ; Merged with nodes:drum|down_4_4[10]    ;
-; nodes:drum|up_4_2[11]                                   ; Merged with nodes:drum|down_4_4[11]    ;
-; nodes:drum|right_3_3[11]                                ; Merged with nodes:drum|down_4_4[11]    ;
-; nodes:drum|up_4_2[12]                                   ; Merged with nodes:drum|down_4_4[12]    ;
-; nodes:drum|right_3_3[12]                                ; Merged with nodes:drum|down_4_4[12]    ;
-; nodes:drum|up_4_2[13]                                   ; Merged with nodes:drum|down_4_4[13]    ;
-; nodes:drum|right_3_3[13]                                ; Merged with nodes:drum|down_4_4[13]    ;
-; nodes:drum|up_4_2[14]                                   ; Merged with nodes:drum|down_4_4[14]    ;
-; nodes:drum|right_3_3[14]                                ; Merged with nodes:drum|down_4_4[14]    ;
-; Total Number of Removed Registers = 1940                ;                                        ;
-+---------------------------------------------------------+----------------------------------------+
++--------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                 ;
++--------------------------------------------------------+-----+
+; Logic Cell Name                                        ;     ;
++--------------------------------------------------------+-----+
+; nodes:drum|node:n0_0|Add8~5                            ;     ;
+; nodes:drum|node:n0_0|Add8~19                           ;     ;
+; nodes:drum|node:n0_0|Add8~20                           ;     ;
+; nodes:drum|node:n0_0|Add8~21                           ;     ;
+; nodes:drum|node:n0_0|Add8~16                           ;     ;
+; nodes:drum|node:n0_0|Add8~15                           ;     ;
+; nodes:drum|node:n0_0|Add8~14                           ;     ;
+; nodes:drum|node:n0_0|Add8~13                           ;     ;
+; nodes:drum|node:n0_0|Add8~12                           ;     ;
+; nodes:drum|node:n0_0|Add8~11                           ;     ;
+; nodes:drum|node:n0_0|Add8~10                           ;     ;
+; nodes:drum|node:n0_0|Add8~6                            ;     ;
+; nodes:drum|node:n0_0|Add8~7                            ;     ;
+; nodes:drum|node:n0_0|Add8~8                            ;     ;
+; nodes:drum|node:n0_0|Add8~9                            ;     ;
+; nodes:drum|node:n0_0|Add8~0                            ;     ;
+; nodes:drum|node:n0_0|Add8~1                            ;     ;
+; nodes:drum|node:n0_0|Add8~2                            ;     ;
+; nodes:drum|node:n0_0|Add8~3                            ;     ;
+; nodes:drum|node:n0_0|Add8~4                            ;     ;
+; nodes:drum|node:n0_0|Add8~18                           ;     ;
+; nodes:drum|node:n0_0|Add8~17                           ;     ;
+; nodes:drum|node:n0_1|Add8~4                            ;     ;
+; nodes:drum|node:n0_1|Add8~5                            ;     ;
+; nodes:drum|node:n0_1|Add8~3                            ;     ;
+; nodes:drum|node:n0_1|Add8~2                            ;     ;
+; nodes:drum|node:n0_1|Add8~1                            ;     ;
+; nodes:drum|node:n0_1|Add8~0                            ;     ;
+; nodes:drum|node:n0_1|Add8~13                           ;     ;
+; nodes:drum|node:n0_1|Add8~12                           ;     ;
+; nodes:drum|node:n0_1|Add8~11                           ;     ;
+; nodes:drum|node:n0_1|Add8~10                           ;     ;
+; nodes:drum|node:n0_1|Add8~9                            ;     ;
+; nodes:drum|node:n0_1|Add8~8                            ;     ;
+; nodes:drum|node:n0_1|Add8~7                            ;     ;
+; nodes:drum|node:n0_1|Add8~6                            ;     ;
+; nodes:drum|node:n0_1|Add8~14                           ;     ;
+; nodes:drum|node:n0_1|Add8~15                           ;     ;
+; nodes:drum|node:n0_1|Add8~16                           ;     ;
+; rtl~7                                                  ;     ;
+; rtl~0                                                  ;     ;
+; rtl~5                                                  ;     ;
+; rtl~4                                                  ;     ;
+; rtl~3                                                  ;     ;
+; rtl~2                                                  ;     ;
+; rtl~1                                                  ;     ;
+; rtl~6                                                  ;     ;
+; nodes:drum|node:n0_2|Add8~1                            ;     ;
+; rtl~16                                                 ;     ;
+; rtl~15                                                 ;     ;
+; rtl~17                                                 ;     ;
+; rtl~18                                                 ;     ;
+; rtl~19                                                 ;     ;
+; nodes:drum|node:n0_2|Add8~13                           ;     ;
+; nodes:drum|node:n0_2|Add8~12                           ;     ;
+; nodes:drum|node:n0_2|Add8~11                           ;     ;
+; nodes:drum|node:n0_2|Add8~10                           ;     ;
+; nodes:drum|node:n0_2|Add8~6                            ;     ;
+; nodes:drum|node:n0_2|Add8~7                            ;     ;
+; nodes:drum|node:n0_2|Add8~8                            ;     ;
+; nodes:drum|node:n0_2|Add8~9                            ;     ;
+; nodes:drum|node:n0_2|Add8~5                            ;     ;
+; nodes:drum|node:n0_2|Add8~4                            ;     ;
+; nodes:drum|node:n0_2|Add8~3                            ;     ;
+; nodes:drum|node:n0_2|Add8~2                            ;     ;
+; nodes:drum|node:n0_2|Add8~0                            ;     ;
+; rtl~9                                                  ;     ;
+; rtl~8                                                  ;     ;
+; rtl~14                                                 ;     ;
+; rtl~13                                                 ;     ;
+; rtl~12                                                 ;     ;
+; rtl~11                                                 ;     ;
+; rtl~10                                                 ;     ;
+; rtl~21                                                 ;     ;
+; rtl~20                                                 ;     ;
+; rtl~26                                                 ;     ;
+; rtl~25                                                 ;     ;
+; rtl~24                                                 ;     ;
+; rtl~23                                                 ;     ;
+; rtl~22                                                 ;     ;
+; rtl~28                                                 ;     ;
+; rtl~27                                                 ;     ;
+; rtl~33                                                 ;     ;
+; rtl~32                                                 ;     ;
+; rtl~31                                                 ;     ;
+; rtl~30                                                 ;     ;
+; rtl~29                                                 ;     ;
+; rtl~35                                                 ;     ;
+; rtl~34                                                 ;     ;
+; rtl~40                                                 ;     ;
+; rtl~39                                                 ;     ;
+; rtl~38                                                 ;     ;
+; rtl~37                                                 ;     ;
+; rtl~36                                                 ;     ;
+; rtl~42                                                 ;     ;
+; rtl~41                                                 ;     ;
+; rtl~47                                                 ;     ;
+; rtl~46                                                 ;     ;
+; rtl~45                                                 ;     ;
+; rtl~44                                                 ;     ;
+; Number of logic cells representing combinational loops ; 218 ;
++--------------------------------------------------------+-----+
+Table restricted to first 100 entries. Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
++------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                   ;
++---------------------------------------------------------+--------------------------------------------+
+; Register name                                           ; Reason for Removal                         ;
++---------------------------------------------------------+--------------------------------------------+
+; I2C_AV_Config:u3|mI2C_DATA[7,8,13..17,19,23]            ; Stuck at GND due to stuck port data_in     ;
+; I2C_AV_Config:u3|I2C_Controller:u0|SD[7,8,13..17,19,23] ; Stuck at GND due to stuck port data_in     ;
+; nodes:drum|node:n4_4|prev[17]                           ; Merged with nodes:drum|node:n4_4|value[17] ;
+; nodes:drum|node:n4_4|prev[16]                           ; Merged with nodes:drum|node:n4_4|value[16] ;
+; nodes:drum|node:n4_4|prev[15]                           ; Merged with nodes:drum|node:n4_4|value[15] ;
+; nodes:drum|node:n4_4|prev[14]                           ; Merged with nodes:drum|node:n4_4|value[14] ;
+; nodes:drum|node:n4_4|prev[13]                           ; Merged with nodes:drum|node:n4_4|value[13] ;
+; nodes:drum|node:n4_4|prev[12]                           ; Merged with nodes:drum|node:n4_4|value[12] ;
+; nodes:drum|node:n4_4|prev[11]                           ; Merged with nodes:drum|node:n4_4|value[11] ;
+; nodes:drum|node:n4_4|prev[10]                           ; Merged with nodes:drum|node:n4_4|value[10] ;
+; nodes:drum|node:n4_4|prev[9]                            ; Merged with nodes:drum|node:n4_4|value[9]  ;
+; nodes:drum|node:n4_4|prev[8]                            ; Merged with nodes:drum|node:n4_4|value[8]  ;
+; nodes:drum|node:n4_4|prev[7]                            ; Merged with nodes:drum|node:n4_4|value[7]  ;
+; nodes:drum|node:n4_4|prev[6]                            ; Merged with nodes:drum|node:n4_4|value[6]  ;
+; nodes:drum|node:n4_4|prev[5]                            ; Merged with nodes:drum|node:n4_4|value[5]  ;
+; nodes:drum|node:n4_4|prev[4]                            ; Merged with nodes:drum|node:n4_4|value[4]  ;
+; nodes:drum|node:n4_4|prev[3]                            ; Merged with nodes:drum|node:n4_4|value[3]  ;
+; nodes:drum|node:n4_4|prev[2]                            ; Merged with nodes:drum|node:n4_4|value[2]  ;
+; nodes:drum|node:n4_4|prev[1]                            ; Merged with nodes:drum|node:n4_4|value[1]  ;
+; nodes:drum|node:n4_4|prev[0]                            ; Merged with nodes:drum|node:n4_4|value[0]  ;
+; nodes:drum|node:n4_3|prev[17]                           ; Merged with nodes:drum|node:n4_3|value[17] ;
+; nodes:drum|node:n4_3|prev[16]                           ; Merged with nodes:drum|node:n4_3|value[16] ;
+; nodes:drum|node:n4_3|prev[15]                           ; Merged with nodes:drum|node:n4_3|value[15] ;
+; nodes:drum|node:n4_3|prev[14]                           ; Merged with nodes:drum|node:n4_3|value[14] ;
+; nodes:drum|node:n4_3|prev[13]                           ; Merged with nodes:drum|node:n4_3|value[13] ;
+; nodes:drum|node:n4_3|prev[12]                           ; Merged with nodes:drum|node:n4_3|value[12] ;
+; nodes:drum|node:n4_3|prev[11]                           ; Merged with nodes:drum|node:n4_3|value[11] ;
+; nodes:drum|node:n4_3|prev[10]                           ; Merged with nodes:drum|node:n4_3|value[10] ;
+; nodes:drum|node:n4_3|prev[9]                            ; Merged with nodes:drum|node:n4_3|value[9]  ;
+; nodes:drum|node:n4_3|prev[8]                            ; Merged with nodes:drum|node:n4_3|value[8]  ;
+; nodes:drum|node:n4_3|prev[7]                            ; Merged with nodes:drum|node:n4_3|value[7]  ;
+; nodes:drum|node:n4_3|prev[6]                            ; Merged with nodes:drum|node:n4_3|value[6]  ;
+; nodes:drum|node:n4_3|prev[5]                            ; Merged with nodes:drum|node:n4_3|value[5]  ;
+; nodes:drum|node:n4_3|prev[4]                            ; Merged with nodes:drum|node:n4_3|value[4]  ;
+; nodes:drum|node:n4_3|prev[3]                            ; Merged with nodes:drum|node:n4_3|value[3]  ;
+; nodes:drum|node:n4_3|prev[2]                            ; Merged with nodes:drum|node:n4_3|value[2]  ;
+; nodes:drum|node:n4_3|prev[1]                            ; Merged with nodes:drum|node:n4_3|value[1]  ;
+; nodes:drum|node:n4_3|prev[0]                            ; Merged with nodes:drum|node:n4_3|value[0]  ;
+; nodes:drum|node:n4_2|prev[17]                           ; Merged with nodes:drum|node:n4_2|value[17] ;
+; nodes:drum|node:n4_2|prev[16]                           ; Merged with nodes:drum|node:n4_2|value[16] ;
+; nodes:drum|node:n4_2|prev[15]                           ; Merged with nodes:drum|node:n4_2|value[15] ;
+; nodes:drum|node:n4_2|prev[14]                           ; Merged with nodes:drum|node:n4_2|value[14] ;
+; nodes:drum|node:n4_2|prev[13]                           ; Merged with nodes:drum|node:n4_2|value[13] ;
+; nodes:drum|node:n4_2|prev[12]                           ; Merged with nodes:drum|node:n4_2|value[12] ;
+; nodes:drum|node:n4_2|prev[11]                           ; Merged with nodes:drum|node:n4_2|value[11] ;
+; nodes:drum|node:n4_2|prev[10]                           ; Merged with nodes:drum|node:n4_2|value[10] ;
+; nodes:drum|node:n4_2|prev[9]                            ; Merged with nodes:drum|node:n4_2|value[9]  ;
+; nodes:drum|node:n4_2|prev[8]                            ; Merged with nodes:drum|node:n4_2|value[8]  ;
+; nodes:drum|node:n4_2|prev[7]                            ; Merged with nodes:drum|node:n4_2|value[7]  ;
+; nodes:drum|node:n4_2|prev[6]                            ; Merged with nodes:drum|node:n4_2|value[6]  ;
+; nodes:drum|node:n4_2|prev[5]                            ; Merged with nodes:drum|node:n4_2|value[5]  ;
+; nodes:drum|node:n4_2|prev[4]                            ; Merged with nodes:drum|node:n4_2|value[4]  ;
+; nodes:drum|node:n4_2|prev[3]                            ; Merged with nodes:drum|node:n4_2|value[3]  ;
+; nodes:drum|node:n4_2|prev[2]                            ; Merged with nodes:drum|node:n4_2|value[2]  ;
+; nodes:drum|node:n4_2|prev[1]                            ; Merged with nodes:drum|node:n4_2|value[1]  ;
+; nodes:drum|node:n4_2|prev[0]                            ; Merged with nodes:drum|node:n4_2|value[0]  ;
+; nodes:drum|node:n4_1|prev[17]                           ; Merged with nodes:drum|node:n4_1|value[17] ;
+; nodes:drum|node:n4_1|prev[16]                           ; Merged with nodes:drum|node:n4_1|value[16] ;
+; nodes:drum|node:n4_1|prev[15]                           ; Merged with nodes:drum|node:n4_1|value[15] ;
+; nodes:drum|node:n4_1|prev[14]                           ; Merged with nodes:drum|node:n4_1|value[14] ;
+; nodes:drum|node:n4_1|prev[13]                           ; Merged with nodes:drum|node:n4_1|value[13] ;
+; nodes:drum|node:n4_1|prev[12]                           ; Merged with nodes:drum|node:n4_1|value[12] ;
+; nodes:drum|node:n4_1|prev[11]                           ; Merged with nodes:drum|node:n4_1|value[11] ;
+; nodes:drum|node:n4_1|prev[10]                           ; Merged with nodes:drum|node:n4_1|value[10] ;
+; nodes:drum|node:n4_1|prev[9]                            ; Merged with nodes:drum|node:n4_1|value[9]  ;
+; nodes:drum|node:n4_1|prev[8]                            ; Merged with nodes:drum|node:n4_1|value[8]  ;
+; nodes:drum|node:n4_1|prev[7]                            ; Merged with nodes:drum|node:n4_1|value[7]  ;
+; nodes:drum|node:n4_1|prev[6]                            ; Merged with nodes:drum|node:n4_1|value[6]  ;
+; nodes:drum|node:n4_1|prev[5]                            ; Merged with nodes:drum|node:n4_1|value[5]  ;
+; nodes:drum|node:n4_1|prev[4]                            ; Merged with nodes:drum|node:n4_1|value[4]  ;
+; nodes:drum|node:n4_1|prev[3]                            ; Merged with nodes:drum|node:n4_1|value[3]  ;
+; nodes:drum|node:n4_1|prev[2]                            ; Merged with nodes:drum|node:n4_1|value[2]  ;
+; nodes:drum|node:n4_1|prev[1]                            ; Merged with nodes:drum|node:n4_1|value[1]  ;
+; nodes:drum|node:n4_1|prev[0]                            ; Merged with nodes:drum|node:n4_1|value[0]  ;
+; nodes:drum|node:n4_0|prev[17]                           ; Merged with nodes:drum|node:n4_0|value[17] ;
+; nodes:drum|node:n4_0|prev[16]                           ; Merged with nodes:drum|node:n4_0|value[16] ;
+; nodes:drum|node:n4_0|prev[15]                           ; Merged with nodes:drum|node:n4_0|value[15] ;
+; nodes:drum|node:n4_0|prev[14]                           ; Merged with nodes:drum|node:n4_0|value[14] ;
+; nodes:drum|node:n4_0|prev[13]                           ; Merged with nodes:drum|node:n4_0|value[13] ;
+; nodes:drum|node:n4_0|prev[12]                           ; Merged with nodes:drum|node:n4_0|value[12] ;
+; nodes:drum|node:n4_0|prev[11]                           ; Merged with nodes:drum|node:n4_0|value[11] ;
+; nodes:drum|node:n4_0|prev[10]                           ; Merged with nodes:drum|node:n4_0|value[10] ;
+; nodes:drum|node:n4_0|prev[9]                            ; Merged with nodes:drum|node:n4_0|value[9]  ;
+; nodes:drum|node:n4_0|prev[8]                            ; Merged with nodes:drum|node:n4_0|value[8]  ;
+; nodes:drum|node:n4_0|prev[7]                            ; Merged with nodes:drum|node:n4_0|value[7]  ;
+; nodes:drum|node:n4_0|prev[6]                            ; Merged with nodes:drum|node:n4_0|value[6]  ;
+; nodes:drum|node:n4_0|prev[5]                            ; Merged with nodes:drum|node:n4_0|value[5]  ;
+; nodes:drum|node:n4_0|prev[4]                            ; Merged with nodes:drum|node:n4_0|value[4]  ;
+; nodes:drum|node:n4_0|prev[3]                            ; Merged with nodes:drum|node:n4_0|value[3]  ;
+; nodes:drum|node:n4_0|prev[2]                            ; Merged with nodes:drum|node:n4_0|value[2]  ;
+; nodes:drum|node:n4_0|prev[1]                            ; Merged with nodes:drum|node:n4_0|value[1]  ;
+; nodes:drum|node:n4_0|prev[0]                            ; Merged with nodes:drum|node:n4_0|value[0]  ;
+; nodes:drum|node:n3_4|prev[17]                           ; Merged with nodes:drum|node:n3_4|value[17] ;
+; nodes:drum|node:n3_4|prev[16]                           ; Merged with nodes:drum|node:n3_4|value[16] ;
+; nodes:drum|node:n3_4|prev[15]                           ; Merged with nodes:drum|node:n3_4|value[15] ;
+; nodes:drum|node:n3_4|prev[14]                           ; Merged with nodes:drum|node:n3_4|value[14] ;
+; nodes:drum|node:n3_4|prev[13]                           ; Merged with nodes:drum|node:n3_4|value[13] ;
+; nodes:drum|node:n3_4|prev[12]                           ; Merged with nodes:drum|node:n3_4|value[12] ;
+; nodes:drum|node:n3_4|prev[11]                           ; Merged with nodes:drum|node:n3_4|value[11] ;
+; nodes:drum|node:n3_4|prev[10]                           ; Merged with nodes:drum|node:n3_4|value[10] ;
+; Total Number of Removed Registers = 571                 ;                                            ;
++---------------------------------------------------------+--------------------------------------------+
 * Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
 
@@ -445,9 +558,9 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 986   ;
-; Number of registers using Synchronous Clear  ; 190   ;
-; Number of registers using Synchronous Load   ; 276   ;
+; Total registers                              ; 1390  ;
+; Number of registers using Synchronous Clear  ; 195   ;
+; Number of registers using Synchronous Load   ; 261   ;
 ; Number of registers using Asynchronous Clear ; 57    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 50    ;
@@ -461,7 +574,7 @@ Encoding Type:  One-Hot
 ; Inverted Register                                ; Fan out ;
 +--------------------------------------------------+---------+
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[4] ; 12      ;
-; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[0] ; 18      ;
+; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[0] ; 17      ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[2] ; 16      ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[3] ; 19      ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[1] ; 13      ;
@@ -471,6 +584,27 @@ Encoding Type:  One-Hot
 ; I2C_AV_Config:u3|I2C_Controller:u0|SDO           ; 4       ;
 ; Total number of inverted registers = 9           ;         ;
 +--------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                ; Example Multiplexer Output ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
+; 3:1                ; 100 bits  ; 200 LEs       ; 200 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n3_3|ShiftRight0 ;                            ;
+; 3:1                ; 125 bits  ; 250 LEs       ; 250 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n4_4|ShiftRight0 ;                            ;
+; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n0_2|ShiftRight0 ;                            ;
+; 4:1                ; 150 bits  ; 300 LEs       ; 150 LEs              ; 150 LEs                ; |DE2_TOP|nodes:drum|node:n3_0|ShiftRight1 ;                            ;
+; 5:1                ; 50 bits   ; 150 LEs       ; 150 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n3_0|ShiftRight0 ;                            ;
+; 5:1                ; 250 bits  ; 750 LEs       ; 250 LEs              ; 500 LEs                ; |DE2_TOP|nodes:drum|node:n0_0|ShiftRight1 ;                            ;
+; 5:1                ; 150 bits  ; 450 LEs       ; 300 LEs              ; 150 LEs                ; |DE2_TOP|nodes:drum|node:n4_0|ShiftRight2 ;                            ;
+; 6:1                ; 175 bits  ; 700 LEs       ; 350 LEs              ; 350 LEs                ; |DE2_TOP|nodes:drum|node:n0_2|ShiftRight2 ;                            ;
+; 6:1                ; 25 bits   ; 100 LEs       ; 75 LEs               ; 25 LEs                 ; |DE2_TOP|nodes:drum|node:n0_2|ShiftRight2 ;                            ;
+; 7:1                ; 50 bits   ; 200 LEs       ; 150 LEs              ; 50 LEs                 ; |DE2_TOP|nodes:drum|node:n4_1|ShiftRight1 ;                            ;
+; 7:1                ; 50 bits   ; 200 LEs       ; 200 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n0_2|ShiftRight2 ;                            ;
+; 8:1                ; 25 bits   ; 125 LEs       ; 100 LEs              ; 25 LEs                 ; |DE2_TOP|nodes:drum|node:n4_1|ShiftRight1 ;                            ;
+; 8:1                ; 75 bits   ; 375 LEs       ; 300 LEs              ; 75 LEs                 ; |DE2_TOP|nodes:drum|node:n0_1|ShiftRight2 ;                            ;
++--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
 
 
 +---------------------------------------------------------------------------------------+
@@ -976,9 +1110,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+-------+----------+--------------+
 ; Port            ; Type  ; Severity ; Details      ;
 +-----------------+-------+----------+--------------+
-; resetval[17..5] ; Input ; Info     ; Stuck at GND ;
-; resetval[3..0]  ; Input ; Info     ; Stuck at GND ;
-; resetval[4]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[5..0]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..6] ; Input ; Info     ; Stuck at GND ;
 +-----------------+-------+----------+--------------+
 
 
@@ -987,11 +1120,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+-------+----------+--------------+
 ; Port            ; Type  ; Severity ; Details      ;
 +-----------------+-------+----------+--------------+
-; resetval[2..1]  ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..7] ; Input ; Info     ; Stuck at GND ;
-; resetval[5..3]  ; Input ; Info     ; Stuck at GND ;
-; resetval[6]     ; Input ; Info     ; Stuck at VCC ;
-; resetval[0]     ; Input ; Info     ; Stuck at GND ;
+; resetval[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..9] ; Input ; Info     ; Stuck at GND ;
+; resetval[7..5]  ; Input ; Info     ; Stuck at GND ;
+; resetval[2..1]  ; Input ; Info     ; Stuck at GND ;
+; resetval[8]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[0]     ; Input ; Info     ; Stuck at VCC ;
 +-----------------+-------+----------+--------------+
 
 
@@ -1000,11 +1134,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+-------+----------+--------------+
 ; Port            ; Type  ; Severity ; Details      ;
 +-----------------+-------+----------+--------------+
-; resetval[6..4]  ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..7] ; Input ; Info     ; Stuck at GND ;
-; resetval[1..0]  ; Input ; Info     ; Stuck at GND ;
-; resetval[3]     ; Input ; Info     ; Stuck at GND ;
-; resetval[2]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[8..6]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[3..0]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..9] ; Input ; Info     ; Stuck at GND ;
+; resetval[5..4]  ; Input ; Info     ; Stuck at GND ;
 +-----------------+-------+----------+--------------+
 
 
@@ -1023,22 +1156,22 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+-------+----------+--------------+
 ; Port            ; Type  ; Severity ; Details      ;
 +-----------------+-------+----------+--------------+
-; resetval[17..5] ; Input ; Info     ; Stuck at GND ;
-; resetval[3..0]  ; Input ; Info     ; Stuck at GND ;
-; resetval[4]     ; Input ; Info     ; Stuck at VCC ;
-+-----------------+-------+----------+--------------+
-
-
-+---------------------------------------------------+
-; Port Connectivity Checks: "nodes:drum|node:n2_2"  ;
-+-----------------+-------+----------+--------------+
-; Port            ; Type  ; Severity ; Details      ;
-+-----------------+-------+----------+--------------+
 ; resetval[5..0]  ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..8] ; Input ; Info     ; Stuck at GND ;
-; resetval[7]     ; Input ; Info     ; Stuck at VCC ;
-; resetval[6]     ; Input ; Info     ; Stuck at GND ;
+; resetval[17..6] ; Input ; Info     ; Stuck at GND ;
 +-----------------+-------+----------+--------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n2_2"   ;
++------------------+-------+----------+--------------+
+; Port             ; Type  ; Severity ; Details      ;
++------------------+-------+----------+--------------+
+; resetval[7..2]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..10] ; Input ; Info     ; Stuck at GND ;
+; resetval[1..0]   ; Input ; Info     ; Stuck at GND ;
+; resetval[9]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[8]      ; Input ; Info     ; Stuck at GND ;
++------------------+-------+----------+--------------+
 
 
 +----------------------------------------------------+
@@ -1046,13 +1179,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+--------------+
 ; Port             ; Type  ; Severity ; Details      ;
 +------------------+-------+----------+--------------+
-; resetval[9..8]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[4..3]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..10] ; Input ; Info     ; Stuck at GND ;
-; resetval[2..0]   ; Input ; Info     ; Stuck at GND ;
+; resetval[11..10] ; Input ; Info     ; Stuck at VCC ;
+; resetval[6..5]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..12] ; Input ; Info     ; Stuck at GND ;
+; resetval[4..1]   ; Input ; Info     ; Stuck at GND ;
+; resetval[9]      ; Input ; Info     ; Stuck at GND ;
+; resetval[8]      ; Input ; Info     ; Stuck at VCC ;
 ; resetval[7]      ; Input ; Info     ; Stuck at GND ;
-; resetval[6]      ; Input ; Info     ; Stuck at VCC ;
-; resetval[5]      ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at VCC ;
 +------------------+-------+----------+--------------+
 
 
@@ -1061,13 +1195,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+--------------+
 ; Port             ; Type  ; Severity ; Details      ;
 +------------------+-------+----------+--------------+
-; resetval[8..7]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..11] ; Input ; Info     ; Stuck at GND ;
-; resetval[6..3]   ; Input ; Info     ; Stuck at GND ;
-; resetval[1..0]   ; Input ; Info     ; Stuck at GND ;
-; resetval[10]     ; Input ; Info     ; Stuck at VCC ;
-; resetval[9]      ; Input ; Info     ; Stuck at GND ;
-; resetval[2]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[10..9]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[3..1]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..13] ; Input ; Info     ; Stuck at GND ;
+; resetval[8..4]   ; Input ; Info     ; Stuck at GND ;
+; resetval[12]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[11]     ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at GND ;
 +------------------+-------+----------+--------------+
 
 
@@ -1086,11 +1220,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+-------+----------+--------------+
 ; Port            ; Type  ; Severity ; Details      ;
 +-----------------+-------+----------+--------------+
-; resetval[2..1]  ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..7] ; Input ; Info     ; Stuck at GND ;
-; resetval[5..3]  ; Input ; Info     ; Stuck at GND ;
-; resetval[6]     ; Input ; Info     ; Stuck at VCC ;
-; resetval[0]     ; Input ; Info     ; Stuck at GND ;
+; resetval[4..3]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..9] ; Input ; Info     ; Stuck at GND ;
+; resetval[7..5]  ; Input ; Info     ; Stuck at GND ;
+; resetval[2..1]  ; Input ; Info     ; Stuck at GND ;
+; resetval[8]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[0]     ; Input ; Info     ; Stuck at VCC ;
 +-----------------+-------+----------+--------------+
 
 
@@ -1099,13 +1234,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+--------------+
 ; Port             ; Type  ; Severity ; Details      ;
 +------------------+-------+----------+--------------+
-; resetval[9..8]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[4..3]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..10] ; Input ; Info     ; Stuck at GND ;
-; resetval[2..0]   ; Input ; Info     ; Stuck at GND ;
+; resetval[11..10] ; Input ; Info     ; Stuck at VCC ;
+; resetval[6..5]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..12] ; Input ; Info     ; Stuck at GND ;
+; resetval[4..1]   ; Input ; Info     ; Stuck at GND ;
+; resetval[9]      ; Input ; Info     ; Stuck at GND ;
+; resetval[8]      ; Input ; Info     ; Stuck at VCC ;
 ; resetval[7]      ; Input ; Info     ; Stuck at GND ;
-; resetval[6]      ; Input ; Info     ; Stuck at VCC ;
-; resetval[5]      ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at VCC ;
 +------------------+-------+----------+--------------+
 
 
@@ -1114,12 +1250,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+--------------+
 ; Port             ; Type  ; Severity ; Details      ;
 +------------------+-------+----------+--------------+
-; resetval[11..9]  ; Input ; Info     ; Stuck at VCC ;
-; resetval[7..2]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..12] ; Input ; Info     ; Stuck at GND ;
-; resetval[8]      ; Input ; Info     ; Stuck at GND ;
-; resetval[1]      ; Input ; Info     ; Stuck at GND ;
-; resetval[0]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[13..11] ; Input ; Info     ; Stuck at VCC ;
+; resetval[9..4]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..14] ; Input ; Info     ; Stuck at GND ;
+; resetval[1..0]   ; Input ; Info     ; Stuck at GND ;
+; resetval[10]     ; Input ; Info     ; Stuck at GND ;
+; resetval[3]      ; Input ; Info     ; Stuck at GND ;
+; resetval[2]      ; Input ; Info     ; Stuck at VCC ;
 +------------------+-------+----------+--------------+
 
 
@@ -1128,15 +1265,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+--------------+
 ; Port             ; Type  ; Severity ; Details      ;
 +------------------+-------+----------+--------------+
-; resetval[12..11] ; Input ; Info     ; Stuck at VCC ;
-; resetval[5..4]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[2..1]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..13] ; Input ; Info     ; Stuck at GND ;
-; resetval[10..8]  ; Input ; Info     ; Stuck at GND ;
-; resetval[7]      ; Input ; Info     ; Stuck at VCC ;
-; resetval[6]      ; Input ; Info     ; Stuck at GND ;
-; resetval[3]      ; Input ; Info     ; Stuck at GND ;
-; resetval[0]      ; Input ; Info     ; Stuck at GND ;
+; resetval[14..13] ; Input ; Info     ; Stuck at VCC ;
+; resetval[7..6]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[4..3]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..15] ; Input ; Info     ; Stuck at GND ;
+; resetval[12..10] ; Input ; Info     ; Stuck at GND ;
+; resetval[2..1]   ; Input ; Info     ; Stuck at GND ;
+; resetval[9]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[8]      ; Input ; Info     ; Stuck at GND ;
+; resetval[5]      ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at VCC ;
 +------------------+-------+----------+--------------+
 
 
@@ -1155,11 +1293,10 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------+-------+----------+--------------+
 ; Port            ; Type  ; Severity ; Details      ;
 +-----------------+-------+----------+--------------+
-; resetval[6..4]  ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..7] ; Input ; Info     ; Stuck at GND ;
-; resetval[1..0]  ; Input ; Info     ; Stuck at GND ;
-; resetval[3]     ; Input ; Info     ; Stuck at GND ;
-; resetval[2]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[8..6]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[3..0]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..9] ; Input ; Info     ; Stuck at GND ;
+; resetval[5..4]  ; Input ; Info     ; Stuck at GND ;
 +-----------------+-------+----------+--------------+
 
 
@@ -1168,13 +1305,13 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+--------------+
 ; Port             ; Type  ; Severity ; Details      ;
 +------------------+-------+----------+--------------+
-; resetval[8..7]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..11] ; Input ; Info     ; Stuck at GND ;
-; resetval[6..3]   ; Input ; Info     ; Stuck at GND ;
-; resetval[1..0]   ; Input ; Info     ; Stuck at GND ;
-; resetval[10]     ; Input ; Info     ; Stuck at VCC ;
-; resetval[9]      ; Input ; Info     ; Stuck at GND ;
-; resetval[2]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[10..9]  ; Input ; Info     ; Stuck at VCC ;
+; resetval[3..1]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..13] ; Input ; Info     ; Stuck at GND ;
+; resetval[8..4]   ; Input ; Info     ; Stuck at GND ;
+; resetval[12]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[11]     ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at GND ;
 +------------------+-------+----------+--------------+
 
 
@@ -1183,15 +1320,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+--------------+
 ; Port             ; Type  ; Severity ; Details      ;
 +------------------+-------+----------+--------------+
-; resetval[12..11] ; Input ; Info     ; Stuck at VCC ;
-; resetval[5..4]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[2..1]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..13] ; Input ; Info     ; Stuck at GND ;
-; resetval[10..8]  ; Input ; Info     ; Stuck at GND ;
-; resetval[7]      ; Input ; Info     ; Stuck at VCC ;
-; resetval[6]      ; Input ; Info     ; Stuck at GND ;
-; resetval[3]      ; Input ; Info     ; Stuck at GND ;
-; resetval[0]      ; Input ; Info     ; Stuck at GND ;
+; resetval[14..13] ; Input ; Info     ; Stuck at VCC ;
+; resetval[7..6]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[4..3]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..15] ; Input ; Info     ; Stuck at GND ;
+; resetval[12..10] ; Input ; Info     ; Stuck at GND ;
+; resetval[2..1]   ; Input ; Info     ; Stuck at GND ;
+; resetval[9]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[8]      ; Input ; Info     ; Stuck at GND ;
+; resetval[5]      ; Input ; Info     ; Stuck at GND ;
+; resetval[0]      ; Input ; Info     ; Stuck at VCC ;
 +------------------+-------+----------+--------------+
 
 
@@ -1200,14 +1338,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 +------------------+-------+----------+--------------+
 ; Port             ; Type  ; Severity ; Details      ;
 +------------------+-------+----------+--------------+
-; resetval[5..1]   ; Input ; Info     ; Stuck at VCC ;
-; resetval[17..14] ; Input ; Info     ; Stuck at GND ;
-; resetval[10..8]  ; Input ; Info     ; Stuck at GND ;
+; resetval[7..3]   ; Input ; Info     ; Stuck at VCC ;
+; resetval[17..16] ; Input ; Info     ; Stuck at GND ;
+; resetval[12..10] ; Input ; Info     ; Stuck at GND ;
+; resetval[15]     ; Input ; Info     ; Stuck at VCC ;
+; resetval[14]     ; Input ; Info     ; Stuck at GND ;
 ; resetval[13]     ; Input ; Info     ; Stuck at VCC ;
-; resetval[12]     ; Input ; Info     ; Stuck at GND ;
-; resetval[11]     ; Input ; Info     ; Stuck at VCC ;
-; resetval[7]      ; Input ; Info     ; Stuck at VCC ;
-; resetval[6]      ; Input ; Info     ; Stuck at GND ;
+; resetval[9]      ; Input ; Info     ; Stuck at VCC ;
+; resetval[8]      ; Input ; Info     ; Stuck at GND ;
+; resetval[2]      ; Input ; Info     ; Stuck at GND ;
+; resetval[1]      ; Input ; Info     ; Stuck at VCC ;
 ; resetval[0]      ; Input ; Info     ; Stuck at GND ;
 +------------------+-------+----------+--------------+
 
@@ -1249,7 +1389,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:04     ;
+; Top            ; 00:01:14     ;
 +----------------+--------------+
 
 
@@ -1259,7 +1399,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Wed Mar 06 01:08:37 2013
+    Info: Processing started: Wed Mar 06 22:27:22 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Audio_Filter_18_bit -c DE2_TOP
 Info: Found 1 design units, including 1 entities, in source file nodes.v
     Info: Found entity 1: nodes
@@ -1290,7 +1430,6 @@ Info: Elaborating entity "Reset_Delay" for hierarchy "Reset_Delay:r0"
 Warning (10230): Verilog HDL assignment warning at Reset_Delay.v(10): truncated value with size 32 to match size of target (20)
 Info: Elaborating entity "VGA_Audio_PLL" for hierarchy "VGA_Audio_PLL:p1"
 Info: Elaborating entity "altpll" for hierarchy "VGA_Audio_PLL:p1|altpll:altpll_component"
-Warning: Variable or input pin "configupdate" is defined but never used
 Info: Elaborated megafunction instantiation "VGA_Audio_PLL:p1|altpll:altpll_component"
 Info: Instantiated megafunction "VGA_Audio_PLL:p1|altpll:altpll_component" with the following parameter:
     Info: Parameter "clk0_divide_by" = "15"
@@ -1365,34 +1504,32 @@ Warning (10230): Verilog HDL assignment warning at AUDIO_DAC_ADC.v(113): truncat
 Warning (10230): Verilog HDL assignment warning at AUDIO_DAC_ADC.v(121): truncated value with size 32 to match size of target (7)
 Warning (10230): Verilog HDL assignment warning at AUDIO_DAC_ADC.v(140): truncated value with size 32 to match size of target (4)
 Info: Elaborating entity "nodes" for hierarchy "nodes:drum"
-Warning (10230): Verilog HDL assignment warning at nodes.v(266): truncated value with size 18 to match size of target (16)
 Info: Elaborating entity "node" for hierarchy "nodes:drum|node:n0_0"
-Warning (10230): Verilog HDL assignment warning at Audio_Filter_18bit_parallel.v(366): truncated value with size 21 to match size of target (18)
 Warning: 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning: The following nodes have both tri-state and non-tri-state drivers
     Warning: Inserted always-enabled tri-state buffer between "AUD_DACLRCK" and its non-tri-state driver.
     Warning: Inserted always-enabled tri-state buffer between "AUD_BCLK" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[1]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[2]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[3]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[4]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[5]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[6]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[7]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[8]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[9]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[10]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[11]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[12]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[13]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[14]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[15]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[16]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[17]" and its non-tri-state driver.
+    Warning: Inserted always-enabled tri-state buffer between "GPIO_0[18]" and its non-tri-state driver.
 Warning: The following bidir pins have no drivers
     Warning: Bidir "SD_DAT3" has no driver
     Warning: Bidir "SD_CMD" has no driver
-    Warning: Bidir "GPIO_0[1]" has no driver
-    Warning: Bidir "GPIO_0[2]" has no driver
-    Warning: Bidir "GPIO_0[3]" has no driver
-    Warning: Bidir "GPIO_0[4]" has no driver
-    Warning: Bidir "GPIO_0[5]" has no driver
-    Warning: Bidir "GPIO_0[6]" has no driver
-    Warning: Bidir "GPIO_0[7]" has no driver
-    Warning: Bidir "GPIO_0[8]" has no driver
-    Warning: Bidir "GPIO_0[9]" has no driver
-    Warning: Bidir "GPIO_0[10]" has no driver
-    Warning: Bidir "GPIO_0[11]" has no driver
-    Warning: Bidir "GPIO_0[12]" has no driver
-    Warning: Bidir "GPIO_0[13]" has no driver
-    Warning: Bidir "GPIO_0[14]" has no driver
-    Warning: Bidir "GPIO_0[15]" has no driver
-    Warning: Bidir "GPIO_0[16]" has no driver
-    Warning: Bidir "GPIO_0[17]" has no driver
-    Warning: Bidir "GPIO_0[18]" has no driver
     Warning: Bidir "GPIO_0[19]" has no driver
     Warning: Bidir "GPIO_0[20]" has no driver
     Warning: Bidir "GPIO_0[21]" has no driver
@@ -1419,6 +1556,24 @@ Warning: TRI or OPNDRN buffers permanently enabled
     Warning: Node "AUD_DACLRCK~synth"
     Warning: Node "AUD_BCLK~synth"
     Warning: Node "GPIO_0[0]~synth"
+    Warning: Node "GPIO_0[1]~synth"
+    Warning: Node "GPIO_0[2]~synth"
+    Warning: Node "GPIO_0[3]~synth"
+    Warning: Node "GPIO_0[4]~synth"
+    Warning: Node "GPIO_0[5]~synth"
+    Warning: Node "GPIO_0[6]~synth"
+    Warning: Node "GPIO_0[7]~synth"
+    Warning: Node "GPIO_0[8]~synth"
+    Warning: Node "GPIO_0[9]~synth"
+    Warning: Node "GPIO_0[10]~synth"
+    Warning: Node "GPIO_0[11]~synth"
+    Warning: Node "GPIO_0[12]~synth"
+    Warning: Node "GPIO_0[13]~synth"
+    Warning: Node "GPIO_0[14]~synth"
+    Warning: Node "GPIO_0[15]~synth"
+    Warning: Node "GPIO_0[16]~synth"
+    Warning: Node "GPIO_0[17]~synth"
+    Warning: Node "GPIO_0[18]~synth"
 Warning: Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX0[0]" is stuck at VCC
     Warning (13410): Pin "HEX0[1]" is stuck at VCC
@@ -1613,28 +1768,11 @@ Warning: Output pins are stuck at VCC or GND
 Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
     Info: Register "I2C_AV_Config:u3|mSetup_ST~9" lost all its fanouts during netlist optimizations.
     Info: Register "I2C_AV_Config:u3|mSetup_ST~10" lost all its fanouts during netlist optimizations.
+Info: Generated suppressed messages file C:/ece5760/lab3/DE2_TOP.map.smsg
 Info: Generating hard_block partition "hard_block:auto_generated_inst"
     Info: Adding node "VGA_Audio_PLL:p1|altpll:altpll_component|pll"
-Warning: Design contains 42 input pin(s) that do not drive logic
+Warning: Design contains 24 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "EXT_CLOCK"
-    Warning (15610): No output dependent on input pin "SW[0]"
-    Warning (15610): No output dependent on input pin "SW[1]"
-    Warning (15610): No output dependent on input pin "SW[2]"
-    Warning (15610): No output dependent on input pin "SW[3]"
-    Warning (15610): No output dependent on input pin "SW[4]"
-    Warning (15610): No output dependent on input pin "SW[5]"
-    Warning (15610): No output dependent on input pin "SW[6]"
-    Warning (15610): No output dependent on input pin "SW[7]"
-    Warning (15610): No output dependent on input pin "SW[8]"
-    Warning (15610): No output dependent on input pin "SW[9]"
-    Warning (15610): No output dependent on input pin "SW[10]"
-    Warning (15610): No output dependent on input pin "SW[11]"
-    Warning (15610): No output dependent on input pin "SW[12]"
-    Warning (15610): No output dependent on input pin "SW[13]"
-    Warning (15610): No output dependent on input pin "SW[14]"
-    Warning (15610): No output dependent on input pin "SW[15]"
-    Warning (15610): No output dependent on input pin "SW[16]"
-    Warning (15610): No output dependent on input pin "SW[17]"
     Warning (15610): No output dependent on input pin "UART_RXD"
     Warning (15610): No output dependent on input pin "IRDA_RXD"
     Warning (15610): No output dependent on input pin "OTG_INT0"
@@ -1658,16 +1796,22 @@ Warning: Design contains 42 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "TD_DATA[7]"
     Warning (15610): No output dependent on input pin "TD_HS"
     Warning (15610): No output dependent on input pin "TD_VS"
-Info: Implemented 2339 device resources after synthesis - the final resource count might be different
+Info: Implemented 13167 device resources after synthesis - the final resource count might be different
     Info: Implemented 48 input pins
     Info: Implemented 218 output pins
     Info: Implemented 159 bidirectional pins
-    Info: Implemented 1913 logic cells
+    Info: Implemented 12741 logic cells
     Info: Implemented 1 PLLs
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 303 warnings
-    Info: Peak virtual memory: 374 megabytes
-    Info: Processing ended: Wed Mar 06 01:08:43 2013
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:06
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 300 warnings
+    Info: Peak virtual memory: 455 megabytes
+    Info: Processing ended: Wed Mar 06 22:28:18 2013
+    Info: Elapsed time: 00:00:56
+    Info: Total CPU time (on all processors): 00:00:55
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in C:/ece5760/lab3/DE2_TOP.map.smsg.
 
 
