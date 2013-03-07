@@ -1,5 +1,5 @@
 Flow report for DE2_TOP
-Wed Mar 06 22:29:40 2013
+Wed Mar 06 23:18:40 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -38,7 +38,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Flow Summary                                                                   ;
 +------------------------------------+-------------------------------------------+
-; Flow Status                        ; Successful - Wed Mar 06 22:29:40 2013     ;
+; Flow Status                        ; Successful - Wed Mar 06 23:18:40 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
@@ -62,7 +62,7 @@ applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/06/2013 22:27:22 ;
+; Start date & time ; 03/06/2013 23:16:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; DE2_TOP             ;
 +-------------------+---------------------+
@@ -73,7 +73,7 @@ applicable agreement for further details.
 +--------------------------------------+---------------------------------------+---------------+-------------+----------------+
 ; Assignment Name                      ; Value                                 ; Default Value ; Entity Name ; Section Id     ;
 +--------------------------------------+---------------------------------------+---------------+-------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 132683363430430.136262684205592       ; --            ; --          ; --             ;
+; COMPILER_SIGNATURE_ID                ; 132683363430430.136262978205416       ; --            ; --          ; --             ;
 ; CYCLONEII_OPTIMIZATION_TECHNIQUE     ; Speed                                 ; Balanced      ; --          ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; nodes                                 ; --            ; --          ; audio_test     ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; audio_test                            ; --            ; --          ; eda_simulation ;
@@ -105,12 +105,12 @@ applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:53     ; 1.0                     ; 455 MB              ; 00:00:53                           ;
-; Fitter                    ; 00:00:48     ; 1.0                     ; 622 MB              ; 00:00:47                           ;
+; Analysis & Synthesis      ; 00:00:54     ; 1.0                     ; 473 MB              ; 00:00:54                           ;
+; Fitter                    ; 00:00:49     ; 1.0                     ; 642 MB              ; 00:00:48                           ;
 ; Assembler                 ; 00:00:03     ; 1.0                     ; 412 MB              ; 00:00:03                           ;
-; TimeQuest Timing Analyzer ; 00:00:12     ; 1.0                     ; 473 MB              ; 00:00:12                           ;
+; TimeQuest Timing Analyzer ; 00:00:13     ; 1.0                     ; 473 MB              ; 00:00:12                           ;
 ; EDA Netlist Writer        ; 00:00:10     ; 1.0                     ; 443 MB              ; 00:00:10                           ;
-; Total                     ; 00:02:06     ; --                      ; --                  ; 00:02:05                           ;
+; Total                     ; 00:02:09     ; --                      ; --                  ; 00:02:07                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

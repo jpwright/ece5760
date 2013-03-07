@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_TOP
-Wed Mar 06 22:28:18 2013
+Wed Mar 06 23:17:18 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -81,7 +81,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 06 22:28:17 2013     ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 06 23:17:18 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
@@ -1399,7 +1399,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Wed Mar 06 22:27:22 2013
+    Info: Processing started: Wed Mar 06 23:16:22 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Audio_Filter_18_bit -c DE2_TOP
 Info: Found 1 design units, including 1 entities, in source file nodes.v
     Info: Found entity 1: nodes
@@ -1803,10 +1803,10 @@ Info: Implemented 13167 device resources after synthesis - the final resource co
     Info: Implemented 12741 logic cells
     Info: Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 300 warnings
-    Info: Peak virtual memory: 455 megabytes
-    Info: Processing ended: Wed Mar 06 22:28:18 2013
+    Info: Peak virtual memory: 473 megabytes
+    Info: Processing ended: Wed Mar 06 23:17:18 2013
     Info: Elapsed time: 00:00:56
-    Info: Total CPU time (on all processors): 00:00:55
+    Info: Total CPU time (on all processors): 00:00:56
 
 
 +------------------------------------------+

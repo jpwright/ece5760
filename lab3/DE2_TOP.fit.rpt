@@ -1,5 +1,5 @@
 Fitter report for DE2_TOP
-Wed Mar 06 22:29:07 2013
+Wed Mar 06 23:18:08 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -65,7 +65,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Fitter Summary                                                                 ;
 +------------------------------------+-------------------------------------------+
-; Fitter Status                      ; Successful - Wed Mar 06 22:29:07 2013     ;
+; Fitter Status                      ; Successful - Wed Mar 06 23:18:08 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
@@ -4390,7 +4390,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Fitter
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Wed Mar 06 22:28:19 2013
+    Info: Processing started: Wed Mar 06 23:17:19 2013
 Info: Command: quartus_fit --read_settings_files=off --write_settings_files=off Audio_Filter_18_bit -c DE2_TOP
 Info: Selected device EP2C35F672C6 for design "DE2_TOP"
 Info: Low junction temperature is 0 degrees C
@@ -4466,7 +4466,7 @@ Info: I/O bank details before I/O pin placement
         Info: I/O bank number 8 does not use VREF pins and has 3.3V VCCIO pins. 53 total pin(s) used --  3 pins available
 Warning: PLL "VGA_Audio_PLL:p1|altpll:altpll_component|pll" output port clk[1] feeds output pin "AUD_XCK" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance
 Warning: PLL "VGA_Audio_PLL:p1|altpll:altpll_component|pll" output port clk[2] feeds output pin "VGA_CLK" via non-dedicated routing -- jitter performance depends on switching rate of other design elements. Use PLL dedicated clock outputs to ensure jitter performance
-Info: Fitter preparation operations ending: elapsed time is 00:00:07
+Info: Fitter preparation operations ending: elapsed time is 00:00:08
 Info: Fitter placement preparation operations beginning
 Info: Fitter placement preparation operations ending: elapsed time is 00:00:03
 Info: Fitter placement operations beginning
@@ -5018,9 +5018,9 @@ Warning: Following 158 pins have no output enable or a GND or VCC output enable 
 Warning: The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Generated suppressed messages file C:/ece5760/lab3/DE2_TOP.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 8 warnings
-    Info: Peak virtual memory: 622 megabytes
-    Info: Processing ended: Wed Mar 06 22:29:10 2013
-    Info: Elapsed time: 00:00:51
+    Info: Peak virtual memory: 642 megabytes
+    Info: Processing ended: Wed Mar 06 23:18:11 2013
+    Info: Elapsed time: 00:00:52
     Info: Total CPU time (on all processors): 00:00:51
 
 
