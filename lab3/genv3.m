@@ -1,4 +1,4 @@
-quarterGridNodes1D = 5; %length of one dimension of the quarter grid
+quarterGridNodes1D = 50; %length of one dimension of the quarter grid
 fileName = 'nodes.v';
 format long
 fileID = fopen(fileName, 'wt'); 
