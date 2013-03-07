@@ -1,5 +1,5 @@
 Analysis & Synthesis report for DE2_TOP
-Wed Mar 06 23:17:18 2013
+Thu Mar 07 00:46:24 2013
 Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
 
 
@@ -25,37 +25,76 @@ Quartus II 64-Bit Version 11.0 Build 157 04/27/2011 SJ Full Version
  17. Parameter Settings for User Entity Instance: I2C_AV_Config:u3
  18. Parameter Settings for User Entity Instance: AUDIO_DAC_ADC:u4
  19. altpll Parameter Settings by Entity Instance
- 20. Port Connectivity Checks: "nodes:drum|node:n4_4"
- 21. Port Connectivity Checks: "nodes:drum|node:n4_3"
- 22. Port Connectivity Checks: "nodes:drum|node:n4_2"
- 23. Port Connectivity Checks: "nodes:drum|node:n4_1"
- 24. Port Connectivity Checks: "nodes:drum|node:n4_0"
- 25. Port Connectivity Checks: "nodes:drum|node:n3_4"
- 26. Port Connectivity Checks: "nodes:drum|node:n3_3"
- 27. Port Connectivity Checks: "nodes:drum|node:n3_2"
- 28. Port Connectivity Checks: "nodes:drum|node:n3_1"
- 29. Port Connectivity Checks: "nodes:drum|node:n3_0"
- 30. Port Connectivity Checks: "nodes:drum|node:n2_4"
- 31. Port Connectivity Checks: "nodes:drum|node:n2_3"
- 32. Port Connectivity Checks: "nodes:drum|node:n2_2"
- 33. Port Connectivity Checks: "nodes:drum|node:n2_1"
- 34. Port Connectivity Checks: "nodes:drum|node:n2_0"
- 35. Port Connectivity Checks: "nodes:drum|node:n1_4"
- 36. Port Connectivity Checks: "nodes:drum|node:n1_3"
- 37. Port Connectivity Checks: "nodes:drum|node:n1_2"
- 38. Port Connectivity Checks: "nodes:drum|node:n1_1"
- 39. Port Connectivity Checks: "nodes:drum|node:n1_0"
- 40. Port Connectivity Checks: "nodes:drum|node:n0_4"
- 41. Port Connectivity Checks: "nodes:drum|node:n0_3"
- 42. Port Connectivity Checks: "nodes:drum|node:n0_2"
- 43. Port Connectivity Checks: "nodes:drum|node:n0_1"
- 44. Port Connectivity Checks: "nodes:drum|node:n0_0"
- 45. Port Connectivity Checks: "AUDIO_DAC_ADC:u4"
- 46. Port Connectivity Checks: "I2C_AV_Config:u3|I2C_Controller:u0"
- 47. Port Connectivity Checks: "VGA_Audio_PLL:p1"
- 48. Elapsed Time Per Partition
- 49. Analysis & Synthesis Messages
- 50. Analysis & Synthesis Suppressed Messages
+ 20. Port Connectivity Checks: "nodes:drum|node:n7_7"
+ 21. Port Connectivity Checks: "nodes:drum|node:n7_6"
+ 22. Port Connectivity Checks: "nodes:drum|node:n7_5"
+ 23. Port Connectivity Checks: "nodes:drum|node:n7_4"
+ 24. Port Connectivity Checks: "nodes:drum|node:n7_3"
+ 25. Port Connectivity Checks: "nodes:drum|node:n7_2"
+ 26. Port Connectivity Checks: "nodes:drum|node:n7_1"
+ 27. Port Connectivity Checks: "nodes:drum|node:n7_0"
+ 28. Port Connectivity Checks: "nodes:drum|node:n6_7"
+ 29. Port Connectivity Checks: "nodes:drum|node:n6_6"
+ 30. Port Connectivity Checks: "nodes:drum|node:n6_5"
+ 31. Port Connectivity Checks: "nodes:drum|node:n6_4"
+ 32. Port Connectivity Checks: "nodes:drum|node:n6_3"
+ 33. Port Connectivity Checks: "nodes:drum|node:n6_2"
+ 34. Port Connectivity Checks: "nodes:drum|node:n6_1"
+ 35. Port Connectivity Checks: "nodes:drum|node:n6_0"
+ 36. Port Connectivity Checks: "nodes:drum|node:n5_7"
+ 37. Port Connectivity Checks: "nodes:drum|node:n5_6"
+ 38. Port Connectivity Checks: "nodes:drum|node:n5_5"
+ 39. Port Connectivity Checks: "nodes:drum|node:n5_4"
+ 40. Port Connectivity Checks: "nodes:drum|node:n5_3"
+ 41. Port Connectivity Checks: "nodes:drum|node:n5_2"
+ 42. Port Connectivity Checks: "nodes:drum|node:n5_1"
+ 43. Port Connectivity Checks: "nodes:drum|node:n5_0"
+ 44. Port Connectivity Checks: "nodes:drum|node:n4_7"
+ 45. Port Connectivity Checks: "nodes:drum|node:n4_6"
+ 46. Port Connectivity Checks: "nodes:drum|node:n4_5"
+ 47. Port Connectivity Checks: "nodes:drum|node:n4_4"
+ 48. Port Connectivity Checks: "nodes:drum|node:n4_3"
+ 49. Port Connectivity Checks: "nodes:drum|node:n4_2"
+ 50. Port Connectivity Checks: "nodes:drum|node:n4_1"
+ 51. Port Connectivity Checks: "nodes:drum|node:n4_0"
+ 52. Port Connectivity Checks: "nodes:drum|node:n3_7"
+ 53. Port Connectivity Checks: "nodes:drum|node:n3_6"
+ 54. Port Connectivity Checks: "nodes:drum|node:n3_5"
+ 55. Port Connectivity Checks: "nodes:drum|node:n3_4"
+ 56. Port Connectivity Checks: "nodes:drum|node:n3_3"
+ 57. Port Connectivity Checks: "nodes:drum|node:n3_2"
+ 58. Port Connectivity Checks: "nodes:drum|node:n3_1"
+ 59. Port Connectivity Checks: "nodes:drum|node:n3_0"
+ 60. Port Connectivity Checks: "nodes:drum|node:n2_7"
+ 61. Port Connectivity Checks: "nodes:drum|node:n2_6"
+ 62. Port Connectivity Checks: "nodes:drum|node:n2_5"
+ 63. Port Connectivity Checks: "nodes:drum|node:n2_4"
+ 64. Port Connectivity Checks: "nodes:drum|node:n2_3"
+ 65. Port Connectivity Checks: "nodes:drum|node:n2_2"
+ 66. Port Connectivity Checks: "nodes:drum|node:n2_1"
+ 67. Port Connectivity Checks: "nodes:drum|node:n2_0"
+ 68. Port Connectivity Checks: "nodes:drum|node:n1_7"
+ 69. Port Connectivity Checks: "nodes:drum|node:n1_6"
+ 70. Port Connectivity Checks: "nodes:drum|node:n1_5"
+ 71. Port Connectivity Checks: "nodes:drum|node:n1_4"
+ 72. Port Connectivity Checks: "nodes:drum|node:n1_3"
+ 73. Port Connectivity Checks: "nodes:drum|node:n1_2"
+ 74. Port Connectivity Checks: "nodes:drum|node:n1_1"
+ 75. Port Connectivity Checks: "nodes:drum|node:n1_0"
+ 76. Port Connectivity Checks: "nodes:drum|node:n0_7"
+ 77. Port Connectivity Checks: "nodes:drum|node:n0_6"
+ 78. Port Connectivity Checks: "nodes:drum|node:n0_5"
+ 79. Port Connectivity Checks: "nodes:drum|node:n0_4"
+ 80. Port Connectivity Checks: "nodes:drum|node:n0_3"
+ 81. Port Connectivity Checks: "nodes:drum|node:n0_2"
+ 82. Port Connectivity Checks: "nodes:drum|node:n0_1"
+ 83. Port Connectivity Checks: "nodes:drum|node:n0_0"
+ 84. Port Connectivity Checks: "AUDIO_DAC_ADC:u4"
+ 85. Port Connectivity Checks: "I2C_AV_Config:u3|I2C_Controller:u0"
+ 86. Port Connectivity Checks: "VGA_Audio_PLL:p1"
+ 87. Elapsed Time Per Partition
+ 88. Analysis & Synthesis Messages
+ 89. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -81,15 +120,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                   ;
 +------------------------------------+-------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 06 23:17:18 2013     ;
+; Analysis & Synthesis Status        ; Successful - Thu Mar 07 00:46:23 2013     ;
 ; Quartus II 64-Bit Version          ; 11.0 Build 157 04/27/2011 SJ Full Version ;
 ; Revision Name                      ; DE2_TOP                                   ;
 ; Top-level Entity Name              ; DE2_TOP                                   ;
 ; Family                             ; Cyclone II                                ;
-; Total logic elements               ; 12,741                                    ;
-;     Total combinational functions  ; 12,290                                    ;
-;     Dedicated logic registers      ; 1,390                                     ;
-; Total registers                    ; 1390                                      ;
+; Total logic elements               ; 31,374                                    ;
+;     Total combinational functions  ; 30,260                                    ;
+;     Dedicated logic registers      ; 3,379                                     ;
+; Total registers                    ; 3379                                      ;
 ; Total pins                         ; 425                                       ;
 ; Total virtual pins                 ; 0                                         ;
 ; Total memory bits                  ; 0                                         ;
@@ -197,13 +236,13 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+-----------------------------+------------------------------------------------------------------+
 ; File Name with User-Entered Path ; Used in Netlist ; File Type                   ; File Name with Absolute Path                                     ;
 +----------------------------------+-----------------+-----------------------------+------------------------------------------------------------------+
-; nodes.v                          ; yes             ; User Verilog HDL File       ; C:/ece5760/lab3/nodes.v                                          ;
-; AUDIO_DAC_ADC.v                  ; yes             ; User Verilog HDL File       ; C:/ece5760/lab3/AUDIO_DAC_ADC.v                                  ;
-; I2C_AV_Config.v                  ; yes             ; User Verilog HDL File       ; C:/ece5760/lab3/I2C_AV_Config.v                                  ;
-; I2C_Controller.v                 ; yes             ; User Verilog HDL File       ; C:/ece5760/lab3/I2C_Controller.v                                 ;
-; Reset_Delay.v                    ; yes             ; User Verilog HDL File       ; C:/ece5760/lab3/Reset_Delay.v                                    ;
-; VGA_Audio_PLL.v                  ; yes             ; User Wizard-Generated File  ; C:/ece5760/lab3/VGA_Audio_PLL.v                                  ;
-; Audio_Filter_18bit_parallel.v    ; yes             ; User Verilog HDL File       ; C:/ece5760/lab3/Audio_Filter_18bit_parallel.v                    ;
+; nodes.v                          ; yes             ; User Verilog HDL File       ; C:/ece5760-copy2/lab3/nodes.v                                    ;
+; AUDIO_DAC_ADC.v                  ; yes             ; User Verilog HDL File       ; C:/ece5760-copy2/lab3/AUDIO_DAC_ADC.v                            ;
+; I2C_AV_Config.v                  ; yes             ; User Verilog HDL File       ; C:/ece5760-copy2/lab3/I2C_AV_Config.v                            ;
+; I2C_Controller.v                 ; yes             ; User Verilog HDL File       ; C:/ece5760-copy2/lab3/I2C_Controller.v                           ;
+; Reset_Delay.v                    ; yes             ; User Verilog HDL File       ; C:/ece5760-copy2/lab3/Reset_Delay.v                              ;
+; VGA_Audio_PLL.v                  ; yes             ; User Wizard-Generated File  ; C:/ece5760-copy2/lab3/VGA_Audio_PLL.v                            ;
+; Audio_Filter_18bit_parallel.v    ; yes             ; User Verilog HDL File       ; C:/ece5760-copy2/lab3/Audio_Filter_18bit_parallel.v              ;
 ; altpll.tdf                       ; yes             ; Megafunction                ; c:/altera/11.0/quartus/libraries/megafunctions/altpll.tdf        ;
 ; aglobal110.inc                   ; yes             ; Megafunction                ; c:/altera/11.0/quartus/libraries/megafunctions/aglobal110.inc    ;
 ; stratix_pll.inc                  ; yes             ; Megafunction                ; c:/altera/11.0/quartus/libraries/megafunctions/stratix_pll.inc   ;
@@ -217,20 +256,20 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------------------+--------------------------+
 ; Resource                                    ; Usage                    ;
 +---------------------------------------------+--------------------------+
-; Estimated Total logic elements              ; 12,741                   ;
+; Estimated Total logic elements              ; 31,374                   ;
 ;                                             ;                          ;
-; Total combinational functions               ; 12290                    ;
+; Total combinational functions               ; 30260                    ;
 ; Logic element usage by number of LUT inputs ;                          ;
-;     -- 4 input functions                    ; 5117                     ;
-;     -- 3 input functions                    ; 6270                     ;
-;     -- <=2 input functions                  ; 903                      ;
+;     -- 4 input functions                    ; 12820                    ;
+;     -- 3 input functions                    ; 15234                    ;
+;     -- <=2 input functions                  ; 2206                     ;
 ;                                             ;                          ;
 ; Logic elements by mode                      ;                          ;
-;     -- normal mode                          ; 7825                     ;
-;     -- arithmetic mode                      ; 4465                     ;
+;     -- normal mode                          ; 18634                    ;
+;     -- arithmetic mode                      ; 11626                    ;
 ;                                             ;                          ;
-; Total registers                             ; 1390                     ;
-;     -- Dedicated logic registers            ; 1390                     ;
+; Total registers                             ; 3379                     ;
+;     -- Dedicated logic registers            ; 3379                     ;
 ;     -- I/O registers                        ; 0                        ;
 ;                                             ;                          ;
 ; I/O pins                                    ; 425                      ;
@@ -238,9 +277,9 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;     -- PLLs                                 ; 1                        ;
 ;                                             ;                          ;
 ; Maximum fan-out node                        ; AUDIO_DAC_ADC:u4|LRCK_1X ;
-; Maximum fan-out                             ; 1294                     ;
-; Total fan-out                               ; 44426                    ;
-; Average fan-out                             ; 3.15                     ;
+; Maximum fan-out                             ; 3283                     ;
+; Total fan-out                               ; 109065                   ;
+; Average fan-out                             ; 3.20                     ;
 +---------------------------------------------+--------------------------+
 
 
@@ -249,50 +288,89 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 ; Compilation Hierarchy Node      ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                               ; Library Name ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
-; |DE2_TOP                        ; 12290 (1)         ; 1390 (0)     ; 0           ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                          ;              ;
+; |DE2_TOP                        ; 30260 (1)         ; 3379 (0)     ; 0           ; 0            ; 0       ; 0         ; 425  ; 0            ; |DE2_TOP                                          ;              ;
 ;    |AUDIO_DAC_ADC:u4|           ; 31 (31)           ; 33 (33)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|AUDIO_DAC_ADC:u4                         ;              ;
-;    |I2C_AV_Config:u3|           ; 93 (49)           ; 61 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|I2C_AV_Config:u3                         ;              ;
-;       |I2C_Controller:u0|       ; 44 (44)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|I2C_AV_Config:u3|I2C_Controller:u0       ;              ;
-;    |Reset_Delay:r0|             ; 29 (29)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Reset_Delay:r0                           ;              ;
+;    |I2C_AV_Config:u3|           ; 94 (49)           ; 61 (38)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|I2C_AV_Config:u3                         ;              ;
+;       |I2C_Controller:u0|       ; 45 (45)           ; 23 (23)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|I2C_AV_Config:u3|I2C_Controller:u0       ;              ;
+;    |Reset_Delay:r0|             ; 28 (28)           ; 21 (21)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|Reset_Delay:r0                           ;              ;
 ;    |VGA_Audio_PLL:p1|           ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1                         ;              ;
 ;       |altpll:altpll_component| ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|VGA_Audio_PLL:p1|altpll:altpll_component ;              ;
-;    |nodes:drum|                 ; 12136 (0)         ; 1275 (425)   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum                               ;              ;
-;       |node:n0_0|               ; 496 (496)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_0                     ;              ;
-;       |node:n0_1|               ; 484 (484)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_1                     ;              ;
-;       |node:n0_2|               ; 474 (474)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_2                     ;              ;
-;       |node:n0_3|               ; 473 (473)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_3                     ;              ;
-;       |node:n0_4|               ; 458 (458)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_4                     ;              ;
-;       |node:n1_0|               ; 502 (502)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_0                     ;              ;
-;       |node:n1_1|               ; 503 (503)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_1                     ;              ;
-;       |node:n1_2|               ; 498 (498)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_2                     ;              ;
-;       |node:n1_3|               ; 497 (497)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_3                     ;              ;
-;       |node:n1_4|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_4                     ;              ;
-;       |node:n2_0|               ; 498 (498)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_0                     ;              ;
-;       |node:n2_1|               ; 498 (498)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_1                     ;              ;
-;       |node:n2_2|               ; 497 (497)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_2                     ;              ;
-;       |node:n2_3|               ; 497 (497)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_3                     ;              ;
-;       |node:n2_4|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_4                     ;              ;
-;       |node:n3_0|               ; 494 (494)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_0                     ;              ;
-;       |node:n3_1|               ; 496 (496)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_1                     ;              ;
-;       |node:n3_2|               ; 496 (496)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_2                     ;              ;
-;       |node:n3_3|               ; 497 (497)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_3                     ;              ;
-;       |node:n3_4|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_4                     ;              ;
-;       |node:n4_0|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_0                     ;              ;
-;       |node:n4_1|               ; 473 (473)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_1                     ;              ;
-;       |node:n4_2|               ; 473 (473)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_2                     ;              ;
-;       |node:n4_3|               ; 475 (475)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_3                     ;              ;
-;       |node:n4_4|               ; 457 (457)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_4                     ;              ;
+;    |nodes:drum|                 ; 30106 (0)         ; 3264 (1088)  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum                               ;              ;
+;       |node:n0_0|               ; 464 (464)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_0                     ;              ;
+;       |node:n0_1|               ; 458 (458)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_1                     ;              ;
+;       |node:n0_2|               ; 457 (457)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_2                     ;              ;
+;       |node:n0_3|               ; 456 (456)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_3                     ;              ;
+;       |node:n0_4|               ; 455 (455)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_4                     ;              ;
+;       |node:n0_5|               ; 456 (456)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_5                     ;              ;
+;       |node:n0_6|               ; 454 (454)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_6                     ;              ;
+;       |node:n0_7|               ; 425 (425)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n0_7                     ;              ;
+;       |node:n1_0|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_0                     ;              ;
+;       |node:n1_1|               ; 482 (482)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_1                     ;              ;
+;       |node:n1_2|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_2                     ;              ;
+;       |node:n1_3|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_3                     ;              ;
+;       |node:n1_4|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_4                     ;              ;
+;       |node:n1_5|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_5                     ;              ;
+;       |node:n1_6|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_6                     ;              ;
+;       |node:n1_7|               ; 453 (453)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n1_7                     ;              ;
+;       |node:n2_0|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_0                     ;              ;
+;       |node:n2_1|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_1                     ;              ;
+;       |node:n2_2|               ; 478 (478)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_2                     ;              ;
+;       |node:n2_3|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_3                     ;              ;
+;       |node:n2_4|               ; 481 (481)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_4                     ;              ;
+;       |node:n2_5|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_5                     ;              ;
+;       |node:n2_6|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_6                     ;              ;
+;       |node:n2_7|               ; 456 (456)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n2_7                     ;              ;
+;       |node:n3_0|               ; 487 (487)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_0                     ;              ;
+;       |node:n3_1|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_1                     ;              ;
+;       |node:n3_2|               ; 478 (478)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_2                     ;              ;
+;       |node:n3_3|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_3                     ;              ;
+;       |node:n3_4|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_4                     ;              ;
+;       |node:n3_5|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_5                     ;              ;
+;       |node:n3_6|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_6                     ;              ;
+;       |node:n3_7|               ; 455 (455)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n3_7                     ;              ;
+;       |node:n4_0|               ; 481 (481)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_0                     ;              ;
+;       |node:n4_1|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_1                     ;              ;
+;       |node:n4_2|               ; 481 (481)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_2                     ;              ;
+;       |node:n4_3|               ; 478 (478)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_3                     ;              ;
+;       |node:n4_4|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_4                     ;              ;
+;       |node:n4_5|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_5                     ;              ;
+;       |node:n4_6|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_6                     ;              ;
+;       |node:n4_7|               ; 457 (457)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n4_7                     ;              ;
+;       |node:n5_0|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n5_0                     ;              ;
+;       |node:n5_1|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n5_1                     ;              ;
+;       |node:n5_2|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n5_2                     ;              ;
+;       |node:n5_3|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n5_3                     ;              ;
+;       |node:n5_4|               ; 478 (478)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n5_4                     ;              ;
+;       |node:n5_5|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n5_5                     ;              ;
+;       |node:n5_6|               ; 482 (482)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n5_6                     ;              ;
+;       |node:n5_7|               ; 455 (455)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n5_7                     ;              ;
+;       |node:n6_0|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n6_0                     ;              ;
+;       |node:n6_1|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n6_1                     ;              ;
+;       |node:n6_2|               ; 480 (480)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n6_2                     ;              ;
+;       |node:n6_3|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n6_3                     ;              ;
+;       |node:n6_4|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n6_4                     ;              ;
+;       |node:n6_5|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n6_5                     ;              ;
+;       |node:n6_6|               ; 479 (479)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n6_6                     ;              ;
+;       |node:n6_7|               ; 457 (457)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n6_7                     ;              ;
+;       |node:n7_0|               ; 452 (452)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n7_0                     ;              ;
+;       |node:n7_1|               ; 455 (455)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n7_1                     ;              ;
+;       |node:n7_2|               ; 453 (453)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n7_2                     ;              ;
+;       |node:n7_3|               ; 456 (456)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n7_3                     ;              ;
+;       |node:n7_4|               ; 457 (457)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n7_4                     ;              ;
+;       |node:n7_5|               ; 454 (454)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n7_5                     ;              ;
+;       |node:n7_6|               ; 454 (454)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n7_6                     ;              ;
+;       |node:n7_7|               ; 423 (423)         ; 34 (34)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |DE2_TOP|nodes:drum|node:n7_7                     ;              ;
 +---------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis IP Cores Summary                                                                                       ;
-+--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------+
-; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance           ; IP Include File                 ;
-+--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------+
-; Altera ; ALTPLL       ; 11.0    ; N/A          ; N/A          ; |DE2_TOP|VGA_Audio_PLL:p1 ; C:/ece5760/lab3/VGA_Audio_PLL.v ;
-+--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis IP Cores Summary                                                                                             ;
++--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------------+
+; Vendor ; IP Core Name ; Version ; Release Date ; License Type ; Entity Instance           ; IP Include File                       ;
++--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------------+
+; Altera ; ALTPLL       ; 11.0    ; N/A          ; N/A          ; |DE2_TOP|VGA_Audio_PLL:p1 ; C:/ece5760-copy2/lab3/VGA_Audio_PLL.v ;
++--------+--------------+---------+--------------+--------------+---------------------------+---------------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -307,114 +385,99 @@ Encoding Type:  One-Hot
 +----------------+----------------+----------------+----------------+
 
 
-+--------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops                 ;
-+--------------------------------------------------------+-----+
-; Logic Cell Name                                        ;     ;
-+--------------------------------------------------------+-----+
-; nodes:drum|node:n0_0|Add8~5                            ;     ;
-; nodes:drum|node:n0_0|Add8~19                           ;     ;
-; nodes:drum|node:n0_0|Add8~20                           ;     ;
-; nodes:drum|node:n0_0|Add8~21                           ;     ;
-; nodes:drum|node:n0_0|Add8~16                           ;     ;
-; nodes:drum|node:n0_0|Add8~15                           ;     ;
-; nodes:drum|node:n0_0|Add8~14                           ;     ;
-; nodes:drum|node:n0_0|Add8~13                           ;     ;
-; nodes:drum|node:n0_0|Add8~12                           ;     ;
-; nodes:drum|node:n0_0|Add8~11                           ;     ;
-; nodes:drum|node:n0_0|Add8~10                           ;     ;
-; nodes:drum|node:n0_0|Add8~6                            ;     ;
-; nodes:drum|node:n0_0|Add8~7                            ;     ;
-; nodes:drum|node:n0_0|Add8~8                            ;     ;
-; nodes:drum|node:n0_0|Add8~9                            ;     ;
-; nodes:drum|node:n0_0|Add8~0                            ;     ;
-; nodes:drum|node:n0_0|Add8~1                            ;     ;
-; nodes:drum|node:n0_0|Add8~2                            ;     ;
-; nodes:drum|node:n0_0|Add8~3                            ;     ;
-; nodes:drum|node:n0_0|Add8~4                            ;     ;
-; nodes:drum|node:n0_0|Add8~18                           ;     ;
-; nodes:drum|node:n0_0|Add8~17                           ;     ;
-; nodes:drum|node:n0_1|Add8~4                            ;     ;
-; nodes:drum|node:n0_1|Add8~5                            ;     ;
-; nodes:drum|node:n0_1|Add8~3                            ;     ;
-; nodes:drum|node:n0_1|Add8~2                            ;     ;
-; nodes:drum|node:n0_1|Add8~1                            ;     ;
-; nodes:drum|node:n0_1|Add8~0                            ;     ;
-; nodes:drum|node:n0_1|Add8~13                           ;     ;
-; nodes:drum|node:n0_1|Add8~12                           ;     ;
-; nodes:drum|node:n0_1|Add8~11                           ;     ;
-; nodes:drum|node:n0_1|Add8~10                           ;     ;
-; nodes:drum|node:n0_1|Add8~9                            ;     ;
-; nodes:drum|node:n0_1|Add8~8                            ;     ;
-; nodes:drum|node:n0_1|Add8~7                            ;     ;
-; nodes:drum|node:n0_1|Add8~6                            ;     ;
-; nodes:drum|node:n0_1|Add8~14                           ;     ;
-; nodes:drum|node:n0_1|Add8~15                           ;     ;
-; nodes:drum|node:n0_1|Add8~16                           ;     ;
-; rtl~7                                                  ;     ;
-; rtl~0                                                  ;     ;
-; rtl~5                                                  ;     ;
-; rtl~4                                                  ;     ;
-; rtl~3                                                  ;     ;
-; rtl~2                                                  ;     ;
-; rtl~1                                                  ;     ;
-; rtl~6                                                  ;     ;
-; nodes:drum|node:n0_2|Add8~1                            ;     ;
-; rtl~16                                                 ;     ;
-; rtl~15                                                 ;     ;
-; rtl~17                                                 ;     ;
-; rtl~18                                                 ;     ;
-; rtl~19                                                 ;     ;
-; nodes:drum|node:n0_2|Add8~13                           ;     ;
-; nodes:drum|node:n0_2|Add8~12                           ;     ;
-; nodes:drum|node:n0_2|Add8~11                           ;     ;
-; nodes:drum|node:n0_2|Add8~10                           ;     ;
-; nodes:drum|node:n0_2|Add8~6                            ;     ;
-; nodes:drum|node:n0_2|Add8~7                            ;     ;
-; nodes:drum|node:n0_2|Add8~8                            ;     ;
-; nodes:drum|node:n0_2|Add8~9                            ;     ;
-; nodes:drum|node:n0_2|Add8~5                            ;     ;
-; nodes:drum|node:n0_2|Add8~4                            ;     ;
-; nodes:drum|node:n0_2|Add8~3                            ;     ;
-; nodes:drum|node:n0_2|Add8~2                            ;     ;
-; nodes:drum|node:n0_2|Add8~0                            ;     ;
-; rtl~9                                                  ;     ;
-; rtl~8                                                  ;     ;
-; rtl~14                                                 ;     ;
-; rtl~13                                                 ;     ;
-; rtl~12                                                 ;     ;
-; rtl~11                                                 ;     ;
-; rtl~10                                                 ;     ;
-; rtl~21                                                 ;     ;
-; rtl~20                                                 ;     ;
-; rtl~26                                                 ;     ;
-; rtl~25                                                 ;     ;
-; rtl~24                                                 ;     ;
-; rtl~23                                                 ;     ;
-; rtl~22                                                 ;     ;
-; rtl~28                                                 ;     ;
-; rtl~27                                                 ;     ;
-; rtl~33                                                 ;     ;
-; rtl~32                                                 ;     ;
-; rtl~31                                                 ;     ;
-; rtl~30                                                 ;     ;
-; rtl~29                                                 ;     ;
-; rtl~35                                                 ;     ;
-; rtl~34                                                 ;     ;
-; rtl~40                                                 ;     ;
-; rtl~39                                                 ;     ;
-; rtl~38                                                 ;     ;
-; rtl~37                                                 ;     ;
-; rtl~36                                                 ;     ;
-; rtl~42                                                 ;     ;
-; rtl~41                                                 ;     ;
-; rtl~47                                                 ;     ;
-; rtl~46                                                 ;     ;
-; rtl~45                                                 ;     ;
-; rtl~44                                                 ;     ;
-; Number of logic cells representing combinational loops ; 218 ;
-+--------------------------------------------------------+-----+
-Table restricted to first 100 entries. Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
++-------------------------------------------------------------+
+; Logic Cells Representing Combinational Loops                ;
++--------------------------------------------------------+----+
+; Logic Cell Name                                        ;    ;
++--------------------------------------------------------+----+
+; nodes:drum|node:n0_0|Add8~21                           ;    ;
+; nodes:drum|node:n0_0|Add8~2                            ;    ;
+; nodes:drum|node:n0_0|Add8~3                            ;    ;
+; nodes:drum|node:n0_0|Add8~4                            ;    ;
+; nodes:drum|node:n0_0|Add8~5                            ;    ;
+; nodes:drum|node:n0_0|Add8~6                            ;    ;
+; nodes:drum|node:n0_0|Add8~7                            ;    ;
+; nodes:drum|node:n0_0|Add8~8                            ;    ;
+; nodes:drum|node:n0_0|Add8~9                            ;    ;
+; nodes:drum|node:n0_0|Add8~10                           ;    ;
+; nodes:drum|node:n0_0|Add8~11                           ;    ;
+; nodes:drum|node:n0_0|Add8~12                           ;    ;
+; nodes:drum|node:n0_0|Add8~13                           ;    ;
+; nodes:drum|node:n0_0|Add8~14                           ;    ;
+; nodes:drum|node:n0_0|Add8~15                           ;    ;
+; nodes:drum|node:n0_0|Add8~16                           ;    ;
+; nodes:drum|node:n0_0|Add8~17                           ;    ;
+; nodes:drum|node:n0_0|Add8~18                           ;    ;
+; nodes:drum|node:n0_0|Add8~19                           ;    ;
+; nodes:drum|node:n0_0|Add8~20                           ;    ;
+; nodes:drum|node:n0_0|Add8~1                            ;    ;
+; nodes:drum|node:n0_0|Add8~0                            ;    ;
+; rtl~1                                                  ;    ;
+; rtl~0                                                  ;    ;
+; rtl~3                                                  ;    ;
+; rtl~2                                                  ;    ;
+; rtl~4                                                  ;    ;
+; rtl~5                                                  ;    ;
+; rtl~6                                                  ;    ;
+; rtl~7                                                  ;    ;
+; rtl~8                                                  ;    ;
+; rtl~9                                                  ;    ;
+; rtl~10                                                 ;    ;
+; rtl~11                                                 ;    ;
+; rtl~12                                                 ;    ;
+; rtl~14                                                 ;    ;
+; rtl~13                                                 ;    ;
+; rtl~15                                                 ;    ;
+; rtl~16                                                 ;    ;
+; rtl~17                                                 ;    ;
+; rtl~19                                                 ;    ;
+; rtl~21                                                 ;    ;
+; rtl~18                                                 ;    ;
+; rtl~20                                                 ;    ;
+; rtl~22                                                 ;    ;
+; rtl~24                                                 ;    ;
+; rtl~26                                                 ;    ;
+; rtl~27                                                 ;    ;
+; rtl~29                                                 ;    ;
+; rtl~23                                                 ;    ;
+; rtl~25                                                 ;    ;
+; rtl~28                                                 ;    ;
+; rtl~31                                                 ;    ;
+; rtl~32                                                 ;    ;
+; rtl~34                                                 ;    ;
+; rtl~35                                                 ;    ;
+; rtl~38                                                 ;    ;
+; rtl~30                                                 ;    ;
+; rtl~33                                                 ;    ;
+; rtl~36                                                 ;    ;
+; rtl~39                                                 ;    ;
+; rtl~40                                                 ;    ;
+; rtl~42                                                 ;    ;
+; rtl~43                                                 ;    ;
+; rtl~37                                                 ;    ;
+; rtl~41                                                 ;    ;
+; rtl~45                                                 ;    ;
+; rtl~46                                                 ;    ;
+; rtl~47                                                 ;    ;
+; rtl~49                                                 ;    ;
+; rtl~44                                                 ;    ;
+; rtl~48                                                 ;    ;
+; rtl~51                                                 ;    ;
+; rtl~52                                                 ;    ;
+; rtl~53                                                 ;    ;
+; rtl~50                                                 ;    ;
+; rtl~55                                                 ;    ;
+; rtl~56                                                 ;    ;
+; rtl~57                                                 ;    ;
+; rtl~54                                                 ;    ;
+; rtl~59                                                 ;    ;
+; rtl~60                                                 ;    ;
+; rtl~58                                                 ;    ;
+; rtl~62                                                 ;    ;
+; rtl~61                                                 ;    ;
+; Number of logic cells representing combinational loops ; 85 ;
++--------------------------------------------------------+----+
+Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
 +------------------------------------------------------------------------------------------------------+
@@ -424,105 +487,105 @@ Table restricted to first 100 entries. Note: All cells listed above may not be p
 +---------------------------------------------------------+--------------------------------------------+
 ; I2C_AV_Config:u3|mI2C_DATA[7,8,13..17,19,23]            ; Stuck at GND due to stuck port data_in     ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD[7,8,13..17,19,23] ; Stuck at GND due to stuck port data_in     ;
-; nodes:drum|node:n4_4|prev[17]                           ; Merged with nodes:drum|node:n4_4|value[17] ;
-; nodes:drum|node:n4_4|prev[16]                           ; Merged with nodes:drum|node:n4_4|value[16] ;
-; nodes:drum|node:n4_4|prev[15]                           ; Merged with nodes:drum|node:n4_4|value[15] ;
-; nodes:drum|node:n4_4|prev[14]                           ; Merged with nodes:drum|node:n4_4|value[14] ;
-; nodes:drum|node:n4_4|prev[13]                           ; Merged with nodes:drum|node:n4_4|value[13] ;
-; nodes:drum|node:n4_4|prev[12]                           ; Merged with nodes:drum|node:n4_4|value[12] ;
-; nodes:drum|node:n4_4|prev[11]                           ; Merged with nodes:drum|node:n4_4|value[11] ;
-; nodes:drum|node:n4_4|prev[10]                           ; Merged with nodes:drum|node:n4_4|value[10] ;
-; nodes:drum|node:n4_4|prev[9]                            ; Merged with nodes:drum|node:n4_4|value[9]  ;
-; nodes:drum|node:n4_4|prev[8]                            ; Merged with nodes:drum|node:n4_4|value[8]  ;
-; nodes:drum|node:n4_4|prev[7]                            ; Merged with nodes:drum|node:n4_4|value[7]  ;
-; nodes:drum|node:n4_4|prev[6]                            ; Merged with nodes:drum|node:n4_4|value[6]  ;
-; nodes:drum|node:n4_4|prev[5]                            ; Merged with nodes:drum|node:n4_4|value[5]  ;
-; nodes:drum|node:n4_4|prev[4]                            ; Merged with nodes:drum|node:n4_4|value[4]  ;
-; nodes:drum|node:n4_4|prev[3]                            ; Merged with nodes:drum|node:n4_4|value[3]  ;
-; nodes:drum|node:n4_4|prev[2]                            ; Merged with nodes:drum|node:n4_4|value[2]  ;
-; nodes:drum|node:n4_4|prev[1]                            ; Merged with nodes:drum|node:n4_4|value[1]  ;
-; nodes:drum|node:n4_4|prev[0]                            ; Merged with nodes:drum|node:n4_4|value[0]  ;
-; nodes:drum|node:n4_3|prev[17]                           ; Merged with nodes:drum|node:n4_3|value[17] ;
-; nodes:drum|node:n4_3|prev[16]                           ; Merged with nodes:drum|node:n4_3|value[16] ;
-; nodes:drum|node:n4_3|prev[15]                           ; Merged with nodes:drum|node:n4_3|value[15] ;
-; nodes:drum|node:n4_3|prev[14]                           ; Merged with nodes:drum|node:n4_3|value[14] ;
-; nodes:drum|node:n4_3|prev[13]                           ; Merged with nodes:drum|node:n4_3|value[13] ;
-; nodes:drum|node:n4_3|prev[12]                           ; Merged with nodes:drum|node:n4_3|value[12] ;
-; nodes:drum|node:n4_3|prev[11]                           ; Merged with nodes:drum|node:n4_3|value[11] ;
-; nodes:drum|node:n4_3|prev[10]                           ; Merged with nodes:drum|node:n4_3|value[10] ;
-; nodes:drum|node:n4_3|prev[9]                            ; Merged with nodes:drum|node:n4_3|value[9]  ;
-; nodes:drum|node:n4_3|prev[8]                            ; Merged with nodes:drum|node:n4_3|value[8]  ;
-; nodes:drum|node:n4_3|prev[7]                            ; Merged with nodes:drum|node:n4_3|value[7]  ;
-; nodes:drum|node:n4_3|prev[6]                            ; Merged with nodes:drum|node:n4_3|value[6]  ;
-; nodes:drum|node:n4_3|prev[5]                            ; Merged with nodes:drum|node:n4_3|value[5]  ;
-; nodes:drum|node:n4_3|prev[4]                            ; Merged with nodes:drum|node:n4_3|value[4]  ;
-; nodes:drum|node:n4_3|prev[3]                            ; Merged with nodes:drum|node:n4_3|value[3]  ;
-; nodes:drum|node:n4_3|prev[2]                            ; Merged with nodes:drum|node:n4_3|value[2]  ;
-; nodes:drum|node:n4_3|prev[1]                            ; Merged with nodes:drum|node:n4_3|value[1]  ;
-; nodes:drum|node:n4_3|prev[0]                            ; Merged with nodes:drum|node:n4_3|value[0]  ;
-; nodes:drum|node:n4_2|prev[17]                           ; Merged with nodes:drum|node:n4_2|value[17] ;
-; nodes:drum|node:n4_2|prev[16]                           ; Merged with nodes:drum|node:n4_2|value[16] ;
-; nodes:drum|node:n4_2|prev[15]                           ; Merged with nodes:drum|node:n4_2|value[15] ;
-; nodes:drum|node:n4_2|prev[14]                           ; Merged with nodes:drum|node:n4_2|value[14] ;
-; nodes:drum|node:n4_2|prev[13]                           ; Merged with nodes:drum|node:n4_2|value[13] ;
-; nodes:drum|node:n4_2|prev[12]                           ; Merged with nodes:drum|node:n4_2|value[12] ;
-; nodes:drum|node:n4_2|prev[11]                           ; Merged with nodes:drum|node:n4_2|value[11] ;
-; nodes:drum|node:n4_2|prev[10]                           ; Merged with nodes:drum|node:n4_2|value[10] ;
-; nodes:drum|node:n4_2|prev[9]                            ; Merged with nodes:drum|node:n4_2|value[9]  ;
-; nodes:drum|node:n4_2|prev[8]                            ; Merged with nodes:drum|node:n4_2|value[8]  ;
-; nodes:drum|node:n4_2|prev[7]                            ; Merged with nodes:drum|node:n4_2|value[7]  ;
-; nodes:drum|node:n4_2|prev[6]                            ; Merged with nodes:drum|node:n4_2|value[6]  ;
-; nodes:drum|node:n4_2|prev[5]                            ; Merged with nodes:drum|node:n4_2|value[5]  ;
-; nodes:drum|node:n4_2|prev[4]                            ; Merged with nodes:drum|node:n4_2|value[4]  ;
-; nodes:drum|node:n4_2|prev[3]                            ; Merged with nodes:drum|node:n4_2|value[3]  ;
-; nodes:drum|node:n4_2|prev[2]                            ; Merged with nodes:drum|node:n4_2|value[2]  ;
-; nodes:drum|node:n4_2|prev[1]                            ; Merged with nodes:drum|node:n4_2|value[1]  ;
-; nodes:drum|node:n4_2|prev[0]                            ; Merged with nodes:drum|node:n4_2|value[0]  ;
-; nodes:drum|node:n4_1|prev[17]                           ; Merged with nodes:drum|node:n4_1|value[17] ;
-; nodes:drum|node:n4_1|prev[16]                           ; Merged with nodes:drum|node:n4_1|value[16] ;
-; nodes:drum|node:n4_1|prev[15]                           ; Merged with nodes:drum|node:n4_1|value[15] ;
-; nodes:drum|node:n4_1|prev[14]                           ; Merged with nodes:drum|node:n4_1|value[14] ;
-; nodes:drum|node:n4_1|prev[13]                           ; Merged with nodes:drum|node:n4_1|value[13] ;
-; nodes:drum|node:n4_1|prev[12]                           ; Merged with nodes:drum|node:n4_1|value[12] ;
-; nodes:drum|node:n4_1|prev[11]                           ; Merged with nodes:drum|node:n4_1|value[11] ;
-; nodes:drum|node:n4_1|prev[10]                           ; Merged with nodes:drum|node:n4_1|value[10] ;
-; nodes:drum|node:n4_1|prev[9]                            ; Merged with nodes:drum|node:n4_1|value[9]  ;
-; nodes:drum|node:n4_1|prev[8]                            ; Merged with nodes:drum|node:n4_1|value[8]  ;
-; nodes:drum|node:n4_1|prev[7]                            ; Merged with nodes:drum|node:n4_1|value[7]  ;
-; nodes:drum|node:n4_1|prev[6]                            ; Merged with nodes:drum|node:n4_1|value[6]  ;
-; nodes:drum|node:n4_1|prev[5]                            ; Merged with nodes:drum|node:n4_1|value[5]  ;
-; nodes:drum|node:n4_1|prev[4]                            ; Merged with nodes:drum|node:n4_1|value[4]  ;
-; nodes:drum|node:n4_1|prev[3]                            ; Merged with nodes:drum|node:n4_1|value[3]  ;
-; nodes:drum|node:n4_1|prev[2]                            ; Merged with nodes:drum|node:n4_1|value[2]  ;
-; nodes:drum|node:n4_1|prev[1]                            ; Merged with nodes:drum|node:n4_1|value[1]  ;
-; nodes:drum|node:n4_1|prev[0]                            ; Merged with nodes:drum|node:n4_1|value[0]  ;
-; nodes:drum|node:n4_0|prev[17]                           ; Merged with nodes:drum|node:n4_0|value[17] ;
-; nodes:drum|node:n4_0|prev[16]                           ; Merged with nodes:drum|node:n4_0|value[16] ;
-; nodes:drum|node:n4_0|prev[15]                           ; Merged with nodes:drum|node:n4_0|value[15] ;
-; nodes:drum|node:n4_0|prev[14]                           ; Merged with nodes:drum|node:n4_0|value[14] ;
-; nodes:drum|node:n4_0|prev[13]                           ; Merged with nodes:drum|node:n4_0|value[13] ;
-; nodes:drum|node:n4_0|prev[12]                           ; Merged with nodes:drum|node:n4_0|value[12] ;
-; nodes:drum|node:n4_0|prev[11]                           ; Merged with nodes:drum|node:n4_0|value[11] ;
-; nodes:drum|node:n4_0|prev[10]                           ; Merged with nodes:drum|node:n4_0|value[10] ;
-; nodes:drum|node:n4_0|prev[9]                            ; Merged with nodes:drum|node:n4_0|value[9]  ;
-; nodes:drum|node:n4_0|prev[8]                            ; Merged with nodes:drum|node:n4_0|value[8]  ;
-; nodes:drum|node:n4_0|prev[7]                            ; Merged with nodes:drum|node:n4_0|value[7]  ;
-; nodes:drum|node:n4_0|prev[6]                            ; Merged with nodes:drum|node:n4_0|value[6]  ;
-; nodes:drum|node:n4_0|prev[5]                            ; Merged with nodes:drum|node:n4_0|value[5]  ;
-; nodes:drum|node:n4_0|prev[4]                            ; Merged with nodes:drum|node:n4_0|value[4]  ;
-; nodes:drum|node:n4_0|prev[3]                            ; Merged with nodes:drum|node:n4_0|value[3]  ;
-; nodes:drum|node:n4_0|prev[2]                            ; Merged with nodes:drum|node:n4_0|value[2]  ;
-; nodes:drum|node:n4_0|prev[1]                            ; Merged with nodes:drum|node:n4_0|value[1]  ;
-; nodes:drum|node:n4_0|prev[0]                            ; Merged with nodes:drum|node:n4_0|value[0]  ;
-; nodes:drum|node:n3_4|prev[17]                           ; Merged with nodes:drum|node:n3_4|value[17] ;
-; nodes:drum|node:n3_4|prev[16]                           ; Merged with nodes:drum|node:n3_4|value[16] ;
-; nodes:drum|node:n3_4|prev[15]                           ; Merged with nodes:drum|node:n3_4|value[15] ;
-; nodes:drum|node:n3_4|prev[14]                           ; Merged with nodes:drum|node:n3_4|value[14] ;
-; nodes:drum|node:n3_4|prev[13]                           ; Merged with nodes:drum|node:n3_4|value[13] ;
-; nodes:drum|node:n3_4|prev[12]                           ; Merged with nodes:drum|node:n3_4|value[12] ;
-; nodes:drum|node:n3_4|prev[11]                           ; Merged with nodes:drum|node:n3_4|value[11] ;
-; nodes:drum|node:n3_4|prev[10]                           ; Merged with nodes:drum|node:n3_4|value[10] ;
-; Total Number of Removed Registers = 571                 ;                                            ;
+; nodes:drum|node:n7_7|prev[17]                           ; Merged with nodes:drum|node:n7_7|value[17] ;
+; nodes:drum|node:n7_7|prev[16]                           ; Merged with nodes:drum|node:n7_7|value[16] ;
+; nodes:drum|node:n7_7|prev[15]                           ; Merged with nodes:drum|node:n7_7|value[15] ;
+; nodes:drum|node:n7_7|prev[14]                           ; Merged with nodes:drum|node:n7_7|value[14] ;
+; nodes:drum|node:n7_7|prev[13]                           ; Merged with nodes:drum|node:n7_7|value[13] ;
+; nodes:drum|node:n7_7|prev[12]                           ; Merged with nodes:drum|node:n7_7|value[12] ;
+; nodes:drum|node:n7_7|prev[11]                           ; Merged with nodes:drum|node:n7_7|value[11] ;
+; nodes:drum|node:n7_7|prev[10]                           ; Merged with nodes:drum|node:n7_7|value[10] ;
+; nodes:drum|node:n7_7|prev[9]                            ; Merged with nodes:drum|node:n7_7|value[9]  ;
+; nodes:drum|node:n7_7|prev[8]                            ; Merged with nodes:drum|node:n7_7|value[8]  ;
+; nodes:drum|node:n7_7|prev[7]                            ; Merged with nodes:drum|node:n7_7|value[7]  ;
+; nodes:drum|node:n7_7|prev[6]                            ; Merged with nodes:drum|node:n7_7|value[6]  ;
+; nodes:drum|node:n7_7|prev[5]                            ; Merged with nodes:drum|node:n7_7|value[5]  ;
+; nodes:drum|node:n7_7|prev[4]                            ; Merged with nodes:drum|node:n7_7|value[4]  ;
+; nodes:drum|node:n7_7|prev[3]                            ; Merged with nodes:drum|node:n7_7|value[3]  ;
+; nodes:drum|node:n7_7|prev[2]                            ; Merged with nodes:drum|node:n7_7|value[2]  ;
+; nodes:drum|node:n7_7|prev[1]                            ; Merged with nodes:drum|node:n7_7|value[1]  ;
+; nodes:drum|node:n7_7|prev[0]                            ; Merged with nodes:drum|node:n7_7|value[0]  ;
+; nodes:drum|node:n7_6|prev[17]                           ; Merged with nodes:drum|node:n7_6|value[17] ;
+; nodes:drum|node:n7_6|prev[16]                           ; Merged with nodes:drum|node:n7_6|value[16] ;
+; nodes:drum|node:n7_6|prev[15]                           ; Merged with nodes:drum|node:n7_6|value[15] ;
+; nodes:drum|node:n7_6|prev[14]                           ; Merged with nodes:drum|node:n7_6|value[14] ;
+; nodes:drum|node:n7_6|prev[13]                           ; Merged with nodes:drum|node:n7_6|value[13] ;
+; nodes:drum|node:n7_6|prev[12]                           ; Merged with nodes:drum|node:n7_6|value[12] ;
+; nodes:drum|node:n7_6|prev[11]                           ; Merged with nodes:drum|node:n7_6|value[11] ;
+; nodes:drum|node:n7_6|prev[10]                           ; Merged with nodes:drum|node:n7_6|value[10] ;
+; nodes:drum|node:n7_6|prev[9]                            ; Merged with nodes:drum|node:n7_6|value[9]  ;
+; nodes:drum|node:n7_6|prev[8]                            ; Merged with nodes:drum|node:n7_6|value[8]  ;
+; nodes:drum|node:n7_6|prev[7]                            ; Merged with nodes:drum|node:n7_6|value[7]  ;
+; nodes:drum|node:n7_6|prev[6]                            ; Merged with nodes:drum|node:n7_6|value[6]  ;
+; nodes:drum|node:n7_6|prev[5]                            ; Merged with nodes:drum|node:n7_6|value[5]  ;
+; nodes:drum|node:n7_6|prev[4]                            ; Merged with nodes:drum|node:n7_6|value[4]  ;
+; nodes:drum|node:n7_6|prev[3]                            ; Merged with nodes:drum|node:n7_6|value[3]  ;
+; nodes:drum|node:n7_6|prev[2]                            ; Merged with nodes:drum|node:n7_6|value[2]  ;
+; nodes:drum|node:n7_6|prev[1]                            ; Merged with nodes:drum|node:n7_6|value[1]  ;
+; nodes:drum|node:n7_6|prev[0]                            ; Merged with nodes:drum|node:n7_6|value[0]  ;
+; nodes:drum|node:n7_5|prev[17]                           ; Merged with nodes:drum|node:n7_5|value[17] ;
+; nodes:drum|node:n7_5|prev[16]                           ; Merged with nodes:drum|node:n7_5|value[16] ;
+; nodes:drum|node:n7_5|prev[15]                           ; Merged with nodes:drum|node:n7_5|value[15] ;
+; nodes:drum|node:n7_5|prev[14]                           ; Merged with nodes:drum|node:n7_5|value[14] ;
+; nodes:drum|node:n7_5|prev[13]                           ; Merged with nodes:drum|node:n7_5|value[13] ;
+; nodes:drum|node:n7_5|prev[12]                           ; Merged with nodes:drum|node:n7_5|value[12] ;
+; nodes:drum|node:n7_5|prev[11]                           ; Merged with nodes:drum|node:n7_5|value[11] ;
+; nodes:drum|node:n7_5|prev[10]                           ; Merged with nodes:drum|node:n7_5|value[10] ;
+; nodes:drum|node:n7_5|prev[9]                            ; Merged with nodes:drum|node:n7_5|value[9]  ;
+; nodes:drum|node:n7_5|prev[8]                            ; Merged with nodes:drum|node:n7_5|value[8]  ;
+; nodes:drum|node:n7_5|prev[7]                            ; Merged with nodes:drum|node:n7_5|value[7]  ;
+; nodes:drum|node:n7_5|prev[6]                            ; Merged with nodes:drum|node:n7_5|value[6]  ;
+; nodes:drum|node:n7_5|prev[5]                            ; Merged with nodes:drum|node:n7_5|value[5]  ;
+; nodes:drum|node:n7_5|prev[4]                            ; Merged with nodes:drum|node:n7_5|value[4]  ;
+; nodes:drum|node:n7_5|prev[3]                            ; Merged with nodes:drum|node:n7_5|value[3]  ;
+; nodes:drum|node:n7_5|prev[2]                            ; Merged with nodes:drum|node:n7_5|value[2]  ;
+; nodes:drum|node:n7_5|prev[1]                            ; Merged with nodes:drum|node:n7_5|value[1]  ;
+; nodes:drum|node:n7_5|prev[0]                            ; Merged with nodes:drum|node:n7_5|value[0]  ;
+; nodes:drum|node:n7_4|prev[17]                           ; Merged with nodes:drum|node:n7_4|value[17] ;
+; nodes:drum|node:n7_4|prev[16]                           ; Merged with nodes:drum|node:n7_4|value[16] ;
+; nodes:drum|node:n7_4|prev[15]                           ; Merged with nodes:drum|node:n7_4|value[15] ;
+; nodes:drum|node:n7_4|prev[14]                           ; Merged with nodes:drum|node:n7_4|value[14] ;
+; nodes:drum|node:n7_4|prev[13]                           ; Merged with nodes:drum|node:n7_4|value[13] ;
+; nodes:drum|node:n7_4|prev[12]                           ; Merged with nodes:drum|node:n7_4|value[12] ;
+; nodes:drum|node:n7_4|prev[11]                           ; Merged with nodes:drum|node:n7_4|value[11] ;
+; nodes:drum|node:n7_4|prev[10]                           ; Merged with nodes:drum|node:n7_4|value[10] ;
+; nodes:drum|node:n7_4|prev[9]                            ; Merged with nodes:drum|node:n7_4|value[9]  ;
+; nodes:drum|node:n7_4|prev[8]                            ; Merged with nodes:drum|node:n7_4|value[8]  ;
+; nodes:drum|node:n7_4|prev[7]                            ; Merged with nodes:drum|node:n7_4|value[7]  ;
+; nodes:drum|node:n7_4|prev[6]                            ; Merged with nodes:drum|node:n7_4|value[6]  ;
+; nodes:drum|node:n7_4|prev[5]                            ; Merged with nodes:drum|node:n7_4|value[5]  ;
+; nodes:drum|node:n7_4|prev[4]                            ; Merged with nodes:drum|node:n7_4|value[4]  ;
+; nodes:drum|node:n7_4|prev[3]                            ; Merged with nodes:drum|node:n7_4|value[3]  ;
+; nodes:drum|node:n7_4|prev[2]                            ; Merged with nodes:drum|node:n7_4|value[2]  ;
+; nodes:drum|node:n7_4|prev[1]                            ; Merged with nodes:drum|node:n7_4|value[1]  ;
+; nodes:drum|node:n7_4|prev[0]                            ; Merged with nodes:drum|node:n7_4|value[0]  ;
+; nodes:drum|node:n7_3|prev[17]                           ; Merged with nodes:drum|node:n7_3|value[17] ;
+; nodes:drum|node:n7_3|prev[16]                           ; Merged with nodes:drum|node:n7_3|value[16] ;
+; nodes:drum|node:n7_3|prev[15]                           ; Merged with nodes:drum|node:n7_3|value[15] ;
+; nodes:drum|node:n7_3|prev[14]                           ; Merged with nodes:drum|node:n7_3|value[14] ;
+; nodes:drum|node:n7_3|prev[13]                           ; Merged with nodes:drum|node:n7_3|value[13] ;
+; nodes:drum|node:n7_3|prev[12]                           ; Merged with nodes:drum|node:n7_3|value[12] ;
+; nodes:drum|node:n7_3|prev[11]                           ; Merged with nodes:drum|node:n7_3|value[11] ;
+; nodes:drum|node:n7_3|prev[10]                           ; Merged with nodes:drum|node:n7_3|value[10] ;
+; nodes:drum|node:n7_3|prev[9]                            ; Merged with nodes:drum|node:n7_3|value[9]  ;
+; nodes:drum|node:n7_3|prev[8]                            ; Merged with nodes:drum|node:n7_3|value[8]  ;
+; nodes:drum|node:n7_3|prev[7]                            ; Merged with nodes:drum|node:n7_3|value[7]  ;
+; nodes:drum|node:n7_3|prev[6]                            ; Merged with nodes:drum|node:n7_3|value[6]  ;
+; nodes:drum|node:n7_3|prev[5]                            ; Merged with nodes:drum|node:n7_3|value[5]  ;
+; nodes:drum|node:n7_3|prev[4]                            ; Merged with nodes:drum|node:n7_3|value[4]  ;
+; nodes:drum|node:n7_3|prev[3]                            ; Merged with nodes:drum|node:n7_3|value[3]  ;
+; nodes:drum|node:n7_3|prev[2]                            ; Merged with nodes:drum|node:n7_3|value[2]  ;
+; nodes:drum|node:n7_3|prev[1]                            ; Merged with nodes:drum|node:n7_3|value[1]  ;
+; nodes:drum|node:n7_3|prev[0]                            ; Merged with nodes:drum|node:n7_3|value[0]  ;
+; nodes:drum|node:n7_2|prev[17]                           ; Merged with nodes:drum|node:n7_2|value[17] ;
+; nodes:drum|node:n7_2|prev[16]                           ; Merged with nodes:drum|node:n7_2|value[16] ;
+; nodes:drum|node:n7_2|prev[15]                           ; Merged with nodes:drum|node:n7_2|value[15] ;
+; nodes:drum|node:n7_2|prev[14]                           ; Merged with nodes:drum|node:n7_2|value[14] ;
+; nodes:drum|node:n7_2|prev[13]                           ; Merged with nodes:drum|node:n7_2|value[13] ;
+; nodes:drum|node:n7_2|prev[12]                           ; Merged with nodes:drum|node:n7_2|value[12] ;
+; nodes:drum|node:n7_2|prev[11]                           ; Merged with nodes:drum|node:n7_2|value[11] ;
+; nodes:drum|node:n7_2|prev[10]                           ; Merged with nodes:drum|node:n7_2|value[10] ;
+; Total Number of Removed Registers = 1390                ;                                            ;
 +---------------------------------------------------------+--------------------------------------------+
 * Table truncated at 100 items. To change the number of removed registers reported, set the "Number of Removed Registers Reported" option under Assignments->Settings->Analysis and Synthesis Settings->More Settings
 
@@ -558,8 +621,8 @@ Table restricted to first 100 entries. Note: All cells listed above may not be p
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1390  ;
-; Number of registers using Synchronous Clear  ; 195   ;
+; Total registers                              ; 3379  ;
+; Number of registers using Synchronous Clear  ; 858   ;
 ; Number of registers using Synchronous Load   ; 261   ;
 ; Number of registers using Asynchronous Clear ; 57    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -575,11 +638,11 @@ Table restricted to first 100 entries. Note: All cells listed above may not be p
 +--------------------------------------------------+---------+
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[4] ; 12      ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[0] ; 17      ;
-; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[2] ; 16      ;
-; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[3] ; 19      ;
+; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[2] ; 17      ;
+; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[3] ; 18      ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[1] ; 13      ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|SD_COUNTER[5] ; 11      ;
-; I2C_AV_Config:u3|I2C_Controller:u0|SCLK          ; 2       ;
+; I2C_AV_Config:u3|I2C_Controller:u0|SCLK          ; 3       ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|END           ; 5       ;
 ; I2C_AV_Config:u3|I2C_Controller:u0|SDO           ; 4       ;
 ; Total number of inverted registers = 9           ;         ;
@@ -591,19 +654,19 @@ Table restricted to first 100 entries. Note: All cells listed above may not be p
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered                                ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
-; 3:1                ; 100 bits  ; 200 LEs       ; 200 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n3_3|ShiftRight0 ;                            ;
-; 3:1                ; 125 bits  ; 250 LEs       ; 250 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n4_4|ShiftRight0 ;                            ;
-; 4:1                ; 50 bits   ; 100 LEs       ; 100 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n0_2|ShiftRight0 ;                            ;
-; 4:1                ; 150 bits  ; 300 LEs       ; 150 LEs              ; 150 LEs                ; |DE2_TOP|nodes:drum|node:n3_0|ShiftRight1 ;                            ;
-; 5:1                ; 50 bits   ; 150 LEs       ; 150 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n3_0|ShiftRight0 ;                            ;
-; 5:1                ; 250 bits  ; 750 LEs       ; 250 LEs              ; 500 LEs                ; |DE2_TOP|nodes:drum|node:n0_0|ShiftRight1 ;                            ;
-; 5:1                ; 150 bits  ; 450 LEs       ; 300 LEs              ; 150 LEs                ; |DE2_TOP|nodes:drum|node:n4_0|ShiftRight2 ;                            ;
-; 6:1                ; 175 bits  ; 700 LEs       ; 350 LEs              ; 350 LEs                ; |DE2_TOP|nodes:drum|node:n0_2|ShiftRight2 ;                            ;
-; 6:1                ; 25 bits   ; 100 LEs       ; 75 LEs               ; 25 LEs                 ; |DE2_TOP|nodes:drum|node:n0_2|ShiftRight2 ;                            ;
-; 7:1                ; 50 bits   ; 200 LEs       ; 150 LEs              ; 50 LEs                 ; |DE2_TOP|nodes:drum|node:n4_1|ShiftRight1 ;                            ;
-; 7:1                ; 50 bits   ; 200 LEs       ; 200 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n0_2|ShiftRight2 ;                            ;
-; 8:1                ; 25 bits   ; 125 LEs       ; 100 LEs              ; 25 LEs                 ; |DE2_TOP|nodes:drum|node:n4_1|ShiftRight1 ;                            ;
-; 8:1                ; 75 bits   ; 375 LEs       ; 300 LEs              ; 75 LEs                 ; |DE2_TOP|nodes:drum|node:n0_1|ShiftRight2 ;                            ;
+; 3:1                ; 256 bits  ; 512 LEs       ; 512 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n0_4|ShiftRight0 ;                            ;
+; 3:1                ; 320 bits  ; 640 LEs       ; 640 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n3_0|ShiftRight0 ;                            ;
+; 4:1                ; 128 bits  ; 256 LEs       ; 256 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n6_2|ShiftRight0 ;                            ;
+; 4:1                ; 384 bits  ; 768 LEs       ; 384 LEs              ; 384 LEs                ; |DE2_TOP|nodes:drum|node:n5_4|ShiftRight2 ;                            ;
+; 5:1                ; 128 bits  ; 384 LEs       ; 384 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n1_0|ShiftRight0 ;                            ;
+; 5:1                ; 640 bits  ; 1920 LEs      ; 640 LEs              ; 1280 LEs               ; |DE2_TOP|nodes:drum|node:n5_6|ShiftRight2 ;                            ;
+; 5:1                ; 384 bits  ; 1152 LEs      ; 768 LEs              ; 384 LEs                ; |DE2_TOP|nodes:drum|node:n5_6|ShiftRight2 ;                            ;
+; 6:1                ; 448 bits  ; 1792 LEs      ; 896 LEs              ; 896 LEs                ; |DE2_TOP|nodes:drum|node:n5_6|ShiftRight2 ;                            ;
+; 6:1                ; 64 bits   ; 256 LEs       ; 192 LEs              ; 64 LEs                 ; |DE2_TOP|nodes:drum|node:n5_6|ShiftRight2 ;                            ;
+; 7:1                ; 128 bits  ; 512 LEs       ; 384 LEs              ; 128 LEs                ; |DE2_TOP|nodes:drum|node:n7_3|ShiftRight1 ;                            ;
+; 7:1                ; 128 bits  ; 512 LEs       ; 512 LEs              ; 0 LEs                  ; |DE2_TOP|nodes:drum|node:n5_6|ShiftRight2 ;                            ;
+; 8:1                ; 64 bits   ; 320 LEs       ; 256 LEs              ; 64 LEs                 ; |DE2_TOP|nodes:drum|node:n0_6|ShiftRight1 ;                            ;
+; 8:1                ; 192 bits  ; 960 LEs       ; 768 LEs              ; 192 LEs                ; |DE2_TOP|nodes:drum|node:n3_0|ShiftRight2 ;                            ;
 +--------------------+-----------+---------------+----------------------+------------------------+-------------------------------------------+----------------------------+
 
 
@@ -1036,12 +1099,265 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------+
-; Port Connectivity Checks: "nodes:drum|node:n4_4" ;
+; Port Connectivity Checks: "nodes:drum|node:n7_7" ;
 +----------+-------+----------+--------------------+
 ; Port     ; Type  ; Severity ; Details            ;
 +----------+-------+----------+--------------------+
 ; right    ; Input ; Info     ; Stuck at GND       ;
 ; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n7_6" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n7_5" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n7_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n7_3" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n7_2" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n7_1" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n7_0" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n6_7" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n6_6" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n6_5" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n6_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n6_3" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n6_2" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n6_1" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n6_0" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n5_7" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n5_6" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n5_5" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n5_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n5_3" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n5_2" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n5_1" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n5_0" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n4_7" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n4_6" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n4_5" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n4_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
 ; resetval ; Input ; Info     ; Stuck at GND       ;
 +----------+-------+----------+--------------------+
 
@@ -1051,7 +1367,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+--------------------+
 ; Port     ; Type  ; Severity ; Details            ;
 +----------+-------+----------+--------------------+
-; right    ; Input ; Info     ; Stuck at GND       ;
 ; resetval ; Input ; Info     ; Stuck at GND       ;
 +----------+-------+----------+--------------------+
 
@@ -1061,7 +1376,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+--------------------+
 ; Port     ; Type  ; Severity ; Details            ;
 +----------+-------+----------+--------------------+
-; right    ; Input ; Info     ; Stuck at GND       ;
 ; resetval ; Input ; Info     ; Stuck at GND       ;
 +----------+-------+----------+--------------------+
 
@@ -1071,7 +1385,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+--------------------+
 ; Port     ; Type  ; Severity ; Details            ;
 +----------+-------+----------+--------------------+
-; right    ; Input ; Info     ; Stuck at GND       ;
 ; resetval ; Input ; Info     ; Stuck at GND       ;
 +----------+-------+----------+--------------------+
 
@@ -1081,7 +1394,34 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+--------------------+
 ; Port     ; Type  ; Severity ; Details            ;
 +----------+-------+----------+--------------------+
-; right    ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n3_7" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n3_6" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n3_5" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
 ; resetval ; Input ; Info     ; Stuck at GND       ;
 +----------+-------+----------+--------------------+
 
@@ -1091,7 +1431,6 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------+-------+----------+--------------------+
 ; Port     ; Type  ; Severity ; Details            ;
 +----------+-------+----------+--------------------+
-; up       ; Input ; Info     ; Stuck at GND       ;
 ; resetval ; Input ; Info     ; Stuck at GND       ;
 +----------+-------+----------+--------------------+
 
@@ -1142,11 +1481,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------+
-; Port Connectivity Checks: "nodes:drum|node:n2_4" ;
+; Port Connectivity Checks: "nodes:drum|node:n2_7" ;
 +----------+-------+----------+--------------------+
 ; Port     ; Type  ; Severity ; Details            ;
 +----------+-------+----------+--------------------+
 ; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n2_6" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n2_5" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n2_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
 ; resetval ; Input ; Info     ; Stuck at GND       ;
 +----------+-------+----------+--------------------+
 
@@ -1206,11 +1572,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------+
-; Port Connectivity Checks: "nodes:drum|node:n1_4" ;
+; Port Connectivity Checks: "nodes:drum|node:n1_7" ;
 +----------+-------+----------+--------------------+
 ; Port     ; Type  ; Severity ; Details            ;
 +----------+-------+----------+--------------------+
 ; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n1_6" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n1_5" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n1_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
 ; resetval ; Input ; Info     ; Stuck at GND       ;
 +----------+-------+----------+--------------------+
 
@@ -1279,11 +1672,38 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +--------------------------------------------------+
-; Port Connectivity Checks: "nodes:drum|node:n0_4" ;
+; Port Connectivity Checks: "nodes:drum|node:n0_7" ;
 +----------+-------+----------+--------------------+
 ; Port     ; Type  ; Severity ; Details            ;
 +----------+-------+----------+--------------------+
 ; up       ; Input ; Info     ; Stuck at GND       ;
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n0_6" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n0_5" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; resetval ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "nodes:drum|node:n0_4" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
 ; resetval ; Input ; Info     ; Stuck at GND       ;
 +----------+-------+----------+--------------------+
 
@@ -1389,7 +1809,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:01:14     ;
+; Top            ; 01:19:00     ;
 +----------------+--------------+
 
 
@@ -1399,7 +1819,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 11.0 Build 157 04/27/2011 SJ Full Version
-    Info: Processing started: Wed Mar 06 23:16:22 2013
+    Info: Processing started: Wed Mar 06 23:52:10 2013
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Audio_Filter_18_bit -c DE2_TOP
 Info: Found 1 design units, including 1 entities, in source file nodes.v
     Info: Found entity 1: nodes
@@ -1768,7 +2188,7 @@ Warning: Output pins are stuck at VCC or GND
 Info: 2 registers lost all their fanouts during netlist optimizations. The first 2 are displayed below.
     Info: Register "I2C_AV_Config:u3|mSetup_ST~9" lost all its fanouts during netlist optimizations.
     Info: Register "I2C_AV_Config:u3|mSetup_ST~10" lost all its fanouts during netlist optimizations.
-Info: Generated suppressed messages file C:/ece5760/lab3/DE2_TOP.map.smsg
+Info: Generated suppressed messages file C:/ece5760-copy2/lab3/DE2_TOP.map.smsg
 Info: Generating hard_block partition "hard_block:auto_generated_inst"
     Info: Adding node "VGA_Audio_PLL:p1|altpll:altpll_component|pll"
 Warning: Design contains 24 input pin(s) that do not drive logic
@@ -1796,22 +2216,22 @@ Warning: Design contains 24 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "TD_DATA[7]"
     Warning (15610): No output dependent on input pin "TD_HS"
     Warning (15610): No output dependent on input pin "TD_VS"
-Info: Implemented 13167 device resources after synthesis - the final resource count might be different
+Info: Implemented 31800 device resources after synthesis - the final resource count might be different
     Info: Implemented 48 input pins
     Info: Implemented 218 output pins
     Info: Implemented 159 bidirectional pins
-    Info: Implemented 12741 logic cells
+    Info: Implemented 31374 logic cells
     Info: Implemented 1 PLLs
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 300 warnings
-    Info: Peak virtual memory: 473 megabytes
-    Info: Processing ended: Wed Mar 06 23:17:18 2013
-    Info: Elapsed time: 00:00:56
-    Info: Total CPU time (on all processors): 00:00:56
+    Info: Peak virtual memory: 623 megabytes
+    Info: Processing ended: Thu Mar 07 00:46:25 2013
+    Info: Elapsed time: 00:54:15
+    Info: Total CPU time (on all processors): 00:54:09
 
 
 +------------------------------------------+
 ; Analysis & Synthesis Suppressed Messages ;
 +------------------------------------------+
-The suppressed messages can be found in C:/ece5760/lab3/DE2_TOP.map.smsg.
+The suppressed messages can be found in C:/ece5760-copy2/lab3/DE2_TOP.map.smsg.
 
 
