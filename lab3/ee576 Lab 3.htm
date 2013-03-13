@@ -1,0 +1,79 @@
+
+<!-- saved from url=(0071)http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/lab3.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>ee576 Lab 3</title>
+</head>
+
+<body class=" hasGoogleVoiceExt">
+<h2> ECE 5760: Laboratory 3 </h2> 
+<h2> Multiprocessor Drum Synthesis. </h2>
+
+<b> Introduction. </b> 
+<p> For this exercise, you will simulate the 2D wave equation on a square mesh in realtime to produce drum-like sounds. 
+<b></b></p><hr><b>
+Procedure:</b> 
+<p> Read <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/WaveFDsoln.pdf"><em>Study Notes on Numerical Solutions of the Wave Equation with the Finite Difference Method</em></a>. The main result you will need to simulate is equation 2.18. A <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/FDfreeEdge2order.m">matlab program</a> gives a sequential version of the algorithm and plots the Fourier modes of the drum. Another <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/FDfreeEdgeMiddleC.m">version</a> is tuned to middle C (261 Hz). You can see in the figure below that the simulated sound spectrum (blue) matches the theoretical drum modes (red) up to about mode 8 or 9 (see <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/vanduyne93physical.pdf"><em>Physical modeling with a 2D waveguide mesh </em></a>for details) .  The theoretical square drum mode frequencies follow the ratio sequence: <br>
+  <code>sqrt(m+n) where m,n=1,2,3,...</code><br>
+  Where the first term (<code>sqrt(2)</code>) corresponds to the fundamental mode of the drum.<br>
+  The first few modes are <code>sqrt(2), sqrt(5), 2*sqrt(2), sqrt(10), sqrt(13), sqrt(17), sqrt3*sqrt(2)</code>.<br>
+  <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/MiddleCspectrum.png"><img src="./ee576 Lab 3_files/MiddleCspectrumSmall.png" width="400" height="178" border="0"></a>
+</p><p>Modifying the boundary conditions, damping, wave speed, drum size, and distrubution of input energy can modifiy the sound of the simulation from <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/BassDrum.wav">drum-like</a>, to <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/chime.wav">chime-like</a>, to <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/Gong.wav">gong-like</a> or <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/bell.wav">bell-like</a>. You can modify the program further to include frequency-dependent damping and other effects. This <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/FD2orderXY.m">version</a> simluates a long, thin bar struck at one end. 
+</p><p>You will probably want to read 
+</p><ul>
+  <li><a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/FPGAfd.pdf"><em>IMPLEMENTATION OF FINITE DIFFERENCE SCHEMES FOR THE WAVE EQUATION</em></a><em> <a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/FPGAfd.pdf">ON FPGA</a></em> </li>
+  <li><a href="http://people.ece.cornell.edu/land/courses/ece5760/LABS/s2013/FPGAparallel.pdf"><em>PARALLEL IMPLEMENTATION OF FINITE DIFFERENCE SCHEMES FOR THE PLATE EQUATION ON A FPGA-BASED MULTI-PROCESSOR ARRAY</em></a> </li>
+  <li><a href="http://www.asres07.umac.mo/rectors_office/docs/weizhao_cv/pub_refereed_conferences/2005/0504-FCCM-HZL.pdf">Time Domain Numerical Simulation for Transient Wave Equations on Reconfigurable Coprocessor Platform</a></li>
+  <li><a href="http://ieeexplore.ieee.org/xpls/abs_all.jsp?arnumber=4359511">Design Methodology for Real-Time FPGA-Based Sound Synthesis</a></li>
+</ul>
+<p>for ideas on parallelization. </p>
+<p>The hardware audio interface is a <a href="http://instruct1.cit.cornell.edu/courses/ece576/DE2_Datasheets/Audio%20CODEC/WM8731_WM8731L.pdf">Wolfson
+WM8731</a> codec which is controlled by an I2C interface. I have simplified the
+drivers somewhat. The cleanest version is in this <a href="http://instruct1.cit.cornell.edu/courses/ece576/DE2/AudioFilter_oct2009/AudioFilter_oct2009.zip">project
+zip</a>. The context for the drivers is explained in the <a href="http://instruct1.cit.cornell.edu/courses/ece576/DE2/fpgaDSP.html">DSP
+page</a>, example 1. The audio codec produces (and outputs) 16-bit 2's complement numbers. The 16-bit numbers should be considered as fractional values in the range +1 to -1 volt. </p>
+<p>Student examples running on FPGA:</p>
+<ul>
+  <li>2008: Matt Meister and Cathy Chen <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/CathyChen/DrumExample.wav">wav file</a>. </li>
+  <li>2008: Parker Evans and Jordan  Crittenden <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/ParkerEvans/beatlab4.wav">wav1</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/ParkerEvans/beat2lab4.wav">wav2</a> </li>
+  <li>2010: Skyler Schneider <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/ss868/drum/bass.wav">wav</a> base drum <br>
+  with n = 16 ,rho = 0.05,  eta = 2e-4, alpha = 0.1, boundaryGain = 0.0, node hit = (8, 8), node probed = (8, 8)</li>
+  <li>2010: Peter Kung and  	 Jsoon Kim, rho bit shifted =<a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/pfk5/Rho6.wma"> 6</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/pfk5/Rho8.wma">8</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/pfk5/Rho10.wma">10</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/pfk5/Rho11.wma">11</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/pfk5/Rho14.wma">14</a></li>
+  <li>2010: Kerran Flanigan, Tom Gowing, Jeff Yates, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/kaf42/chickenCan.wav">chickencan</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/kaf42/glassHit.wav">glasshit</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/kaf42/littleBongo.wav">littlebongo</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/kaf42/miniBell.wav">minibell</a></li>
+  <li>2011: Jinda Cui and Jiawei Yang, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/drum2011/drum.wma">drum</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/drum2011/bass_drum.wma">bass drum</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/drum2011/knock_a_bowl.wma">bowl</a></li>
+  <li>2011: Weiqing Li and Luke 	Ackerman, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/drum2011/low.wma">low</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/drum2011/high.wma">high</a></li>
+  <li>2011: João Diogo Falcão, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/drum2011/growinggrig.wav">growing grid</a>, <a href="http://people.ece.cornell.edu/land/courses/ece5760/StudentWork/drum2011/oldmacd.wav">old MacDonald</a>. <br>
+  The growing grid starts at 7*34*4=952 nodes, (#columns*#lines*symmetry), and ends at 254*34*4=34544 nodes. This is with Rho=0.5 and Eta=0.000244.</li>
+</ul>
+<p></p>
+<hr>
+<b> Assignment</b>
+<ol>
+  <li>  Build a realtime drum simulator which produces sound from the audio interface. 
+  </li><li>The simulator should solve the 2d wave equation to produce selectable effects. A minimum of two buttons on the DE2 should produce different timbers.
+  </li><li>Part of your grade will be determined by how many nodes you can simulate in realtime. The grade will be based on the product of <code><br>
+    (number of wave equation nodes)*(audio sample frequency)</code>.
+     <br>
+     Each sample that you calculate must be output to the audio codec.     <br>
+    Each node simulated will require around 10 additions/multiplications. You may be able to use clever shifting schemes to avoid multiplys. Thus the computation rate will be about <br>
+ <code> 10*(number of wave equation nodes)*(audio sample frequency)</code> . <br>
+ For a minimal 10x10 grid at 44 kHz, you will need <code>1000x44000=44x10<sup>6</sup></code>  operations/second. For a more accurate 20x20 grid you will need ~<code>200x10<sup>6</sup></code>
+operations/sec. Clearly some parallel processing will be necessary. 
+  </li><li>You can use fine-grained parallelism or course-grained multiprocessors. You can use NiosII or Pancake or not, as you wish.  
+  </li><li>Record the audio output back into matlab to show that your simulation matches drum modes (under the correct boundary conditions, etc). 
+</li></ol>
+    
+<p>Be prepared to demo your design to your TA in lab. </p>
+<p> Your written lab report should include the sections mentioned in the <a href="http://people.ece.cornell.edu/land/courses/ece5760/policy.html">policy page</a>, and :
+</p><ul>
+  <li>Mathematical considerations (what you actually implemented) 
+  </li><li> Your parallelization scheme   
+  </li><li>A plot of the power spectrum of your drum sounds 
+  </li><li> A heavily commented listing of your Verilog design and GCC  code (if you use NiosII) or Syrup code (if you use Pancake)..  
+</li></ul>
+<hr>
+<br>
+<small> <font size="-1">Copyright Cornell University </font></small>
+<!-- #BeginDate format:Am1 -->February 25, 2013<!-- #EndDate -->
+ 
+
+<div id="sbi_camera_button" class="sbi_search" style="left: 0px; top: 0px; position: absolute; width: 29px; height: 27px; border: none; margin: 0px; padding: 0px; z-index: 2147483647; display: none;"></div></body></html>

@@ -1,23 +1,7 @@
 // --------------------------------------------------------------------
+// Drum Synthesizer
+// Jeremy Blum, Sima Mitra, Jason Wright
 // --------------------------------------------------------------------
-//
-// Major Functions: Audio Filters with a 18-bit fixed point parallel
-// implementation: very fast, but uses lots of multipliers
-//
-// --------------------------------------------------------------------
-//
-// Revision History :
-// --------------------------------------------------------------------
-// Bruce R Land, Cornell University, Nov 2007
-// Improved top module written by Adam Shapiro
-// Bruce Land Oct 2009 
-// -- syntax cleanup and module name improvement
-// --------------------------------------------------------------------
-
-// ( ?° ?? ?°)
-//
-// ^ Bruce
-
 
 module DE2_TOP (
     // Clock Input
@@ -161,7 +145,7 @@ module DE2_TOP (
    
    //Set all GPIO to tri-state.
    //assign GPIO_0 = 36'hzzzzzzzzz;
-   assign GPIO_1 = 36'hzzzzzzzzz;
+   assign GPIO_1 = 36'hzzzzzzzzz; //We Used this for debugging
 
    //Disable audio codec.
    //assign AUD_DACDAT = 1'b0;
@@ -257,7 +241,7 @@ assign	TD_RESET	=	1'b1;	//	Allow 27 MHz
 assign	AUD_ADCLRCK	=	AUD_DACLRCK;
 assign	AUD_XCK		=	AUD_CTRL_CLK;
 
-assign GPIO_0[0] = AUD_DACLRCK;
+assign GPIO_0[0] = AUD_DACLRCK; //For Debugging the Clock
 
 Reset_Delay			r0	(	.iCLK(CLOCK_50),.oRESET(DLY_RST)	);
 
@@ -297,19 +281,12 @@ assign restart = ~KEY[1];
 /// audio stuff /////////////////////////////////////////////////
 // output to audio DAC
 wire signed [15:0] audio_outL, audio_outR ;
-// input from audio ADC
-//wire signed [15:0] audio_inL, audio_inR ;
-// filter outputs
-//wire signed [15:0] filter1_out, filter2_out, filter3_out ;
 wire signed[15:0] nodes_out;
 
 // make some output
-// original signal in R channel
-// filtered signal in L channel
 assign audio_outR = nodes_out ; 
 assign audio_outL = nodes_out ;
 assign GPIO_0[18:1] = nodes_out;
-//assign GPIO_35 = GND;
 //green LEDs for button debugging
 assign LEDG[0] = ~KEY[0];
 assign LEDG[1] = ~KEY[0];
@@ -323,11 +300,12 @@ assign LEDG[7] = ~KEY[3];
 assign LEDR[15:0] = nodes_out;
 
 
-
+//Creates all the drum nodes
 nodes drum (.restart(restart), .clk(AUD_DACLRCK), .audio_out(nodes_out), .sw(SW[17:0]));
 
 endmodule
 
+//Defines the inputs and outputs for a node
 module node(left, right, up, down, clk, reset, resetval, value, sw);
 
 	output reg signed[17:0] value;
@@ -352,31 +330,25 @@ module node(left, right, up, down, clk, reset, resetval, value, sw);
 	reg signed[31:0] rhocoeff;
 	reg signed[17:0] rhocoeff2;
 	
-	//assign newval = (((left+right+up+down - (prev + prev + prev + prev))/8) + (prev + prev) - prev2 + (prev2/256)) - 	((((left+right+up+down - (prev + prev + prev + prev))/8) + (prev + prev) - prev2 + (prev2/256))/256);
-	
+	//Everything gets updated on the positive clock edge
 	always @ (posedge clk)
 	begin
 		case(reset)
 			1'b1 :
 			begin
+				//If reset is activated, set everything to the reset state
 				value <= resetval;
 				prev2 <= resetval;
 				prev <= resetval;
 			end
 			1'b0:
 			begin
-				//newval = ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>1) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>2) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>3) + ((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>4);
-				
-				//newval = ((((left+right+up+down - (prev<<2))>>>2) + (prev<<1) -(prev2>>>1) + (prev2>>>2) + (prev2>>>3) + (prev2>>>4))>>>1);
-				//newval = (((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) - prev2 + (prev2>>>4)) - 	((((left+right+up+down - (prev<<<2))>>>2) + (prev<<<1) - prev2 + (prev2>>>4))>>>4);
-				//////newval = (((left+right+up+down - (prev + prev + prev + prev))>>>3) + (prev + prev) - prev2 + (prev2>>>8)) - 	((((left+right+up+down - (prev + prev + prev + prev))>>>3) + (prev + prev) - prev2 + (prev2>>>8))>>>8);
-				//newval = (((20'd0 - (prev + prev + prev + prev))>>>3) + (prev + prev) - prev2 + (prev2>>>8)) - 	((((20'd0 - (prev + prev + prev + prev))>>>3) + (prev + prev) - prev2 + (prev2>>>8))>>>8);
+				//Otherwise, connect the neighbors and apply the coefficients
 				neighbors = left+right+up+down;
 				prevgain = prev+prev+prev+prev;
 				rhocoeff = (neighbors-prevgain)>>>sw[3:0];
 				rhocoeff2 = {rhocoeff[31:30], rhocoeff[15:0]};
 				newval = (rhocoeff2 + (prev + prev) - prev2 + (prev2>>>sw[17:4])) - ((rhocoeff2 + (prev + prev) - prev2 + (prev2>>>sw[17:4]))>>>sw[17:4]);
-				//newval = (((left+right+up+down - (prev + prev + prev + prev))/8) + (prev + prev) - prev2 + (prev2/128)) - 	((((left+right+up+down - (prev + prev + prev + prev))/8) + (prev + prev) - prev2 + (prev2/128))/128);
 				value = {newval[63:62], newval[15:0]};
 				prev2 = prev;
 				prev = value;
@@ -387,389 +359,3 @@ module node(left, right, up, down, clk, reset, resetval, value, sw);
 	
 	
 endmodule
-
-///////////////////////////////////////////////////////////////////
-/// Second order IIR filter ///////////////////////////////////////
-///////////////////////////////////////////////////////////////////
-//module IIR2_18bit_parallel (audio_out, audio_in, 
-//			scale, 
-//			b1, b2, b3, 
-//			a2, a3, 
-//			state_clk, lr_clk, reset) ;
-//// The filter is a "Direct Form II Transposed"
-//// 
-////    a(1)*y(n) = b(1)*x(n) + b(2)*x(n-1) + ... + b(nb+1)*x(n-nb)
-////                          - a(2)*y(n-1) - ... - a(na+1)*y(n-na)
-//// 
-////    If a(1) is not equal to 1, FILTER normalizes the filter
-////    coefficients by a(1). 
-//// Structure:
-////
-////    in >____________>_________________>_______
-////            |                |                |
-////           b3                b2               b1
-////            |                |                |
-////            + -> reg:f1_n2-- + -> reg:f1_n1-> + -> scale --> f1_n0 --> out  
-////            |                |                                 |
-////           a3                a2                                | 
-////            |__________<_____|_________________________<_______| 
-////                                
-////
-//// one audio sample, 16 bit, 2's complement
-//output wire signed [15:0] audio_out ;
-//// one audio sample, 16 bit, 2's complement
-//input wire signed [15:0] audio_in ;
-//// shift factor for output
-//input wire [2:0] scale ;
-//// filter coefficients
-//input wire signed [17:0] b1, b2, b3, a2, a3 ;
-//input wire state_clk, lr_clk, reset ;
-//
-///// filter vars //////////////////////////////////////////////////
-//wire signed [17:0] b1_in, b2_in, b3_in, a2_out, a3_out ;
-//
-//// history pipeline regs
-//reg signed [17:0] f1_n1, f1_n2 ; 
-//// history pipeline inputs
-//wire signed [17:0] f1_n1_input, f1_n2_input, f1_n0 ; 
-//
-//// convert input to 18-bits and mult by filter coeff
-//signed_mult b1in (b1_in, b1, {audio_in, 2'b0});
-//signed_mult b2in (b2_in, b2, {audio_in, 2'b0});
-//signed_mult b3in (b3_in, b3, {audio_in, 2'b0});
-//signed_mult a2out (a2_out, a2, f1_n0);
-//signed_mult a3out (a3_out, a3, f1_n0);
-//
-//// add operations
-//assign f1_n1_input =  b2_in + f1_n2 + a2_out ;
-//assign f1_n2_input =  b3_in + a3_out ;
-//
-//// scale the output and turncate for audio codec
-//assign f1_n0 = (f1_n1 + b1_in) << scale ;
-//assign audio_out = f1_n0[17:2] ;
-
-///////////////////////////////////////////////////////////////////
-
-//Run the filter state machine at audio sample rate
-//audio cycle
-//always @ (posedge lr_clk) 
-//begin
-//	if (reset)
-//	begin
-//		f1_n1 <= 0;
-//		f1_n2 <= 0;	
-//	end
-//
-//	else 
-//	begin
-//		f1_n1 <= f1_n1_input ;
-//		f1_n2 <= f1_n2_input ;		
-//	end
-//end	
-//endmodule
-
-///////////////////////////////////////////////////////////////////
-/// Fourth order IIR filter ///////////////////////////////////////
-///////////////////////////////////////////////////////////////////
-//module IIR4_18bit_parallel (audio_out, audio_in, 
-//			scale, 
-//			b1, b2, b3, b4, b5, 
-//			a2, a3, a4, a5, 
-//			state_clk, lr_clk, reset) ;
-//// The filter is a "Direct Form II Transposed"
-//// 
-////    a(1)*y(n) = b(1)*x(n) + b(2)*x(n-1) + ... + b(nb+1)*x(n-nb)
-////                          - a(2)*y(n-1) - ... - a(na+1)*y(n-na)
-//// 
-////    If a(1) is not equal to 1, FILTER normalizes the filter
-////    coefficients by a(1). 
-////
-//// one audio sample, 16 bit, 2's complement
-//output wire signed [15:0] audio_out ;
-//// one audio sample, 16 bit, 2's complement
-//input wire signed [15:0] audio_in ;
-//// shift factor for output
-//input wire [2:0] scale ;
-//// filter coefficients
-//input wire signed [17:0] b1, b2, b3, b4, b5, a2, a3, a4, a5 ;
-//input wire state_clk, lr_clk, reset ;
-//
-///// filter vars //////////////////////////////////////////////////
-//wire signed [17:0] b1_in, b2_in, b3_in, b4_in, b5_in ;
-//wire signed [17:0] a2_out, a3_out, a4_out, a5_out ;
-//
-//// history pipeline regs
-//reg signed [17:0] f1_n1, f1_n2, f1_n3, f1_n4 ; 
-//// history pipeline inputs
-//wire signed [17:0] f1_n1_input, f1_n2_input, f1_n3_input, f1_n4_input, f1_n0 ; 
-//
-//// convert input to 18-bits and mult by filter coeff
-//signed_mult b1in (b1_in, b1, {audio_in, 2'b0});
-//signed_mult b2in (b2_in, b2, {audio_in, 2'b0});
-//signed_mult b3in (b3_in, b3, {audio_in, 2'b0});
-//signed_mult b4in (b4_in, b4, {audio_in, 2'b0});
-//signed_mult b5in (b5_in, b5, {audio_in, 2'b0});
-//signed_mult a2out (a2_out, a2, f1_n0);
-//signed_mult a3out (a3_out, a3, f1_n0);
-//signed_mult a4out (a4_out, a4, f1_n0);
-//signed_mult a5out (a5_out, a5, f1_n0);
-//
-//// add operations
-//assign f1_n1_input = b2_in + f1_n2 + a2_out ;
-//assign f1_n2_input = b3_in + f1_n3 + a3_out ;
-//assign f1_n3_input = b4_in + f1_n4 + a4_out ;
-//assign f1_n4_input = b5_in + a5_out ;
-//
-//// scale the output and turncate for audio codec
-//assign f1_n0 = (f1_n1 + b1_in) << scale ;
-//assign audio_out = f1_n0[17:2] ;
-
-///////////////////////////////////////////////////////////////////
-
-//Run the filter state machine at audio sample rate
-//audio cycle
-//always @ (posedge lr_clk) 
-//begin
-//	if (reset)
-//	begin
-//		f1_n1 <= 0;
-//		f1_n2 <= 0;	
-//		f1_n3 <= 0;
-//		f1_n4 <= 0;	
-//	end
-//
-//	else 
-//	begin
-//		f1_n1 <= f1_n1_input ;
-//		f1_n2 <= f1_n2_input ;	
-//		f1_n3 <= f1_n3_input ;
-//		f1_n4 <= f1_n4_input ;		
-//	end
-//end	
-//endmodule
-
-
-///////////////////////////////////////////////////////////////////
-/// Sixth order IIR filter ///////////////////////////////////////
-///////////////////////////////////////////////////////////////////
-//module IIR6_18bit_parallel (audio_out, audio_in, 
-//			scale, 
-//			b1, b2, b3, b4, b5, b6, b7,
-//			a2, a3, a4, a5, a6, a7,
-//			state_clk, lr_clk, reset) ;
-//// The filter is a "Direct Form II Transposed"
-//// 
-////    a(1)*y(n) = b(1)*x(n) + b(2)*x(n-1) + ... + b(nb+1)*x(n-nb)
-////                          - a(2)*y(n-1) - ... - a(na+1)*y(n-na)
-//// 
-////    If a(1) is not equal to 1, FILTER normalizes the filter
-////    coefficients by a(1). 
-////
-//// one audio sample, 16 bit, 2's complement
-//output wire signed [15:0] audio_out ;
-//// one audio sample, 16 bit, 2's complement
-//input wire signed [15:0] audio_in ;
-//// shift factor for output
-//input wire [2:0] scale ;
-//// filter coefficients
-//input wire signed [17:0] b1, b2, b3, b4, b5, b6, b7, a2, a3, a4, a5, a6, a7 ;
-//input wire state_clk, lr_clk, reset ;
-//
-///// filter vars //////////////////////////////////////////////////
-//wire signed [17:0] b1_in, b2_in, b3_in, b4_in, b5_in, b6_in, b7_in ;
-//wire signed [17:0] a2_out, a3_out, a4_out, a5_out, a6_out, a7_out ;
-//
-//// history pipeline regs
-//reg signed [17:0] f1_n1, f1_n2, f1_n3, f1_n4, f1_n5, f1_n6 ; 
-//// history pipeline inputs
-//wire signed [17:0] f1_n1_input, f1_n2_input, f1_n3_input, 
-//					f1_n4_input, f1_n5_input, f1_n6_input, f1_n0 ; 
-//
-//// convert input to 18-bits and mult by filter coeff
-//signed_mult b1in (b1_in, b1, {audio_in, 2'b0});
-//signed_mult b2in (b2_in, b2, {audio_in, 2'b0});
-//signed_mult b3in (b3_in, b3, {audio_in, 2'b0});
-//signed_mult b4in (b4_in, b4, {audio_in, 2'b0});
-//signed_mult b5in (b5_in, b5, {audio_in, 2'b0});
-//signed_mult b6in (b6_in, b6, {audio_in, 2'b0});
-//signed_mult b7in (b7_in, b7, {audio_in, 2'b0});
-//signed_mult a2out (a2_out, a2, f1_n0);
-//signed_mult a3out (a3_out, a3, f1_n0);
-//signed_mult a4out (a4_out, a4, f1_n0);
-//signed_mult a5out (a5_out, a5, f1_n0);
-//signed_mult a6out (a6_out, a6, f1_n0);
-//signed_mult a7out (a7_out, a7, f1_n0);
-//
-//// add operations
-//assign f1_n1_input = b2_in + f1_n2 + a2_out ;
-//assign f1_n2_input = b3_in + f1_n3 + a3_out ;
-//assign f1_n3_input = b4_in + f1_n4 + a4_out ;
-//assign f1_n4_input = b5_in + f1_n5 + a5_out ;
-//assign f1_n5_input = b6_in + f1_n6 + a6_out ;
-//assign f1_n6_input = b7_in + a7_out ;
-//
-//// scale the output and turncate for audio codec
-//assign f1_n0 = (f1_n1 + b1_in) << scale ;
-//assign audio_out = f1_n0[17:2] ;
-
-///////////////////////////////////////////////////////////////////
-
-//Run the filter state machine at audio sample rate
-//audio cycle
-//always @ (posedge lr_clk) 
-//begin
-//	if (reset)
-//	begin
-//		f1_n1 <= 0;
-//		f1_n2 <= 0;	
-//		f1_n3 <= 0;
-//		f1_n4 <= 0;
-//		f1_n5 <= 0;
-//		f1_n6 <= 0;	
-//	end
-//
-//	else 
-//	begin
-//		f1_n1 <= f1_n1_input ;
-//		f1_n2 <= f1_n2_input ;	
-//		f1_n3 <= f1_n3_input ;
-//		f1_n4 <= f1_n4_input ;
-//		f1_n5 <= f1_n5_input ;
-//		f1_n6 <= f1_n6_input ;		
-//	end
-//end	
-//endmodule
-///////////////////////////////////////////////////
-//// signed mult of 2.16 format 2'comp ////////////
-///////////////////////////////////////////////////
-module signed_mult (out, a, b);
-
-	output 		[17:0]	out;
-	input 	signed	[17:0] 	a;
-	input 	signed	[17:0] 	b;
-	
-	wire	signed	[17:0]	out;
-	wire 	signed	[35:0]	mult_out;
-
-	assign mult_out = a * b;
-	//FilterMult m1(a, b, mult_out) ;
-	//assign out = mult_out[33:17];
-	assign out = {mult_out[35], mult_out[32:16]};
-endmodule
-//////////////////////////////////////////////////
-
-
-/////////////////////////////////////////////////////
-//// Time weighted average amplitude (2'comp) ///////
-/////////////////////////////////////////////////////
-// dk_const    e-folding time of average			         
-// 3			~8 samples
-// 4			15 
-// 5			32
-// 6			64
-// 7			128 -- 2.7 mSec at 48kHz
-// 8			256 -- 5.3 mSec (useful for music/voice)
-// 9			512 -- 10.5 mSec (useful for music/voice)
-// 10			1024 -- 21 mSec (useful for music/voice)
-// 11			2048 -- 42 mSec
-//module average (out, in, dk_const, clk);
-//
-//	output reg signed [15:0] out ;
-//	input wire signed [15:0] in ;
-//	input wire [3:0] dk_const ;
-//	input wire clk;
-//	
-//	wire signed  [17:0] new_out ;
-//	//first order lowpass of absolute value of input
-//	assign new_out = out - (out>>>dk_const) + ((in[15]?-in:in)>>>dk_const) ;
-//	always @(posedge clk)
-//	begin
-//		 out <= new_out ;
-//	end
-//endmodule
-//////////////////////////////////////////////////
-
-/* matlab program to generate the filter header 
-%18-bit, 16-bit fraction,  2's comp conversion
-clear all
-figure(1);clf;
-clc
-
-%The scale has to be adjusted so that filter coefficients are
-% -1.0<coeff<1.0
-%Scaling performed is 2^(-scale)
-scale = 2;
-%For lowpass, set equal to normalized Freq (cutoff/(Fs/2))
-%For bandpass, set equal to normalized Freq vector ([low high]/(Fs/2))
-freq = [0.25] ;
-%Filter order:
-%    use 2,4 for lowpass 
-%        1,2 for bandpass
-%NOTE that for a bandpass filter (order) poles are generated for the high
-%and low cutoffs, so the total order is (order)*2
-order = 6;
-
-%could also use butter, or cheby1 or cheby2 or besself
-% but note that besself is lowpass only!
-[b, a] = butter(order, freq) ;
-%[b, a] = cheby1(order, 0.1, freq) ;
-%[b, a] = besself(order, freq) ;
-b = b * (2^-scale) ;
-a = -a * (2^-scale) ;
-
-disp(' ')
-fprintf('//Filter: cutoff=%f \n',freq)
-sorder = order*length(freq);
-if sorder==2
-    scstr = 'IIR2 filter(';
-elseif sorder==4
-    scstr = 'IIR4 filter('; 
-elseif sorder==6
-    scstr = 'IIR6 filter('; 
-else
-    error('order*length(freq) must equal 2 4 or 6')
-end
-fprintf('%s \n',scstr); 
-fprintf('     .audio_out (your_out), \n')
-fprintf('     .audio_in (your_in), \n')
-fprintf('     .scale (3''d%1d), \n', scale)
-for i=1:length(b)
-    if b(i)>=0
-        fprintf('     .b%1d (18''h%s), \n', i, dec2hex(fix(2^16*b(i)))) ;
-    else
-        fprintf('     .b%1d (18''h%s), \n', i, dec2hex(bitcmp(fix(2^16*-b(i)),18)+1));
-    end
-end
-
-for i=2:length(a)
-    if a(i)>=0
-        fprintf('     .a%1d (18''h%s), \n', i, dec2hex(fix(2^16*a(i))))
-    else
-        fprintf('     .a%1d (18''h%s), \n', i,dec2hex(bitcmp(fix(2^16*-a(i)),18)+1))
-    end
-end
-fprintf('     .state_clk(AUD_CTRL_CLK), \n');
-fprintf('     .lr_clk(AUD_DACLRCK), \n');
-fprintf('     .reset(reset) \n');
-fprintf(') ; //end filter \n');
-
-disp(' ')
-disp('CHECK scaling! all b''s and a''s <1 absolute value?') 
-disp('BUT as big as possible?')
-b
-a
-
-%sampling rate on DE2 board
-Fs = 48000;
-[b,a] = butter(order, freq) ;
-[fresponse, ffreq] = freqz(b,a,300);
-plot(ffreq/pi*Fs/2,abs(fresponse), 'b', 'linewidth',2);
-xlabel('frequency'); ylabel('filter amplitude');
-hold on
-b = fix((b*(2^-scale))*2^16) ;
-a = fix((a*(2^-scale))*2^16) ;
-[fresponse, ffreq] = freqz(b,a,300);
-plot(ffreq/pi*Fs/2,abs(fresponse), 'r', 'linewidth',2);
-legend('exact','scaled 16-bit')
-
-*/
