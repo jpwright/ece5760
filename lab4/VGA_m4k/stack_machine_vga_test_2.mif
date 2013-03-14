@@ -1,0 +1,382 @@
+DEPTH = 4096;
+WIDTH = 18;
+  
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+   
+CONTENT
+BEGIN
+[000..FFF]	:	0000;
+000	:	d000;	%  in switches % 
+001	:	f013;	%  dup  % 
+002	:	3E81;	%  pop rand % 
+003	:	e003;	%  out redLEDs % 
+004	:	1000;	%  pushi 0 % 
+005	:	3E80;	%  pop count % 
+006	:	0000;	% L1: nop  % 
+007	:	2E80;	%  push count % 
+008	:	1320;	%  pushi N % 
+009	:	f00f;	%  lt  % 
+00a	:	5071;	%  jz L2 % 
+00b	:	1520;	%  pushi y % 
+00c	:	2E80;	%  push count % 
+00d	:	f000;	%  add  % 
+00e	:	100A;	%  pushi 10 % 
+00f	:	1008;	%  pushi 8 % 
+010	:	f003;	%  shl  % 
+011	:	8000;	%  st  % 
+012	:	1200;	%  pushi x % 
+013	:	2E80;	%  push count % 
+014	:	f000;	%  add  % 
+015	:	100A;	%  pushi 10 % 
+016	:	1008;	%  pushi 8 % 
+017	:	f003;	%  shl  % 
+018	:	8000;	%  st  % 
+019	:	1B60;	%  pushi vy % 
+01a	:	2E80;	%  push count % 
+01b	:	f000;	%  add  % 
+01c	:	1000;	%  pushi 0 % 
+01d	:	8000;	%  st  % 
+01e	:	1840;	%  pushi vx % 
+01f	:	2E80;	%  push count % 
+020	:	f000;	%  add  % 
+021	:	11F4;	%  pushi 500 % 
+022	:	8000;	%  st  % 
+023	:	9000;	%  pushpc  % 
+024	:	4162;	%  jmp rand_num % 
+025	:	f017;	%  drop  % 
+026	:	9000;	%  pushpc  % 
+027	:	4162;	%  jmp rand_num % 
+028	:	f017;	%  drop  % 
+029	:	9000;	%  pushpc  % 
+02a	:	4162;	%  jmp rand_num % 
+02b	:	f017;	%  drop  % 
+02c	:	9000;	%  pushpc  % 
+02d	:	4162;	%  jmp rand_num % 
+02e	:	f017;	%  drop  % 
+02f	:	9000;	%  pushpc  % 
+030	:	4162;	%  jmp rand_num % 
+031	:	f017;	%  drop  % 
+032	:	9000;	%  pushpc  % 
+033	:	4162;	%  jmp rand_num % 
+034	:	f017;	%  drop  % 
+035	:	9000;	%  pushpc  % 
+036	:	4162;	%  jmp rand_num % 
+037	:	f017;	%  drop  % 
+038	:	9000;	%  pushpc  % 
+039	:	4162;	%  jmp rand_num % 
+03a	:	1004;	%  pushi scale % 
+03b	:	f004;	%  shr  % 
+03c	:	1520;	%  pushi y % 
+03d	:	2E80;	%  push count % 
+03e	:	f000;	%  add  % 
+03f	:	7000;	%  ld  % 
+040	:	f000;	%  add  % 
+041	:	3E85;	%  pop temp % 
+042	:	1520;	%  pushi y % 
+043	:	2E80;	%  push count % 
+044	:	f000;	%  add  % 
+045	:	2E85;	%  push temp % 
+046	:	8000;	%  st  % 
+047	:	9000;	%  pushpc  % 
+048	:	4162;	%  jmp rand_num % 
+049	:	f017;	%  drop  % 
+04a	:	9000;	%  pushpc  % 
+04b	:	4162;	%  jmp rand_num % 
+04c	:	f017;	%  drop  % 
+04d	:	9000;	%  pushpc  % 
+04e	:	4162;	%  jmp rand_num % 
+04f	:	f017;	%  drop  % 
+050	:	9000;	%  pushpc  % 
+051	:	4162;	%  jmp rand_num % 
+052	:	f017;	%  drop  % 
+053	:	9000;	%  pushpc  % 
+054	:	4162;	%  jmp rand_num % 
+055	:	f017;	%  drop  % 
+056	:	9000;	%  pushpc  % 
+057	:	4162;	%  jmp rand_num % 
+058	:	f017;	%  drop  % 
+059	:	9000;	%  pushpc  % 
+05a	:	4162;	%  jmp rand_num % 
+05b	:	f017;	%  drop  % 
+05c	:	9000;	%  pushpc  % 
+05d	:	4162;	%  jmp rand_num % 
+05e	:	1004;	%  pushi scale % 
+05f	:	f004;	%  shr  % 
+060	:	1200;	%  pushi x % 
+061	:	2E80;	%  push count % 
+062	:	f000;	%  add  % 
+063	:	7000;	%  ld  % 
+064	:	f000;	%  add  % 
+065	:	3E85;	%  pop temp % 
+066	:	1200;	%  pushi x % 
+067	:	2E80;	%  push count % 
+068	:	f000;	%  add  % 
+069	:	2E85;	%  push temp % 
+06a	:	8000;	%  st  % 
+06b	:	2E80;	%  push count % 
+06c	:	1001;	%  pushi 1 % 
+06d	:	f000;	%  add  % 
+06e	:	3E80;	%  pop count % 
+06f	:	4007;	%  jmp L1 % 
+070	:	0000;	% L2: nop  % 
+071	:	1000;	%  pushi 0 % 
+072	:	e002;	%  out vga_we % 
+073	:	1001;	%  pushi 1 % 
+074	:	3E82;	%  pop g % 
+075	:	1000;	%  pushi 0 % 
+076	:	3E83;	%  pop d % 
+077	:	0000;	% L3: nop  % 
+078	:	1001;	%  pushi forever % 
+079	:	5162;	%  jz L12 % 
+07a	:	2E84;	%  push dd % 
+07b	:	1001;	%  pushi 1 % 
+07c	:	f000;	%  add  % 
+07d	:	3E84;	%  pop dd % 
+07e	:	2E84;	%  push dd % 
+07f	:	100F;	%  pushi 15 % 
+080	:	f005;	%  band  % 
+081	:	5086;	%  jz L4 % 
+082	:	1000;	%  pushi 0 % 
+083	:	3E83;	%  pop d % 
+084	:	4089;	%  jmp L5 % 
+085	:	0000;	% L4: nop  % 
+086	:	1001;	%  pushi 1 % 
+087	:	3E83;	%  pop d % 
+088	:	0000;	% L5: nop  % 
+089	:	1000;	%  pushi 0 % 
+08a	:	3E80;	%  pop count % 
+08b	:	0000;	% L6: nop  % 
+08c	:	2E80;	%  push count % 
+08d	:	1320;	%  pushi N % 
+08e	:	f00f;	%  lt  % 
+08f	:	5160;	%  jz L11 % 
+090	:	1200;	%  pushi x % 
+091	:	2E80;	%  push count % 
+092	:	f000;	%  add  % 
+093	:	7000;	%  ld  % 
+094	:	1008;	%  pushi 8 % 
+095	:	f004;	%  shr  % 
+096	:	1009;	%  pushi 9 % 
+097	:	f003;	%  shl  % 
+098	:	1520;	%  pushi y % 
+099	:	2E80;	%  push count % 
+09a	:	f000;	%  add  % 
+09b	:	7000;	%  ld  % 
+09c	:	1008;	%  pushi 8 % 
+09d	:	f004;	%  shr  % 
+09e	:	f000;	%  add  % 
+09f	:	e000;	%  out vga_addr % 
+0a0	:	1000;	%  pushi 0 % 
+0a1	:	e001;	%  out vga_data % 
+0a2	:	1001;	%  pushi 1 % 
+0a3	:	e002;	%  out vga_we % 
+0a4	:	1000;	%  pushi 0 % 
+0a5	:	e002;	%  out vga_we % 
+0a6	:	1840;	%  pushi vx % 
+0a7	:	2E80;	%  push count % 
+0a8	:	f000;	%  add  % 
+0a9	:	7000;	%  ld  % 
+0aa	:	f013;	%  dup  % 
+0ab	:	2E83;	%  push d % 
+0ac	:	f002;	%  mul  % 
+0ad	:	f001;	%  sub  % 
+0ae	:	3E85;	%  pop temp % 
+0af	:	1840;	%  pushi vx % 
+0b0	:	2E80;	%  push count % 
+0b1	:	f000;	%  add  % 
+0b2	:	2E85;	%  push temp % 
+0b3	:	8000;	%  st  % 
+0b4	:	1B60;	%  pushi vy % 
+0b5	:	2E80;	%  push count % 
+0b6	:	f000;	%  add  % 
+0b7	:	7000;	%  ld  % 
+0b8	:	f013;	%  dup  % 
+0b9	:	2E83;	%  push d % 
+0ba	:	f002;	%  mul  % 
+0bb	:	f001;	%  sub  % 
+0bc	:	2E82;	%  push g % 
+0bd	:	f000;	%  add  % 
+0be	:	3E85;	%  pop temp % 
+0bf	:	1B60;	%  pushi vy % 
+0c0	:	2E80;	%  push count % 
+0c1	:	f000;	%  add  % 
+0c2	:	2E85;	%  push temp % 
+0c3	:	8000;	%  st  % 
+0c4	:	1840;	%  pushi vx % 
+0c5	:	2E80;	%  push count % 
+0c6	:	f000;	%  add  % 
+0c7	:	7000;	%  ld  % 
+0c8	:	1200;	%  pushi x % 
+0c9	:	2E80;	%  push count % 
+0ca	:	f000;	%  add  % 
+0cb	:	7000;	%  ld  % 
+0cc	:	f000;	%  add  % 
+0cd	:	3E85;	%  pop temp % 
+0ce	:	1200;	%  pushi x % 
+0cf	:	2E80;	%  push count % 
+0d0	:	f000;	%  add  % 
+0d1	:	2E85;	%  push temp % 
+0d2	:	8000;	%  st  % 
+0d3	:	1200;	%  pushi x % 
+0d4	:	2E80;	%  push count % 
+0d5	:	f000;	%  add  % 
+0d6	:	7000;	%  ld  % 
+0d7	:	11E0;	%  pushi 480 % 
+0d8	:	1008;	%  pushi 8 % 
+0d9	:	f003;	%  shl  % 
+0da	:	f00e;	%  gt  % 
+0db	:	50EF;	%  jz L7 % 
+0dc	:	1840;	%  pushi vx % 
+0dd	:	2E80;	%  push count % 
+0de	:	f000;	%  add  % 
+0df	:	7000;	%  ld  % 
+0e0	:	f010;	%  neg  % 
+0e1	:	3E85;	%  pop temp % 
+0e2	:	1840;	%  pushi vx % 
+0e3	:	2E80;	%  push count % 
+0e4	:	f000;	%  add  % 
+0e5	:	2E85;	%  push temp % 
+0e6	:	8000;	%  st  % 
+0e7	:	1200;	%  pushi x % 
+0e8	:	2E80;	%  push count % 
+0e9	:	f000;	%  add  % 
+0ea	:	11E0;	%  pushi 480 % 
+0eb	:	1008;	%  pushi 8 % 
+0ec	:	f003;	%  shl  % 
+0ed	:	8000;	%  st  % 
+0ee	:	0000;	% L7: nop  % 
+0ef	:	1200;	%  pushi x % 
+0f0	:	2E80;	%  push count % 
+0f1	:	f000;	%  add  % 
+0f2	:	7000;	%  ld  % 
+0f3	:	1005;	%  pushi 5 % 
+0f4	:	1008;	%  pushi 8 % 
+0f5	:	f003;	%  shl  % 
+0f6	:	f00d;	%  le  % 
+0f7	:	5104;	%  jz L8 % 
+0f8	:	1840;	%  pushi vx % 
+0f9	:	2E80;	%  push count % 
+0fa	:	f000;	%  add  % 
+0fb	:	7000;	%  ld  % 
+0fc	:	f010;	%  neg  % 
+0fd	:	3E85;	%  pop temp % 
+0fe	:	1840;	%  pushi vx % 
+0ff	:	2E80;	%  push count % 
+100	:	f000;	%  add  % 
+101	:	2E85;	%  push temp % 
+102	:	8000;	%  st  % 
+103	:	0000;	% L8: nop  % 
+104	:	1B60;	%  pushi vy % 
+105	:	2E80;	%  push count % 
+106	:	f000;	%  add  % 
+107	:	7000;	%  ld  % 
+108	:	1520;	%  pushi y % 
+109	:	2E80;	%  push count % 
+10a	:	f000;	%  add  % 
+10b	:	7000;	%  ld  % 
+10c	:	f000;	%  add  % 
+10d	:	3E85;	%  pop temp % 
+10e	:	1520;	%  pushi y % 
+10f	:	2E80;	%  push count % 
+110	:	f000;	%  add  % 
+111	:	2E85;	%  push temp % 
+112	:	8000;	%  st  % 
+113	:	1520;	%  pushi y % 
+114	:	2E80;	%  push count % 
+115	:	f000;	%  add  % 
+116	:	7000;	%  ld  % 
+117	:	11E0;	%  pushi 480 % 
+118	:	1008;	%  pushi 8 % 
+119	:	f003;	%  shl  % 
+11a	:	f00e;	%  gt  % 
+11b	:	512F;	%  jz L9 % 
+11c	:	1B60;	%  pushi vy % 
+11d	:	2E80;	%  push count % 
+11e	:	f000;	%  add  % 
+11f	:	7000;	%  ld  % 
+120	:	f010;	%  neg  % 
+121	:	3E85;	%  pop temp % 
+122	:	1B60;	%  pushi vy % 
+123	:	2E80;	%  push count % 
+124	:	f000;	%  add  % 
+125	:	2E85;	%  push temp % 
+126	:	8000;	%  st  % 
+127	:	1520;	%  pushi y % 
+128	:	2E80;	%  push count % 
+129	:	f000;	%  add  % 
+12a	:	11E0;	%  pushi 480 % 
+12b	:	1008;	%  pushi 8 % 
+12c	:	f003;	%  shl  % 
+12d	:	8000;	%  st  % 
+12e	:	0000;	% L9: nop  % 
+12f	:	1520;	%  pushi y % 
+130	:	2E80;	%  push count % 
+131	:	f000;	%  add  % 
+132	:	7000;	%  ld  % 
+133	:	1005;	%  pushi 5 % 
+134	:	1008;	%  pushi 8 % 
+135	:	f003;	%  shl  % 
+136	:	f00d;	%  le  % 
+137	:	5144;	%  jz L10 % 
+138	:	1B60;	%  pushi vy % 
+139	:	2E80;	%  push count % 
+13a	:	f000;	%  add  % 
+13b	:	7000;	%  ld  % 
+13c	:	f010;	%  neg  % 
+13d	:	3E85;	%  pop temp % 
+13e	:	1B60;	%  pushi vy % 
+13f	:	2E80;	%  push count % 
+140	:	f000;	%  add  % 
+141	:	2E85;	%  push temp % 
+142	:	8000;	%  st  % 
+143	:	0000;	% L10: nop  % 
+144	:	1200;	%  pushi x % 
+145	:	2E80;	%  push count % 
+146	:	f000;	%  add  % 
+147	:	7000;	%  ld  % 
+148	:	1008;	%  pushi 8 % 
+149	:	f004;	%  shr  % 
+14a	:	1009;	%  pushi 9 % 
+14b	:	f003;	%  shl  % 
+14c	:	1520;	%  pushi y % 
+14d	:	2E80;	%  push count % 
+14e	:	f000;	%  add  % 
+14f	:	7000;	%  ld  % 
+150	:	1008;	%  pushi 8 % 
+151	:	f004;	%  shr  % 
+152	:	f000;	%  add  % 
+153	:	e000;	%  out vga_addr % 
+154	:	1001;	%  pushi 1 % 
+155	:	e001;	%  out vga_data % 
+156	:	1001;	%  pushi 1 % 
+157	:	e002;	%  out vga_we % 
+158	:	1000;	%  pushi 0 % 
+159	:	e002;	%  out vga_we % 
+15a	:	2E80;	%  push count % 
+15b	:	1001;	%  pushi 1 % 
+15c	:	f000;	%  add  % 
+15d	:	3E80;	%  pop count % 
+15e	:	408C;	%  jmp L6 % 
+15f	:	0000;	% L11: nop  % 
+160	:	4078;	%  jmp L3 % 
+161	:	0000;	% L12: nop  % 
+162	:	3E86;	% rand_num: pop tempPC % 
+163	:	2E81;	%  push rand % 
+164	:	f013;	%  dup  % 
+165	:	1007;	%  pushi 7 % 
+166	:	f003;	%  shl  % 
+167	:	f007;	%  bxor  % 
+168	:	1011;	%  pushi 17 % 
+169	:	f004;	%  shr  % 
+16a	:	2E81;	%  push rand % 
+16b	:	1001;	%  pushi 1 % 
+16c	:	f003;	%  shl  % 
+16d	:	f006;	%  bor  % 
+16e	:	f013;	%  dup  % 
+16f	:	3E81;	%  pop rand % 
+170	:	2E86;	%  push tempPC % 
+171	:	1001;	%  pushi 1 % 
+172	:	f000;	%  add  % 
+173	:	9001;	%  poppc  % 
+END ;	

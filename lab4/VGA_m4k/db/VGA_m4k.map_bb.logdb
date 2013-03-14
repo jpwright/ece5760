@@ -1,0 +1,4 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,minicpu:cpu1|alu:alu0|lpm_mult:Mult0|mult_t8t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,minicpu:cpu2|alu:alu0|lpm_mult:Mult0|mult_t8t:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,minicpu:cpu3|alu:alu0|lpm_mult:Mult0|mult_t8t:auto_generated|mac_out2,

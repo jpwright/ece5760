@@ -1,0 +1,6761 @@
+SYSTEM nios_system
+{
+   System_Wizard_Version = "11.00";
+   System_Wizard_Build = "157";
+   Builder_Application = "sopc_builder_ca";
+   WIZARD_SCRIPT_ARGUMENTS 
+   {
+      hdl_language = "vhdl";
+      device_family = "CYCLONEII";
+      device_family_id = "CYCLONEII";
+      generate_sdk = "0";
+      do_build_sim = "0";
+      hardcopy_compatible = "0";
+      CLOCKS 
+      {
+         CLOCK clk
+         {
+            frequency = "50000000";
+            source = "External";
+            Is_Clock_Source = "0";
+            display_name = "clk";
+            pipeline = "0";
+            clock_module_connection_point_for_c2h = "clk.clk";
+         }
+         CLOCK clk_27
+         {
+            frequency = "27000000";
+            source = "External";
+            Is_Clock_Source = "0";
+            display_name = "clk_27";
+            pipeline = "0";
+            clock_module_connection_point_for_c2h = "clk_27.clk";
+         }
+         CLOCK External_Clocks_sys_clk
+         {
+            frequency = "50000000";
+            source = "";
+            Is_Clock_Source = "1";
+            display_name = "sys_clk from External_Clocks";
+            pipeline = "0";
+            clock_module_connection_point_for_c2h = "External_Clocks.sys_clk";
+         }
+         CLOCK sys_clk
+         {
+            frequency = "50000000";
+            source = "External_Clocks_sys_clk";
+            Is_Clock_Source = "0";
+            display_name = "sys_clk";
+         }
+         CLOCK External_Clocks_SDRAM_CLK
+         {
+            frequency = "50000000";
+            source = "";
+            Is_Clock_Source = "1";
+            display_name = "SDRAM_CLK from External_Clocks";
+            pipeline = "0";
+            clock_module_connection_point_for_c2h = "External_Clocks.sdram_clk";
+         }
+         CLOCK sdram_clk
+         {
+            frequency = "50000000";
+            source = "External_Clocks_SDRAM_CLK";
+            Is_Clock_Source = "0";
+            display_name = "sdram_clk";
+         }
+         CLOCK External_Clocks_AUD_CLK
+         {
+            frequency = "12880000";
+            source = "";
+            Is_Clock_Source = "1";
+            display_name = "AUD_CLK from External_Clocks";
+            pipeline = "0";
+            clock_module_connection_point_for_c2h = "External_Clocks.audio_clk";
+         }
+         CLOCK audio_clk
+         {
+            frequency = "12880000";
+            source = "External_Clocks_AUD_CLK";
+            Is_Clock_Source = "0";
+            display_name = "audio_clk";
+         }
+         CLOCK External_Clocks_VGA_CLK
+         {
+            frequency = "25000000";
+            source = "";
+            Is_Clock_Source = "1";
+            display_name = "VGA_CLK from External_Clocks";
+            pipeline = "0";
+            clock_module_connection_point_for_c2h = "External_Clocks.vga_clk";
+         }
+         CLOCK vga_clk
+         {
+            frequency = "25000000";
+            source = "External_Clocks_VGA_CLK";
+            Is_Clock_Source = "0";
+            display_name = "vga_clk";
+         }
+      }
+      clock_freq = "50000000";
+      clock_freq = "50000000";
+      board_class = "";
+      view_master_columns = "1";
+      view_master_priorities = "0";
+      generate_hdl = "";
+      bustype_column_width = "0";
+      clock_column_width = "80";
+      name_column_width = "75";
+      desc_column_width = "75";
+      base_column_width = "75";
+      end_column_width = "75";
+      do_log_history = "0";
+   }
+   MODULE CPU
+   {
+      MASTER instruction_master
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "0";
+            }
+            PORT reset_n
+            {
+               type = "reset_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "0";
+            }
+            PORT i_address
+            {
+               type = "address";
+               width = "28";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT i_read
+            {
+               type = "read";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT i_readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT i_readdatavalid
+            {
+               type = "readdatavalid";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT i_waitrequest
+            {
+               type = "waitrequest";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_resetrequest
+            {
+               type = "resetrequest";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Is_Asynchronous = "0";
+            DBS_Big_Endian = "0";
+            Adapts_To = "";
+            Do_Stream_Reads = "0";
+            Do_Stream_Writes = "0";
+            Max_Address_Width = "32";
+            Data_Width = "32";
+            Address_Width = "28";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "";
+            Linewrap_Bursts = "";
+            Burst_On_Burst_Boundaries_Only = "";
+            Always_Burst_Max_Burst = "";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            Is_Instruction_Master = "1";
+            Is_Readable = "1";
+            Is_Writeable = "0";
+            Address_Group = "0";
+            Has_IRQ = "0";
+            Irq_Scheme = "individual_requests";
+            Interrupt_Range = "0-0";
+         }
+         MEMORY_MAP 
+         {
+            Entry CPU/jtag_debug_module
+            {
+               address = "0x0a000000";
+               span = "0x00000800";
+               is_bridge = "0";
+            }
+            Entry SDRAM/s1
+            {
+               address = "0x00000000";
+               span = "0x00800000";
+               is_bridge = "0";
+            }
+         }
+      }
+      MASTER custom_instruction_master
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "nios_custom_instruction";
+            Data_Width = "32";
+            Address_Width = "8";
+            Is_Custom_Instruction = "1";
+            Is_Enabled = "1";
+            Max_Address_Width = "8";
+            Base_Address = "N/A";
+            Is_Visible = "0";
+         }
+         PORT_WIRING 
+         {
+            PORT dataa
+            {
+               type = "dataa";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT datab
+            {
+               type = "datab";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT result
+            {
+               type = "result";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "0";
+            }
+            PORT clk_en
+            {
+               type = "clk_en";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT start
+            {
+               type = "start";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT done
+            {
+               type = "done";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "0";
+            }
+            PORT n
+            {
+               type = "n";
+               width = "8";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT a
+            {
+               type = "a";
+               width = "5";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT b
+            {
+               type = "b";
+               width = "5";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT c
+            {
+               type = "c";
+               width = "5";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT readra
+            {
+               type = "readra";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT readrb
+            {
+               type = "readrb";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT writerc
+            {
+               type = "writerc";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "0";
+            }
+            PORT M_ci_multi_a
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_a";
+               width = "5";
+            }
+            PORT M_ci_multi_b
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_b";
+               width = "5";
+            }
+            PORT M_ci_multi_c
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_c";
+               width = "5";
+            }
+            PORT M_ci_multi_clk_en
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_clk_en";
+               width = "1";
+            }
+            PORT M_ci_multi_dataa
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_dataa";
+               width = "32";
+            }
+            PORT M_ci_multi_datab
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_datab";
+               width = "32";
+            }
+            PORT M_ci_multi_done
+            {
+               Is_Enabled = "1";
+               direction = "input";
+               type = "multi_done";
+               width = "1";
+            }
+            PORT M_ci_multi_estatus
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_estatus";
+               width = "1";
+            }
+            PORT M_ci_multi_ipending
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_ipending";
+               width = "32";
+            }
+            PORT M_ci_multi_n
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_n";
+               width = "8";
+            }
+            PORT M_ci_multi_readra
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_readra";
+               width = "1";
+            }
+            PORT M_ci_multi_readrb
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_readrb";
+               width = "1";
+            }
+            PORT M_ci_multi_result
+            {
+               Is_Enabled = "1";
+               direction = "input";
+               type = "multi_result";
+               width = "32";
+            }
+            PORT M_ci_multi_start
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_start";
+               width = "1";
+            }
+            PORT M_ci_multi_status
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_status";
+               width = "1";
+            }
+            PORT M_ci_multi_writerc
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "multi_writerc";
+               width = "1";
+            }
+            PORT clk
+            {
+               Is_Enabled = "1";
+               direction = "input";
+               type = "clk";
+               width = "1";
+            }
+            PORT reset_n
+            {
+               Is_Enabled = "1";
+               direction = "input";
+               type = "reset_n";
+               width = "1";
+            }
+         }
+      }
+      SLAVE jtag_debug_module
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "1cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "2048";
+            Read_Latency = "0";
+            Is_Memory_Device = "1";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "9";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            Accepts_External_Connections = "1";
+            Requires_Internal_Connections = "";
+            MASTERED_BY CPU/instruction_master
+            {
+               priority = "1";
+               Offset_Address = "0x0a000000";
+            }
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x0a000000";
+            }
+            Base_Address = "0x0a000000";
+            Is_Readable = "1";
+            Is_Writeable = "1";
+            Uses_Tri_State_Data_Bus = "0";
+            Has_IRQ = "0";
+            JTAG_Hub_Base_Id = "1118278";
+            JTAG_Hub_Instance_Id = "0";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+         PORT_WIRING 
+         {
+            PORT jtag_debug_module_address
+            {
+               type = "address";
+               width = "9";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_begintransfer
+            {
+               type = "begintransfer";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_debugaccess
+            {
+               type = "debugaccess";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_select
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_resetrequest
+            {
+               Is_Enabled = "1";
+               direction = "output";
+               type = "resetrequest";
+               width = "1";
+            }
+         }
+      }
+      MASTER data_master
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Has_IRQ = "1";
+            Irq_Scheme = "individual_requests";
+            Bus_Type = "avalon";
+            Is_Asynchronous = "0";
+            DBS_Big_Endian = "0";
+            Adapts_To = "";
+            Do_Stream_Reads = "0";
+            Do_Stream_Writes = "0";
+            Max_Address_Width = "32";
+            Data_Width = "32";
+            Address_Width = "29";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "1";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            Is_Data_Master = "1";
+            Address_Group = "0";
+            Is_Readable = "1";
+            Is_Writeable = "1";
+            Interrupt_Range = "0-31";
+         }
+         PORT_WIRING 
+         {
+            PORT d_irq
+            {
+               type = "irq";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT d_address
+            {
+               type = "address";
+               width = "29";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT d_byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT d_read
+            {
+               type = "read";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT d_readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT d_readdatavalid
+            {
+               type = "readdatavalid";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "0";
+            }
+            PORT d_waitrequest
+            {
+               type = "waitrequest";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT d_write
+            {
+               type = "write";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT d_writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT jtag_debug_module_debugaccess_to_roms
+            {
+               type = "debugaccess";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         MEMORY_MAP 
+         {
+            Entry CPU/jtag_debug_module
+            {
+               address = "0x0a000000";
+               span = "0x00000800";
+               is_bridge = "0";
+            }
+            Entry JTAG_UART/avalon_jtag_slave
+            {
+               address = "0x10001000";
+               span = "0x00000008";
+               is_bridge = "0";
+            }
+            Entry Interval_Timer/s1
+            {
+               address = "0x10002000";
+               span = "0x00000020";
+               is_bridge = "0";
+            }
+            Entry sysid/control_slave
+            {
+               address = "0x10002020";
+               span = "0x00000008";
+               is_bridge = "0";
+            }
+            Entry SDRAM/s1
+            {
+               address = "0x00000000";
+               span = "0x00800000";
+               is_bridge = "0";
+            }
+            Entry Red_LEDs/avalon_parallel_port_slave
+            {
+               address = "0x10000000";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry Green_LEDs/avalon_parallel_port_slave
+            {
+               address = "0x10000010";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry HEX3_HEX0/avalon_parallel_port_slave
+            {
+               address = "0x10000020";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry HEX7_HEX4/avalon_parallel_port_slave
+            {
+               address = "0x10000030";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry Slider_Switches/avalon_parallel_port_slave
+            {
+               address = "0x10000040";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry Pushbuttons/avalon_parallel_port_slave
+            {
+               address = "0x10000050";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry Expansion_JP1/avalon_parallel_port_slave
+            {
+               address = "0x10000060";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry Expansion_JP2/avalon_parallel_port_slave
+            {
+               address = "0x10000070";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry Serial_Port/avalon_rs232_slave
+            {
+               address = "0x10001010";
+               span = "0x00000008";
+               is_bridge = "0";
+            }
+            Entry Audio/avalon_audio_slave
+            {
+               address = "0x10003040";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry Char_LCD_16x2/avalon_lcd_slave
+            {
+               address = "0x10003050";
+               span = "0x00000002";
+               is_bridge = "0";
+            }
+            Entry PS2_Port/avalon_ps2_slave
+            {
+               address = "0x10000100";
+               span = "0x00000008";
+               is_bridge = "0";
+            }
+            Entry SRAM/avalon_sram_slave
+            {
+               address = "0x08000000";
+               span = "0x00080000";
+               is_bridge = "0";
+            }
+            Entry VGA_Char_Buffer/avalon_char_control_slave
+            {
+               address = "0x10003030";
+               span = "0x00000008";
+               is_bridge = "0";
+            }
+            Entry VGA_Char_Buffer/avalon_char_buffer_slave
+            {
+               address = "0x09000000";
+               span = "0x00002000";
+               is_bridge = "0";
+            }
+            Entry AV_Config/avalon_av_config_slave
+            {
+               address = "0x10003000";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+            Entry External_Clocks/avalon_clocks_slave
+            {
+               address = "0x10002030";
+               span = "0x00000002";
+               is_bridge = "0";
+            }
+            Entry VGA_Pixel_Buffer/avalon_control_slave
+            {
+               address = "0x10003020";
+               span = "0x00000010";
+               is_bridge = "0";
+            }
+         }
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+         cache_has_dcache = "0";
+         cache_dcache_size = "0";
+         cache_dcache_line_size = "0";
+         cache_dcache_bursts = "0";
+         cache_dcache_ram_block_type = "AUTO";
+         num_tightly_coupled_data_masters = "0";
+         gui_num_tightly_coupled_data_masters = "0";
+         gui_include_tightly_coupled_data_masters = "0";
+         gui_omit_avalon_data_master = "0";
+         cache_has_icache = "1";
+         cache_icache_size = "4096";
+         cache_icache_line_size = "32";
+         cache_icache_ram_block_type = "AUTO";
+         cache_icache_bursts = "0";
+         num_tightly_coupled_instruction_masters = "0";
+         gui_num_tightly_coupled_instruction_masters = "0";
+         gui_include_tightly_coupled_instruction_masters = "0";
+         debug_level = "3";
+         include_oci = "1";
+         oci_num_xbrk = "2";
+         oci_num_dbrk = "2";
+         oci_dbrk_trace = "0";
+         oci_dbrk_pairs = "1";
+         oci_onchip_trace = "0";
+         oci_offchip_trace = "0";
+         oci_data_trace = "0";
+         include_third_party_debug_port = "0";
+         oci_trace_addr_width = "7";
+         oci_debugreq_signals = "0";
+         oci_trigger_arming = "1";
+         oci_embedded_pll = "0";
+         oci_assign_jtag_instance_id = "0";
+         oci_jtag_instance_id = "0";
+         oci_num_pm = "0";
+         oci_pm_width = "32";
+         performance_counters_present = "0";
+         performance_counters_width = "32";
+         always_encrypt = "1";
+         debug_simgen = "0";
+         activate_model_checker = "0";
+         activate_test_end_checker = "0";
+         activate_trace = "1";
+         activate_monitors = "1";
+         clear_x_bits_ld_non_bypass = "1";
+         bit_31_bypass_dcache = "1";
+         hdl_sim_caches_cleared = "1";
+         hbreak_test = "0";
+         allow_full_address_range = "0";
+         extra_exc_info = "0";
+         branch_prediction_type = "Static";
+         bht_ptr_sz = "8";
+         bht_index_pc_only = "0";
+         gui_branch_prediction_type = "Static";
+         full_waveform_signals = "0";
+         export_pcb = "0";
+         big_endian = "0";
+         avalon_debug_port_present = "0";
+         illegal_instructions_trap = "0";
+         illegal_memory_access_detection = "0";
+         illegal_mem_exc = "0";
+         slave_access_error_exc = "0";
+         division_error_exc = "0";
+         eic_present = "0";
+         num_shadow_reg_sets = "0";
+         gui_mmu_present = "0";
+         mmu_present = "0";
+         process_id_num_bits = "8";
+         tlb_ptr_sz = "7";
+         tlb_num_ways = "16";
+         udtlb_num_entries = "6";
+         uitlb_num_entries = "4";
+         fast_tlb_miss_exc_slave = "";
+         fast_tlb_miss_exc_offset = "0x00000000";
+         mpu_present = "0";
+         mpu_num_data_regions = "8";
+         mpu_num_inst_regions = "8";
+         mpu_min_data_region_size_log2 = "12";
+         mpu_min_inst_region_size_log2 = "12";
+         mpu_use_limit = "0";
+         hardware_divide_present = "1";
+         gui_hardware_divide_setting = "1";
+         hardware_multiply_present = "1";
+         hardware_multiply_impl = "embedded_mul";
+         shift_rot_impl = "fast_le_shift";
+         gui_hardware_multiply_setting = "embedded_mul_fast_le_shift";
+         reset_slave = "SDRAM/s1";
+         break_slave = "CPU/jtag_debug_module";
+         exc_slave = "SDRAM/s1";
+         reset_offset = "0x00000000";
+         break_offset = "0x00000020";
+         exc_offset = "0x00000020";
+         cpu_reset = "0";
+         CPU_Implementation = "small";
+         cpu_selection = "s";
+         device_family_id = "CYCLONEII";
+         address_stall_present = "1";
+         dsp_block_supports_shift = "0";
+         mrams_present = "0";
+         cpuid_value = "0";
+         dont_overwrite_cpuid = "1";
+         allow_legacy_sdk = "1";
+         legacy_sdk_support = "1";
+         inst_addr_width = "28";
+         data_addr_width = "29";
+         CPU_Architecture = "nios2";
+         cache_icache_burst_type = "none";
+         oci_sync_depth = "2";
+         hardware_divide_impl = "variable_latency";
+         hardware_multiply_omits_msw = "1";
+         break_slave_override = "";
+         break_offset_override = "0x20";
+         altera_show_unreleased_features = "0";
+         altera_show_unpublished_features = "0";
+         altera_internal_test = "0";
+         alt_log_port_base = "";
+         alt_log_port_type = "";
+         cpuid_sz = "1";
+         gui_illegal_instructions_trap = "0";
+         advanced_exc = "0";
+         gui_illegal_memory_access_detection = "0";
+         cache_omit_dcache = "0";
+         cache_omit_icache = "0";
+         omit_instruction_master = "0";
+         omit_data_master = "0";
+         ras_ptr_sz = "4";
+         jtb_ptr_sz = "5";
+         ibuf_ptr_sz = "4";
+         always_bypass_dcache = "0";
+         iss_trace_on = "0";
+         iss_trace_warning = "1";
+         iss_trace_info = "1";
+         iss_trace_disassembly = "0";
+         iss_trace_registers = "0";
+         iss_trace_instr_count = "0";
+         iss_software_debug = "0";
+         iss_software_debug_port = "9996";
+         iss_memory_dump_start = "";
+         iss_memory_dump_end = "";
+         Boot_Copier = "boot_loader_cfi.srec";
+         Boot_Copier_EPCS = "boot_loader_epcs.srec";
+         Boot_Copier_EPCS_SII_SIII_CIII = "boot_loader_epcs_sii_siii_ciii.srec";
+         Boot_Copier_BE = "boot_loader_cfi_be.srec";
+         Boot_Copier_EPCS_BE = "boot_loader_epcs_be.srec";
+         Boot_Copier_EPCS_SII_SIII_CIII_BE = "boot_loader_epcs_sii_siii_ciii_be.srec";
+         CONSTANTS 
+         {
+            CONSTANT __nios_catch_irqs__
+            {
+               value = "1";
+               comment = "Include panic handler for all irqs (needs uart)";
+            }
+            CONSTANT __nios_use_constructors__
+            {
+               value = "1";
+               comment = "Call c++ static constructors";
+            }
+            CONSTANT __nios_use_small_printf__
+            {
+               value = "1";
+               comment = "Smaller non-ANSI printf, with no floating point";
+            }
+            CONSTANT nasys_has_icache
+            {
+               value = "1";
+               comment = "True if instruction cache present";
+            }
+            CONSTANT nasys_icache_size
+            {
+               value = "4096";
+               comment = "Size in bytes of instruction cache";
+            }
+            CONSTANT nasys_icache_line_size
+            {
+               value = "32";
+               comment = "Size in bytes of each icache line";
+            }
+            CONSTANT nasys_icache_line_size_log2
+            {
+               value = "5";
+               comment = "Log2 size in bytes of each icache line";
+            }
+            CONSTANT nasys_has_dcache
+            {
+               value = "0";
+               comment = "True if instruction cache present";
+            }
+            CONSTANT nasys_dcache_size
+            {
+               value = "0";
+               comment = "Size in bytes of data cache";
+            }
+            CONSTANT nasys_dcache_line_size
+            {
+               value = "0";
+               comment = "Size in bytes of each dcache line";
+            }
+            CONSTANT nasys_dcache_line_size_log2
+            {
+               value = "-Infinity";
+               comment = "Log2 size in bytes of each dcache line";
+            }
+         }
+         license_status = "encrypted";
+         mainmem_slave = "SDRAM/s1";
+         datamem_slave = "SDRAM/s1";
+         maincomm_slave = "";
+         germs_monitor_id = "";
+      }
+      class = "altera_nios2";
+      class_version = "7.08110";
+      SYSTEM_BUILDER_INFO 
+      {
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         Parameters_Signature = "";
+         Is_CPU = "1";
+         Instantiate_In_System_Module = "1";
+         Required_Device_Family = "STRATIX,STRATIXGX,STRATIXII,STRATIXIIGX,STRATIXIIGXLITE,STRATIXIII,STRATIXIV,STRATIXV,CYCLONE,CYCLONEII,CYCLONEIII,CYCLONEIVE,HARDCOPYIII,ARRIAII,ARRIAIIGZ,TARPON,HARDCOPYIV,STINGRAY";
+         Default_Module_Name = "cpu";
+         Top_Level_Ports_Are_Enumerated = "1";
+         View 
+         {
+            Settings_Summary = "Nios II/s
+            <br>&nbsp;&nbsp;4-Kbyte Instruction Cache
+            
+            <br>&nbsp;&nbsp;JTAG Debug Module
+            ";
+            MESSAGES 
+            {
+            }
+         }
+      }
+      iss_model_name = "altera_nios2";
+      HDL_INFO 
+      {
+         PLI_Files = "";
+         Precompiled_Simulation_Library_Files = "";
+         Simulation_HDL_Files = "";
+         Synthesis_HDL_Files = "__PROJECT_DIRECTORY__/CPU_test_bench.vhd, __PROJECT_DIRECTORY__/CPU_mult_cell.vhd, __PROJECT_DIRECTORY__/CPU_oci_test_bench.vhd, __PROJECT_DIRECTORY__/CPU_jtag_debug_module_tck.vhd, __PROJECT_DIRECTORY__/CPU_jtag_debug_module_sysclk.vhd, __PROJECT_DIRECTORY__/CPU_jtag_debug_module_wrapper.vhd, __PROJECT_DIRECTORY__/CPU.vhd";
+         Synthesis_Only_Files = "";
+      }
+      MASTER tightly_coupled_instruction_master_0
+      {
+         PORT_WIRING 
+         {
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Register_Incoming_Signals = "0";
+            Bus_Type = "avalon";
+            Data_Width = "32";
+            Max_Address_Width = "31";
+            Address_Width = "8";
+            Is_Instruction_Master = "1";
+            Has_IRQ = "0";
+            Is_Enabled = "0";
+            Is_Big_Endian = "0";
+            Connection_Limit = "1";
+            Is_Channel = "1";
+         }
+      }
+      MASTER tightly_coupled_instruction_master_1
+      {
+         PORT_WIRING 
+         {
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Register_Incoming_Signals = "0";
+            Bus_Type = "avalon";
+            Data_Width = "32";
+            Max_Address_Width = "31";
+            Address_Width = "8";
+            Address_Group = "0";
+            Is_Instruction_Master = "1";
+            Is_Readable = "1";
+            Is_Writeable = "0";
+            Has_IRQ = "0";
+            Is_Enabled = "0";
+            Is_Big_Endian = "0";
+            Connection_Limit = "1";
+            Is_Channel = "1";
+         }
+      }
+      MASTER tightly_coupled_instruction_master_2
+      {
+         PORT_WIRING 
+         {
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Register_Incoming_Signals = "0";
+            Bus_Type = "avalon";
+            Data_Width = "32";
+            Max_Address_Width = "31";
+            Address_Width = "8";
+            Address_Group = "0";
+            Is_Instruction_Master = "1";
+            Is_Readable = "1";
+            Is_Writeable = "0";
+            Has_IRQ = "0";
+            Is_Enabled = "0";
+            Is_Big_Endian = "0";
+            Connection_Limit = "1";
+            Is_Channel = "1";
+         }
+      }
+      MASTER tightly_coupled_instruction_master_3
+      {
+         PORT_WIRING 
+         {
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Register_Incoming_Signals = "0";
+            Bus_Type = "avalon";
+            Data_Width = "32";
+            Max_Address_Width = "31";
+            Address_Width = "8";
+            Address_Group = "0";
+            Is_Instruction_Master = "1";
+            Is_Readable = "1";
+            Is_Writeable = "0";
+            Has_IRQ = "0";
+            Is_Enabled = "0";
+            Is_Big_Endian = "0";
+            Connection_Limit = "1";
+            Is_Channel = "1";
+         }
+      }
+      MASTER data_master2
+      {
+         PORT_WIRING 
+         {
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Register_Incoming_Signals = "1";
+            Bus_Type = "avalon";
+            Data_Width = "32";
+            Max_Address_Width = "31";
+            Address_Width = "8";
+            Address_Group = "0";
+            Is_Data_Master = "1";
+            Is_Readable = "1";
+            Is_Writeable = "1";
+            Has_IRQ = "0";
+            Is_Enabled = "0";
+            Is_Big_Endian = "0";
+         }
+      }
+      MASTER tightly_coupled_data_master_0
+      {
+         PORT_WIRING 
+         {
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Register_Incoming_Signals = "0";
+            Bus_Type = "avalon";
+            Data_Width = "32";
+            Max_Address_Width = "31";
+            Address_Width = "8";
+            Address_Group = "0";
+            Is_Data_Master = "1";
+            Is_Readable = "1";
+            Is_Writeable = "1";
+            Has_IRQ = "0";
+            Is_Enabled = "0";
+            Is_Big_Endian = "0";
+            Connection_Limit = "1";
+            Is_Channel = "1";
+         }
+      }
+      MASTER tightly_coupled_data_master_1
+      {
+         PORT_WIRING 
+         {
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Register_Incoming_Signals = "0";
+            Bus_Type = "avalon";
+            Data_Width = "32";
+            Max_Address_Width = "31";
+            Address_Width = "8";
+            Address_Group = "0";
+            Is_Data_Master = "1";
+            Is_Readable = "1";
+            Is_Writeable = "1";
+            Has_IRQ = "0";
+            Is_Enabled = "0";
+            Is_Big_Endian = "0";
+            Connection_Limit = "1";
+            Is_Channel = "1";
+         }
+      }
+      MASTER tightly_coupled_data_master_2
+      {
+         PORT_WIRING 
+         {
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Register_Incoming_Signals = "0";
+            Bus_Type = "avalon";
+            Data_Width = "32";
+            Max_Address_Width = "31";
+            Address_Width = "8";
+            Address_Group = "0";
+            Is_Data_Master = "1";
+            Is_Readable = "1";
+            Is_Writeable = "1";
+            Has_IRQ = "0";
+            Is_Enabled = "0";
+            Is_Big_Endian = "0";
+            Connection_Limit = "1";
+            Is_Channel = "1";
+         }
+      }
+      MASTER tightly_coupled_data_master_3
+      {
+         PORT_WIRING 
+         {
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Register_Incoming_Signals = "0";
+            Bus_Type = "avalon";
+            Data_Width = "32";
+            Max_Address_Width = "31";
+            Address_Width = "8";
+            Address_Group = "0";
+            Is_Data_Master = "1";
+            Is_Readable = "1";
+            Is_Writeable = "1";
+            Has_IRQ = "0";
+            Is_Enabled = "0";
+            Is_Big_Endian = "0";
+            Connection_Limit = "1";
+            Is_Channel = "1";
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT jtag_debug_trigout
+         {
+            width = "1";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT jtag_debug_offchip_trace_clk
+         {
+            width = "1";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT jtag_debug_offchip_trace_data
+         {
+            width = "18";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT clkx2
+         {
+            width = "1";
+            direction = "input";
+            Is_Enabled = "0";
+            visible = "0";
+         }
+         PORT A_ci_multi_clock
+         {
+            Is_Enabled = "1";
+            direction = "output";
+            width = "1";
+         }
+         PORT A_ci_multi_reset
+         {
+            Is_Enabled = "1";
+            direction = "output";
+            width = "1";
+         }
+      }
+      SIMULATION 
+      {
+         DISPLAY 
+         {
+            SIGNAL aaa
+            {
+               format = "Logic";
+               name = "i_readdata";
+               radix = "hexadecimal";
+            }
+            SIGNAL aab
+            {
+               format = "Logic";
+               name = "i_readdatavalid";
+               radix = "hexadecimal";
+            }
+            SIGNAL aac
+            {
+               format = "Logic";
+               name = "i_waitrequest";
+               radix = "hexadecimal";
+            }
+            SIGNAL aad
+            {
+               format = "Logic";
+               name = "i_address";
+               radix = "hexadecimal";
+            }
+            SIGNAL aae
+            {
+               format = "Logic";
+               name = "i_read";
+               radix = "hexadecimal";
+            }
+            SIGNAL aaf
+            {
+               format = "Logic";
+               name = "M_ci_multi_dataa";
+               radix = "hexadecimal";
+            }
+            SIGNAL aag
+            {
+               format = "Logic";
+               name = "M_ci_multi_datab";
+               radix = "hexadecimal";
+            }
+            SIGNAL aah
+            {
+               format = "Logic";
+               name = "M_ci_multi_ipending";
+               radix = "hexadecimal";
+            }
+            SIGNAL aai
+            {
+               format = "Logic";
+               name = "M_ci_multi_status";
+               radix = "hexadecimal";
+            }
+            SIGNAL aaj
+            {
+               format = "Logic";
+               name = "M_ci_multi_estatus";
+               radix = "hexadecimal";
+            }
+            SIGNAL aak
+            {
+               format = "Logic";
+               name = "M_ci_multi_n";
+               radix = "hexadecimal";
+            }
+            SIGNAL aal
+            {
+               format = "Logic";
+               name = "M_ci_multi_a";
+               radix = "hexadecimal";
+            }
+            SIGNAL aam
+            {
+               format = "Logic";
+               name = "M_ci_multi_b";
+               radix = "hexadecimal";
+            }
+            SIGNAL aan
+            {
+               format = "Logic";
+               name = "M_ci_multi_c";
+               radix = "hexadecimal";
+            }
+            SIGNAL aao
+            {
+               format = "Logic";
+               name = "M_ci_multi_readra";
+               radix = "hexadecimal";
+            }
+            SIGNAL aap
+            {
+               format = "Logic";
+               name = "M_ci_multi_readrb";
+               radix = "hexadecimal";
+            }
+            SIGNAL aaq
+            {
+               format = "Logic";
+               name = "M_ci_multi_writerc";
+               radix = "hexadecimal";
+            }
+            SIGNAL aar
+            {
+               format = "Logic";
+               name = "M_ci_multi_result";
+               radix = "hexadecimal";
+            }
+            SIGNAL aas
+            {
+               format = "Logic";
+               name = "M_ci_multi_clk_en";
+               radix = "hexadecimal";
+            }
+            SIGNAL aat
+            {
+               format = "Logic";
+               name = "M_ci_multi_start";
+               radix = "hexadecimal";
+            }
+            SIGNAL aau
+            {
+               format = "Logic";
+               name = "M_ci_multi_done";
+               radix = "hexadecimal";
+            }
+            SIGNAL aav
+            {
+               format = "Logic";
+               name = "clk";
+               radix = "hexadecimal";
+            }
+            SIGNAL aaw
+            {
+               format = "Logic";
+               name = "reset_n";
+               radix = "hexadecimal";
+            }
+            SIGNAL aax
+            {
+               format = "Logic";
+               name = "d_readdata";
+               radix = "hexadecimal";
+            }
+            SIGNAL aay
+            {
+               format = "Logic";
+               name = "d_waitrequest";
+               radix = "hexadecimal";
+            }
+            SIGNAL aaz
+            {
+               format = "Logic";
+               name = "d_irq";
+               radix = "hexadecimal";
+            }
+            SIGNAL aba
+            {
+               format = "Logic";
+               name = "d_address";
+               radix = "hexadecimal";
+            }
+            SIGNAL abb
+            {
+               format = "Logic";
+               name = "d_byteenable";
+               radix = "hexadecimal";
+            }
+            SIGNAL abc
+            {
+               format = "Logic";
+               name = "d_read";
+               radix = "hexadecimal";
+            }
+            SIGNAL abd
+            {
+               format = "Logic";
+               name = "d_write";
+               radix = "hexadecimal";
+            }
+            SIGNAL abe
+            {
+               format = "Logic";
+               name = "d_writedata";
+               radix = "hexadecimal";
+            }
+            SIGNAL abf
+            {
+               format = "Divider";
+               name = "base pipeline";
+               radix = "";
+            }
+            SIGNAL abg
+            {
+               format = "Logic";
+               name = "clk";
+               radix = "hexadecimal";
+            }
+            SIGNAL abh
+            {
+               format = "Logic";
+               name = "reset_n";
+               radix = "hexadecimal";
+            }
+            SIGNAL abi
+            {
+               format = "Logic";
+               name = "M_stall";
+               radix = "hexadecimal";
+            }
+            SIGNAL abj
+            {
+               format = "Logic";
+               name = "F_pcb_nxt";
+               radix = "hexadecimal";
+            }
+            SIGNAL abk
+            {
+               format = "Logic";
+               name = "F_pcb";
+               radix = "hexadecimal";
+            }
+            SIGNAL abl
+            {
+               format = "Logic";
+               name = "D_pcb";
+               radix = "hexadecimal";
+            }
+            SIGNAL abm
+            {
+               format = "Logic";
+               name = "E_pcb";
+               radix = "hexadecimal";
+            }
+            SIGNAL abn
+            {
+               format = "Logic";
+               name = "M_pcb";
+               radix = "hexadecimal";
+            }
+            SIGNAL abo
+            {
+               format = "Logic";
+               name = "W_pcb";
+               radix = "hexadecimal";
+            }
+            SIGNAL abp
+            {
+               format = "Logic";
+               name = "F_vinst";
+               radix = "ascii";
+            }
+            SIGNAL abq
+            {
+               format = "Logic";
+               name = "D_vinst";
+               radix = "ascii";
+            }
+            SIGNAL abr
+            {
+               format = "Logic";
+               name = "E_vinst";
+               radix = "ascii";
+            }
+            SIGNAL abs
+            {
+               format = "Logic";
+               name = "M_vinst";
+               radix = "ascii";
+            }
+            SIGNAL abt
+            {
+               format = "Logic";
+               name = "W_vinst";
+               radix = "ascii";
+            }
+            SIGNAL abu
+            {
+               format = "Logic";
+               name = "F_inst_ram_hit";
+               radix = "hexadecimal";
+            }
+            SIGNAL abv
+            {
+               format = "Logic";
+               name = "F_iw_valid";
+               radix = "hexadecimal";
+            }
+            SIGNAL abw
+            {
+               format = "Logic";
+               name = "F_issue";
+               radix = "hexadecimal";
+            }
+            SIGNAL abx
+            {
+               format = "Logic";
+               name = "F_kill";
+               radix = "hexadecimal";
+            }
+            SIGNAL aby
+            {
+               format = "Logic";
+               name = "D_kill";
+               radix = "hexadecimal";
+            }
+            SIGNAL abz
+            {
+               format = "Logic";
+               name = "D_refetch";
+               radix = "hexadecimal";
+            }
+            SIGNAL aca
+            {
+               format = "Logic";
+               name = "D_issue";
+               radix = "hexadecimal";
+            }
+            SIGNAL acb
+            {
+               format = "Logic";
+               name = "D_valid";
+               radix = "hexadecimal";
+            }
+            SIGNAL acc
+            {
+               format = "Logic";
+               name = "E_valid";
+               radix = "hexadecimal";
+            }
+            SIGNAL acd
+            {
+               format = "Logic";
+               name = "M_valid";
+               radix = "hexadecimal";
+            }
+            SIGNAL ace
+            {
+               format = "Logic";
+               name = "W_valid";
+               radix = "hexadecimal";
+            }
+            SIGNAL acf
+            {
+               format = "Logic";
+               name = "W_wr_dst_reg";
+               radix = "hexadecimal";
+            }
+            SIGNAL acg
+            {
+               format = "Logic";
+               name = "W_dst_regnum";
+               radix = "hexadecimal";
+            }
+            SIGNAL ach
+            {
+               format = "Logic";
+               name = "W_wr_data";
+               radix = "hexadecimal";
+            }
+            SIGNAL aci
+            {
+               format = "Logic";
+               name = "F_en";
+               radix = "hexadecimal";
+            }
+            SIGNAL acj
+            {
+               format = "Logic";
+               name = "D_en";
+               radix = "hexadecimal";
+            }
+            SIGNAL ack
+            {
+               format = "Logic";
+               name = "E_en";
+               radix = "hexadecimal";
+            }
+            SIGNAL acl
+            {
+               format = "Logic";
+               name = "M_en";
+               radix = "hexadecimal";
+            }
+            SIGNAL acm
+            {
+               format = "Logic";
+               name = "F_iw";
+               radix = "hexadecimal";
+            }
+            SIGNAL acn
+            {
+               format = "Logic";
+               name = "D_iw";
+               radix = "hexadecimal";
+            }
+            SIGNAL aco
+            {
+               format = "Logic";
+               name = "E_iw";
+               radix = "hexadecimal";
+            }
+            SIGNAL acp
+            {
+               format = "Logic";
+               name = "E_valid_prior_to_hbreak";
+               radix = "hexadecimal";
+            }
+            SIGNAL acq
+            {
+               format = "Logic";
+               name = "M_pipe_flush_nxt";
+               radix = "hexadecimal";
+            }
+            SIGNAL acr
+            {
+               format = "Logic";
+               name = "M_pipe_flush_baddr_nxt";
+               radix = "hexadecimal";
+            }
+            SIGNAL acs
+            {
+               format = "Logic";
+               name = "M_status_reg_pie";
+               radix = "hexadecimal";
+            }
+            SIGNAL act
+            {
+               format = "Logic";
+               name = "M_ienable_reg";
+               radix = "hexadecimal";
+            }
+            SIGNAL acu
+            {
+               format = "Logic";
+               name = "intr_req";
+               radix = "hexadecimal";
+            }
+            SIGNAL acv
+            {
+               format = "Divider";
+               name = "multicycle_custom_instruction";
+               radix = "";
+            }
+            SIGNAL acw
+            {
+               format = "Logic";
+               name = "M_ctrl_custom_multi";
+               radix = "hexadecimal";
+            }
+            SIGNAL acx
+            {
+               format = "Logic";
+               name = "M_ci_multi_dataa";
+               radix = "hexadecimal";
+            }
+            SIGNAL acy
+            {
+               format = "Logic";
+               name = "M_ci_multi_datab";
+               radix = "hexadecimal";
+            }
+            SIGNAL acz
+            {
+               format = "Logic";
+               name = "M_ci_multi_ipending";
+               radix = "hexadecimal";
+            }
+            SIGNAL ada
+            {
+               format = "Logic";
+               name = "M_ci_multi_status";
+               radix = "hexadecimal";
+            }
+            SIGNAL adb
+            {
+               format = "Logic";
+               name = "M_ci_multi_estatus";
+               radix = "hexadecimal";
+            }
+            SIGNAL adc
+            {
+               format = "Logic";
+               name = "M_ci_multi_n";
+               radix = "hexadecimal";
+            }
+            SIGNAL add
+            {
+               format = "Logic";
+               name = "M_ci_multi_readra";
+               radix = "hexadecimal";
+            }
+            SIGNAL ade
+            {
+               format = "Logic";
+               name = "M_ci_multi_readrb";
+               radix = "hexadecimal";
+            }
+            SIGNAL adf
+            {
+               format = "Logic";
+               name = "M_ci_multi_writerc";
+               radix = "hexadecimal";
+            }
+            SIGNAL adg
+            {
+               format = "Logic";
+               name = "M_ci_multi_result";
+               radix = "hexadecimal";
+            }
+            SIGNAL adh
+            {
+               format = "Logic";
+               name = "M_ci_multi_clk_en";
+               radix = "hexadecimal";
+            }
+            SIGNAL adi
+            {
+               format = "Logic";
+               name = "M_ci_multi_start";
+               radix = "hexadecimal";
+            }
+            SIGNAL adj
+            {
+               format = "Logic";
+               name = "M_ci_multi_done";
+               radix = "hexadecimal";
+            }
+            SIGNAL adk
+            {
+               format = "Logic";
+               name = "M_ci_multi_stall";
+               radix = "hexadecimal";
+            }
+         }
+      }
+   }
+   MODULE JTAG_UART
+   {
+      SLAVE avalon_jtag_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT rst_n
+            {
+               type = "reset_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT av_irq
+            {
+               type = "irq";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT av_chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT av_address
+            {
+               type = "address";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT av_read_n
+            {
+               type = "read_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT av_readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT av_write_n
+            {
+               type = "write_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT av_writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT av_waitrequest
+            {
+               type = "waitrequest";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT dataavailable
+            {
+               type = "dataavailable";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT readyfordata
+            {
+               type = "readyfordata";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Has_IRQ = "1";
+            Bus_Type = "avalon";
+            Read_Wait_States = "peripheral_controlled";
+            Write_Wait_States = "peripheral_controlled";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "1";
+            Address_Alignment = "native";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Read_Latency = "0";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "1";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            JTAG_Hub_Base_Id = "262254";
+            JTAG_Hub_Instance_Id = "0";
+            Connection_Limit = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10001000";
+            }
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "8";
+            }
+            Base_Address = "0x10001000";
+            Address_Group = "0";
+         }
+      }
+      class = "altera_avalon_jtag_uart";
+      class_version = "7.08110";
+      iss_model_name = "altera_avalon_jtag_uart";
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+         write_depth = "64";
+         read_depth = "64";
+         write_threshold = "8";
+         read_threshold = "8";
+         read_char_stream = "";
+         showascii = "1";
+         relativepath = "1";
+         read_le = "0";
+         write_le = "0";
+         altera_show_unreleased_jtag_uart_features = "1";
+      }
+      SIMULATION 
+      {
+         DISPLAY 
+         {
+            SIGNAL av_chipselect
+            {
+               name = "av_chipselect";
+            }
+            SIGNAL av_address
+            {
+               name = "av_address";
+               radix = "hexadecimal";
+            }
+            SIGNAL av_read_n
+            {
+               name = "av_read_n";
+            }
+            SIGNAL av_readdata
+            {
+               name = "av_readdata";
+               radix = "hexadecimal";
+            }
+            SIGNAL av_write_n
+            {
+               name = "av_write_n";
+            }
+            SIGNAL av_writedata
+            {
+               name = "av_writedata";
+               radix = "hexadecimal";
+            }
+            SIGNAL av_waitrequest
+            {
+               name = "av_waitrequest";
+            }
+            SIGNAL dataavailable
+            {
+               name = "dataavailable";
+            }
+            SIGNAL readyfordata
+            {
+               name = "readyfordata";
+            }
+            SIGNAL av_irq
+            {
+               name = "av_irq";
+            }
+         }
+         INTERACTIVE_IN drive
+         {
+            enable = "0";
+            file = "_input_data_stream.dat";
+            mutex = "_input_data_mutex.dat";
+            log = "_in.log";
+            rate = "100";
+            signals = "temp,list";
+            exe = "nios2-terminal";
+         }
+         INTERACTIVE_OUT log
+         {
+            enable = "1";
+            exe = "perl -- atail-f.pl";
+            file = "_output_stream.dat";
+            radix = "ascii";
+            signals = "temp,list";
+         }
+         Fix_Me_Up = "";
+      }
+      SYSTEM_BUILDER_INFO 
+      {
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         Instantiate_In_System_Module = "1";
+         Iss_Launch_Telnet = "0";
+         Top_Level_Ports_Are_Enumerated = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+            Settings_Summary = "<br>Write Depth: 64; Write IRQ Threshold: 8
+                <br>Read  Depth: 64; Read  IRQ Threshold: 8";
+         }
+      }
+      HDL_INFO 
+      {
+         Precompiled_Simulation_Library_Files = "";
+         Simulation_HDL_Files = "";
+         Synthesis_HDL_Files = "__PROJECT_DIRECTORY__/JTAG_UART.vhd";
+         Synthesis_Only_Files = "";
+      }
+      PORT_WIRING 
+      {
+      }
+   }
+   MODULE Interval_Timer
+   {
+      SLAVE s1
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset_n
+            {
+               type = "reset_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT irq
+            {
+               type = "irq";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "3";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "16";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "16";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write_n
+            {
+               type = "write_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Has_IRQ = "1";
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "1cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "native";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Read_Latency = "0";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "16";
+            Address_Width = "3";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10002000";
+            }
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "0";
+            }
+            Base_Address = "0x10002000";
+            Address_Group = "0";
+         }
+      }
+      class = "altera_avalon_timer";
+      class_version = "7.08110";
+      iss_model_name = "altera_avalon_timer";
+      SYSTEM_BUILDER_INFO 
+      {
+         Instantiate_In_System_Module = "1";
+         Is_Enabled = "1";
+         Top_Level_Ports_Are_Enumerated = "1";
+         View 
+         {
+            Settings_Summary = "Timer with 125 ms timeout period.";
+            Is_Collapsed = "1";
+            MESSAGES 
+            {
+            }
+         }
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+         always_run = "0";
+         fixed_period = "0";
+         snapshot = "1";
+         period = "125.0";
+         period_units = "ms";
+         reset_output = "0";
+         timeout_pulse_output = "0";
+         load_value = "6249999";
+         counter_size = "32";
+         mult = "0.0010";
+         ticks_per_sec = "8";
+      }
+      HDL_INFO 
+      {
+         Precompiled_Simulation_Library_Files = "";
+         Simulation_HDL_Files = "";
+         Synthesis_HDL_Files = "__PROJECT_DIRECTORY__/Interval_Timer.vhd";
+         Synthesis_Only_Files = "";
+      }
+      PORT_WIRING 
+      {
+      }
+   }
+   MODULE sysid
+   {
+      SLAVE control_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clock
+            {
+               type = "clock";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset_n
+            {
+               type = "reset_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "1cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "native";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Read_Latency = "0";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "1";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10002020";
+            }
+            Base_Address = "0x10002020";
+            Has_IRQ = "0";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      class = "altera_avalon_sysid";
+      class_version = "7.08110";
+      SYSTEM_BUILDER_INFO 
+      {
+         Date_Modified = "";
+         Is_Enabled = "1";
+         Instantiate_In_System_Module = "1";
+         Fixed_Module_Name = "sysid";
+         Top_Level_Ports_Are_Enumerated = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            Settings_Summary = "System ID (at last Generate):<br> <b>00000000</b>    (unique ID tag) <br> <b>4DD679A7</b> (timestamp: Fri May 20, 2011 @10:24 AM)";
+            MESSAGES 
+            {
+            }
+         }
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+         id = "0u";
+         timestamp = "1305901479u";
+         regenerate_values = "0";
+         MAKE 
+         {
+            TARGET verifysysid
+            {
+               verifysysid 
+               {
+                  All_Depends_On = "0";
+                  Command = "nios2-download $(JTAG_CABLE)                                --sidp=0x10002020 --id=0 --timestamp=1305901479";
+                  Is_Phony = "1";
+                  Target_File = "dummy_verifysysid_file";
+               }
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Precompiled_Simulation_Library_Files = "";
+         Simulation_HDL_Files = "";
+         Synthesis_HDL_Files = "__PROJECT_DIRECTORY__/sysid.vhd";
+         Synthesis_Only_Files = "";
+      }
+      PORT_WIRING 
+      {
+      }
+   }
+   MODULE SDRAM
+   {
+      SLAVE s1
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset_n
+            {
+               type = "reset_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT az_addr
+            {
+               type = "address";
+               width = "22";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT az_be_n
+            {
+               type = "byteenable_n";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT az_cs
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT az_data
+            {
+               type = "writedata";
+               width = "16";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT az_rd_n
+            {
+               type = "read_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT az_wr_n
+            {
+               type = "write_n";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT za_data
+            {
+               type = "readdata";
+               width = "16";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT za_valid
+            {
+               type = "readdatavalid";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT za_waitrequest
+            {
+               type = "waitrequest";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT zs_addr
+            {
+               direction = "output";
+               width = "12";
+               Is_Enabled = "1";
+            }
+            PORT zs_ba
+            {
+               direction = "output";
+               width = "2";
+               Is_Enabled = "1";
+            }
+            PORT zs_cas_n
+            {
+               direction = "output";
+               width = "1";
+               Is_Enabled = "1";
+            }
+            PORT zs_cke
+            {
+               direction = "output";
+               width = "1";
+               Is_Enabled = "1";
+            }
+            PORT zs_cs_n
+            {
+               direction = "output";
+               width = "1";
+               Is_Enabled = "1";
+            }
+            PORT zs_dq
+            {
+               direction = "inout";
+               width = "16";
+               Is_Enabled = "1";
+            }
+            PORT zs_dqm
+            {
+               direction = "output";
+               width = "2";
+               Is_Enabled = "1";
+            }
+            PORT zs_ras_n
+            {
+               direction = "output";
+               width = "1";
+               Is_Enabled = "1";
+            }
+            PORT zs_we_n
+            {
+               direction = "output";
+               width = "1";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Read_Wait_States = "peripheral_controlled";
+            Write_Wait_States = "peripheral_controlled";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "8388608";
+            Read_Latency = "0";
+            Is_Memory_Device = "1";
+            Maximum_Pending_Read_Transactions = "7";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "16";
+            Address_Width = "22";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/instruction_master
+            {
+               priority = "1";
+               Offset_Address = "0x00000000";
+            }
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x00000000";
+            }
+            Base_Address = "0x00000000";
+            Has_IRQ = "0";
+            Simulation_Num_Lanes = "1";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT zs_addr
+         {
+            type = "export";
+            width = "12";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT zs_ba
+         {
+            type = "export";
+            width = "2";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT zs_cas_n
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT zs_cke
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT zs_cs_n
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT zs_dq
+         {
+            type = "export";
+            width = "16";
+            direction = "inout";
+            Is_Enabled = "0";
+         }
+         PORT zs_dqm
+         {
+            type = "export";
+            width = "2";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT zs_ras_n
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+         PORT zs_we_n
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "0";
+         }
+      }
+      iss_model_name = "altera_memory";
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+         register_data_in = "1";
+         sim_model_base = "0";
+         sdram_data_width = "16";
+         sdram_addr_width = "12";
+         sdram_row_width = "12";
+         sdram_col_width = "8";
+         sdram_num_chipselects = "1";
+         sdram_num_banks = "4";
+         refresh_period = "15.625";
+         powerup_delay = "100.0";
+         cas_latency = "3";
+         t_rfc = "70.0";
+         t_rp = "20.0";
+         t_mrd = "3";
+         t_rcd = "20.0";
+         t_ac = "5.5";
+         t_wr = "14.0";
+         init_refresh_commands = "2";
+         init_nop_delay = "0.0";
+         shared_data = "0";
+         sdram_bank_width = "2";
+         tristate_bridge_slave = "";
+         starvation_indicator = "0";
+         is_initialized = "1";
+      }
+      SIMULATION 
+      {
+         DISPLAY 
+         {
+            SIGNAL a
+            {
+               name = "az_addr";
+               radix = "hexadecimal";
+            }
+            SIGNAL b
+            {
+               name = "az_be_n";
+               radix = "hexadecimal";
+            }
+            SIGNAL c
+            {
+               name = "az_cs";
+            }
+            SIGNAL d
+            {
+               name = "az_data";
+               radix = "hexadecimal";
+            }
+            SIGNAL e
+            {
+               name = "az_rd_n";
+            }
+            SIGNAL f
+            {
+               name = "az_wr_n";
+            }
+            SIGNAL h
+            {
+               name = "za_data";
+               radix = "hexadecimal";
+            }
+            SIGNAL i
+            {
+               name = "za_valid";
+            }
+            SIGNAL j
+            {
+               name = "za_waitrequest";
+            }
+            SIGNAL l
+            {
+               name = "CODE";
+               radix = "ascii";
+            }
+            SIGNAL g
+            {
+               name = "clk";
+            }
+            SIGNAL k
+            {
+               name = "za_cannotrefresh";
+               suppress = "1";
+            }
+            SIGNAL m
+            {
+               name = "zs_addr";
+               radix = "hexadecimal";
+               suppress = "0";
+            }
+            SIGNAL n
+            {
+               name = "zs_ba";
+               radix = "hexadecimal";
+               suppress = "0";
+            }
+            SIGNAL o
+            {
+               name = "zs_cs_n";
+               radix = "hexadecimal";
+               suppress = "0";
+            }
+            SIGNAL p
+            {
+               name = "zs_ras_n";
+               suppress = "0";
+            }
+            SIGNAL q
+            {
+               name = "zs_cas_n";
+               suppress = "0";
+            }
+            SIGNAL r
+            {
+               name = "zs_we_n";
+               suppress = "0";
+            }
+            SIGNAL s
+            {
+               name = "zs_dq";
+               radix = "hexadecimal";
+               suppress = "0";
+            }
+            SIGNAL t
+            {
+               name = "zs_dqm";
+               radix = "hexadecimal";
+               suppress = "0";
+            }
+            SIGNAL u
+            {
+               name = "zt_addr";
+               radix = "hexadecimal";
+               suppress = "1";
+            }
+            SIGNAL v
+            {
+               name = "zt_ba";
+               radix = "hexadecimal";
+               suppress = "1";
+            }
+            SIGNAL w
+            {
+               name = "zt_oe";
+               suppress = "1";
+            }
+            SIGNAL x
+            {
+               name = "zt_cke";
+               suppress = "1";
+            }
+            SIGNAL y
+            {
+               name = "zt_chipselect";
+               suppress = "1";
+            }
+            SIGNAL z0
+            {
+               name = "zt_lock_n";
+               suppress = "1";
+            }
+            SIGNAL z1
+            {
+               name = "zt_ras_n";
+               suppress = "1";
+            }
+            SIGNAL z2
+            {
+               name = "zt_cas_n";
+               suppress = "1";
+            }
+            SIGNAL z3
+            {
+               name = "zt_we_n";
+               suppress = "1";
+            }
+            SIGNAL z4
+            {
+               name = "zt_cs_n";
+               radix = "hexadecimal";
+               suppress = "1";
+            }
+            SIGNAL z5
+            {
+               name = "zt_dqm";
+               radix = "hexadecimal";
+               suppress = "1";
+            }
+            SIGNAL z6
+            {
+               name = "zt_data";
+               radix = "hexadecimal";
+               suppress = "1";
+            }
+            SIGNAL z7
+            {
+               name = "tz_data";
+               radix = "hexadecimal";
+               suppress = "1";
+            }
+            SIGNAL z8
+            {
+               name = "tz_waitrequest";
+               suppress = "1";
+            }
+         }
+         Fix_Me_Up = "";
+      }
+      SYSTEM_BUILDER_INFO 
+      {
+         Instantiate_In_System_Module = "1";
+         Is_Enabled = "1";
+         Default_Module_Name = "sdram";
+         Top_Level_Ports_Are_Enumerated = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         Disable_Simulation_Port_Wiring = "0";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+            Settings_Summary = "4194304 x 16<br>
+                Memory size: 8 MBytes<br>
+                64 MBits
+                ";
+         }
+      }
+      class = "altera_avalon_new_sdram_controller";
+      class_version = "7.08110";
+      HDL_INFO 
+      {
+         Precompiled_Simulation_Library_Files = "";
+         Simulation_HDL_Files = "";
+         Synthesis_HDL_Files = "__PROJECT_DIRECTORY__/SDRAM.vhd";
+         Synthesis_Only_Files = "";
+      }
+   }
+   MODULE Red_LEDs
+   {
+      SLAVE avalon_parallel_port_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10000000";
+            }
+            Base_Address = "0x10000000";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT LEDR
+         {
+            type = "export";
+            width = "18";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_parallel_port";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Red_LEDs.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE Green_LEDs
+   {
+      SLAVE avalon_parallel_port_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10000010";
+            }
+            Base_Address = "0x10000010";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT LEDG
+         {
+            type = "export";
+            width = "9";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_parallel_port";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Green_LEDs.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE HEX3_HEX0
+   {
+      SLAVE avalon_parallel_port_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10000020";
+            }
+            Base_Address = "0x10000020";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT HEX0
+         {
+            type = "export";
+            width = "7";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT HEX1
+         {
+            type = "export";
+            width = "7";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT HEX2
+         {
+            type = "export";
+            width = "7";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT HEX3
+         {
+            type = "export";
+            width = "7";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_parallel_port";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/HEX3_HEX0.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE HEX7_HEX4
+   {
+      SLAVE avalon_parallel_port_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10000030";
+            }
+            Base_Address = "0x10000030";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT HEX4
+         {
+            type = "export";
+            width = "7";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT HEX5
+         {
+            type = "export";
+            width = "7";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT HEX6
+         {
+            type = "export";
+            width = "7";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT HEX7
+         {
+            type = "export";
+            width = "7";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_parallel_port";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/HEX7_HEX4.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE Slider_Switches
+   {
+      SLAVE avalon_parallel_port_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10000040";
+            }
+            Base_Address = "0x10000040";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT SW
+         {
+            type = "export";
+            width = "18";
+            direction = "input";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_parallel_port";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Slider_Switches.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE Pushbuttons
+   {
+      SLAVE avalon_parallel_port_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT irq
+            {
+               type = "irq";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Has_IRQ = "1";
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10000050";
+            }
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "1";
+            }
+            Base_Address = "0x10000050";
+            Address_Group = "0";
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT KEY
+         {
+            type = "export";
+            width = "4";
+            direction = "input";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_parallel_port";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Pushbuttons.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE Expansion_JP1
+   {
+      SLAVE avalon_parallel_port_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT irq
+            {
+               type = "irq";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Has_IRQ = "1";
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10000060";
+            }
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "11";
+            }
+            Base_Address = "0x10000060";
+            Address_Group = "0";
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT GPIO_0
+         {
+            type = "export";
+            width = "32";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_parallel_port";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Expansion_JP1.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE Expansion_JP2
+   {
+      SLAVE avalon_parallel_port_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT irq
+            {
+               type = "irq";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Has_IRQ = "1";
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10000070";
+            }
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "12";
+            }
+            Base_Address = "0x10000070";
+            Address_Group = "0";
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT GPIO_1
+         {
+            type = "export";
+            width = "32";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_parallel_port";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Expansion_JP2.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE Serial_Port
+   {
+      SLAVE avalon_rs232_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT irq
+            {
+               type = "irq";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Has_IRQ = "1";
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "8";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "1";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10001010";
+            }
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "10";
+            }
+            Base_Address = "0x10001010";
+            Address_Group = "0";
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT UART_RXD
+         {
+            type = "export";
+            width = "1";
+            direction = "input";
+            Is_Enabled = "1";
+         }
+         PORT UART_TXD
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_rs232";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Serial_Port.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE AV_Config
+   {
+      SLAVE avalon_av_config_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT waitrequest
+            {
+               type = "waitrequest";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Read_Wait_States = "peripheral_controlled";
+            Write_Wait_States = "peripheral_controlled";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10003000";
+            }
+            Base_Address = "0x10003000";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT I2C_SDAT
+         {
+            type = "export";
+            width = "1";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+         PORT I2C_SCLK
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_audio_and_video_config";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/AV_Config.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE Audio
+   {
+      SLAVE avalon_audio_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT irq
+            {
+               type = "irq";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Has_IRQ = "1";
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10003040";
+            }
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "6";
+            }
+            Base_Address = "0x10003040";
+            Address_Group = "0";
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT AUD_ADCDAT
+         {
+            type = "export";
+            width = "1";
+            direction = "input";
+            Is_Enabled = "1";
+         }
+         PORT AUD_BCLK
+         {
+            type = "export";
+            width = "1";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+         PORT AUD_ADCLRCK
+         {
+            type = "export";
+            width = "1";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+         PORT AUD_DACLRCK
+         {
+            type = "export";
+            width = "1";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+         PORT AUD_DACDAT
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_audio";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Audio.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE Char_LCD_16x2
+   {
+      SLAVE avalon_lcd_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "8";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "8";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT waitrequest
+            {
+               type = "waitrequest";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Read_Wait_States = "peripheral_controlled";
+            Write_Wait_States = "peripheral_controlled";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "2";
+            Read_Latency = "0";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "8";
+            Address_Width = "1";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10003050";
+            }
+            Base_Address = "0x10003050";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT LCD_DATA
+         {
+            type = "export";
+            width = "8";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+         PORT LCD_ON
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT LCD_BLON
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT LCD_EN
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT LCD_RS
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT LCD_RW
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_character_lcd";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Char_LCD_16x2.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE PS2_Port
+   {
+      SLAVE avalon_ps2_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT irq
+            {
+               type = "irq";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT waitrequest
+            {
+               type = "waitrequest";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Has_IRQ = "1";
+            Bus_Type = "avalon";
+            Read_Wait_States = "peripheral_controlled";
+            Write_Wait_States = "peripheral_controlled";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "8";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "1";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10000100";
+            }
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "7";
+            }
+            Base_Address = "0x10000100";
+            Address_Group = "0";
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT PS2_CLK
+         {
+            type = "export";
+            width = "1";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+         PORT PS2_DAT
+         {
+            type = "export";
+            width = "1";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_ps2";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/PS2_Port.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE SRAM
+   {
+      SLAVE avalon_sram_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "18";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT byteenable
+            {
+               type = "byteenable";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT writedata
+            {
+               type = "writedata";
+               width = "16";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "16";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT readdatavalid
+            {
+               type = "readdatavalid";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "524288";
+            Read_Latency = "0";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "2";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "16";
+            Address_Width = "18";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x08000000";
+            }
+            MASTERED_BY VGA_Pixel_Buffer/avalon_pixel_dma_master
+            {
+               priority = "1";
+               Offset_Address = "0x08000000";
+            }
+            Base_Address = "0x08000000";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT SRAM_DQ
+         {
+            type = "export";
+            width = "16";
+            direction = "inout";
+            Is_Enabled = "1";
+         }
+         PORT SRAM_ADDR
+         {
+            type = "export";
+            width = "18";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT SRAM_LB_N
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT SRAM_UB_N
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT SRAM_CE_N
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT SRAM_OE_N
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT SRAM_WE_N
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_sram";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/SRAM.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE VGA_Pixel_Buffer
+   {
+      MASTER avalon_pixel_dma_master
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT master_readdatavalid
+            {
+               type = "readdatavalid";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT master_waitrequest
+            {
+               type = "waitrequest";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT master_address
+            {
+               type = "address";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT master_arbiterlock
+            {
+               type = "arbiterlock";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT master_read
+            {
+               type = "read";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT master_readdata
+            {
+               type = "readdata";
+               width = "16";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Is_Asynchronous = "0";
+            DBS_Big_Endian = "0";
+            Adapts_To = "";
+            Do_Stream_Reads = "0";
+            Do_Stream_Writes = "0";
+            Max_Address_Width = "32";
+            Data_Width = "16";
+            Address_Width = "32";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+         }
+         MEMORY_MAP 
+         {
+            Entry SRAM/avalon_sram_slave
+            {
+               address = "0x08000000";
+               span = "0x00080000";
+               is_bridge = "0";
+            }
+         }
+      }
+      MASTER avalon_pixel_source
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+         }
+         PORT_WIRING 
+         {
+            PORT stream_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_data
+            {
+               type = "data";
+               width = "16";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+      }
+      SLAVE avalon_control_slave
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "16";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "2";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10003020";
+            }
+            Base_Address = "0x10003020";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+         PORT_WIRING 
+         {
+            PORT slave_address
+            {
+               type = "address";
+               width = "2";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT slave_byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT slave_read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT slave_write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT slave_writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT slave_readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_video_pixel_buffer_dma";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/VGA_Pixel_Buffer.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE VGA_Char_Buffer
+   {
+      SLAVE avalon_char_control_slave
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT ctrl_address
+            {
+               type = "address";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT ctrl_byteenable
+            {
+               type = "byteenable";
+               width = "4";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT ctrl_chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT ctrl_read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT ctrl_write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT ctrl_writedata
+            {
+               type = "writedata";
+               width = "32";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT ctrl_readdata
+            {
+               type = "readdata";
+               width = "32";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "8";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "32";
+            Address_Width = "1";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10003030";
+            }
+            Base_Address = "0x10003030";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      MASTER avalon_char_source
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+         }
+         PORT_WIRING 
+         {
+            PORT stream_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_data
+            {
+               type = "data";
+               width = "40";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+      }
+      SLAVE avalon_char_buffer_slave
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Read_Wait_States = "peripheral_controlled";
+            Write_Wait_States = "peripheral_controlled";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "8192";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "8";
+            Address_Width = "13";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x09000000";
+            }
+            Base_Address = "0x09000000";
+            Address_Group = "1";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+         PORT_WIRING 
+         {
+            PORT buf_byteenable
+            {
+               type = "byteenable";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT buf_chipselect
+            {
+               type = "chipselect";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT buf_read
+            {
+               type = "read";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT buf_write
+            {
+               type = "write";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT buf_writedata
+            {
+               type = "writedata";
+               width = "8";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT buf_readdata
+            {
+               type = "readdata";
+               width = "8";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT buf_waitrequest
+            {
+               type = "waitrequest";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT buf_address
+            {
+               type = "address";
+               width = "13";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_video_character_buffer_with_dma";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/VGA_Char_Buffer.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE VGA_Controller
+   {
+      SLAVE avalon_vga_sink
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT data
+            {
+               type = "data";
+               width = "30";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+            Accepts_Internal_Connections = "1";
+            MASTERED_BY VGA_Dual_Clock_FIFO/avalon_dc_buffer_source
+            {
+               priority = "0";
+            }
+            Address_Group = "0";
+            Base_Address = "0x00000000";
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT VGA_CLK
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT VGA_HS
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT VGA_VS
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT VGA_BLANK
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT VGA_SYNC
+         {
+            type = "export";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT VGA_R
+         {
+            type = "export";
+            width = "10";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT VGA_G
+         {
+            type = "export";
+            width = "10";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT VGA_B
+         {
+            type = "export";
+            width = "10";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_video_vga_controller";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "vga_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/VGA_Controller.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE VGA_Pixel_RGB_Resampler
+   {
+      SLAVE avalon_rgb_sink
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_data
+            {
+               type = "data";
+               width = "16";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+            Accepts_Internal_Connections = "1";
+            MASTERED_BY VGA_Pixel_Buffer/avalon_pixel_source
+            {
+               priority = "0";
+            }
+            Address_Group = "0";
+            Base_Address = "0x00000000";
+         }
+      }
+      MASTER avalon_rgb_source
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+         }
+         PORT_WIRING 
+         {
+            PORT stream_out_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_data
+            {
+               type = "data";
+               width = "30";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_video_rgb_resampler";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/VGA_Pixel_RGB_Resampler.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE VGA_Pixel_Scaler
+   {
+      SLAVE avalon_scaler_sink
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_data
+            {
+               type = "data";
+               width = "30";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+            Accepts_Internal_Connections = "1";
+            MASTERED_BY VGA_Pixel_RGB_Resampler/avalon_rgb_source
+            {
+               priority = "0";
+            }
+            Address_Group = "0";
+            Base_Address = "0x00000000";
+         }
+      }
+      MASTER avalon_scaler_source
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+         }
+         PORT_WIRING 
+         {
+            PORT stream_out_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_data
+            {
+               type = "data";
+               width = "30";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_video_scaler";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/VGA_Pixel_Scaler.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE VGA_Dual_Clock_FIFO
+   {
+      SLAVE avalon_dc_buffer_sink
+      {
+         PORT_WIRING 
+         {
+            PORT clk_stream_in
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_in_data
+            {
+               type = "data";
+               width = "30";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+            Accepts_Internal_Connections = "1";
+            Clock_Source = "sys_clk";
+            Has_Clock = "1";
+            MASTERED_BY Alpha_Blending/avalon_blended_source
+            {
+               priority = "0";
+            }
+            Address_Group = "0";
+            Base_Address = "0x00000000";
+         }
+      }
+      MASTER avalon_dc_buffer_source
+      {
+         PORT_WIRING 
+         {
+            PORT clk_stream_out
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT stream_out_data
+            {
+               type = "data";
+               width = "30";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+            Clock_Source = "vga_clk";
+            Has_Clock = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_video_dual_clock_buffer";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "clk";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/VGA_Dual_Clock_FIFO.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE CPU_fpoint
+   {
+      SLAVE s1
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "nios_custom_instruction";
+            Data_Width = "32";
+            Address_Width = "2";
+            Is_Custom_Instruction = "1";
+            Is_Enabled = "1";
+            ci_operands = "2";
+            ci_cycles = "1";
+            ci_inst_type = "variable multicycle";
+            Has_Base_Address = "1";
+            Base_Address = "0x000000fc";
+            ci_macro_name = "fpoint";
+            MASTERED_BY CPU/custom_instruction_master
+            {
+               priority = "1";
+            }
+            IRQ_MASTER CPU/custom_instruction_master
+            {
+               IRQ_Number = "NC";
+            }
+            Address_Group = "0";
+         }
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+            }
+            PORT clk_en
+            {
+               type = "clk_en";
+               width = "1";
+               direction = "input";
+            }
+            PORT dataa
+            {
+               type = "dataa";
+               width = "32";
+               direction = "input";
+            }
+            PORT datab
+            {
+               type = "datab";
+               width = "32";
+               direction = "input";
+            }
+            PORT n
+            {
+               type = "n";
+               width = "2";
+               direction = "input";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+            }
+            PORT start
+            {
+               type = "start";
+               width = "1";
+               direction = "input";
+            }
+            PORT done
+            {
+               type = "done";
+               width = "1";
+               direction = "output";
+            }
+            PORT result
+            {
+               type = "result";
+               width = "32";
+               direction = "output";
+            }
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_nios_custom_instr_floating_point";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/CPU_fpoint.vho";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE External_Clocks
+   {
+      SLAVE avalon_clocks_slave
+      {
+         PORT_WIRING 
+         {
+            PORT CLOCK_50
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT address
+            {
+               type = "address";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT readdata
+            {
+               type = "readdata";
+               width = "8";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "avalon";
+            Write_Wait_States = "0cycles";
+            Read_Wait_States = "0cycles";
+            Hold_Time = "0cycles";
+            Setup_Time = "0cycles";
+            Is_Printable_Device = "0";
+            Address_Alignment = "dynamic";
+            Well_Behaved_Waitrequest = "0";
+            Is_Nonvolatile_Storage = "0";
+            Address_Span = "2";
+            Read_Latency = "1";
+            Is_Memory_Device = "0";
+            Maximum_Pending_Read_Transactions = "0";
+            Minimum_Uninterrupted_Run_Length = "1";
+            Accepts_Internal_Connections = "1";
+            Write_Latency = "0";
+            Is_Flash = "0";
+            Data_Width = "8";
+            Address_Width = "1";
+            Maximum_Burst_Size = "1";
+            Register_Incoming_Signals = "0";
+            Register_Outgoing_Signals = "0";
+            Interleave_Bursts = "0";
+            Linewrap_Bursts = "0";
+            Burst_On_Burst_Boundaries_Only = "0";
+            Always_Burst_Max_Burst = "0";
+            Is_Big_Endian = "0";
+            Is_Enabled = "1";
+            Clock_Source = "clk";
+            Has_Clock = "1";
+            MASTERED_BY CPU/data_master
+            {
+               priority = "1";
+               Offset_Address = "0x10002030";
+            }
+            Base_Address = "0x10002030";
+            Address_Group = "0";
+            IRQ_MASTER CPU/data_master
+            {
+               IRQ_Number = "NC";
+            }
+         }
+      }
+      PORT_WIRING 
+      {
+         PORT sys_clk
+         {
+            type = "out_clk";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT SDRAM_CLK
+         {
+            type = "out_clk";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT CLOCK_27
+         {
+            type = "clk";
+            width = "1";
+            direction = "input";
+            Is_Enabled = "1";
+         }
+         PORT AUD_CLK
+         {
+            type = "out_clk";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+         PORT VGA_CLK
+         {
+            type = "out_clk";
+            width = "1";
+            direction = "output";
+            Is_Enabled = "1";
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_clocks";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "clk_27";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/External_Clocks.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+   MODULE Alpha_Blending
+   {
+      SLAVE avalon_foreground_sink
+      {
+         PORT_WIRING 
+         {
+            PORT clk
+            {
+               type = "clk";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT reset
+            {
+               type = "reset";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT foreground_data
+            {
+               type = "data";
+               width = "40";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT foreground_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT foreground_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT foreground_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT foreground_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+            Accepts_Internal_Connections = "1";
+            MASTERED_BY VGA_Char_Buffer/avalon_char_source
+            {
+               priority = "0";
+            }
+            Address_Group = "0";
+            Base_Address = "0x00000000";
+         }
+      }
+      MASTER avalon_blended_source
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+         }
+         PORT_WIRING 
+         {
+            PORT output_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT output_data
+            {
+               type = "data";
+               width = "30";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT output_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT output_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+            PORT output_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+      }
+      SLAVE avalon_background_sink
+      {
+         SYSTEM_BUILDER_INFO 
+         {
+            Bus_Type = "atlantic";
+            Accepts_Internal_Connections = "1";
+            MASTERED_BY VGA_Pixel_Scaler/avalon_scaler_source
+            {
+               priority = "0";
+            }
+            Address_Group = "1";
+            Base_Address = "0x00000000";
+         }
+         PORT_WIRING 
+         {
+            PORT background_data
+            {
+               type = "data";
+               width = "30";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT background_startofpacket
+            {
+               type = "startofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT background_endofpacket
+            {
+               type = "endofpacket";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT background_valid
+            {
+               type = "valid";
+               width = "1";
+               direction = "input";
+               Is_Enabled = "1";
+            }
+            PORT background_ready
+            {
+               type = "ready";
+               width = "1";
+               direction = "output";
+               Is_Enabled = "1";
+            }
+         }
+      }
+      class = "no_legacy_module";
+      class_version = "7.08110";
+      gtf_class_name = "altera_up_avalon_video_alpha_blender";
+      gtf_class_version = "11.0";
+      SYSTEM_BUILDER_INFO 
+      {
+         Do_Not_Generate = "1";
+         Instantiate_In_System_Module = "1";
+         Is_Bridge = "0";
+         Is_Enabled = "1";
+         Clock_Source = "sys_clk";
+         Has_Clock = "1";
+         View 
+         {
+            MESSAGES 
+            {
+            }
+         }
+      }
+      HDL_INFO 
+      {
+         Simulation_HDL_Files = "__PROJECT_DIRECTORY__/Alpha_Blending.v";
+      }
+      WIZARD_SCRIPT_ARGUMENTS 
+      {
+      }
+   }
+}
