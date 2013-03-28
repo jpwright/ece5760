@@ -75,28 +75,35 @@ int main(void){
 	
 		for (x=0; x<640; x++) {
 			for (y=0; y<480; y++) {
-				zr[x][y] = (float)(x*xscale + xoff);
-				zi[x][y] = (float)(y*yscale + yoff);
+				float xc = (float)(x*xscale + xoff);
+				float yc = (float)(y*yscale + yoff);
+				zr[x][y] = xc;
+				zi[x][y] = yc;
 				t = 0;
-				while (t<50){
-					float zr_xy = zr[x][y];
-					float zi_xy = zi[x][y];
-					float zr_n = zr_xy*zr_xy - zi_xy*zi_xy + (float)(x*xscale + xoff);
-					float zi_n = 2.0*zr_xy*zi_xy + (float)(y*yscale + yoff);
-					if (zr_n*zi_n < 4.0) {
-						
-						zr[x][y] = zr_n;
-						zi[x][y] = zi_n;
-					}else{
-						alt_up_pixel_buffer_dma_draw(pixel_buffer_dev, t, x, y);
-						t = 50;
+				//float q = pow((xc - 0.25), 2) + pow(yc, 2);
+				//if (q*(q+(xc-0.25)) >= 0.25*pow(yc, 2)) {
+					while (t<50){
+						float zr_xy = zr[x][y];
+						float zi_xy = zi[x][y];
+						float zr_n = zr_xy*zr_xy - zi_xy*zi_xy + (float)(x*xscale + xoff);
+						float zi_n = 2.0*zr_xy*zi_xy + (float)(y*yscale + yoff);
+						if (zr_n*zi_n < 4.0) {
+							
+							zr[x][y] = zr_n;
+							zi[x][y] = zi_n;
+						}else{
+							alt_up_pixel_buffer_dma_draw(pixel_buffer_dev, t, x, y);
+							t = 50;
+						}
+						if (t == 49)
+						{
+							alt_up_pixel_buffer_dma_draw(pixel_buffer_dev, 0, x, y);
+						}
+						t = t +1;
 					}
-					if (t == 49)
-					{
-						alt_up_pixel_buffer_dma_draw(pixel_buffer_dev, 0, x, y);
-					}
-					t = t +1;
-				}
+				//} else {
+				//	alt_up_pixel_buffer_dma_draw(pixel_buffer_dev, 0, x, y);
+				//}
 				//
 			}
 		}
@@ -107,16 +114,23 @@ int main(void){
 		//We only allow zooming by a factor of two, so only neeed input is the center to zoom to.
 		printf ("\nCurrent X Offset=%f\n",xoff);
 		printf ("Current Y Offset=%f\n",yoff);
-		alt_printf ("To zoom by 2X, enter the new X and Y Offsets.\n");
-		//float x_center, y_center;
+		float xoff_n;
+		float yoff_n;
 		alt_printf ("What is the new X Offset? ");
-		scanf ("%f",&xoff);
+		scanf ("%f",&xoff_n);
 		alt_printf ("What is the new Y Offset? ");
-		scanf ("%f",&yoff);
+		scanf ("%f",&yoff_n);
+		alt_printf ("Scaling ");
+		scanf ("%f",&xscale);
+		yscale = xscale;
 		alt_printf ("Cool. Get ready for some crazy zooming action.\n");
 		
 		xscale = xscale/2;
 		yscale = yscale/2;
+		
+		xoff = -1.0*xoff_n*640.0*xscale;
+		yoff = -1.0*yoff_n*480.0*yscale;
+	
 		t=0;
 
 		

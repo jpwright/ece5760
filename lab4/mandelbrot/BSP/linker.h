@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: C:/ece5760/lab4/mandelbrot/DE2_Media_Computer/verilog/nios_system.sopcinfo
  *
- * Generated: Thu Mar 28 03:23:37 EDT 2013
+ * Generated: Thu Mar 28 05:00:10 EDT 2013
  */
 
 /*
@@ -68,7 +68,7 @@
 #define RESET_REGION_BASE 0x0
 #define RESET_REGION_SPAN 32
 #define SDRAM_REGION_BASE 0x20
-#define SDRAM_REGION_SPAN 1048544
+#define SDRAM_REGION_SPAN 8388576
 
 
 /*

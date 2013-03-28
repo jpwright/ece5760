@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: C:/ece5760/lab4/mandelbrot/DE2_Media_Computer/verilog/nios_system.sopcinfo
  *
- * Generated: Thu Mar 28 03:23:37 EDT 2013
+ * Generated: Thu Mar 28 05:00:10 EDT 2013
  */
 
 /*
@@ -51,7 +51,7 @@
 MEMORY
 {
     reset : ORIGIN = 0x0, LENGTH = 32
-    SDRAM : ORIGIN = 0x20, LENGTH = 1048544
+    SDRAM : ORIGIN = 0x20, LENGTH = 8388576
 }
 
 /* Define symbols for each memory base-address */
@@ -366,7 +366,7 @@ SECTIONS
 /*
  * Don't override this, override the __alt_stack_* symbols instead.
  */
-__alt_data_end = 0x100000;
+__alt_data_end = 0x800000;
 
 /*
  * The next two symbols define the location of the default stack.  You can
@@ -382,4 +382,4 @@ PROVIDE( __alt_stack_limit   = __alt_stack_base );
  * Override this symbol to put the heap in a different memory.
  */
 PROVIDE( __alt_heap_start    = end );
-PROVIDE( __alt_heap_limit    = 0x100000 );
+PROVIDE( __alt_heap_limit    = 0x800000 );

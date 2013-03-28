@@ -4,7 +4,7 @@
  * Machine generated for CPU 'cpu_0' in SOPC Builder design 'nios_system'
  * SOPC Builder design path: C:/ece5760/lab4/mandelbrot/DE2_Media_Computer/verilog/nios_system.sopcinfo
  *
- * Generated: Thu Mar 28 03:23:36 EDT 2013
+ * Generated: Thu Mar 28 05:00:10 EDT 2013
  */
 
 /*
@@ -473,7 +473,7 @@
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/sysid"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1364454863u
+#define SYSID_TIMESTAMP 1364455509u
 #define SYSID_TYPE "altera_avalon_sysid"
 
 #endif /* __SYSTEM_H_ */

@@ -473,4 +473,5 @@ set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_RO
 set_global_assignment -name VERILOG_FILE nios_system.v
 set_global_assignment -name QIP_FILE nios_system.qip
 set_global_assignment -name FITTER_EFFORT "FAST FIT"
+set_global_assignment -name VERILOG_FILE "../../../../../Users/Lab User/Desktop/de2_media_computer.v"
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

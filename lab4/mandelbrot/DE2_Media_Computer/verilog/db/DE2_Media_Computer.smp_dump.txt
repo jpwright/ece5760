@@ -1,16 +1,4 @@
 
-State Machine - |DE2_Media_Computer|nios_system:NiosII|nios_system_clock_2:the_nios_system_clock_2|nios_system_clock_2_master_FSM:master_FSM|master_state
-Name master_state.100 master_state.010 master_state.001 
-master_state.001 0 0 0 
-master_state.010 0 1 1 
-master_state.100 1 0 1 
-
-State Machine - |DE2_Media_Computer|nios_system:NiosII|nios_system_clock_2:the_nios_system_clock_2|nios_system_clock_2_slave_FSM:slave_FSM|slave_state
-Name slave_state.100 slave_state.010 slave_state.001 
-slave_state.001 0 0 0 
-slave_state.010 0 1 1 
-slave_state.100 1 0 1 
-
 State Machine - |DE2_Media_Computer|nios_system:NiosII|nios_system_clock_1:the_nios_system_clock_1|nios_system_clock_1_master_FSM:master_FSM|master_state
 Name master_state.100 master_state.010 master_state.001 
 master_state.001 0 0 0 
@@ -34,15 +22,6 @@ Name slave_state.100 slave_state.010 slave_state.001
 slave_state.001 0 0 0 
 slave_state.010 0 1 1 
 slave_state.100 1 0 1 
-
-State Machine - |DE2_Media_Computer|nios_system:NiosII|cpu_1:the_cpu_1|cpu_1_nios2_oci:the_cpu_1_nios2_oci|cpu_1_jtag_debug_module_wrapper:the_cpu_1_jtag_debug_module_wrapper|cpu_1_jtag_debug_module_tck:the_cpu_1_jtag_debug_module_tck|DRsize
-Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
-DRsize.000 0 0 0 0 0 0 
-DRsize.001 0 0 0 0 1 1 
-DRsize.010 0 0 0 1 0 1 
-DRsize.011 0 0 1 0 0 1 
-DRsize.100 0 1 0 0 0 1 
-DRsize.101 1 0 0 0 0 1 
 
 State Machine - |DE2_Media_Computer|nios_system:NiosII|cpu_0:the_cpu_0|cpu_0_nios2_oci:the_cpu_0_nios2_oci|cpu_0_jtag_debug_module_wrapper:the_cpu_0_jtag_debug_module_wrapper|cpu_0_jtag_debug_module_tck:the_cpu_0_jtag_debug_module_tck|DRsize
 Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 

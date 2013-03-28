@@ -4,8 +4,8 @@
  <systemtable filter="All Interfaces">
   <columns>
    <opcodeName visible="0" />
-   <connections preferredWidth="287" />
-   <irq preferredWidth="47" />
+   <connections preferredWidth="143" />
+   <irq preferredWidth="34" />
    <export visible="0" />
    <name preferredWidth="381" />
   </columns>
@@ -19,5 +19,5 @@
  </clocktable>
  <window width="1280" height="984" x="0" y="0" />
  <library
-   expandedCategories="Library/Processors,Project,Library/Interface Protocols,Library/Interface Protocols/Serial,Library,Library/Peripherals/Debug and Performance,Library/Peripherals/Microcontroller Peripherals,Library/Peripherals,Library/Bridges and Adapters,Library/Bridges and Adapters/Memory Mapped,Library/Processor Additions" />
+   expandedCategories="Library,Library/Peripherals,Library/Peripherals/Multiprocessor Coordination,Project" />
 </preferences>
