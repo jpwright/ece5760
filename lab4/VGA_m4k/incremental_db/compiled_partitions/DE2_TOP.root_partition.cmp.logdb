@@ -1,2 +1,0 @@
-v1
-PORT_SWAPPING,PORT_SWAPPING_FINISHED,minicpu:cpu3|alu:alu0|lpm_mult:Mult0|mult_t8t:auto_generated|mac_mult1,

@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="NiosII_stratix_1s10_standard">
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|cpu:the_cpu|cpu_ic_data_module:cpu_ic_data|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_nnb1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|cpu:the_cpu|cpu_ic_tag_module:cpu_ic_tag|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_bqf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|cpu:the_cpu|cpu_register_bank_b_module:cpu_register_bank_b|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_fgf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|cpu:the_cpu|cpu_mult_cell:the_cpu_mult_cell|altmult_add:the_altmult_add" CBX_FILE_NAME="mult_add_1f72.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|jtag_uart:the_jtag_uart|jtag_uart_scfifo_r:the_jtag_uart_scfifo_r|scfifo:rfifo" CBX_FILE_NAME="scfifo_cg21.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|onchip_ram:the_onchip_ram|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_s191.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|cpu:the_cpu|cpu_nios2_oci:the_cpu_nios2_oci|cpu_nios2_oci_im:the_cpu_nios2_oci_im|cpu_traceram_lpm_dram_bdp_component_module:cpu_traceram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_puv1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|cpu:the_cpu|cpu_nios2_oci:the_cpu_nios2_oci|cpu_nios2_ocimem:the_cpu_nios2_ocimem|cpu_ociram_lpm_dram_bdp_component_module:cpu_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_8q62.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|cpu:the_cpu|cpu_register_bank_a_module:cpu_register_bank_a|altsyncram:the_altsyncram" CBX_FILE_NAME="altsyncram_egf1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|NiosII_stratix_1s10_standard|jtag_uart:the_jtag_uart|jtag_uart_scfifo_w:the_jtag_uart_scfifo_w|scfifo:wfifo" CBX_FILE_NAME="scfifo_cg21.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

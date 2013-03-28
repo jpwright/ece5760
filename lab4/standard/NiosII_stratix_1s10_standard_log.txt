@@ -1,0 +1,111 @@
+Altera SOPC Builder Version 9.00 Build 235
+Copyright (c) 1999-2009 Altera Corporation.  All rights reserved.
+
+
+# 2009.10.18 14:55:31 (*) mk_custom_sdk starting
+# 2009.10.18 14:55:31 (*) Reading project C:/work/standard/NiosII_stratix_1s10_standard.ptf.
+
+# 2009.10.18 14:55:31 (*) Finding all CPUs
+# 2009.10.18 14:55:31 (*) Finding all available components
+
+# 2009.10.18 14:55:31 (*) Reading C:/work/standard/.sopc_builder/install.ptf
+
+# 2009.10.18 14:55:31 (*) Found 67 components
+
+# 2009.10.18 14:55:33 (*) Finding all peripherals
+
+# 2009.10.18 14:55:33 (*) Finding software components
+
+# 2009.10.18 14:55:34 (*) (Legacy SDK Generation Skipped)
+# 2009.10.18 14:55:34 (*) (All TCL Script Generation Skipped)
+# 2009.10.18 14:55:34 (*) (No Libraries Built)
+# 2009.10.18 14:55:34 (*) (Contents Generation Skipped)
+# 2009.10.18 14:55:34 (*) mk_custom_sdk finishing
+
+# 2009.10.18 14:55:34 (*) Starting generation for system: NiosII_stratix_1s10_standard.
+
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+....
+.
+.
+.
+
+# 2009.10.18 14:55:37 (*) Running Generator Program for pll
+
+# 2009.10.18 14:55:42 (*) Running Generator Program for cpu
+
+# 2009.10.18 14:55:44 (*)   Checking for plaintext license.
+# 2009.10.18 14:55:46 (*)   Plaintext license not found.
+# 2009.10.18 14:55:46 (*)   Checking for encrypted license (non-evaluation).
+# 2009.10.18 14:55:48 (*)   Encrypted license found.  SOF will not be time-limited.
+# 2009.10.18 14:55:48 (*)   Getting CPU configuration settings
+# 2009.10.18 14:55:48 (*)   Elaborating CPU configuration settings
+# 2009.10.18 14:55:48 (*)   Creating all objects for CPU
+# 2009.10.18 14:55:50 (*)     Pipeline frontend
+
+# 2009.10.18 14:55:53 (*)   Generating HDL from CPU objects
+# 2009.10.18 14:56:04 (*)   Creating encrypted HDL
+
+# 2009.10.18 14:56:08 (*) Running Generator Program for sys_clk_timer
+
+# 2009.10.18 14:56:10 (*) Running Generator Program for sysid
+
+# 2009.10.18 14:56:12 (*) Running Generator Program for reconfig_request_pio
+
+# 2009.10.18 14:56:13 (*) Running Generator Program for jtag_uart
+
+# 2009.10.18 14:56:16 (*) Running Generator Program for high_res_timer
+
+# 2009.10.18 14:56:18 (*) Running Generator Program for ext_flash
+
+# 2009.10.18 14:56:19 (*) Running Generator Program for ext_ram
+
+# 2009.10.18 14:56:21 (*) Running Generator Program for lcd_display
+
+# 2009.10.18 14:56:22 (*) Running Generator Program for uart1
+
+# 2009.10.18 14:56:25 (*) Running Generator Program for button_pio
+
+# 2009.10.18 14:56:27 (*) Running Generator Program for led_pio
+
+# 2009.10.18 14:56:29 (*) Running Generator Program for seven_seg_pio
+
+# 2009.10.18 14:56:31 (*) Running Generator Program for onchip_ram
+
+# 2009.10.18 14:56:33 (*) Running Generator Program for sdram
+
+# 2009.10.18 14:56:36 (*) Running Generator Program for NiosII_stratix_1s10_standard_clock_0
+
+.
+
+# 2009.10.18 14:56:38 (*) Running Test Generator Program for sdram
+
+# 2009.10.18 14:56:40 (*) Making arbitration and system (top) modules.
+
+# 2009.10.18 14:57:02 (*) Generating Quartus symbol for top level: NiosII_stratix_1s10_standard
+
+# 2009.10.18 14:57:02 (*) Symbol C:/work/standard/NiosII_stratix_1s10_standard.bsf already exists, no need to regenerate
+# 2009.10.18 14:57:02 (*) Creating command-line system-generation script: C:/work/standard/NiosII_stratix_1s10_standard_generation_script
+
+# 2009.10.18 14:57:02 (*) Running setup for HDL simulator: modelsim
+
+
+# 2009.10.18 14:57:03 (*) Completed generation for system: NiosII_stratix_1s10_standard.
+# 2009.10.18 14:57:03 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+  SOPC Builder database : C:/work/standard/NiosII_stratix_1s10_standard.ptf 
+  System HDL Model : C:/work/standard/NiosII_stratix_1s10_standard.vhd 
+  System Generation Script : C:/work/standard/NiosII_stratix_1s10_standard_generation_script 
+
+# 2009.10.18 14:57:03 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+
+
+Press 'Exit' to exit.

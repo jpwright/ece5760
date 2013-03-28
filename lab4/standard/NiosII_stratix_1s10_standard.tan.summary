@@ -1,0 +1,116 @@
+--------------------------------------------------------------------------------------
+Timing Analyzer Summary
+--------------------------------------------------------------------------------------
+
+Type           : Worst-case tsu
+Slack          : N/A
+Required Time  : None
+Actual Time    : 9.331 ns
+From           : LCD_data_to_and_from_the_lcd_display[7]
+To             : cpu:the_cpu|d_readdata_d1[7]
+From Clock     : --
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Worst-case tco
+Slack          : N/A
+Required Time  : None
+Actual Time    : 12.607 ns
+From           : cpu:the_cpu|M_alu_result[21]
+To             : LCD_E_from_the_lcd_display
+From Clock     : clk
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case tpd
+Slack          : N/A
+Required Time  : None
+Actual Time    : 2.504 ns
+From           : altera_internal_jtag~TDO
+To             : altera_reserved_tdo
+From Clock     : --
+To Clock       : --
+Failed Paths   : 0
+
+Type           : Worst-case th
+Slack          : N/A
+Required Time  : None
+Actual Time    : 3.707 ns
+From           : altera_internal_jtag~TMSUTAP
+To             : sld_hub:sld_hub_inst|sld_shadow_jsm:shadow_jsm|state[0]
+From Clock     : --
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Setup: 'clk'
+Slack          : 2.297 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : NiosII_stratix_1s10_standard_clock_0:the_NiosII_stratix_1s10_standard_clock_0|NiosII_stratix_1s10_standard_clock_0_slave_FSM:slave_FSM|internal_slave_write_request
+To             : NiosII_stratix_1s10_standard_clock_0:the_NiosII_stratix_1s10_standard_clock_0|altera_std_synchronizer:the_altera_std_synchronizer3|din_s1
+From Clock     : pll:the_pll|altpllpll:the_pll|altpll:altpll_component|_clk0
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Clock Setup: 'pll:the_pll|altpllpll:the_pll|altpll:altpll_component|_clk0'
+Slack          : 2.529 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 57.24 MHz ( period = 17.471 ns )
+From           : cpu:the_cpu|M_alu_result[21]
+To             : ext_ram_bus_avalon_slave_arbitrator:the_ext_ram_bus_avalon_slave|ext_ram_bus_address[15]
+From Clock     : pll:the_pll|altpllpll:the_pll|altpll:altpll_component|_clk0
+To Clock       : pll:the_pll|altpllpll:the_pll|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Setup: 'altera_internal_jtag~TCKUTAP'
+Slack          : 6.510 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : 143.27 MHz ( period = 6.980 ns )
+From           : sld_hub:sld_hub_inst|irsr_reg[5]
+To             : sld_hub:sld_hub_inst|tdo
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Hold: 'pll:the_pll|altpllpll:the_pll|altpll:altpll_component|_clk0'
+Slack          : 0.528 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : jtag_uart:the_jtag_uart|r_val
+To             : jtag_uart:the_jtag_uart|r_val
+From Clock     : pll:the_pll|altpllpll:the_pll|altpll:altpll_component|_clk0
+To Clock       : pll:the_pll|altpllpll:the_pll|altpll:altpll_component|_clk0
+Failed Paths   : 0
+
+Type           : Clock Hold: 'altera_internal_jtag~TCKUTAP'
+Slack          : 0.604 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : jtag_uart:the_jtag_uart|alt_jtag_atlantic:jtag_uart_alt_jtag_atlantic|td_shift[10]
+To             : jtag_uart:the_jtag_uart|alt_jtag_atlantic:jtag_uart_alt_jtag_atlantic|wdata[6]
+From Clock     : altera_internal_jtag~TCKUTAP
+To Clock       : altera_internal_jtag~TCKUTAP
+Failed Paths   : 0
+
+Type           : Clock Hold: 'clk'
+Slack          : 0.605 ns
+Required Time  : 50.00 MHz ( period = 20.000 ns )
+Actual Time    : N/A
+From           : NiosII_stratix_1s10_standard_clock_0:the_NiosII_stratix_1s10_standard_clock_0|master_writedata[13]
+To             : pll:the_pll|control_reg_out[13]
+From Clock     : clk
+To Clock       : clk
+Failed Paths   : 0
+
+Type           : Total number of failed paths
+Slack          : 
+Required Time  : 
+Actual Time    : 
+From           : 
+To             : 
+From Clock     : 
+To Clock       : 
+Failed Paths   : 0
+
+--------------------------------------------------------------------------------------
+

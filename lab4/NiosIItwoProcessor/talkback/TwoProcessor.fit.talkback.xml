@@ -1,0 +1,2235 @@
+
+<!--
+This XML file (created on Mon Oct 16 09:18:11 2006) contains limited information
+from the compilation of logic designs using Quartus II software (BUT NOT THE
+LOGIC DESIGN FILES) that will be transmitted to Altera Corporation through
+operation of the "TalkBack" feature.  To enable/disable this feature, run
+qtb_install.exe located in your quartus/bin folder.  For more information, go
+to www.altera.com/products/software/download/dnl-download_license.html
+-->
+<talkback>
+<ver>6.0</ver>
+<schema>quartus_version_6.0_build_202.xsd</schema>
+<license>
+	<host_id>00123f4b0b3f</host_id>
+	<nic_id>00123f4b0b3f</nic_id>
+	<cdrive_id>882dfa9e</cdrive_id>
+</license>
+<tool>
+	<name>Quartus II</name>
+	<version>6.0</version>
+	<build>Build 202</build>
+	<service_pack_label>1</service_pack_label>
+	<binary_type>32</binary_type>
+	<module>quartus_fit</module>
+	<edition>Web Edition</edition>
+	<eval>Licensed</eval>
+	<compilation_end_time>Mon Oct 16 09:18:11 2006</compilation_end_time>
+</tool>
+<machine>
+	<os>Windows XP</os>
+	<cpu>
+		<proc_count>2</proc_count>
+		<cpu_freq units="MHz">3391</cpu_freq>
+	</cpu>
+	<ram units="MB">1023</ram>
+</machine>
+<project>C:/DE2/NiosIItwoProcessor/TwoProcessor</project>
+<revision>TwoProcessor</revision>
+<compilation_summary>
+	<flow_status>Successful - Mon Oct 16 09:18:10 2006</flow_status>
+	<quartus_ii_version>6.0 Build 202 06/20/2006 SP 1 SJ Web Edition</quartus_ii_version>
+	<revision_name>TwoProcessor</revision_name>
+	<top_level_entity_name>TwoProcessor</top_level_entity_name>
+	<family>Cyclone II</family>
+	<device>EP2C35F672C6</device>
+	<timing_models>Final</timing_models>
+	<met_timing_requirements>N/A</met_timing_requirements>
+	<total_logic_elements>4,145 / 33,216 ( 12 % )</total_logic_elements>
+	<total_registers>2570</total_registers>
+	<total_pins>60 / 475 ( 13 % )</total_pins>
+	<total_virtual_pins>0</total_virtual_pins>
+	<total_memory_bits>300,000 / 483,840 ( 62 % )</total_memory_bits>
+	<embedded_multiplier_9_bit_elements>8 / 70 ( 11 % )</embedded_multiplier_9_bit_elements>
+	<total_plls>0 / 4 ( 0 % )</total_plls>
+</compilation_summary>
+<resource_usage_summary>
+	<rsc name="Total logic elements" util="12" max=" 33216 " type="int">4145 </rsc>
+	<rsc name="-- Combinational with no register" type="int">1575</rsc>
+	<rsc name="-- Register only" type="int">271</rsc>
+	<rsc name="-- Combinational with a register" type="int">2299</rsc>
+	<rsc name="Logic element usage by number of LUT inputs" type="text"></rsc>
+	<rsc name="-- 4 input functions" type="int">2065</rsc>
+	<rsc name="-- 3 input functions" type="int">1354</rsc>
+	<rsc name="-- &lt;=2 input functions" type="int">455</rsc>
+	<rsc name="-- Register only" type="int">271</rsc>
+	<rsc name="Logic elements by mode" type="text"></rsc>
+	<rsc name="-- normal mode" type="int">3435</rsc>
+	<rsc name="-- arithmetic mode" type="int">439</rsc>
+	<rsc name="Total registers" util="8" max=" 33216 " type="int">2570 </rsc>
+	<rsc name="Total LABs" util="17" max=" 2076 " type="int">351 </rsc>
+	<rsc name="User inserted logic elements" type="int">0</rsc>
+	<rsc name="Virtual pins" type="int">0</rsc>
+	<rsc name="I/O pins" util="13" max=" 475 " type="int">60 </rsc>
+	<rsc name="-- Clock pins" util="100" max=" 8 " type="int">8 </rsc>
+	<rsc name="Global signals" type="int">13</rsc>
+	<rsc name="M4Ks" util="74" max=" 105 " type="int">78 </rsc>
+	<rsc name="Total memory bits" util="62" max=" 483840 " type="int">300000 </rsc>
+	<rsc name="Total RAM block bits" util="74" max=" 483840 " type="int">359424 </rsc>
+	<rsc name="Embedded Multiplier 9-bit elements" util="11" max=" 70 " type="int">8 </rsc>
+	<rsc name="PLLs" util="0" max=" 4 " type="int">0 </rsc>
+	<rsc name="Global clocks" util="81" max=" 16 " type="int">13 </rsc>
+	<rsc name="Maximum fan-out node" type="text">CLOCK_50~clkctrl</rsc>
+	<rsc name="Maximum fan-out" type="int">2332</rsc>
+	<rsc name="Highest non-global fan-out signal" type="text">TwoProc:mytwo|cpu_1:the_cpu_1|W_stall</rsc>
+	<rsc name="Highest non-global fan-out" type="int">488</rsc>
+	<rsc name="Total fan-out" type="int">25619</rsc>
+	<rsc name="Average fan-out" type="float">3.76</rsc>
+</resource_usage_summary>
+<control_signals>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|EPEO2888_6</name>
+		<location>LCFF_X31_Y35_N7</location>
+		<fan_out>2</fan_out>
+		<usage>Clock</usage>
+		<global>no</global>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|EPEO2888_5</name>
+		<location>LCFF_X24_Y35_N3</location>
+		<fan_out>2</fan_out>
+		<usage>Clock</usage>
+		<global>no</global>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|EPEO2888_4</name>
+		<location>LCFF_X24_Y35_N1</location>
+		<fan_out>2</fan_out>
+		<usage>Clock</usage>
+		<global>no</global>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|EPEO2888_3</name>
+		<location>LCFF_X23_Y35_N15</location>
+		<fan_out>2</fan_out>
+		<usage>Clock</usage>
+		<global>no</global>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|EPEO2888_2</name>
+		<location>LCFF_X23_Y35_N1</location>
+		<fan_out>2</fan_out>
+		<usage>Clock</usage>
+		<global>no</global>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|EPEO2888_1</name>
+		<location>LCFF_X22_Y35_N15</location>
+		<fan_out>2</fan_out>
+		<usage>Clock</usage>
+		<global>no</global>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|EPEO2888_0</name>
+		<location>LCFF_X22_Y35_N5</location>
+		<fan_out>2</fan_out>
+		<usage>Clock</usage>
+		<global>no</global>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|\IAZL1155:12:LJMV0916_1</name>
+		<location>LCCOMB_X22_Y35_N30</location>
+		<fan_out>2</fan_out>
+		<usage>Clock</usage>
+		<global>no</global>
+	</row>
+	<row>
+		<name>altera_internal_jtag~UPDATEUSER</name>
+		<location>JTAG_X1_Y19_N0</location>
+		<fan_out>15</fan_out>
+		<usage>Async. clear, Clock, Latch enable</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK1</global_line_name>
+	</row>
+	<row>
+		<name>altera_internal_jtag~CLKDRUSER</name>
+		<location>JTAG_X1_Y19_N0</location>
+		<fan_out>23</fan_out>
+		<usage>Clock</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK9</global_line_name>
+	</row>
+	<row>
+		<name>altera_internal_jtag~TCKUTAP</name>
+		<location>JTAG_X1_Y19_N0</location>
+		<fan_out>250</fan_out>
+		<usage>Clock</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK0</global_line_name>
+	</row>
+	<row>
+		<name>CLOCK_50</name>
+		<location>PIN_N2</location>
+		<fan_out>2332</fan_out>
+		<usage>Clock</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK2</global_line_name>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|EPEO2888_7</name>
+		<location>LCFF_X31_Y35_N1</location>
+		<fan_out>20</fan_out>
+		<usage>Clock</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK11</global_line_name>
+	</row>
+	<row>
+		<name>sld_hub:sld_hub_inst|CLR_SIGNAL</name>
+		<location>LCFF_X43_Y23_N7</location>
+		<fan_out>274</fan_out>
+		<usage>Async. clear</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK13</global_line_name>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_1:the_cpu_1|hq3myc14108phmpo7y7qmhbp98hy0vq~0</name>
+		<location>LCCOMB_X35_Y23_N2</location>
+		<fan_out>1740</fan_out>
+		<usage>Async. clear</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK15</global_line_name>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|VELJ8121:JDCF0099|EHEH8502</name>
+		<location>LCCOMB_X40_Y23_N16</location>
+		<fan_out>9</fan_out>
+		<usage>Async. clear</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK14</global_line_name>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|TwoProc_reset_clk_domain_synch_module:TwoProc_reset_clk_domain_synch|data_out</name>
+		<location>LCFF_X35_Y23_N3</location>
+		<fan_out>340</fan_out>
+		<usage>Async. clear</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK8</global_line_name>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|MDCK2395:\cycloneii_WCRO7487_gen_0:cycloneii_WCRO7487_gen_1|WCRO7487_0</name>
+		<location>LCCOMB_X36_Y34_N16</location>
+		<fan_out>17</fan_out>
+		<usage>Clock</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK10</global_line_name>
+	</row>
+	<row>
+		<name>pzdyqx:nabboc|process1~0</name>
+		<location>LCCOMB_X43_Y26_N20</location>
+		<fan_out>4</fan_out>
+		<usage>Async. clear</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK6</global_line_name>
+	</row>
+	<row>
+		<name>sld_hub:sld_hub_inst|sld_jtag_state_machine:jtag_state_machine|state[0]</name>
+		<location>LCFF_X43_Y23_N17</location>
+		<fan_out>13</fan_out>
+		<usage>Async. clear</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK7</global_line_name>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|reset_n_sources~17</name>
+		<location>LCCOMB_X36_Y20_N16</location>
+		<fan_out>2</fan_out>
+		<usage>Async. clear</usage>
+		<global>yes</global>
+		<global_resource_used>Global clock</global_resource_used>
+		<global_line_name>GCLK12</global_line_name>
+	</row>
+</control_signals>
+<non_global_high_fan_out_signals>
+	<row>
+		<name>TwoProc:mytwo|out_1:the_out_1|data_out[0]</name>
+		<fan_out>1</fan_out>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|out_1:the_out_1|data_out[1]</name>
+		<fan_out>1</fan_out>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|out_1:the_out_1|data_out[2]</name>
+		<fan_out>1</fan_out>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|out_1:the_out_1|data_out[3]</name>
+		<fan_out>1</fan_out>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|out_1:the_out_1|data_out[4]</name>
+		<fan_out>1</fan_out>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|out_1:the_out_1|data_out[5]</name>
+		<fan_out>1</fan_out>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|out_1:the_out_1|data_out[6]</name>
+		<fan_out>1</fan_out>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|out_1:the_out_1|data_out[7]</name>
+		<fan_out>1</fan_out>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|out_1:the_out_1|data_out[8]</name>
+		<fan_out>1</fan_out>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|out_0:the_out_0|data_out[0]</name>
+		<fan_out>1</fan_out>
+	</row>
+</non_global_high_fan_out_signals>
+<ram_summary>
+	<row>
+		<name>TwoProc:mytwo|cpu_1:the_cpu_1|cpu_1_register_bank_b_module:cpu_1_register_bank_b|altsyncram:the_altsyncram|altsyncram_7be1:auto_generated|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>Simple Dual Port</mode>
+		<port_a_depth>32</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_b_depth>32</port_b_depth>
+		<port_b_width>32</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>1024</size>
+		<m4ks>1</m4ks>
+		<mif>cpu_1_rf_ram_b.mif</mif>
+		<location>M4K_X26_Y16</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_1:the_cpu_1|cpu_1_register_bank_a_module:cpu_1_register_bank_a|altsyncram:the_altsyncram|altsyncram_6be1:auto_generated|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>Simple Dual Port</mode>
+		<port_a_depth>32</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_b_depth>32</port_b_depth>
+		<port_b_width>32</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>1024</size>
+		<m4ks>1</m4ks>
+		<mif>cpu_1_rf_ram_a.mif</mif>
+		<location>M4K_X26_Y17</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_0:the_cpu_0|cpu_0_register_bank_b_module:cpu_0_register_bank_b|altsyncram:the_altsyncram|altsyncram_5be1:auto_generated|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>Simple Dual Port</mode>
+		<port_a_depth>32</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_b_depth>32</port_b_depth>
+		<port_b_width>32</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>1024</size>
+		<m4ks>1</m4ks>
+		<mif>cpu_0_rf_ram_b.mif</mif>
+		<location>M4K_X26_Y15</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_0:the_cpu_0|cpu_0_register_bank_a_module:cpu_0_register_bank_a|altsyncram:the_altsyncram|altsyncram_4be1:auto_generated|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>Simple Dual Port</mode>
+		<port_a_depth>32</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_b_depth>32</port_b_depth>
+		<port_b_width>32</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>1024</size>
+		<m4ks>1</m4ks>
+		<mif>cpu_0_rf_ram_a.mif</mif>
+		<location>M4K_X26_Y14</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_1:the_cpu_1|cpu_1_ic_data_module:cpu_1_ic_data|altsyncram:the_altsyncram|altsyncram_6pb1:auto_generated|altsyncram_esk1:altsyncram1|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>True Dual Port</mode>
+		<port_a_depth>256</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_b_depth>256</port_b_depth>
+		<port_b_width>32</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>8192</size>
+		<m4ks>2</m4ks>
+		<mif>None</mif>
+		<location>M4K_X26_Y19, M4K_X26_Y18</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|onchip_memory_1:the_onchip_memory_1|altsyncram:the_altsyncram|altsyncram_98a1:auto_generated|ALTSYNCRAM</name>
+		<type>M4K</type>
+		<mode>Single Port</mode>
+		<port_a_depth>4096</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<size>131072</size>
+		<m4ks>32</m4ks>
+		<mif>onchip_memory_1.hex</mif>
+		<location>M4K_X52_Y22, M4K_X13_Y23, M4K_X26_Y28, M4K_X26_Y30, M4K_X52_Y26, M4K_X13_Y29, M4K_X13_Y25, M4K_X26_Y34, M4K_X52_Y23, M4K_X52_Y28, M4K_X13_Y24, M4K_X26_Y31, M4K_X52_Y21, M4K_X13_Y28, M4K_X26_Y26, M4K_X26_Y33, M4K_X52_Y20, M4K_X26_Y29, M4K_X13_Y26, M4K_X13_Y31, M4K_X52_Y27, M4K_X13_Y22, M4K_X26_Y27, M4K_X13_Y32, M4K_X26_Y25, M4K_X13_Y27, M4K_X52_Y25, M4K_X26_Y32, M4K_X52_Y24, M4K_X52_Y29, M4K_X13_Y21, M4K_X13_Y30</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_1:the_cpu_1|cpu_1_nios2_oci:the_cpu_1_nios2_oci|cpu_1_nios2_ocimem:the_cpu_1_nios2_ocimem|cpu_1_ociram_lpm_dram_bdp_component_module:cpu_1_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram|altsyncram_d572:auto_generated|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>True Dual Port</mode>
+		<port_a_depth>256</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_b_depth>256</port_b_depth>
+		<port_b_width>32</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>8192</size>
+		<m4ks>2</m4ks>
+		<mif>cpu_1_ociram_default_contents.mif</mif>
+		<location>M4K_X26_Y23, M4K_X26_Y24</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_1:the_cpu_1|cpu_1_ic_tag_module:cpu_1_ic_tag|altsyncram:the_altsyncram|altsyncram_ohe1:auto_generated|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>Simple Dual Port</mode>
+		<port_a_depth>32</port_a_depth>
+		<port_a_width>16</port_a_width>
+		<port_b_depth>32</port_b_depth>
+		<port_b_width>16</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>512</size>
+		<m4ks>1</m4ks>
+		<mif>cpu_1_ic_tag_ram.mif</mif>
+		<location>M4K_X52_Y17</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_0:the_cpu_0|cpu_0_ic_data_module:cpu_0_ic_data|altsyncram:the_altsyncram|altsyncram_6pb1:auto_generated|altsyncram_esk1:altsyncram1|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>True Dual Port</mode>
+		<port_a_depth>256</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_b_depth>256</port_b_depth>
+		<port_b_width>32</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>8192</size>
+		<m4ks>2</m4ks>
+		<mif>None</mif>
+		<location>M4K_X26_Y13, M4K_X26_Y12</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|onchip_memory_0:the_onchip_memory_0|altsyncram:the_altsyncram|altsyncram_88a1:auto_generated|ALTSYNCRAM</name>
+		<type>M4K</type>
+		<mode>Single Port</mode>
+		<port_a_depth>4096</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<size>131072</size>
+		<m4ks>32</m4ks>
+		<mif>onchip_memory_0.hex</mif>
+		<location>M4K_X13_Y12, M4K_X52_Y11, M4K_X13_Y19, M4K_X52_Y15, M4K_X13_Y5, M4K_X26_Y6, M4K_X13_Y13, M4K_X52_Y18, M4K_X13_Y8, M4K_X26_Y5, M4K_X13_Y17, M4K_X52_Y16, M4K_X13_Y9, M4K_X26_Y8, M4K_X13_Y15, M4K_X52_Y12, M4K_X13_Y7, M4K_X26_Y7, M4K_X13_Y14, M4K_X26_Y11, M4K_X13_Y18, M4K_X52_Y14, M4K_X13_Y10, M4K_X26_Y20, M4K_X13_Y11, M4K_X52_Y10, M4K_X13_Y20, M4K_X52_Y19, M4K_X13_Y6, M4K_X26_Y10, M4K_X13_Y16, M4K_X52_Y13</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_0:the_cpu_0|cpu_0_nios2_oci:the_cpu_0_nios2_oci|cpu_0_nios2_ocimem:the_cpu_0_nios2_ocimem|cpu_0_ociram_lpm_dram_bdp_component_module:cpu_0_ociram_lpm_dram_bdp_component|altsyncram:the_altsyncram|altsyncram_c572:auto_generated|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>True Dual Port</mode>
+		<port_a_depth>256</port_a_depth>
+		<port_a_width>32</port_a_width>
+		<port_b_depth>256</port_b_depth>
+		<port_b_width>32</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>8192</size>
+		<m4ks>2</m4ks>
+		<mif>cpu_0_ociram_default_contents.mif</mif>
+		<location>M4K_X26_Y22, M4K_X26_Y21</location>
+	</row>
+	<row>
+		<name>TwoProc:mytwo|cpu_0:the_cpu_0|cpu_0_ic_tag_module:cpu_0_ic_tag|altsyncram:the_altsyncram|altsyncram_lhe1:auto_generated|ALTSYNCRAM</name>
+		<type>AUTO</type>
+		<mode>Simple Dual Port</mode>
+		<port_a_depth>32</port_a_depth>
+		<port_a_width>15</port_a_width>
+		<port_b_depth>32</port_b_depth>
+		<port_b_width>15</port_b_width>
+		<port_a_input_registers>yes</port_a_input_registers>
+		<port_a_output_registers>no</port_a_output_registers>
+		<port_b_input_registers>yes</port_b_input_registers>
+		<port_b_output_registers>no</port_b_output_registers>
+		<size>480</size>
+		<m4ks>1</m4ks>
+		<mif>cpu_0_ic_tag_ram.mif</mif>
+		<location>M4K_X26_Y9</location>
+	</row>
+</ram_summary>
+<dsp_block_usage_summary>
+	<row>
+		<statistic>Simple Multipliers (9-bit)</statistic>
+		<number_used>0</number_used>
+		<available_per_block>2</available_per_block>
+		<maximum_available>70</maximum_available>
+	</row>
+	<row>
+		<statistic>Simple Multipliers (18-bit)</statistic>
+		<number_used>4</number_used>
+		<available_per_block>1</available_per_block>
+		<maximum_available>35</maximum_available>
+	</row>
+	<row>
+		<statistic>Embedded Multiplier Blocks</statistic>
+		<number_used>4</number_used>
+		<maximum_available>35</maximum_available>
+	</row>
+	<row>
+		<statistic>Embedded Multiplier 9-bit elements</statistic>
+		<number_used>8</number_used>
+		<available_per_block>2</available_per_block>
+		<maximum_available>70</maximum_available>
+	</row>
+	<row>
+		<statistic>Signed Embedded Multipliers</statistic>
+		<number_used>0</number_used>
+	</row>
+	<row>
+		<statistic>Unsigned Embedded Multipliers</statistic>
+		<number_used>4</number_used>
+	</row>
+	<row>
+		<statistic>Mixed Sign Embedded Multipliers</statistic>
+		<number_used>0</number_used>
+	</row>
+	<row>
+		<statistic>Variable Sign Embedded Multipliers</statistic>
+		<number_used>0</number_used>
+	</row>
+	<row>
+		<statistic>Dedicated Input Shift Register Chains</statistic>
+		<number_used>0</number_used>
+	</row>
+</dsp_block_usage_summary>
+<interconnect_usage_summary>
+	<rsc name="Local interconnects" util="6" max=" 33216 " type="int">1848 </rsc>
+	<rsc name="Block interconnects" util="10" max=" 94460 " type="int">9370 </rsc>
+	<rsc name="R4 interconnects" util="12" max=" 81294 " type="int">9422 </rsc>
+	<rsc name="R24 interconnects" util="10" max=" 3091 " type="int">313 </rsc>
+	<rsc name="C4 interconnects" util="12" max=" 60840 " type="int">7070 </rsc>
+	<rsc name="C16 interconnects" util="8" max=" 3315 " type="int">252 </rsc>
+	<rsc name="Global clocks" util="81" max=" 16 " type="int">13 </rsc>
+	<rsc name="Direct links" util="1" max=" 94460 " type="int">619 </rsc>
+</interconnect_usage_summary>
+<mep_data>
+	<command_line>quartus_fit --read_settings_files=off --write_settings_files=off TwoProcessor -c TwoProcessor</command_line>
+</mep_data>
+<software_data>
+	<smart_recompile>off</smart_recompile>
+</software_data>
+<messages>
+	<warning>Warning: Following 1 pins have nothing, GND, or VCC driving datain port -- changes to this connectivity may change fitting results</warning>
+	<warning>Warning: Found 28 output pins without output pin load capacitance assignment</warning>
+	<warning>Warning: Ignored locations or region assignments to the following nodes</warning>
+	<warning>Warning: Node &quot;VGA_VS&quot; is assigned to location or region, but does not exist in design</warning>
+	<warning>Warning: Node &quot;VGA_SYNC&quot; is assigned to location or region, but does not exist in design</warning>
+	<info>Info: Quartus II Fitter was successful. 0 errors, 372 warnings</info>
+	<info>Info: Elapsed time: 00:01:44</info>
+	<info>Info: Processing ended: Mon Oct 16 09:18:10 2006</info>
+	<info>Info: Pin TDO has GND driving its datain port</info>
+	<info>Info: Node TwoProc:mytwo|TwoProc_reset_clk_domain_synch_module:TwoProc_reset_clk_domain_synch|data_out~clkctrl uses non-global routing resources to route signals to global destination nodes</info>
+</messages>
+<fitter_settings>
+	<row>
+		<option>Device</option>
+		<setting>EP2C35F672C6</setting>
+	</row>
+	<row>
+		<option>Use smart compilation</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Router Timing Optimization Level</option>
+		<setting>Normal</setting>
+		<default_value>Normal</default_value>
+	</row>
+	<row>
+		<option>Placement Effort Multiplier</option>
+		<setting>1.0</setting>
+		<default_value>1.0</default_value>
+	</row>
+	<row>
+		<option>Router Effort Multiplier</option>
+		<setting>1.0</setting>
+		<default_value>1.0</default_value>
+	</row>
+	<row>
+		<option>Optimize Hold Timing</option>
+		<setting>IO Paths and Minimum TPD Paths</setting>
+		<default_value>IO Paths and Minimum TPD Paths</default_value>
+	</row>
+	<row>
+		<option>Optimize Fast-Corner Timing</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>PowerPlay Power Optimization</option>
+		<setting>Normal compilation</setting>
+		<default_value>Normal compilation</default_value>
+	</row>
+	<row>
+		<option>Optimize Timing</option>
+		<setting>Normal compilation</setting>
+		<default_value>Normal compilation</default_value>
+	</row>
+	<row>
+		<option>Optimize IOC Register Placement for Timing</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Limit to One Fitting Attempt</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Final Placement Optimizations</option>
+		<setting>Automatically</setting>
+		<default_value>Automatically</default_value>
+	</row>
+	<row>
+		<option>Fitter Aggressive Routability Optimizations</option>
+		<setting>Automatically</setting>
+		<default_value>Automatically</default_value>
+	</row>
+	<row>
+		<option>Fitter Initial Placement Seed</option>
+		<setting>1</setting>
+		<default_value>1</default_value>
+	</row>
+	<row>
+		<option>PCI I/O</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Weak Pull-Up Resistor</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Enable Bus-Hold Circuitry</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Auto Global Memory Control Signals</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Auto Packed Registers -- Stratix II/Cyclone II</option>
+		<setting>Auto</setting>
+		<default_value>Auto</default_value>
+	</row>
+	<row>
+		<option>Auto Delay Chains</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Auto Merge PLLs</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Ignore PLL Mode When Merging PLLs</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+	<row>
+		<option>Fitter Effort</option>
+		<setting>Auto Fit</setting>
+		<default_value>Auto Fit</default_value>
+	</row>
+	<row>
+		<option>Physical Synthesis Effort Level</option>
+		<setting>Normal</setting>
+		<default_value>Normal</default_value>
+	</row>
+	<row>
+		<option>Auto Global Clock</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Auto Global Register Control Signals</option>
+		<setting>On</setting>
+		<default_value>On</default_value>
+	</row>
+	<row>
+		<option>Always Enable Input Buffers</option>
+		<setting>Off</setting>
+		<default_value>Off</default_value>
+	</row>
+</fitter_settings>
+<fitter_device_options>
+	<row>
+		<option>Enable user-supplied start-up clock (CLKUSR)</option>
+		<setting>Off</setting>
+	</row>
+	<row>
+		<option>Enable device-wide reset (DEV_CLRn)</option>
+		<setting>Off</setting>
+	</row>
+	<row>
+		<option>Enable device-wide output enable (DEV_OE)</option>
+		<setting>Off</setting>
+	</row>
+	<row>
+		<option>Enable INIT_DONE output</option>
+		<setting>Off</setting>
+	</row>
+	<row>
+		<option>Configuration scheme</option>
+		<setting>Active Serial</setting>
+	</row>
+	<row>
+		<option>Error detection CRC</option>
+		<setting>Off</setting>
+	</row>
+	<row>
+		<option>Reserve nCEO pin after configuration</option>
+		<setting>As output driving ground</setting>
+	</row>
+	<row>
+		<option>Reserve all unused pins</option>
+		<setting>As output driving ground</setting>
+	</row>
+	<row>
+		<option>Base pin-out file on sameframe device</option>
+		<setting>Off</setting>
+	</row>
+</fitter_device_options>
+<input_pins>
+	<row>
+		<name>CLOCK_27</name>
+		<pin__>D13</pin__>
+		<i_o_bank>3</i_o_bank>
+		<x_coordinate>31</x_coordinate>
+		<y_coordinate>36</y_coordinate>
+		<cell_number>3</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>CLOCK_50</name>
+		<pin__>N2</pin__>
+		<i_o_bank>2</i_o_bank>
+		<x_coordinate>0</x_coordinate>
+		<y_coordinate>18</y_coordinate>
+		<cell_number>0</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>EXT_CLOCK</name>
+		<pin__>P26</pin__>
+		<i_o_bank>6</i_o_bank>
+		<x_coordinate>65</x_coordinate>
+		<y_coordinate>19</y_coordinate>
+		<cell_number>3</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>KEY[0]</name>
+		<pin__>G26</pin__>
+		<i_o_bank>5</i_o_bank>
+		<x_coordinate>65</x_coordinate>
+		<y_coordinate>27</y_coordinate>
+		<cell_number>1</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>KEY[1]</name>
+		<pin__>N23</pin__>
+		<i_o_bank>5</i_o_bank>
+		<x_coordinate>65</x_coordinate>
+		<y_coordinate>20</y_coordinate>
+		<cell_number>2</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>KEY[2]</name>
+		<pin__>P23</pin__>
+		<i_o_bank>6</i_o_bank>
+		<x_coordinate>65</x_coordinate>
+		<y_coordinate>18</y_coordinate>
+		<cell_number>0</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>KEY[3]</name>
+		<pin__>W26</pin__>
+		<i_o_bank>6</i_o_bank>
+		<x_coordinate>65</x_coordinate>
+		<y_coordinate>10</y_coordinate>
+		<cell_number>2</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[0]</name>
+		<pin__>N25</pin__>
+		<i_o_bank>5</i_o_bank>
+		<x_coordinate>65</x_coordinate>
+		<y_coordinate>19</y_coordinate>
+		<cell_number>0</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[10]</name>
+		<pin__>N1</pin__>
+		<i_o_bank>2</i_o_bank>
+		<x_coordinate>0</x_coordinate>
+		<y_coordinate>18</y_coordinate>
+		<cell_number>1</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[11]</name>
+		<pin__>P1</pin__>
+		<i_o_bank>1</i_o_bank>
+		<x_coordinate>0</x_coordinate>
+		<y_coordinate>18</y_coordinate>
+		<cell_number>3</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[12]</name>
+		<pin__>P2</pin__>
+		<i_o_bank>1</i_o_bank>
+		<x_coordinate>0</x_coordinate>
+		<y_coordinate>18</y_coordinate>
+		<cell_number>2</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[13]</name>
+		<pin__>T7</pin__>
+		<i_o_bank>1</i_o_bank>
+		<x_coordinate>0</x_coordinate>
+		<y_coordinate>11</y_coordinate>
+		<cell_number>0</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[14]</name>
+		<pin__>U3</pin__>
+		<i_o_bank>1</i_o_bank>
+		<x_coordinate>0</x_coordinate>
+		<y_coordinate>12</y_coordinate>
+		<cell_number>0</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[15]</name>
+		<pin__>U4</pin__>
+		<i_o_bank>1</i_o_bank>
+		<x_coordinate>0</x_coordinate>
+		<y_coordinate>12</y_coordinate>
+		<cell_number>1</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[16]</name>
+		<pin__>V1</pin__>
+		<i_o_bank>1</i_o_bank>
+		<x_coordinate>0</x_coordinate>
+		<y_coordinate>12</y_coordinate>
+		<cell_number>2</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[17]</name>
+		<pin__>V2</pin__>
+		<i_o_bank>1</i_o_bank>
+		<x_coordinate>0</x_coordinate>
+		<y_coordinate>12</y_coordinate>
+		<cell_number>3</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[1]</name>
+		<pin__>N26</pin__>
+		<i_o_bank>5</i_o_bank>
+		<x_coordinate>65</x_coordinate>
+		<y_coordinate>19</y_coordinate>
+		<cell_number>1</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[2]</name>
+		<pin__>P25</pin__>
+		<i_o_bank>6</i_o_bank>
+		<x_coordinate>65</x_coordinate>
+		<y_coordinate>19</y_coordinate>
+		<cell_number>2</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[3]</name>
+		<pin__>AE14</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>33</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>0</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[4]</name>
+		<pin__>AF14</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>33</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>1</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[5]</name>
+		<pin__>AD13</pin__>
+		<i_o_bank>8</i_o_bank>
+		<x_coordinate>33</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>2</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[6]</name>
+		<pin__>AC13</pin__>
+		<i_o_bank>8</i_o_bank>
+		<x_coordinate>33</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>3</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[7]</name>
+		<pin__>C13</pin__>
+		<i_o_bank>3</i_o_bank>
+		<x_coordinate>31</x_coordinate>
+		<y_coordinate>36</y_coordinate>
+		<cell_number>2</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[8]</name>
+		<pin__>B13</pin__>
+		<i_o_bank>4</i_o_bank>
+		<x_coordinate>31</x_coordinate>
+		<y_coordinate>36</y_coordinate>
+		<cell_number>0</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>SW[9]</name>
+		<pin__>A13</pin__>
+		<i_o_bank>4</i_o_bank>
+		<x_coordinate>31</x_coordinate>
+		<y_coordinate>36</y_coordinate>
+		<cell_number>1</cell_number>
+		<combinational_fan_out>1</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>TCK</name>
+		<pin__>D14</pin__>
+		<i_o_bank>4</i_o_bank>
+		<x_coordinate>33</x_coordinate>
+		<y_coordinate>36</y_coordinate>
+		<cell_number>0</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>TCS</name>
+		<pin__>A14</pin__>
+		<i_o_bank>4</i_o_bank>
+		<x_coordinate>33</x_coordinate>
+		<y_coordinate>36</y_coordinate>
+		<cell_number>1</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+	<row>
+		<name>TDI</name>
+		<pin__>B14</pin__>
+		<i_o_bank>4</i_o_bank>
+		<x_coordinate>33</x_coordinate>
+		<y_coordinate>36</y_coordinate>
+		<cell_number>2</cell_number>
+		<combinational_fan_out>0</combinational_fan_out>
+		<registered_fan_out>0</registered_fan_out>
+		<global>no</global>
+		<input_register>no</input_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+	</row>
+</input_pins>
+<output_pins>
+	<row>
+		<name>LEDG[0]</name>
+		<pin__>AE22</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>59</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>0</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDG[1]</name>
+		<pin__>AF22</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>59</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>1</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDG[2]</name>
+		<pin__>W19</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>59</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>2</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDG[3]</name>
+		<pin__>V18</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>59</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>3</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDG[4]</name>
+		<pin__>U18</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>57</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>0</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDG[5]</name>
+		<pin__>U17</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>57</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>1</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDG[6]</name>
+		<pin__>AA20</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>57</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>2</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDG[7]</name>
+		<pin__>Y18</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>57</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>3</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDG[8]</name>
+		<pin__>Y12</pin__>
+		<i_o_bank>8</i_o_bank>
+		<x_coordinate>29</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>0</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[0]</name>
+		<pin__>AE23</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>63</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>0</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[10]</name>
+		<pin__>AA13</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>35</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>0</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[11]</name>
+		<pin__>AC14</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>35</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>1</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[12]</name>
+		<pin__>AD15</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>35</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>2</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[13]</name>
+		<pin__>AE15</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>35</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>3</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[14]</name>
+		<pin__>AF13</pin__>
+		<i_o_bank>8</i_o_bank>
+		<x_coordinate>31</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>0</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[15]</name>
+		<pin__>AE13</pin__>
+		<i_o_bank>8</i_o_bank>
+		<x_coordinate>31</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>1</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[16]</name>
+		<pin__>AE12</pin__>
+		<i_o_bank>8</i_o_bank>
+		<x_coordinate>31</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>2</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[17]</name>
+		<pin__>AD12</pin__>
+		<i_o_bank>8</i_o_bank>
+		<x_coordinate>31</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>3</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[1]</name>
+		<pin__>AF23</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>63</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>1</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[2]</name>
+		<pin__>AB21</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>63</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>2</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[3]</name>
+		<pin__>AC22</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>63</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>3</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[4]</name>
+		<pin__>AD22</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>61</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>0</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[5]</name>
+		<pin__>AD23</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>61</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>1</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[6]</name>
+		<pin__>AD21</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>61</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>2</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[7]</name>
+		<pin__>AC21</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>61</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>3</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[8]</name>
+		<pin__>AA14</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>37</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>2</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>LEDR[9]</name>
+		<pin__>Y13</pin__>
+		<i_o_bank>7</i_o_bank>
+		<x_coordinate>37</x_coordinate>
+		<y_coordinate>0</y_coordinate>
+		<cell_number>3</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+	<row>
+		<name>TDO</name>
+		<pin__>F14</pin__>
+		<i_o_bank>4</i_o_bank>
+		<x_coordinate>35</x_coordinate>
+		<y_coordinate>36</y_coordinate>
+		<cell_number>3</cell_number>
+		<output_register>no</output_register>
+		<output_enable_register>no</output_enable_register>
+		<power_up_high>no</power_up_high>
+		<pci_i_o_enabled>no</pci_i_o_enabled>
+		<open_drain>no</open_drain>
+		<tri_primitive>no</tri_primitive>
+		<bus_hold>no</bus_hold>
+		<weak_pull_up>Off</weak_pull_up>
+		<i_o_standard>LVTTL</i_o_standard>
+		<current_strength>24mA</current_strength>
+		<termination>Off</termination>
+		<location_assigned_by>User</location_assigned_by>
+		<load units="pF">0</load>
+	</row>
+</output_pins>
+<i_o_bank_usage>
+	<row>
+		<i_o_bank>1</i_o_bank>
+		<usage>7 / 64 ( 11 % )</usage>
+		<vccio_voltage>3.3V</vccio_voltage>
+	</row>
+	<row>
+		<i_o_bank>2</i_o_bank>
+		<usage>4 / 59 ( 7 % )</usage>
+		<vccio_voltage>3.3V</vccio_voltage>
+	</row>
+	<row>
+		<i_o_bank>3</i_o_bank>
+		<usage>2 / 56 ( 4 % )</usage>
+		<vccio_voltage>3.3V</vccio_voltage>
+	</row>
+	<row>
+		<i_o_bank>4</i_o_bank>
+		<usage>6 / 58 ( 10 % )</usage>
+		<vccio_voltage>3.3V</vccio_voltage>
+	</row>
+	<row>
+		<i_o_bank>5</i_o_bank>
+		<usage>4 / 65 ( 6 % )</usage>
+		<vccio_voltage>3.3V</vccio_voltage>
+	</row>
+	<row>
+		<i_o_bank>6</i_o_bank>
+		<usage>5 / 59 ( 8 % )</usage>
+		<vccio_voltage>3.3V</vccio_voltage>
+	</row>
+	<row>
+		<i_o_bank>7</i_o_bank>
+		<usage>24 / 58 ( 41 % )</usage>
+		<vccio_voltage>3.3V</vccio_voltage>
+	</row>
+	<row>
+		<i_o_bank>8</i_o_bank>
+		<usage>7 / 56 ( 13 % )</usage>
+		<vccio_voltage>3.3V</vccio_voltage>
+	</row>
+</i_o_bank_usage>
+<advanced_data___general>
+	<row>
+		<name>Status Code</name>
+		<value>0</value>
+	</row>
+	<row>
+		<name>Desired User Slack</name>
+		<value>0</value>
+	</row>
+	<row>
+		<name>Fit Attempts</name>
+		<value>1</value>
+	</row>
+</advanced_data___general>
+<advanced_data___placement_preparation>
+	<row>
+		<name>Auto Fit Point 1 - Fit Attempt 1</name>
+		<value>ff</value>
+	</row>
+	<row>
+		<name>Mid Wire Use - Fit Attempt 1</name>
+		<value>14</value>
+	</row>
+	<row>
+		<name>Mid Slack - Fit Attempt 1</name>
+		<value>-16429</value>
+	</row>
+	<row>
+		<name>Internal Atom Count - Fit Attempt 1</name>
+		<value>6440</value>
+	</row>
+	<row>
+		<name>LE/ALM Count - Fit Attempt 1</name>
+		<value>4145</value>
+	</row>
+	<row>
+		<name>LAB Count - Fit Attempt 1</name>
+		<value>351</value>
+	</row>
+	<row>
+		<name>Outputs per Lab - Fit Attempt 1</name>
+		<value>9.567</value>
+	</row>
+	<row>
+		<name>Inputs per LAB - Fit Attempt 1</name>
+		<value>20.000</value>
+	</row>
+	<row>
+		<name>Global Inputs per LAB - Fit Attempt 1</name>
+		<value>1.966</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;non-global clock + sync load&apos; - Fit Attempt 1</name>
+		<value>0:213;1:134;2:4</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;non-global controls&apos; - Fit Attempt 1</name>
+		<value>0:83;1:113;2:137;3:18</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;non-global + aclr&apos; - Fit Attempt 1</name>
+		<value>0:15;1:68;2:109;3:137;4:20;5:2</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;global non-clock non-aclr&apos; - Fit Attempt 1</name>
+		<value>0:349;1:2</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;global controls&apos; - Fit Attempt 1</name>
+		<value>0:19;1:4;2:292;3:34;4:2</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;deterministic LABSMUXA/LABXMUXB&apos; - Fit Attempt 1</name>
+		<value>0:110;1:239;2:2</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;deterministic LABSMUXC/LABXMUXD&apos; - Fit Attempt 1</name>
+		<value>0:84;1:155;2:104;3:8</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;clock / ce pair constraint&apos; - Fit Attempt 1</name>
+		<value>0:15;1:173;2:163</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;aclr constraint&apos; - Fit Attempt 1</name>
+		<value>0:15;1:290;2:46</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;true sload_sclear pair&apos; - Fit Attempt 1</name>
+		<value>0:133;1:218</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;constant sload_sclear pair&apos; - Fit Attempt 1</name>
+		<value>0:346;1:5</value>
+	</row>
+	<row>
+		<name>LAB Constraint &apos;has placement constraint&apos; - Fit Attempt 1</name>
+		<value>0:325;1:26</value>
+	</row>
+	<row>
+		<name>LEs in Chains - Fit Attempt 1</name>
+		<value>463</value>
+	</row>
+	<row>
+		<name>LEs in Long Chains - Fit Attempt 1</name>
+		<value>326</value>
+	</row>
+	<row>
+		<name>LABs with Chains - Fit Attempt 1</name>
+		<value>40</value>
+	</row>
+	<row>
+		<name>LABs with Multiple Chains - Fit Attempt 1</name>
+		<value>0</value>
+	</row>
+	<row>
+		<name>Time - Fit Attempt 1</name>
+		<value>4</value>
+	</row>
+	<row>
+		<name>Time in tsm_dat.dll - Fit Attempt 1</name>
+		<value>0.031</value>
+	</row>
+	<row>
+		<name>Time in tsm_tan.dll - Fit Attempt 1</name>
+		<value>1.515</value>
+	</row>
+</advanced_data___placement_preparation>
+<advanced_data___placement>
+	<row>
+		<name>Auto Fit Point 2 - Fit Attempt 1</name>
+		<value>ff</value>
+	</row>
+	<row>
+		<name>Early Wire Use - Fit Attempt 1</name>
+		<value>5</value>
+	</row>
+	<row>
+		<name>Early Slack - Fit Attempt 1</name>
+		<value>-16788</value>
+	</row>
+	<row>
+		<name>Auto Fit Point 3 - Fit Attempt 1</name>
+		<value>ff</value>
+	</row>
+	<row>
+		<name>Auto Fit Point 4 - Fit Attempt 1</name>
+		<value>ff</value>
+	</row>
+	<row>
+		<name>Mid Wire Use - Fit Attempt 1</name>
+		<value>8</value>
+	</row>
+	<row>
+		<name>Mid Slack - Fit Attempt 1</name>
+		<value>-13435</value>
+	</row>
+	<row>
+		<name>Late Wire Use - Fit Attempt 1</name>
+		<value>9</value>
+	</row>
+	<row>
+		<name>Late Slack - Fit Attempt 1</name>
+		<value>-13435</value>
+	</row>
+	<row>
+		<name>Auto Fit Point 5 - Fit Attempt 1</name>
+		<value>ff</value>
+	</row>
+	<row>
+		<name>Time - Fit Attempt 1</name>
+		<value>8</value>
+	</row>
+	<row>
+		<name>Time in tsm_tan.dll - Fit Attempt 1</name>
+		<value>2.905</value>
+	</row>
+</advanced_data___placement>
+<advanced_data___routing>
+	<row>
+		<name>Early Slack - Fit Attempt 1</name>
+		<value>-10344</value>
+	</row>
+	<row>
+		<name>Early Wire Use - Fit Attempt 1</name>
+		<value>10</value>
+	</row>
+	<row>
+		<name>Peak Regional Wire - Fit Attempt 1</name>
+		<value>54</value>
+	</row>
+	<row>
+		<name>Mid Slack - Fit Attempt 1</name>
+		<value>-13622</value>
+	</row>
+	<row>
+		<name>Late Slack - Fit Attempt 1</name>
+		<value>-11357</value>
+	</row>
+	<row>
+		<name>Late Wire Use - Fit Attempt 1</name>
+		<value>12</value>
+	</row>
+	<row>
+		<name>Time - Fit Attempt 1</name>
+		<value>40</value>
+	</row>
+	<row>
+		<name>Time in tsm_dat.dll - Fit Attempt 1</name>
+		<value>0.015</value>
+	</row>
+	<row>
+		<name>Time in tsm_tan.dll - Fit Attempt 1</name>
+		<value>11.810</value>
+	</row>
+</advanced_data___routing>
+<files>
+	<top>C:/DE2/NiosIItwoProcessor/TwoProcessor.v</top>
+	<extensions>
+		<ext filename="none">1</ext>
+		<ext ext_name="v">22</ext>
+		<ext ext_name="ptf">1</ext>
+		<ext ext_name="tdf">22</ext>
+		<ext ext_name="inc">17</ext>
+		<ext ext_name="lst">1</ext>
+		<ext ext_name="mif">8</ext>
+		<ext ext_name="hex">2</ext>
+		<ext ext_name="vhd">4</ext>
+	</extensions>
+	<sub_files>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_0.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_0_jtag_debug_module.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_0_jtag_debug_module_wrapper.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_0_mult_cell.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_0_test_bench.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_1.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_1_jtag_debug_module.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_1_jtag_debug_module_wrapper.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_1_mult_cell.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_1_test_bench.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/in_0.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/in_1.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/mutex_0.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/onchip_memory_0.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/onchip_memory_1.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/onchip_memory_2.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/out_0.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/out_1.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/timer_0.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/timer_1.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/TwoProc.ptf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/TwoProc.v</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/TwoProcessor.v</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/altsyncram.tdf</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/stratix_ram_block.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/lpm_mux.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/lpm_decode.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/aglobal60.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/altsyncram.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/a_rdenreg.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/altrom.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/altram.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/altdpram.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/altqpram.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/cbx.lst</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_6pb1.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_esk1.tdf</sub_file>
+		<sub_file>none</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_lhe1.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_0_ic_tag_ram.mif</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_4be1.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_0_rf_ram_a.mif</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_5be1.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_0_rf_ram_b.mif</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/altmult_add.tdf</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/stratix_mac_mult.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/stratix_mac_out.inc</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/mult_add_4cr2.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/ded_mult_2o81.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/dffpipe_93c.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/mult_add_6cr2.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_c572.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_0_ociram_default_contents.mif</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_e502.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_ohe1.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_1_ic_tag_ram.mif</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_6be1.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_1_rf_ram_a.mif</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_7be1.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_1_rf_ram_b.mif</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_d572.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/cpu_1_ociram_default_contents.mif</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_88a1.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/onchip_memory_0.hex</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/altsyncram_98a1.tdf</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/onchip_memory_1.hex</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/pzdyqx.vhd</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/sld_hub.vhd</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/lpm_shiftreg.tdf</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/lpm_constant.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/dffeea.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/lpm_decode.tdf</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/declut.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/altshift.inc</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/lpm_compare.inc</sub_file>
+		<sub_file>C:/DE2/NiosIItwoProcessor/db/decode_aoi.tdf</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/sld_dffex.vhd</sub_file>
+		<sub_file>c:/altera/quartus60/libraries/megafunctions/sld_rom_sr.vhd</sub_file>
+	</sub_files>
+</files>
+<architecture>
+	<family>Cyclone II</family>
+	<auto_device>OFF</auto_device>
+	<device>EP2C35F672C6</device>
+</architecture>
+<pkg_io>
+	<pin_std count="63">LVTTL</pin_std>
+</pkg_io>
+</talkback>

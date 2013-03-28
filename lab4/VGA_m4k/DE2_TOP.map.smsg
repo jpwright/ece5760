@@ -1,8 +1,0 @@
-Warning (10273): Verilog HDL warning at VGA_sram_3cpu_fast_sw_char.v(877): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at VGA_sram_3cpu_fast_sw_char.v(935): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at VGA_sram_3cpu_fast_sw_char.v(1061): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at VGA_sram_3cpu_fast_sw_char.v(1062): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at VGA_sram_3cpu_fast_sw_char.v(1063): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at VGA_sram_3cpu_fast_sw_char.v(1064): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at VGA_sram_3cpu_fast_sw_char.v(1065): extended using "x" or "z"
-Warning (10273): Verilog HDL warning at VGA_sram_3cpu_fast_sw_char.v(1066): extended using "x" or "z"

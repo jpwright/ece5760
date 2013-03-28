@@ -1,0 +1,19 @@
+# clk
+# cpu_0
+set_global_assignment -name SDC_FILE [file join $::quartus(qip_path) cpu_0.sdc]
+set_global_assignment -name SOURCE_FILE [file join $::quartus(qip_path) cpu_0.ocp]
+# null
+# onchip_memory_0
+# timer_0
+# out_0
+# in_0
+# cpu_1
+set_global_assignment -name SDC_FILE [file join $::quartus(qip_path) cpu_1.sdc]
+set_global_assignment -name SOURCE_FILE [file join $::quartus(qip_path) cpu_1.ocp]
+# onchip_memory_1
+# timer_1
+# out_1
+# in_1
+# mutex_0
+set_global_assignment -name SOPC_BUILDER_SIGNATURE_ID 00000000000000E00000013DAF1F2D3C 
+ 

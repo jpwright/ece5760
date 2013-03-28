@@ -1,0 +1,59 @@
+# clk
+# cpu_0
+set_global_assignment -name SDC_FILE [file join $::quartus(qip_path) cpu_0.sdc]
+set_global_assignment -name SOURCE_FILE [file join $::quartus(qip_path) cpu_0.ocp]
+# JTAG_UART_0
+# Interval_Timer
+# sysid
+# SDRAM
+# Red_LEDs
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Input_Output/altera_up_avalon_parallel_port/altera_up_avalon_parallel_port_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) Red_LEDs.v]
+# Green_LEDs
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) Green_LEDs.v]
+# Slider_Switches
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) Slider_Switches.v]
+# Pushbuttons
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) Pushbuttons.v]
+# Serial_Port
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Communications/altera_up_avalon_rs232/altera_up_avalon_rs232_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) Serial_Port.v]
+# AV_Config
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Audio_Video/altera_up_avalon_audio_and_video_config/altera_up_avalon_audio_and_video_config_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) AV_Config.v]
+# SRAM
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Memory/altera_up_avalon_sram/altera_up_avalon_sram_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) SRAM.v]
+# VGA_Pixel_Buffer
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Audio_Video/Video/altera_up_avalon_video_pixel_buffer_dma/altera_up_avalon_video_pixel_buffer_dma_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) VGA_Pixel_Buffer.v]
+# VGA_Char_Buffer
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Audio_Video/Video/altera_up_avalon_video_character_buffer_with_dma/altera_up_avalon_video_character_buffer_with_dma_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) VGA_Char_Buffer.v]
+# VGA_Controller
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Audio_Video/Video/altera_up_avalon_video_vga_controller/altera_up_avalon_video_vga_controller_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) VGA_Controller.v]
+# VGA_Pixel_RGB_Resampler
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Audio_Video/Video/altera_up_avalon_video_rgb_resampler/altera_up_avalon_video_rgb_resampler_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) VGA_Pixel_RGB_Resampler.v]
+# VGA_Dual_Clock_FIFO
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Audio_Video/Video/altera_up_avalon_video_dual_clock_buffer/altera_up_avalon_video_dual_clock_buffer_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) VGA_Dual_Clock_FIFO.v]
+# clk_27
+# Alpha_Blending
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/Audio_Video/Video/altera_up_avalon_video_alpha_blender/altera_up_avalon_video_alpha_blender_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) Alpha_Blending.v]
+# External_Clocks
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) University_Program/altera_up_avalon_clocks/altera_up_avalon_clocks_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) External_Clocks.v]
+# cpu_0_altera_nios_custom_instr_floating_point_inst
+set_global_assignment -name TCL_FILE [file join $::quartus(ip_rootpath) altera/nios2_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_qsys_hw.tcl]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(ip_rootpath) altera/nios2_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_wrapper.v]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(ip_rootpath) altera/nios2_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_qsys.v]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(ip_rootpath) altera/nios2_ip/altera_nios_custom_instr_floating_point_qsys/fpoint_hw_qsys.v]
+set_global_assignment -name VERILOG_FILE [file join $::quartus(qip_path) cpu_0_altera_nios_custom_instr_floating_point_inst.v]
+# pio_0
+# null
+set_global_assignment -name SDC_FILE [file join $::quartus(ip_rootpath) altera/sopc_builder_ip/altera_avalon_clock_adapter/altera_avalon_clock_adapter.sdc]
+set_global_assignment -name SOPC_BUILDER_SIGNATURE_ID 00000000000000E00000013DAFE2DAE2 
+ 

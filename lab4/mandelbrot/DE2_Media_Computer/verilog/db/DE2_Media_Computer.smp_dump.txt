@@ -1,0 +1,115 @@
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|nios_system_clock_2:the_nios_system_clock_2|nios_system_clock_2_master_FSM:master_FSM|master_state
+Name master_state.100 master_state.010 master_state.001 
+master_state.001 0 0 0 
+master_state.010 0 1 1 
+master_state.100 1 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|nios_system_clock_2:the_nios_system_clock_2|nios_system_clock_2_slave_FSM:slave_FSM|slave_state
+Name slave_state.100 slave_state.010 slave_state.001 
+slave_state.001 0 0 0 
+slave_state.010 0 1 1 
+slave_state.100 1 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|nios_system_clock_1:the_nios_system_clock_1|nios_system_clock_1_master_FSM:master_FSM|master_state
+Name master_state.100 master_state.010 master_state.001 
+master_state.001 0 0 0 
+master_state.010 0 1 1 
+master_state.100 1 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|nios_system_clock_1:the_nios_system_clock_1|nios_system_clock_1_slave_FSM:slave_FSM|slave_state
+Name slave_state.100 slave_state.010 slave_state.001 
+slave_state.001 0 0 0 
+slave_state.010 0 1 1 
+slave_state.100 1 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|nios_system_clock_0:the_nios_system_clock_0|nios_system_clock_0_master_FSM:master_FSM|master_state
+Name master_state.100 master_state.010 master_state.001 
+master_state.001 0 0 0 
+master_state.010 0 1 1 
+master_state.100 1 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|nios_system_clock_0:the_nios_system_clock_0|nios_system_clock_0_slave_FSM:slave_FSM|slave_state
+Name slave_state.100 slave_state.010 slave_state.001 
+slave_state.001 0 0 0 
+slave_state.010 0 1 1 
+slave_state.100 1 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|cpu_1:the_cpu_1|cpu_1_nios2_oci:the_cpu_1_nios2_oci|cpu_1_jtag_debug_module_wrapper:the_cpu_1_jtag_debug_module_wrapper|cpu_1_jtag_debug_module_tck:the_cpu_1_jtag_debug_module_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|cpu_0:the_cpu_0|cpu_0_nios2_oci:the_cpu_0_nios2_oci|cpu_0_jtag_debug_module_wrapper:the_cpu_0_jtag_debug_module_wrapper|cpu_0_jtag_debug_module_tck:the_cpu_0_jtag_debug_module_tck|DRsize
+Name DRsize.101 DRsize.100 DRsize.011 DRsize.010 DRsize.001 DRsize.000 
+DRsize.000 0 0 0 0 0 0 
+DRsize.001 0 0 0 0 1 1 
+DRsize.010 0 0 0 1 0 1 
+DRsize.011 0 0 1 0 0 1 
+DRsize.100 0 1 0 0 0 1 
+DRsize.101 1 0 0 0 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|VGA_Pixel_Buffer:the_VGA_Pixel_Buffer|present_state
+Name present_state.STATE_3_MAX_PENDING_READS_STALL present_state.STATE_2_READ_BUFFER present_state.STATE_1_WAIT_FOR_LAST_PIXEL present_state.STATE_0_IDLE 
+present_state.STATE_0_IDLE 0 0 0 0 
+present_state.STATE_1_WAIT_FOR_LAST_PIXEL 0 0 1 1 
+present_state.STATE_2_READ_BUFFER 0 1 0 1 
+present_state.STATE_3_MAX_PENDING_READS_STALL 1 0 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|SDRAM:the_SDRAM|m_next
+Name m_next.010000000 m_next.000010000 m_next.000001000 m_next.000000001 
+m_next.000000001 0 0 0 0 
+m_next.000001000 0 0 1 1 
+m_next.000010000 0 1 0 1 
+m_next.010000000 1 0 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|SDRAM:the_SDRAM|m_state
+Name m_state.100000000 m_state.010000000 m_state.001000000 m_state.000100000 m_state.000010000 m_state.000001000 m_state.000000100 m_state.000000010 m_state.000000001 
+m_state.000000001 0 0 0 0 0 0 0 0 0 
+m_state.000000010 0 0 0 0 0 0 0 1 1 
+m_state.000000100 0 0 0 0 0 0 1 0 1 
+m_state.000001000 0 0 0 0 0 1 0 0 1 
+m_state.000010000 0 0 0 0 1 0 0 0 1 
+m_state.000100000 0 0 0 1 0 0 0 0 1 
+m_state.001000000 0 0 1 0 0 0 0 0 1 
+m_state.010000000 0 1 0 0 0 0 0 0 1 
+m_state.100000000 1 0 0 0 0 0 0 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|SDRAM:the_SDRAM|i_next
+Name i_next.111 i_next.101 i_next.010 i_next.000 
+i_next.000 0 0 0 0 
+i_next.010 0 0 1 1 
+i_next.101 0 1 0 1 
+i_next.111 1 0 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|SDRAM:the_SDRAM|i_state
+Name i_state.111 i_state.101 i_state.011 i_state.010 i_state.001 i_state.000 
+i_state.000 0 0 0 0 0 0 
+i_state.001 0 0 0 0 1 1 
+i_state.010 0 0 0 1 0 1 
+i_state.011 0 0 1 0 0 1 
+i_state.101 0 1 0 0 0 1 
+i_state.111 1 0 0 0 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|AV_Config:the_AV_Config|s_serial_transfer
+Name s_serial_transfer.STATE_6_POST_READ s_serial_transfer.STATE_5_READ_TRANSFER s_serial_transfer.STATE_4_PRE_READ s_serial_transfer.STATE_3_POST_WRITE s_serial_transfer.STATE_2_WRITE_TRANSFER s_serial_transfer.STATE_1_PRE_WRITE s_serial_transfer.STATE_0_IDLE 
+s_serial_transfer.STATE_0_IDLE 0 0 0 0 0 0 0 
+s_serial_transfer.STATE_1_PRE_WRITE 0 0 0 0 0 1 1 
+s_serial_transfer.STATE_2_WRITE_TRANSFER 0 0 0 0 1 0 1 
+s_serial_transfer.STATE_3_POST_WRITE 0 0 0 1 0 0 1 
+s_serial_transfer.STATE_4_PRE_READ 0 0 1 0 0 0 1 
+s_serial_transfer.STATE_5_READ_TRANSFER 0 1 0 0 0 0 1 
+s_serial_transfer.STATE_6_POST_READ 1 0 0 0 0 0 1 
+
+State Machine - |DE2_Media_Computer|nios_system:NiosII|AV_Config:the_AV_Config|altera_up_av_config_serial_bus_controller:Serial_Bus_Controller|s_serial_protocol
+Name s_serial_protocol.STATE_5_STOP_BIT s_serial_protocol.STATE_4_TRANSFER s_serial_protocol.STATE_3_START_BIT s_serial_protocol.STATE_2_RESTART_BIT s_serial_protocol.STATE_1_INITIALIZE s_serial_protocol.STATE_0_IDLE 
+s_serial_protocol.STATE_0_IDLE 0 0 0 0 0 0 
+s_serial_protocol.STATE_1_INITIALIZE 0 0 0 0 1 1 
+s_serial_protocol.STATE_2_RESTART_BIT 0 0 0 1 0 1 
+s_serial_protocol.STATE_3_START_BIT 0 0 1 0 0 1 
+s_serial_protocol.STATE_4_TRANSFER 0 1 0 0 0 1 
+s_serial_protocol.STATE_5_STOP_BIT 1 0 0 0 0 1 

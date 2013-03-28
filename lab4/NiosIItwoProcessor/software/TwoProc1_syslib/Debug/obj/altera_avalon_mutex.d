@@ -1,0 +1,31 @@
+obj/altera_avalon_mutex.o:  \
+ /cygdrive/c/altera/quartus60/sopc_builder/components/altera_avalon_mutex/HAL/src/altera_avalon_mutex.c \
+  /cygdrive/c/altera/kits/nios2_60/bin/nios2-gnutools/H-i686-pc-cygwin/bin/../lib/gcc/nios2-elf/3.4.1/include/stddef.h \
+  /cygdrive/c/altera/kits/nios2_60/bin/nios2-gnutools/H-i686-pc-cygwin/bin/../lib/gcc/nios2-elf/3.4.1/../../../../nios2-elf/include/errno.h \
+  /cygdrive/c/altera/kits/nios2_60/bin/nios2-gnutools/H-i686-pc-cygwin/bin/../lib/gcc/nios2-elf/3.4.1/../../../../nios2-elf/include/sys/errno.h \
+  /cygdrive/c/altera/kits/nios2_60/bin/nios2-gnutools/H-i686-pc-cygwin/bin/../lib/gcc/nios2-elf/3.4.1/../../../../nios2-elf/include/sys/reent.h \
+  /cygdrive/c/altera/kits/nios2_60/bin/nios2-gnutools/H-i686-pc-cygwin/bin/../lib/gcc/nios2-elf/3.4.1/../../../../nios2-elf/include/_ansi.h \
+  /cygdrive/c/altera/kits/nios2_60/bin/nios2-gnutools/H-i686-pc-cygwin/bin/../lib/gcc/nios2-elf/3.4.1/../../../../nios2-elf/include/newlib.h \
+  /cygdrive/c/altera/kits/nios2_60/bin/nios2-gnutools/H-i686-pc-cygwin/bin/../lib/gcc/nios2-elf/3.4.1/../../../../nios2-elf/include/sys/config.h \
+  /cygdrive/c/altera/kits/nios2_60/bin/nios2-gnutools/H-i686-pc-cygwin/bin/../lib/gcc/nios2-elf/3.4.1/../../../../nios2-elf/include/machine/ieeefp.h \
+  /cygdrive/c/altera/kits/nios2_60/bin/nios2-gnutools/H-i686-pc-cygwin/bin/../lib/gcc/nios2-elf/3.4.1/../../../../nios2-elf/include/sys/_types.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_nios2/HAL/inc/nios2.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_nios2/HAL/inc/alt_types.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/sys/alt_errno.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_nios2/HAL/inc/alt_types.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/priv/alt_file.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/sys/alt_dev.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/sys/alt_llist.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/priv/alt_dev_llist.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/sys/alt_llist.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_nios2/HAL/inc/alt_types.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/os/alt_sem.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/priv/alt_no_error.h \
+  /cygdrive/c/altera/quartus60/sopc_builder/components/altera_avalon_mutex/HAL/inc/altera_avalon_mutex.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/priv/alt_dev_llist.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/sys/alt_dev.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/sys/alt_errno.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_hal/HAL/inc/os/alt_sem.h \
+  /cygdrive/c/altera/quartus60/sopc_builder/components/altera_avalon_mutex/inc/altera_avalon_mutex_regs.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_nios2/HAL/inc/io.h \
+  /cygdrive/c/altera/kits/nios2_60/components/altera_nios2/HAL/inc/alt_types.h

@@ -1,0 +1,3990 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title>datasheet for nios_system</title>
+  <style type="text/css">
+body { font-family:arial ;}
+a { text-decoration:underline ; color:#003000 ;}
+a:hover { text-decoration:underline ; color:0030f0 ;}
+td { padding : 5px ;}
+table.topTitle { width:100% ;}
+table.topTitle td.l { text-align:left ; font-weight: bold ; font-size:30px ;}
+table.topTitle td.r { text-align:right ; font-weight: bold ; font-size:16px ;}
+table.blueBar { width : 100% ; border-spacing : 0px ;}
+table.blueBar td { background:#0036ff ; font-size:12px ; color : white ; text-align : left ; font-weight : bold ;}
+table.blueBar td.l { text-align : left ;}
+table.blueBar td.r { text-align : right ;}
+table.items { width:100% ; border-collapse:collapse ;}
+table.items td.label { font-weight:bold ; font-size:16px ; vertical-align:top ;}
+table.items td.mono { font-family:courier ; font-size:12px ; white-space:pre ;}
+div.label { font-weight:bold ; font-size:16px ; vertical-align:top ; text-align:center ;}
+table.grid { border-collapse:collapse ;}
+table.grid td { border:1px solid #bbb ; font-size:12px ;}
+body { font-family:arial ;}
+table.x { font-family:courier ; border-collapse:collapse ; padding:2px ;}
+table.x td { border:1px solid #bbb ;}
+td.tableTitle { font-weight:bold ; text-align:center ;}
+table.grid { border-collapse:collapse ;}
+table.grid td { border:1px solid #bbb ;}
+table.grid td.tableTitle { font-weight:bold ; text-align:center ;}
+table.mmap { border-collapse:collapse ; text-size:11px ; border:1px solid #d8d8d8 ;}
+table.mmap td { border-color:#d8d8d8 ; border-width:1px ; border-style:solid ;}
+table.mmap td.empty { border-style:none ; background-color:#f0f0f0 ;}
+table.mmap td.slavemodule { text-align:left ; font-size:11px ; border-style:solid solid none solid ;}
+table.mmap td.slavem { text-align:right ; font-size:9px ; font-style:italic ; border-style:none solid none solid ;}
+table.mmap td.slaveb { text-align:right ; font-size:9px ; font-style:italic ; border-style:none solid solid solid ;}
+table.mmap td.mastermodule { text-align:center ; font-size:11px ; border-style:solid solid none solid ;}
+table.mmap td.masterlr { text-align:center ; font-size:9px ; font-style:italic ; border-style:none solid solid solid ;}
+table.mmap td.masterl { text-align:center ; font-size:9px ; font-style:italic ; border-style:none none solid solid ;}
+table.mmap td.masterm { text-align:center ; font-size:9px ; font-style:italic ; border-style:none none solid none ;}
+table.mmap td.masterr { text-align:center ; font-size:9px ; font-style:italic ; border-style:none solid solid none ;}
+table.mmap td.addr { font-family:courier ; font-size:9px ; text-align:right ;}
+table.connectionboxes { border-collapse:separate ; border-spacing:0px ; font-family:arial ;}
+table.connectionboxes td.from { border-bottom:1px solid black ; font-size:9px ; font-style:italic ; vertical-align:bottom ; text-align:left ;}
+table.connectionboxes td.to { font-size:9px ; font-style:italic ; vertical-align:top ; text-align:right ;}
+table.connectionboxes td.lefthandwire { border-bottom:1px solid black ; font-size:9px ; font-style:italic ; vertical-align:bottom ; text-align:right ;}
+table.connectionboxes td.righthandwire { border-bottom:1px solid black ; font-size:9px ; font-style:italic ; vertical-align:bottom ; text-align:left ;}
+table.connectionboxes td.righthandlabel { font-size:11px ; vertical-align:bottom ; text-align:left ;}
+table.connectionboxes td.neighbor { padding:3px ; border:1px solid black ; font-size: 11px ; background:#e8e8e8 ; vertical-align:center ; text-align:center ;}
+table.connectionboxes td.main { padding:8px ; border:1px solid black ; font-size: 14px ; font-weight:bold ; background:#ffffff ; vertical-align:center ; text-align:center ;}
+.parametersbox { border:1px solid #d0d0d0 ; display:inline-block ; max-height:160px ; overflow:auto ; width:360px ; font-size:10px ;}
+.flowbox { display:inline-block ;}
+.parametersbox table { font-size:10px ;}
+td.parametername { font-style:italic ;}
+td.parametervalue { font-weight:bold ;}
+div.greydiv { vertical-align:top ; text-align:center ; background:#eeeeee ; border-top:1px solid #707070 ; border-bottom:1px solid #707070 ; padding:20px ; margin:20px ; width:auto ;}</style>
+ </head>
+ <body>
+  <table class="topTitle">
+   <tr>
+    <td class="l">nios_system</td>
+    <td class="r">
+     <br/>
+     <br/>
+    </td>
+   </tr>
+  </table>
+  <table class="blueBar">
+   <tr>
+    <td class="l">2013.03.28.03:25:12</td>
+    <td class="r">Datasheet</td>
+   </tr>
+  </table>
+  <div style="width:100% ;  height:10px"> </div>
+  <div class="label">Overview</div>
+  <div class="greydiv">
+   <div style="display:inline-block ; text-align:left">
+    <table class="connectionboxes">
+     <tr>
+      <td class="lefthandwire">&#160;&#160;clk&#160;</td>
+      <td class="main" rowspan="7">nios_system</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="lefthandwire">&#160;&#160;clk_27&#160;</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td class="righthandlabel">&#160;&#160;
+       <a href="#module_pio_0"><b>pio_0</b>
+       </a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td class="righthandwire">&#160;out_port&#160;&#160;</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+    </table>
+   </div><span style="display:inline-block ; width:28px"> </span>
+   <div style="display:inline-block ; text-align:left"><span>Processor
+     <br/>&#160;&#160;
+     <a href="#module_cpu_0"><b>cpu_0</b>
+     </a> Nios II 11.0
+     <br/>All Components
+     <br/>&#160;&#160;
+     <a href="#module_cpu_0"><b>cpu_0</b>
+     </a> altera_nios2 11.0
+     <br/>&#160;&#160;
+     <a href="#module_JTAG_UART_0"><b>JTAG_UART_0</b>
+     </a> altera_avalon_jtag_uart 11.0
+     <br/>&#160;&#160;
+     <a href="#module_Interval_Timer"><b>Interval_Timer</b>
+     </a> altera_avalon_timer 11.0
+     <br/>&#160;&#160;
+     <a href="#module_sysid"><b>sysid</b>
+     </a> altera_avalon_sysid 11.0
+     <br/>&#160;&#160;
+     <a href="#module_SDRAM"><b>SDRAM</b>
+     </a> altera_avalon_new_sdram_controller 11.0
+     <br/>&#160;&#160;
+     <a href="#module_Red_LEDs"><b>Red_LEDs</b>
+     </a> altera_up_avalon_parallel_port 11.0
+     <br/>&#160;&#160;
+     <a href="#module_Green_LEDs"><b>Green_LEDs</b>
+     </a> altera_up_avalon_parallel_port 11.0
+     <br/>&#160;&#160;
+     <a href="#module_Slider_Switches"><b>Slider_Switches</b>
+     </a> altera_up_avalon_parallel_port 11.0
+     <br/>&#160;&#160;
+     <a href="#module_Pushbuttons"><b>Pushbuttons</b>
+     </a> altera_up_avalon_parallel_port 11.0
+     <br/>&#160;&#160;
+     <a href="#module_Serial_Port"><b>Serial_Port</b>
+     </a> altera_up_avalon_rs232 11.0
+     <br/>&#160;&#160;
+     <a href="#module_AV_Config"><b>AV_Config</b>
+     </a> altera_up_avalon_audio_and_video_config 11.0
+     <br/>&#160;&#160;
+     <a href="#module_SRAM"><b>SRAM</b>
+     </a> altera_up_avalon_sram 11.0
+     <br/>&#160;&#160;
+     <a href="#module_VGA_Pixel_Buffer"><b>VGA_Pixel_Buffer</b>
+     </a> altera_up_avalon_video_pixel_buffer_dma 11.0
+     <br/>&#160;&#160;
+     <a href="#module_VGA_Char_Buffer"><b>VGA_Char_Buffer</b>
+     </a> altera_up_avalon_video_character_buffer_with_dma 11.0
+     <br/>&#160;&#160;
+     <a href="#module_External_Clocks"><b>External_Clocks</b>
+     </a> altera_up_avalon_clocks 11.0
+     <br/>&#160;&#160;
+     <a href="#module_pio_0"><b>pio_0</b>
+     </a> altera_avalon_pio 11.0</span>
+   </div>
+  </div>
+  <div style="width:100% ;  height:10px"> </div>
+  <div class="label">Memory Map</div>
+  <table class="mmap">
+   <tr>
+    <td class="empty" rowspan="2"></td>
+    <td class="mastermodule" colspan="2">
+     <a href="#module_cpu_0"><b>cpu_0</b>
+     </a>
+    </td>
+    <td class="mastermodule" colspan="1">
+     <a href="#module_VGA_Pixel_Buffer"><b>VGA_Pixel_Buffer</b>
+     </a>
+    </td>
+   </tr>
+   <tr>
+    <td class="masterl">&#160;instruction_master</td>
+    <td class="masterr">&#160;data_master</td>
+    <td class="masterlr">&#160;avalon_pixel_dma_master</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_cpu_0"><b>cpu_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">jtag_debug_module&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>0a000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>0a000000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_JTAG_UART_0"><b>JTAG_UART_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_jtag_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10001000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_Interval_Timer"><b>Interval_Timer</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s1&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10002000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_sysid"><b>sysid</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">control_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10002020</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_SDRAM"><b>SDRAM</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s1&#160;</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>00000000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_Red_LEDs"><b>Red_LEDs</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10000000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_Green_LEDs"><b>Green_LEDs</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10000010</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_Slider_Switches"><b>Slider_Switches</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10000040</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_Pushbuttons"><b>Pushbuttons</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_parallel_port_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10000050</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_Serial_Port"><b>Serial_Port</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_rs232_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10001010</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_AV_Config"><b>AV_Config</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_av_config_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10003000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_SRAM"><b>SRAM</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_sram_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>08000000</td>
+    <td class="addr"><span style="color:#989898">0x</span>08000000</td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_VGA_Pixel_Buffer"><b>VGA_Pixel_Buffer</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_control_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10003020</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_VGA_Char_Buffer"><b>VGA_Char_Buffer</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">avalon_char_control_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10003030</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavem">avalon_char_buffer_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>09000000</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_External_Clocks"><b>External_Clocks</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">avalon_clocks_slave&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>10002030</td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slavemodule">&#160;
+     <a href="#module_pio_0"><b>pio_0</b>
+     </a>
+    </td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+    <td class="empty"></td>
+   </tr>
+   <tr>
+    <td class="slaveb">s1&#160;</td>
+    <td class="empty"></td>
+    <td class="addr"><span style="color:#989898">0x</span>00800000</td>
+    <td class="empty"></td>
+   </tr>
+  </table>
+  <a name="module_clk"> </a>
+  <div>
+   <hr/>
+   <h2>clk</h2>clock_source v11.0
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">clockFrequency</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockFrequencyKnown</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputClockFrequency</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetSynchronousEdges</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_cpu_0"> </a>
+  <div>
+   <hr/>
+   <h2>cpu_0</h2>altera_nios2 v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="main" rowspan="61">cpu_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">d_irq&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_JTAG_UART_0">JTAG_UART_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_jtag_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_Interval_Timer">Interval_Timer</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">d_irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_sysid">sysid</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;control_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">instruction_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_SDRAM">SDRAM</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Red_LEDs">Red_LEDs</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_parallel_port_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Green_LEDs">Green_LEDs</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_parallel_port_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Slider_Switches">Slider_Switches</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_parallel_port_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_Pushbuttons">Pushbuttons</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_parallel_port_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">d_irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;interrupt</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_Serial_Port">Serial_Port</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_rs232_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">d_irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;interrupt</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_SRAM">SRAM</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_sram_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_VGA_Char_Buffer">VGA_Char_Buffer</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_char_control_slave</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_char_buffer_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_AV_Config">AV_Config</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_av_config_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Pixel_Buffer">VGA_Pixel_Buffer</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_control_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_clocks_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">custom_instruction_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0_altera_nios_custom_instr_floating_point_inst">cpu_0_altera_nios_custom_instr_floating_point_inst</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_pio_0">pio_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">userDefinedSettings</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledInstructionMaster3MapParam</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledInstructionMaster3AddrWidth</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledInstructionMaster2MapParam</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledInstructionMaster2AddrWidth</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledInstructionMaster1MapParam</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledInstructionMaster1AddrWidth</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledInstructionMaster0MapParam</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledInstructionMaster0AddrWidth</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledDataMaster3MapParam</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledDataMaster3AddrWidth</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledDataMaster2MapParam</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledDataMaster2AddrWidth</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledDataMaster1MapParam</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledDataMaster1AddrWidth</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledDataMaster0MapParam</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">tightlyCoupledDataMaster0AddrWidth</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_showUnpublishedSettings</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_showInternalSettings</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_shadowRegisterSets</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_preciseSlaveAccessErrorException</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_preciseIllegalMemAccessException</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_preciseDivisionErrorException</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_performanceCounter</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_perfCounterWidth</td>
+        <td class="parametervalue">_32</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_interruptControllerType</td>
+        <td class="parametervalue">Internal</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_illegalMemAccessDetection</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_illegalInstructionsTrap</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_fullWaveformSignals</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_extraExceptionInfo</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_exportPCB</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_debugSimGen</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_clearXBitsLDNonBypass</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_branchPredictionType</td>
+        <td class="parametervalue">Static</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_bit31BypassDCache</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_bigEndian</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_bhtPtrSz</td>
+        <td class="parametervalue">_8</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_bhtIndexPcOnly</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_avalonDebugPortPresent</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_alwaysEncrypt</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_allowFullAddressRange</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_activateTrace</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_activateTestEndChecker</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_activateMonitors</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_activateModelChecker</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_HDLSimCachesCleared</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">setting_HBreakTest</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetSlave</td>
+        <td class="parametervalue">SDRAM.s1</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetOffset</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">muldiv_multiplierType</td>
+        <td class="parametervalue">EmbeddedMulFast</td>
+       </tr>
+       <tr>
+        <td class="parametername">muldiv_divider</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">mpu_useLimit</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">mpu_numOfInstRegion</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">mpu_numOfDataRegion</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">mpu_minInstRegionSize</td>
+        <td class="parametervalue">_12</td>
+       </tr>
+       <tr>
+        <td class="parametername">mpu_minDataRegionSize</td>
+        <td class="parametervalue">_12</td>
+       </tr>
+       <tr>
+        <td class="parametername">mpu_enabled</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">mmu_uitlbNumEntries</td>
+        <td class="parametervalue">_4</td>
+       </tr>
+       <tr>
+        <td class="parametername">mmu_udtlbNumEntries</td>
+        <td class="parametervalue">_6</td>
+       </tr>
+       <tr>
+        <td class="parametername">mmu_tlbPtrSz</td>
+        <td class="parametervalue">_7</td>
+       </tr>
+       <tr>
+        <td class="parametername">mmu_tlbNumWays</td>
+        <td class="parametervalue">_16</td>
+       </tr>
+       <tr>
+        <td class="parametername">mmu_processIDNumBits</td>
+        <td class="parametervalue">_10</td>
+       </tr>
+       <tr>
+        <td class="parametername">mmu_enabled</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">mmu_autoAssignTlbPtrSz</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">mmu_TLBMissExcSlave</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">mmu_TLBMissExcOffset</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">manuallyAssignCpuID</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">internalIrqMaskSystemInfo</td>
+        <td class="parametervalue">15</td>
+       </tr>
+       <tr>
+        <td class="parametername">instSlaveMapParam</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='SDRAM.s1' start='0x0' end='0x800000' /&gt;&lt;slave name='cpu_0.jtag_debug_module' start='0xA000000' end='0xA000800' /&gt;&lt;/address-map&gt;</td>
+       </tr>
+       <tr>
+        <td class="parametername">instAddrWidth</td>
+        <td class="parametervalue">28</td>
+       </tr>
+       <tr>
+        <td class="parametername">impl</td>
+        <td class="parametervalue">Fast</td>
+       </tr>
+       <tr>
+        <td class="parametername">icache_size</td>
+        <td class="parametervalue">_4096</td>
+       </tr>
+       <tr>
+        <td class="parametername">icache_ramBlockType</td>
+        <td class="parametervalue">Automatic</td>
+       </tr>
+       <tr>
+        <td class="parametername">icache_numTCIM</td>
+        <td class="parametervalue">_0</td>
+       </tr>
+       <tr>
+        <td class="parametername">icache_burstType</td>
+        <td class="parametervalue">None</td>
+       </tr>
+       <tr>
+        <td class="parametername">exceptionSlave</td>
+        <td class="parametervalue">SDRAM.s1</td>
+       </tr>
+       <tr>
+        <td class="parametername">exceptionOffset</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFeaturesSystemInfo</td>
+        <td class="parametervalue">M512_MEMORY 0 M4K_MEMORY 1 M9K_MEMORY 0 M20K_MEMORY 0 M144K_MEMORY 0 MRAM_MEMORY 0 MLAB_MEMORY 0 ESB 0 EPCS 1 DSP 0 EMUL 1 HARDCOPY 0 LVDS_IO 0 ADDRESS_STALL 1 TRANSCEIVER_3G_BLOCK 0 TRANSCEIVER_6G_BLOCK 0 DSP_SHIFTER_BLOCK 0</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamilyName</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">debug_triggerArming</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">debug_level</td>
+        <td class="parametervalue">Level1</td>
+       </tr>
+       <tr>
+        <td class="parametername">debug_jtagInstanceID</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">debug_embeddedPLL</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">debug_debugReqSignals</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">debug_assignJtagInstanceID</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">debug_OCIOnchipTrace</td>
+        <td class="parametervalue">_128</td>
+       </tr>
+       <tr>
+        <td class="parametername">dcache_size</td>
+        <td class="parametervalue">_2048</td>
+       </tr>
+       <tr>
+        <td class="parametername">dcache_ramBlockType</td>
+        <td class="parametervalue">Automatic</td>
+       </tr>
+       <tr>
+        <td class="parametername">dcache_omitDataMaster</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">dcache_numTCDM</td>
+        <td class="parametervalue">_0</td>
+       </tr>
+       <tr>
+        <td class="parametername">dcache_lineSize</td>
+        <td class="parametervalue">_4</td>
+       </tr>
+       <tr>
+        <td class="parametername">dcache_bursts</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">dataSlaveMapParam</td>
+        <td class="parametervalue">&lt;address-map&gt;&lt;slave name='SDRAM.s1' start='0x0' end='0x800000' /&gt;&lt;slave name='pio_0.s1' start='0x800000' end='0x800010' /&gt;&lt;slave name='SRAM.avalon_sram_slave' start='0x8000000' end='0x8080000' /&gt;&lt;slave name='VGA_Char_Buffer.avalon_char_buffer_slave' start='0x9000000' end='0x9002000' /&gt;&lt;slave name='cpu_0.jtag_debug_module' start='0xA000000' end='0xA000800' /&gt;&lt;slave name='Red_LEDs.avalon_parallel_port_slave' start='0x10000000' end='0x10000010' /&gt;&lt;slave name='Green_LEDs.avalon_parallel_port_slave' start='0x10000010' end='0x10000020' /&gt;&lt;slave name='Slider_Switches.avalon_parallel_port_slave' start='0x10000040' end='0x10000050' /&gt;&lt;slave name='Pushbuttons.avalon_parallel_port_slave' start='0x10000050' end='0x10000060' /&gt;&lt;slave name='JTAG_UART_0.avalon_jtag_slave' start='0x10001000' end='0x10001008' /&gt;&lt;slave name='Serial_Port.avalon_rs232_slave' start='0x10001010' end='0x10001018' /&gt;&lt;slave name='Interval_Timer.s1' start='0x10002000' end='0x10002020' /&gt;&lt;slave name='sysid.control_slave' start='0x10002020' end='0x10002028' /&gt;&lt;slave name='External_Clocks.avalon_clocks_slave' start='0x10002030' end='0x10002032' /&gt;&lt;slave name='AV_Config.avalon_av_config_slave' start='0x10003000' end='0x10003010' /&gt;&lt;slave name='VGA_Pixel_Buffer.avalon_control_slave' start='0x10003020' end='0x10003030' /&gt;&lt;slave name='VGA_Char_Buffer.avalon_char_control_slave' start='0x10003030' end='0x10003038' /&gt;&lt;/address-map&gt;</td>
+       </tr>
+       <tr>
+        <td class="parametername">dataAddrWidth</td>
+        <td class="parametervalue">29</td>
+       </tr>
+       <tr>
+        <td class="parametername">customInstSlavesSystemInfo</td>
+        <td class="parametervalue">&lt;info&gt;&lt;slave name="altera_nios_custom_instr_floating_point_inst" baseAddress="252" addressSpan="4" clockCycleType="VARIABLE" /&gt;&lt;/info&gt;</td>
+       </tr>
+       <tr>
+        <td class="parametername">cpuReset</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">cpuID</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockFrequency</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">breakSlave</td>
+        <td class="parametervalue">cpu_0.jtag_debug_module</td>
+       </tr>
+       <tr>
+        <td class="parametername">breakOffset</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">CPU_IMPLEMENTATION</td>
+        <td class="parametervalue">"fast"</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIG_ENDIAN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CPU_FREQ</td>
+        <td class="parametervalue">50000000u</td>
+       </tr>
+       <tr>
+        <td class="parametername">ICACHE_LINE_SIZE</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">ICACHE_LINE_SIZE_LOG2</td>
+        <td class="parametervalue">5</td>
+       </tr>
+       <tr>
+        <td class="parametername">ICACHE_SIZE</td>
+        <td class="parametervalue">4096</td>
+       </tr>
+       <tr>
+        <td class="parametername">DCACHE_LINE_SIZE</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">DCACHE_LINE_SIZE_LOG2</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">DCACHE_SIZE</td>
+        <td class="parametervalue">2048</td>
+       </tr>
+       <tr>
+        <td class="parametername">FLUSHDA_SUPPORTED</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_JMPI_INSTRUCTION</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">EXCEPTION_ADDR</td>
+        <td class="parametervalue">0x20</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_ADDR</td>
+        <td class="parametervalue">0x0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BREAK_ADDR</td>
+        <td class="parametervalue">0xa000020</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_DEBUG_STUB</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_DEBUG_CORE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">CPU_ID_SIZE</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">CPU_ID_VALUE</td>
+        <td class="parametervalue">0x0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HARDWARE_DIVIDE_PRESENT</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HARDWARE_MULTIPLY_PRESENT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HARDWARE_MULX_PRESENT</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">INST_ADDR_WIDTH</td>
+        <td class="parametervalue">28</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_ADDR_WIDTH</td>
+        <td class="parametervalue">29</td>
+       </tr>
+       <tr>
+        <td class="parametername">NUM_OF_SHADOW_REG_SETS</td>
+        <td class="parametervalue">0</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_JTAG_UART_0"> </a>
+  <div>
+   <hr/>
+   <h2>JTAG_UART_0</h2>altera_avalon_jtag_uart v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">d_irq&#160;&#160;</td>
+      <td class="main" rowspan="7">JTAG_UART_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_jtag_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">allowMultipleConnections</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">hubInstanceID</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">readBufferDepth</td>
+        <td class="parametervalue">64</td>
+       </tr>
+       <tr>
+        <td class="parametername">readIRQThreshold</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">simInputCharacterStream</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">simInteractiveOptions</td>
+        <td class="parametervalue">INTERACTIVE_ASCII_OUTPUT</td>
+       </tr>
+       <tr>
+        <td class="parametername">useRegistersForReadBuffer</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">useRegistersForWriteBuffer</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">useRelativePathForSimFile</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">writeBufferDepth</td>
+        <td class="parametervalue">64</td>
+       </tr>
+       <tr>
+        <td class="parametername">writeIRQThreshold</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">WRITE_DEPTH</td>
+        <td class="parametervalue">64</td>
+       </tr>
+       <tr>
+        <td class="parametername">READ_DEPTH</td>
+        <td class="parametervalue">64</td>
+       </tr>
+       <tr>
+        <td class="parametername">WRITE_THRESHOLD</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">READ_THRESHOLD</td>
+        <td class="parametervalue">8</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_Interval_Timer"> </a>
+  <div>
+   <hr/>
+   <h2>Interval_Timer</h2>altera_avalon_timer v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="7">Interval_Timer</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">d_irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;irq</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">alwaysRun</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">counterSize</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">fixedPeriod</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">period</td>
+        <td class="parametervalue">125.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">periodUnits</td>
+        <td class="parametervalue">MSEC</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetOutput</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">snapshot</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">systemFrequency</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">timeoutPulseOutput</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">timerPreset</td>
+        <td class="parametervalue">CUSTOM</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">ALWAYS_RUN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">FIXED_PERIOD</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">SNAPSHOT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">PERIOD</td>
+        <td class="parametervalue">125.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">PERIOD_UNITS</td>
+        <td class="parametervalue">"ms"</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_OUTPUT</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">TIMEOUT_PULSE_OUTPUT</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">FREQ</td>
+        <td class="parametervalue">50000000u</td>
+       </tr>
+       <tr>
+        <td class="parametername">LOAD_VALUE</td>
+        <td class="parametervalue">6249999ULL</td>
+       </tr>
+       <tr>
+        <td class="parametername">COUNTER_SIZE</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">MULT</td>
+        <td class="parametervalue">0.0010</td>
+       </tr>
+       <tr>
+        <td class="parametername">TICKS_PER_SEC</td>
+        <td class="parametervalue">8u</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_sysid"> </a>
+  <div>
+   <hr/>
+   <h2>sysid</h2>altera_avalon_sysid v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="5">sysid</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;control_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">id</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">timestamp</td>
+        <td class="parametervalue">1364455509</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">ID</td>
+        <td class="parametervalue">0u</td>
+       </tr>
+       <tr>
+        <td class="parametername">TIMESTAMP</td>
+        <td class="parametervalue">1364455509u</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_SDRAM"> </a>
+  <div>
+   <hr/>
+   <h2>SDRAM</h2>altera_avalon_new_sdram_controller v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">instruction_master&#160;&#160;</td>
+      <td class="main" rowspan="7">SDRAM</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">TAC</td>
+        <td class="parametervalue">5.5</td>
+       </tr>
+       <tr>
+        <td class="parametername">TMRD</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">TRCD</td>
+        <td class="parametervalue">20.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">TRFC</td>
+        <td class="parametervalue">70.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">TRP</td>
+        <td class="parametervalue">20.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">TWR</td>
+        <td class="parametervalue">14.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">casLatency</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">columnWidth</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">dataWidth</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateSimulationModel</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">initNOPDelay</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">initRefreshCommands</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">masteredTristateBridgeSlave</td>
+        <td class="parametervalue"></td>
+       </tr>
+       <tr>
+        <td class="parametername">model</td>
+        <td class="parametervalue">custom</td>
+       </tr>
+       <tr>
+        <td class="parametername">numberOfBanks</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">numberOfChipSelects</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">pinsSharedViaTriState</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">powerUpDelay</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">refreshPeriod</td>
+        <td class="parametervalue">15.625</td>
+       </tr>
+       <tr>
+        <td class="parametername">registerDataIn</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">rowWidth</td>
+        <td class="parametervalue">12</td>
+       </tr>
+       <tr>
+        <td class="parametername">size</td>
+        <td class="parametervalue">8388608</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">REGISTER_DATA_IN</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">SIM_MODEL_BASE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">SDRAM_DATA_WIDTH</td>
+        <td class="parametervalue">16</td>
+       </tr>
+       <tr>
+        <td class="parametername">SDRAM_ADDR_WIDTH</td>
+        <td class="parametervalue">22</td>
+       </tr>
+       <tr>
+        <td class="parametername">SDRAM_ROW_WIDTH</td>
+        <td class="parametervalue">12</td>
+       </tr>
+       <tr>
+        <td class="parametername">SDRAM_COL_WIDTH</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">SDRAM_NUM_CHIPSELECTS</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">SDRAM_NUM_BANKS</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">REFRESH_PERIOD</td>
+        <td class="parametervalue">15.625</td>
+       </tr>
+       <tr>
+        <td class="parametername">POWERUP_DELAY</td>
+        <td class="parametervalue">100.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CAS_LATENCY</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">T_RFC</td>
+        <td class="parametervalue">70.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">T_RP</td>
+        <td class="parametervalue">20.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">T_MRD</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">T_RCD</td>
+        <td class="parametervalue">20.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">T_AC</td>
+        <td class="parametervalue">5.5</td>
+       </tr>
+       <tr>
+        <td class="parametername">T_WR</td>
+        <td class="parametervalue">14.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">INIT_REFRESH_COMMANDS</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">INIT_NOP_DELAY</td>
+        <td class="parametervalue">0.0</td>
+       </tr>
+       <tr>
+        <td class="parametername">SHARED_DATA</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">STARVATION_INDICATOR</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">TRISTATE_BRIDGE_SLAVE</td>
+        <td class="parametervalue">""</td>
+       </tr>
+       <tr>
+        <td class="parametername">IS_INITIALIZED</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">SDRAM_BANK_WIDTH</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">CONTENTS_INFO</td>
+        <td class="parametervalue">""</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_Red_LEDs"> </a>
+  <div>
+   <hr/>
+   <h2>Red_LEDs</h2>altera_up_avalon_parallel_port v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="5">Red_LEDs</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_parallel_port_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">board</td>
+        <td class="parametervalue">DE2</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_port</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">preset</td>
+        <td class="parametervalue">LEDs</td>
+       </tr>
+       <tr>
+        <td class="parametername">leds</td>
+        <td class="parametervalue">Red</td>
+       </tr>
+       <tr>
+        <td class="parametername">sevensegs</td>
+        <td class="parametervalue">3 to 0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gpio</td>
+        <td class="parametervalue">GPIO 0 (JP1)</td>
+       </tr>
+       <tr>
+        <td class="parametername">DW</td>
+        <td class="parametervalue">18</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output only</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_DW</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_direction</td>
+        <td class="parametervalue">Input only</td>
+       </tr>
+       <tr>
+        <td class="parametername">capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">edge</td>
+        <td class="parametervalue">Rising</td>
+       </tr>
+       <tr>
+        <td class="parametername">irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irq_type</td>
+        <td class="parametervalue">Level</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_Green_LEDs"> </a>
+  <div>
+   <hr/>
+   <h2>Green_LEDs</h2>altera_up_avalon_parallel_port v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="5">Green_LEDs</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_parallel_port_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">board</td>
+        <td class="parametervalue">DE2</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_port</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">preset</td>
+        <td class="parametervalue">LEDs</td>
+       </tr>
+       <tr>
+        <td class="parametername">leds</td>
+        <td class="parametervalue">Green</td>
+       </tr>
+       <tr>
+        <td class="parametername">sevensegs</td>
+        <td class="parametervalue">3 to 0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gpio</td>
+        <td class="parametervalue">GPIO 0 (JP1)</td>
+       </tr>
+       <tr>
+        <td class="parametername">DW</td>
+        <td class="parametervalue">9</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output only</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_DW</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_direction</td>
+        <td class="parametervalue">Input only</td>
+       </tr>
+       <tr>
+        <td class="parametername">capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">edge</td>
+        <td class="parametervalue">Rising</td>
+       </tr>
+       <tr>
+        <td class="parametername">irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irq_type</td>
+        <td class="parametervalue">Level</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_Slider_Switches"> </a>
+  <div>
+   <hr/>
+   <h2>Slider_Switches</h2>altera_up_avalon_parallel_port v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="5">Slider_Switches</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_parallel_port_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">board</td>
+        <td class="parametervalue">DE2</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_port</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">preset</td>
+        <td class="parametervalue">Slider Switches</td>
+       </tr>
+       <tr>
+        <td class="parametername">leds</td>
+        <td class="parametervalue">Green</td>
+       </tr>
+       <tr>
+        <td class="parametername">sevensegs</td>
+        <td class="parametervalue">3 to 0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gpio</td>
+        <td class="parametervalue">GPIO 0 (JP1)</td>
+       </tr>
+       <tr>
+        <td class="parametername">DW</td>
+        <td class="parametervalue">18</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Input only</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_DW</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_direction</td>
+        <td class="parametervalue">Input only</td>
+       </tr>
+       <tr>
+        <td class="parametername">capture</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">edge</td>
+        <td class="parametervalue">Rising</td>
+       </tr>
+       <tr>
+        <td class="parametername">irq</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irq_type</td>
+        <td class="parametervalue">Level</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_Pushbuttons"> </a>
+  <div>
+   <hr/>
+   <h2>Pushbuttons</h2>altera_up_avalon_parallel_port v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="7">Pushbuttons</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_parallel_port_slave</td>
+     </tr>
+     <tr>
+      <td class="from">d_irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;interrupt</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">board</td>
+        <td class="parametervalue">DE2</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_port</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">preset</td>
+        <td class="parametervalue">Pushbuttons</td>
+       </tr>
+       <tr>
+        <td class="parametername">leds</td>
+        <td class="parametervalue">Green</td>
+       </tr>
+       <tr>
+        <td class="parametername">sevensegs</td>
+        <td class="parametervalue">3 to 0</td>
+       </tr>
+       <tr>
+        <td class="parametername">gpio</td>
+        <td class="parametervalue">GPIO 0 (JP1)</td>
+       </tr>
+       <tr>
+        <td class="parametername">DW</td>
+        <td class="parametervalue">4</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Input only</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_DW</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">custom_direction</td>
+        <td class="parametervalue">Input only</td>
+       </tr>
+       <tr>
+        <td class="parametername">capture</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">edge</td>
+        <td class="parametervalue">Falling</td>
+       </tr>
+       <tr>
+        <td class="parametername">irq</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">irq_type</td>
+        <td class="parametervalue">Edge</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_Serial_Port"> </a>
+  <div>
+   <hr/>
+   <h2>Serial_Port</h2>altera_up_avalon_rs232 v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="7">Serial_Port</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_rs232_slave</td>
+     </tr>
+     <tr>
+      <td class="from">d_irq&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;interrupt</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">baud</td>
+        <td class="parametervalue">115200</td>
+       </tr>
+       <tr>
+        <td class="parametername">parity</td>
+        <td class="parametervalue">Odd</td>
+       </tr>
+       <tr>
+        <td class="parametername">data_bits</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">stop_bits</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_AV_Config"> </a>
+  <div>
+   <hr/>
+   <h2>AV_Config</h2>altera_up_avalon_audio_and_video_config v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="5">AV_Config</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_av_config_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">device</td>
+        <td class="parametervalue">On-Board Peripherals</td>
+       </tr>
+       <tr>
+        <td class="parametername">board</td>
+        <td class="parametervalue">DE2</td>
+       </tr>
+       <tr>
+        <td class="parametername">eai</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">audio_in</td>
+        <td class="parametervalue">Microphone to ADC</td>
+       </tr>
+       <tr>
+        <td class="parametername">dac_enable</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">mic_bypass</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">line_in_bypass</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">mic_attenuation</td>
+        <td class="parametervalue">-6dB</td>
+       </tr>
+       <tr>
+        <td class="parametername">data_format</td>
+        <td class="parametervalue">Left Justified</td>
+       </tr>
+       <tr>
+        <td class="parametername">bit_length</td>
+        <td class="parametervalue">32</td>
+       </tr>
+       <tr>
+        <td class="parametername">sampling_rate</td>
+        <td class="parametervalue">48 kHz</td>
+       </tr>
+       <tr>
+        <td class="parametername">bosr</td>
+        <td class="parametervalue">250fs/256fs</td>
+       </tr>
+       <tr>
+        <td class="parametername">sr_register</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">video_format</td>
+        <td class="parametervalue">NTSC</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_SRAM"> </a>
+  <div>
+   <hr/>
+   <h2>SRAM</h2>altera_up_avalon_sram v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="8">SRAM</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_sram_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Pixel_Buffer">VGA_Pixel_Buffer</a>
+      </td>
+      <td class="from">avalon_pixel_dma_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_sram_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">board</td>
+        <td class="parametervalue">DE2</td>
+       </tr>
+       <tr>
+        <td class="parametername">pixel_buffer</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_VGA_Pixel_Buffer"> </a>
+  <div>
+   <hr/>
+   <h2>VGA_Pixel_Buffer</h2>altera_up_avalon_video_pixel_buffer_dma v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="10">VGA_Pixel_Buffer</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_control_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_pixel_dma_master&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_SRAM">SRAM</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_sram_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_pixel_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Pixel_RGB_Resampler">VGA_Pixel_RGB_Resampler</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_rgb_sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">addr_mode</td>
+        <td class="parametervalue">X-Y</td>
+       </tr>
+       <tr>
+        <td class="parametername">start_address</td>
+        <td class="parametervalue">134217728</td>
+       </tr>
+       <tr>
+        <td class="parametername">back_start_address</td>
+        <td class="parametervalue">134217728</td>
+       </tr>
+       <tr>
+        <td class="parametername">image_width</td>
+        <td class="parametervalue">640</td>
+       </tr>
+       <tr>
+        <td class="parametername">image_height</td>
+        <td class="parametervalue">480</td>
+       </tr>
+       <tr>
+        <td class="parametername">color_space</td>
+        <td class="parametervalue">8-bit RGB</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_VGA_Char_Buffer"> </a>
+  <div>
+   <hr/>
+   <h2>VGA_Char_Buffer</h2>altera_up_avalon_video_character_buffer_with_dma v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+      <td class="main" rowspan="9">VGA_Char_Buffer</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_char_control_slave</td>
+     </tr>
+     <tr>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_char_buffer_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_char_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Alpha_Blending">Alpha_Blending</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_foreground_sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">vga_device</td>
+        <td class="parametervalue">On-board VGA DAC</td>
+       </tr>
+       <tr>
+        <td class="parametername">enable_transparency</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">color_bits</td>
+        <td class="parametervalue">1-bit</td>
+       </tr>
+       <tr>
+        <td class="parametername">resolution</td>
+        <td class="parametervalue">80 x 60</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_VGA_Controller"> </a>
+  <div>
+   <hr/>
+   <h2>VGA_Controller</h2>altera_up_avalon_video_vga_controller v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Dual_Clock_FIFO">VGA_Dual_Clock_FIFO</a>
+      </td>
+      <td class="from">avalon_dc_buffer_source&#160;&#160;</td>
+      <td class="main" rowspan="5">VGA_Controller</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_vga_sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">vga_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">board</td>
+        <td class="parametervalue">DE2</td>
+       </tr>
+       <tr>
+        <td class="parametername">device</td>
+        <td class="parametervalue">VGA Connector</td>
+       </tr>
+       <tr>
+        <td class="parametername">underflow_flag</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">25000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_VGA_Pixel_RGB_Resampler"> </a>
+  <div>
+   <hr/>
+   <h2>VGA_Pixel_RGB_Resampler</h2>altera_up_avalon_video_rgb_resampler v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Pixel_Buffer">VGA_Pixel_Buffer</a>
+      </td>
+      <td class="from">avalon_pixel_source&#160;&#160;</td>
+      <td class="main" rowspan="7">VGA_Pixel_RGB_Resampler</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_rgb_sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_rgb_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Alpha_Blending">Alpha_Blending</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_background_sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">input_type</td>
+        <td class="parametervalue">8-bit RGB</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_type</td>
+        <td class="parametervalue">30-bit RGB</td>
+       </tr>
+       <tr>
+        <td class="parametername">alpha</td>
+        <td class="parametervalue">255</td>
+       </tr>
+       <tr>
+        <td class="parametername">input_bits</td>
+        <td class="parametervalue">8</td>
+       </tr>
+       <tr>
+        <td class="parametername">input_planes</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_bits</td>
+        <td class="parametervalue">10</td>
+       </tr>
+       <tr>
+        <td class="parametername">output_planes</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_VGA_Dual_Clock_FIFO"> </a>
+  <div>
+   <hr/>
+   <h2>VGA_Dual_Clock_FIFO</h2>altera_up_avalon_video_dual_clock_buffer v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Alpha_Blending">Alpha_Blending</a>
+      </td>
+      <td class="from">avalon_blended_source&#160;&#160;</td>
+      <td class="main" rowspan="9">VGA_Dual_Clock_FIFO</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_dc_buffer_sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_stream_in</td>
+     </tr>
+     <tr>
+      <td class="from">vga_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_stream_out</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_dc_buffer_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Controller">VGA_Controller</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_vga_sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">color_bits</td>
+        <td class="parametervalue">10</td>
+       </tr>
+       <tr>
+        <td class="parametername">color_planes</td>
+        <td class="parametervalue">3</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_STREAM_IN_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_STREAM_OUT_CLOCK_RATE</td>
+        <td class="parametervalue">25000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_clk_27"> </a>
+  <div>
+   <hr/>
+   <h2>clk_27</h2>clock_source v11.0
+   <br/>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">clockFrequency</td>
+        <td class="parametervalue">27000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockFrequencyKnown</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">inputClockFrequency</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetSynchronousEdges</td>
+        <td class="parametervalue">NONE</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_Alpha_Blending"> </a>
+  <div>
+   <hr/>
+   <h2>Alpha_Blending</h2>altera_up_avalon_video_alpha_blender v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Char_Buffer">VGA_Char_Buffer</a>
+      </td>
+      <td class="from">avalon_char_source&#160;&#160;</td>
+      <td class="main" rowspan="10">Alpha_Blending</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_foreground_sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Pixel_RGB_Resampler">VGA_Pixel_RGB_Resampler</a>
+      </td>
+      <td class="from">avalon_rgb_source&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_background_sink</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_External_Clocks">External_Clocks</a>
+      </td>
+      <td class="from">sys_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">avalon_blended_source&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Dual_Clock_FIFO">VGA_Dual_Clock_FIFO</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;avalon_dc_buffer_sink</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">mode</td>
+        <td class="parametervalue">Normal</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLOCK_RESET_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_External_Clocks"> </a>
+  <div>
+   <hr/>
+   <h2>External_Clocks</h2>altera_up_avalon_clocks v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk">clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="main" rowspan="63">External_Clocks</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_in_primary</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;avalon_clocks_slave</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_clk_27">clk_27</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk_in_secondary</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_SRAM">SRAM</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Red_LEDs">Red_LEDs</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Green_LEDs">Green_LEDs</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Slider_Switches">Slider_Switches</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Pushbuttons">Pushbuttons</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_JTAG_UART_0">JTAG_UART_0</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Serial_Port">Serial_Port</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Interval_Timer">Interval_Timer</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_sysid">sysid</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_AV_Config">AV_Config</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Pixel_Buffer">VGA_Pixel_Buffer</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Pixel_RGB_Resampler">VGA_Pixel_RGB_Resampler</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Char_Buffer">VGA_Char_Buffer</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">vga_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_VGA_Controller">VGA_Controller</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_VGA_Dual_Clock_FIFO">VGA_Dual_Clock_FIFO</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_stream_in</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">vga_clk&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_stream_out</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_Alpha_Blending">Alpha_Blending</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clock_reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="from">sys_clk&#160;&#160;</td>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_SDRAM">SDRAM</a>
+      </td>
+     </tr>
+     <tr>
+      <td></td>
+      <td></td>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">board</td>
+        <td class="parametervalue">DE2</td>
+       </tr>
+       <tr>
+        <td class="parametername">sys_clk_freq</td>
+        <td class="parametervalue">50</td>
+       </tr>
+       <tr>
+        <td class="parametername">sdram_clk</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">vga_clk</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">audio_clk</td>
+        <td class="parametervalue">true</td>
+       </tr>
+       <tr>
+        <td class="parametername">audio_clk_freq</td>
+        <td class="parametervalue">12.288</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_CLK_IN_PRIMARY_CLOCK_RATE</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_cpu_0_altera_nios_custom_instr_floating_point_inst"> </a>
+  <div>
+   <hr/>
+   <h2>cpu_0_altera_nios_custom_instr_floating_point_inst</h2>altera_nios_custom_instr_floating_point v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">custom_instruction_master&#160;&#160;</td>
+      <td class="main" rowspan="2">cpu_0_altera_nios_custom_instr_floating_point_inst</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">useDivider</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">AUTO_DEVICE_FAMILY</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">Cyclone II</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>(none)</td>
+    </tr>
+   </table>
+  </div>
+  <a name="module_pio_0"> </a>
+  <div>
+   <hr/>
+   <h2>pio_0</h2>altera_avalon_pio v11.0
+   <br/>
+   <div class="greydiv">
+    <table class="connectionboxes">
+     <tr>
+      <td class="neighbor" rowspan="4">
+       <a href="#module_clk">clk</a>
+      </td>
+      <td class="from">clk&#160;&#160;</td>
+      <td class="main" rowspan="7">pio_0</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;clk</td>
+     </tr>
+     <tr>
+      <td class="from">clk_reset&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;reset</td>
+     </tr>
+     <tr style="height:6px">
+      <td></td>
+     </tr>
+     <tr>
+      <td class="neighbor" rowspan="2">
+       <a href="#module_cpu_0">cpu_0</a>
+      </td>
+      <td class="from">data_master&#160;&#160;</td>
+     </tr>
+     <tr>
+      <td class="to">&#160;&#160;s1</td>
+     </tr>
+    </table>
+   </div>
+   <br/>
+   <br/>
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Parameters</h2>
+      <table>
+       <tr>
+        <td class="parametername">bitClearingEdgeCapReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">bitModifyingOutReg</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">captureEdge</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">clockRate</td>
+        <td class="parametervalue">50000000</td>
+       </tr>
+       <tr>
+        <td class="parametername">direction</td>
+        <td class="parametervalue">Output</td>
+       </tr>
+       <tr>
+        <td class="parametername">edgeType</td>
+        <td class="parametervalue">RISING</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateIRQ</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">irqType</td>
+        <td class="parametervalue">LEVEL</td>
+       </tr>
+       <tr>
+        <td class="parametername">resetValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDoTestBenchWiring</td>
+        <td class="parametervalue">false</td>
+       </tr>
+       <tr>
+        <td class="parametername">simDrivenValue</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">width</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">deviceFamily</td>
+        <td class="parametervalue">UNKNOWN</td>
+       </tr>
+       <tr>
+        <td class="parametername">generateLegacySim</td>
+        <td class="parametervalue">false</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>&#160;&#160;
+   <table class="flowbox">
+    <tr>
+     <td class="parametersbox">
+      <h2>Software Assignments</h2>
+      <table>
+       <tr>
+        <td class="parametername">DO_TEST_BENCH_WIRING</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DRIVEN_SIM_VALUE</td>
+        <td class="parametervalue">0x0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_TRI</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_OUT</td>
+        <td class="parametervalue">1</td>
+       </tr>
+       <tr>
+        <td class="parametername">HAS_IN</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">CAPTURE</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIT_CLEARING_EDGE_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">BIT_MODIFYING_OUTPUT_REGISTER</td>
+        <td class="parametervalue">0</td>
+       </tr>
+       <tr>
+        <td class="parametername">DATA_WIDTH</td>
+        <td class="parametervalue">2</td>
+       </tr>
+       <tr>
+        <td class="parametername">RESET_VALUE</td>
+        <td class="parametervalue">0x0</td>
+       </tr>
+       <tr>
+        <td class="parametername">EDGE_TYPE</td>
+        <td class="parametervalue">"NONE"</td>
+       </tr>
+       <tr>
+        <td class="parametername">IRQ_TYPE</td>
+        <td class="parametervalue">"NONE"</td>
+       </tr>
+       <tr>
+        <td class="parametername">FREQ</td>
+        <td class="parametervalue">50000000u</td>
+       </tr>
+      </table>
+     </td>
+    </tr>
+   </table>
+  </div>
+  <table class="blueBar">
+   <tr>
+    <td class="l">generation took 0.00 seconds</td>
+    <td class="r">rendering took 0.18 seconds</td>
+   </tr>
+  </table>
+ </body>
+</html>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>TwoProc2_syslib</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>com.altera.ide.core.alterabuilder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.cdt.core.cnature</nature>
+		<nature>org.eclipse.cdt.managedbuilder.core.managedBuildNature</nature>
+		<nature>com.altera.ide.core.AlteraNios2Nature</nature>
+		<nature>com.altera.ide.core.AlteraSDKNature</nature>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>Device Drivers [nios2]</name>
+			<type>2</type>
+			<location>c:/altera/kits/nios2_60/components</location>
+		</link>
+		<link>
+			<name>Device Drivers [sopc_builder]</name>
+			<type>2</type>
+			<location>C:/altera/quartus60/sopc_builder/components</location>
+		</link>
+	</linkedResources>
+</projectDescription>

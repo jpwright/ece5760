@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# This script creates the hal_reduced_footprint Board Support Package (BSP).
+
+BSP_TYPE=hal
+BSP_DIR=.
+SOPC_DIR=../../..
+
+# Run nios2-bsp utility to create a HAL BSP in this directory
+# for the system with a .sopc file in $SOPC_DIR.
+cmd="nios2-bsp $BSP_TYPE $BSP_DIR $SOPC_DIR \
+--set hal.max_file_descriptors 4 \
+--set hal.enable_small_c_library true \
+--set hal.sys_clk_timer none \
+--set hal.timestamp_timer none \
+--set hal.enable_exit false \
+--set hal.enable_c_plus_plus false \
+--set hal.enable_lightweight_device_driver_api true \
+--set hal.enable_clean_exit false \
+--set hal.enable_sim_optimize false \
+--set hal.enable_reduced_device_drivers true \
+--set hal.make.bsp_cflags_optimization \"-Os\" $@"
+
+echo "create-this-bsp: Running \"$cmd\""
+$cmd || {
+    echo "$cmd failed"
+    exit 1
+}
+
+echo "create-this-bsp: Running make"
+make

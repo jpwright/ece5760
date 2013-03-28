@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Wed Mar 27 23:53:11 2013
+Quartus II 64-Bit Version : 11.0 Build 157 04/27/2011 SJ Full Version
+Revision Name : TwoProcessor
+Top-level Entity Name : TwoProcessor
+Family : Cyclone II
+Total logic elements : 4,420
+    Total combinational functions : 3,884
+    Dedicated logic registers : 2,554
+Total registers : 2554
+Total pins : 56
+Total virtual pins : 0
+Total memory bits : 300,000
+Embedded Multiplier 9-bit elements : 8
+Total PLLs : 0

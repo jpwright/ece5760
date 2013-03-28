@@ -1,0 +1,12 @@
+Analysis & Synthesis Status : Successful - Sun Oct 18 15:00:16 2009
+Quartus II Version : 9.0 Build 235 06/17/2009 SP 2 SJ Web Edition
+Revision Name : NiosII_stratix_1s10_standard
+Top-level Entity Name : NiosII_stratix_1s10_standard
+Family : Stratix
+Total logic elements : 4,531
+Total pins : 172
+Total virtual pins : 2
+Total memory bits : 571,136
+DSP block 9-bit elements : 8
+Total PLLs : 1
+Total DLLs : 0

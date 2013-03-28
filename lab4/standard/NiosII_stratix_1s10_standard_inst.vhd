@@ -1,0 +1,43 @@
+  --Example instantiation for system 'NiosII_stratix_1s10_standard'
+  NiosII_stratix_1s10_standard_inst : NiosII_stratix_1s10_standard
+    port map(
+      LCD_E_from_the_lcd_display => LCD_E_from_the_lcd_display,
+      LCD_RS_from_the_lcd_display => LCD_RS_from_the_lcd_display,
+      LCD_RW_from_the_lcd_display => LCD_RW_from_the_lcd_display,
+      LCD_data_to_and_from_the_lcd_display => LCD_data_to_and_from_the_lcd_display,
+      be_n_to_the_ext_ram => be_n_to_the_ext_ram,
+      bidir_port_to_and_from_the_reconfig_request_pio => bidir_port_to_and_from_the_reconfig_request_pio,
+      byteenablen_to_the_lan91c111 => byteenablen_to_the_lan91c111,
+      ext_ram_bus_address => ext_ram_bus_address,
+      ext_ram_bus_data => ext_ram_bus_data,
+      ior_n_to_the_lan91c111 => ior_n_to_the_lan91c111,
+      iow_n_to_the_lan91c111 => iow_n_to_the_lan91c111,
+      out_port_from_the_led_pio => out_port_from_the_led_pio,
+      out_port_from_the_seven_seg_pio => out_port_from_the_seven_seg_pio,
+      pll_c0_out => pll_c0_out,
+      pll_e0_out => pll_e0_out,
+      read_n_to_the_ext_flash => read_n_to_the_ext_flash,
+      read_n_to_the_ext_ram => read_n_to_the_ext_ram,
+      reset_to_the_lan91c111 => reset_to_the_lan91c111,
+      select_n_to_the_ext_flash => select_n_to_the_ext_flash,
+      select_n_to_the_ext_ram => select_n_to_the_ext_ram,
+      txd_from_the_uart1 => txd_from_the_uart1,
+      write_n_to_the_ext_flash => write_n_to_the_ext_flash,
+      write_n_to_the_ext_ram => write_n_to_the_ext_ram,
+      zs_addr_from_the_sdram => zs_addr_from_the_sdram,
+      zs_ba_from_the_sdram => zs_ba_from_the_sdram,
+      zs_cas_n_from_the_sdram => zs_cas_n_from_the_sdram,
+      zs_cke_from_the_sdram => zs_cke_from_the_sdram,
+      zs_cs_n_from_the_sdram => zs_cs_n_from_the_sdram,
+      zs_dq_to_and_from_the_sdram => zs_dq_to_and_from_the_sdram,
+      zs_dqm_from_the_sdram => zs_dqm_from_the_sdram,
+      zs_ras_n_from_the_sdram => zs_ras_n_from_the_sdram,
+      zs_we_n_from_the_sdram => zs_we_n_from_the_sdram,
+      clk => clk,
+      in_port_to_the_button_pio => in_port_to_the_button_pio,
+      irq_from_the_lan91c111 => irq_from_the_lan91c111,
+      reset_n => reset_n,
+      rxd_to_the_uart1 => rxd_to_the_uart1
+    );
+
+

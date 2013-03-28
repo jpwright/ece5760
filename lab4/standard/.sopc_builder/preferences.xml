@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="Default">
+  <columns>
+   <opcodeName visible="0" />
+   <connections preferredWidth="63" />
+   <irq preferredWidth="34" />
+   <export visible="0" />
+  </columns>
+ </systemtable>
+ <clocktable>
+  <columns>
+   <clockname preferredWidth="251" />
+   <clocksource preferredWidth="251" />
+   <frequency preferredWidth="251" />
+  </columns>
+ </clocktable>
+ <window width="1280" height="984" x="0" y="0" />
+ <library
+   expandedCategories="Library/Memories and Memory Controllers/SDRAM,Library/Processors,Library/Memories and Memory Controllers,Library/Memories and Memory Controllers/External Memory Interfaces,Library/Memories and Memory Controllers/On-Chip,Library/Interface Protocols/Serial,Library/Processor Additions,Project,Library/Interface Protocols,Library" />
+</preferences>

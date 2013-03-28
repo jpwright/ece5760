@@ -1,0 +1,106 @@
+Altera SOPC Builder Version 11.00 Build 157
+Copyright (c) 1999-2009 Altera Corporation.  All rights reserved.
+
+
+No .sopc_builder configuration file(!)
+# 2013.03.27 23:51:48 (*) mk_custom_sdk starting
+# 2013.03.27 23:51:48 (*) Reading project C:/ece5760/lab4/NiosIItwoProcessor/TwoProc.ptf.
+
+# 2013.03.27 23:51:48 (*) Finding all CPUs
+
+# 2013.03.27 23:51:48 (*) Finding all available components
+# 2013.03.27 23:51:48 (*) Reading C:/ece5760/lab4/NiosIItwoProcessor/.sopc_builder/install.ptf
+
+# 2013.03.27 23:51:48 (*) Found 63 components
+
+# 2013.03.27 23:51:49 (*) Finding all peripherals
+
+# 2013.03.27 23:51:49 (*) Finding software components
+
+# 2013.03.27 23:51:49 (*) (Legacy SDK Generation Skipped)
+# 2013.03.27 23:51:49 (*) (All TCL Script Generation Skipped)
+# 2013.03.27 23:51:49 (*) (No Libraries Built)
+# 2013.03.27 23:51:49 (*) (Contents Generation Skipped)
+# 2013.03.27 23:51:49 (*) mk_custom_sdk finishing
+
+# 2013.03.27 23:51:49 (*) Starting generation for system: TwoProc.
+
+.
+.
+.
+...
+....
+.
+
+# 2013.03.27 23:51:51 (*) Running Generator Program for cpu_0
+
+# 2013.03.27 23:51:51 (*) Starting Nios II generation
+# 2013.03.27 23:51:52 (*)   Checking for plaintext license.
+# 2013.03.27 23:51:52 (*)   Plaintext license not found.
+# 2013.03.27 23:51:52 (*)   Checking for encrypted license (non-evaluation).
+# 2013.03.27 23:51:52 (*)   Encrypted license found.  SOF will not be time-limited.
+# 2013.03.27 23:51:52 (*)   Getting CPU configuration settings
+Warning: currently assigned JTAG instance ID 0 for cpu_0/jtag_debug_module is shared by cpu_1/jtag_debug_module. Reassigned to 1.
+
+# 2013.03.27 23:51:52 (*)   Elaborating CPU configuration settings
+# 2013.03.27 23:51:52 (*)   Creating all objects for CPU
+# 2013.03.27 23:51:53 (*)     Pipeline frontend
+# 2013.03.27 23:51:55 (*)   Generating HDL from CPU objects
+# 2013.03.27 23:51:57 (*)   Creating encrypted HDL
+# 2013.03.27 23:51:58 (*) Done Nios II generation
+
+# 2013.03.27 23:51:59 (*) Running Generator Program for onchip_memory_0
+
+# 2013.03.27 23:52:00 (*) Running Generator Program for timer_0
+
+# 2013.03.27 23:52:00 (*) Running Generator Program for out_0
+
+# 2013.03.27 23:52:01 (*) Running Generator Program for in_0
+
+# 2013.03.27 23:52:02 (*) Running Generator Program for cpu_1
+
+# 2013.03.27 23:52:03 (*) Starting Nios II generation
+# 2013.03.27 23:52:03 (*)   Checking for plaintext license.
+# 2013.03.27 23:52:03 (*)   Plaintext license not found.
+# 2013.03.27 23:52:03 (*)   Checking for encrypted license (non-evaluation).
+# 2013.03.27 23:52:04 (*)   Encrypted license found.  SOF will not be time-limited.
+# 2013.03.27 23:52:04 (*)   Getting CPU configuration settings
+# 2013.03.27 23:52:04 (*)   Elaborating CPU configuration settings
+# 2013.03.27 23:52:04 (*)   Creating all objects for CPU
+
+# 2013.03.27 23:52:05 (*)     Pipeline frontend
+# 2013.03.27 23:52:06 (*)   Generating HDL from CPU objects
+# 2013.03.27 23:52:09 (*)   Creating encrypted HDL
+# 2013.03.27 23:52:10 (*) Done Nios II generation
+
+# 2013.03.27 23:52:10 (*) Running Generator Program for onchip_memory_1
+
+# 2013.03.27 23:52:11 (*) Running Generator Program for timer_1
+
+# 2013.03.27 23:52:12 (*) Running Generator Program for out_1
+
+# 2013.03.27 23:52:13 (*) Running Generator Program for in_1
+
+# 2013.03.27 23:52:14 (*) Running Generator Program for mutex_0
+
+
+# 2013.03.27 23:52:14 (*) Making arbitration and system (top) modules.
+
+# 2013.03.27 23:52:19 (*) Generating Quartus symbol for top level: TwoProc
+
+# 2013.03.27 23:52:19 (*) Symbol C:/ece5760/lab4/NiosIItwoProcessor/TwoProc.bsf already exists, no need to regenerate
+# 2013.03.27 23:52:19 (*) Creating command-line system-generation script: C:/ece5760/lab4/NiosIItwoProcessor/TwoProc_generation_script
+
+# 2013.03.27 23:52:19 (*) Running setup for HDL simulator: modelsim
+
+
+# 2013.03.27 23:52:19 (*) Completed generation for system: TwoProc.
+# 2013.03.27 23:52:19 (*) THE FOLLOWING SYSTEM ITEMS HAVE BEEN GENERATED:
+  SOPC Builder database : C:/ece5760/lab4/NiosIItwoProcessor/TwoProc.ptf 
+  System HDL Model : C:/ece5760/lab4/NiosIItwoProcessor/TwoProc.v 
+  System Generation Script : C:/ece5760/lab4/NiosIItwoProcessor/TwoProc_generation_script 
+
+# 2013.03.27 23:52:19 (*) SUCCESS: SYSTEM GENERATION COMPLETED.
+
+
+Press 'Exit' to exit.

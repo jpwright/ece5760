@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?fileVersion 2.1.0?>
+
+<ManagedProjectBuildInfo>
+<project id="TwoProc1_syslib.nios2.lib.1897314328" name="Nios II Library" projectType="nios2.lib">
+<configuration artifactExtension="a" artifactName="TwoProc1_syslib" cleanCommand="rm -rf" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="nios2.lib.debug.1012647395" name="Debug" parent="nios2.lib.debug">
+<toolChain id="com.altera.nj.ui.lib.Debug.1160077413" name="com.altera.nj.ui.lib.Debug" superClass="com.altera.nj.ui.lib.Debug">
+<tool id="com.altera.nj.ui.tool.compiler.lib.debug.1287686546" name="Nios II Compiler" superClass="com.altera.nj.ui.tool.compiler.lib.debug"/>
+<tool id="com.altera.nj.ui.tool.archiver.lib.debug.1735212368" name="Archiver" superClass="com.altera.nj.ui.tool.archiver.lib.debug"/>
+</toolChain>
+</configuration>
+<configuration artifactExtension="a" artifactName="TwoProc1_syslib" cleanCommand="rm -rf" errorParsers="org.eclipse.cdt.core.MakeErrorParser;org.eclipse.cdt.core.GCCErrorParser;org.eclipse.cdt.core.GLDErrorParser;org.eclipse.cdt.core.GASErrorParser" id="nios2.lib.release.2027668892" name="Release" parent="nios2.lib.release">
+<toolChain id="com.altera.nj.ui.lib.Release.272010777" name="com.altera.nj.ui.lib.Release" superClass="com.altera.nj.ui.lib.Release">
+<tool id="com.altera.nj.ui.tool.compiler.lib.release.1494246534" name="Nios II Compiler" superClass="com.altera.nj.ui.tool.compiler.lib.release"/>
+<tool id="com.altera.nj.ui.tool.archiver.lib.release.1564604902" name="Archiver" superClass="com.altera.nj.ui.tool.archiver.lib.release"/>
+</toolChain>
+</configuration>
+</project>
+</ManagedProjectBuildInfo>

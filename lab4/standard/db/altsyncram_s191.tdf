@@ -1,0 +1,124 @@
+--altsyncram BYTE_SIZE=8 CBX_DECLARE_ALL_CONNECTED_PORTS="OFF" CYCLONEII_M4K_COMPATIBILITY="ON" DEVICE_FAMILY="Stratix" LOW_POWER_MODE="AUTO" MAXIMUM_DEPTH=16384 NUMWORDS_A=16384 OPERATION_MODE="SINGLE_PORT" OUTDATA_REG_A="UNREGISTERED" RAM_BLOCK_TYPE="M-RAM" READ_DURING_WRITE_MODE_MIXED_PORTS="DONT_CARE" WIDTH_A=32 WIDTH_BYTEENA_A=4 WIDTHAD_A=14 address_a byteena_a clock0 clocken0 data_a q_a wren_a CARRY_CHAIN="MANUAL" CARRY_CHAIN_LENGTH=70
+--VERSION_BEGIN 9.0SP2 cbx_altsyncram 2009:05:19:16:53:16:SJ cbx_cycloneii 2008:05:19:10:57:37:SJ cbx_lpm_add_sub 2009:05:07:10:25:28:SJ cbx_lpm_compare 2009:02:03:01:43:16:SJ cbx_lpm_decode 2008:05:19:10:39:27:SJ cbx_lpm_mux 2009:03:31:01:01:28:SJ cbx_mgl 2009:02:26:16:06:21:SJ cbx_stratix 2008:09:18:16:08:35:SJ cbx_stratixii 2008:11:14:16:08:42:SJ cbx_stratixiii 2009:05:12:13:36:56:SJ cbx_util_mgl 2008:11:21:14:58:47:SJ  VERSION_END
+
+
+-- Copyright (C) 1991-2009 Altera Corporation
+--  Your use of Altera Corporation's design tools, logic functions 
+--  and other software and tools, and its AMPP partner logic 
+--  functions, and any output files from any of the foregoing 
+--  (including device programming or simulation files), and any 
+--  associated documentation or information are expressly subject 
+--  to the terms and conditions of the Altera Program License 
+--  Subscription Agreement, Altera MegaCore Function License 
+--  Agreement, or other applicable license agreement, including, 
+--  without limitation, that your use is for the sole purpose of 
+--  programming logic devices manufactured by Altera and sold by 
+--  Altera or its authorized distributors.  Please refer to the 
+--  applicable agreement for further details.
+
+
+FUNCTION stratix_ram_block (clk0, clk1, clr0, clr1, ena0, ena1, portaaddr[PORT_A_ADDRESS_WIDTH-1..0], portabyteenamasks[PORT_A_BYTE_ENABLE_MASK_WIDTH-1..0], portadatain[PORT_A_DATA_WIDTH-1..0], portawe, portbaddr[PORT_B_ADDRESS_WIDTH-1..0], portbbyteenamasks[PORT_B_BYTE_ENABLE_MASK_WIDTH-1..0], portbdatain[PORT_B_DATA_WIDTH-1..0], portbrewe)
+WITH ( CONNECTIVITY_CHECKING, DATA_INTERLEAVE_OFFSET_IN_BITS, DATA_INTERLEAVE_WIDTH_IN_BITS, DONT_POWER_OPTIMIZE, INIT_FILE, INIT_FILE_LAYOUT, LOGICAL_RAM_NAME, mem_init0, mem_init1, MIXED_PORT_FEED_THROUGH_MODE, OPERATION_MODE, PORT_A_ADDRESS_CLEAR, PORT_A_ADDRESS_WIDTH = 1, PORT_A_BYTE_ENABLE_CLEAR, PORT_A_BYTE_ENABLE_MASK_WIDTH = 1, PORT_A_DATA_IN_CLEAR, PORT_A_DATA_OUT_CLEAR, PORT_A_DATA_OUT_CLOCK, PORT_A_DATA_WIDTH = 1, PORT_A_FIRST_ADDRESS, PORT_A_FIRST_BIT_NUMBER, PORT_A_LAST_ADDRESS, PORT_A_LOGICAL_RAM_DEPTH, PORT_A_LOGICAL_RAM_WIDTH, PORT_A_WRITE_ENABLE_CLEAR, PORT_B_ADDRESS_CLEAR, PORT_B_ADDRESS_CLOCK, PORT_B_ADDRESS_WIDTH = 1, PORT_B_BYTE_ENABLE_CLEAR, PORT_B_BYTE_ENABLE_CLOCK, PORT_B_BYTE_ENABLE_MASK_WIDTH = 1, PORT_B_DATA_IN_CLEAR, PORT_B_DATA_IN_CLOCK, PORT_B_DATA_OUT_CLEAR, PORT_B_DATA_OUT_CLOCK, PORT_B_DATA_WIDTH = 1, PORT_B_FIRST_ADDRESS, PORT_B_FIRST_BIT_NUMBER, PORT_B_LAST_ADDRESS, PORT_B_LOGICAL_RAM_DEPTH, PORT_B_LOGICAL_RAM_WIDTH, PORT_B_READ_ENABLE_WRITE_ENABLE_CLEAR, PORT_B_READ_ENABLE_WRITE_ENABLE_CLOCK, POWER_UP_UNINITIALIZED, RAM_BLOCK_TYPE)
+RETURNS ( portadataout[PORT_A_DATA_WIDTH-1..0], portbdataout[PORT_B_DATA_WIDTH-1..0]);
+
+--synthesis_resources = M-RAM 1 
+OPTIONS ALTERA_INTERNAL_OPTION = "OPTIMIZE_POWER_DURING_SYNTHESIS=NORMAL_COMPILATION";
+
+SUBDESIGN altsyncram_s191
+( 
+	address_a[13..0]	:	input;
+	byteena_a[3..0]	:	input;
+	clock0	:	input;
+	clocken0	:	input;
+	data_a[31..0]	:	input;
+	q_a[31..0]	:	output;
+	wren_a	:	input;
+) 
+VARIABLE 
+	ram_block1a0 : stratix_ram_block
+		WITH (
+			CONNECTIVITY_CHECKING = "OFF",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "single_port",
+			PORT_A_ADDRESS_WIDTH = 14,
+			PORT_A_BYTE_ENABLE_MASK_WIDTH = 1,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 8,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 0,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 16384,
+			PORT_A_LOGICAL_RAM_WIDTH = 32,
+			RAM_BLOCK_TYPE = "M-RAM"
+		);
+	ram_block1a1 : stratix_ram_block
+		WITH (
+			CONNECTIVITY_CHECKING = "OFF",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "single_port",
+			PORT_A_ADDRESS_WIDTH = 14,
+			PORT_A_BYTE_ENABLE_MASK_WIDTH = 1,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 8,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 8,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 16384,
+			PORT_A_LOGICAL_RAM_WIDTH = 32,
+			RAM_BLOCK_TYPE = "M-RAM"
+		);
+	ram_block1a2 : stratix_ram_block
+		WITH (
+			CONNECTIVITY_CHECKING = "OFF",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "single_port",
+			PORT_A_ADDRESS_WIDTH = 14,
+			PORT_A_BYTE_ENABLE_MASK_WIDTH = 1,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 8,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 16,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 16384,
+			PORT_A_LOGICAL_RAM_WIDTH = 32,
+			RAM_BLOCK_TYPE = "M-RAM"
+		);
+	ram_block1a3 : stratix_ram_block
+		WITH (
+			CONNECTIVITY_CHECKING = "OFF",
+			LOGICAL_RAM_NAME = "ALTSYNCRAM",
+			OPERATION_MODE = "single_port",
+			PORT_A_ADDRESS_WIDTH = 14,
+			PORT_A_BYTE_ENABLE_MASK_WIDTH = 1,
+			PORT_A_DATA_OUT_CLEAR = "none",
+			PORT_A_DATA_OUT_CLOCK = "none",
+			PORT_A_DATA_WIDTH = 8,
+			PORT_A_FIRST_ADDRESS = 0,
+			PORT_A_FIRST_BIT_NUMBER = 24,
+			PORT_A_LAST_ADDRESS = 16383,
+			PORT_A_LOGICAL_RAM_DEPTH = 16384,
+			PORT_A_LOGICAL_RAM_WIDTH = 32,
+			RAM_BLOCK_TYPE = "M-RAM"
+		);
+	address_a_wire[13..0]	: WIRE;
+
+BEGIN 
+	ram_block1a[3..0].clk0 = clock0;
+	ram_block1a[3..0].ena0 = clocken0;
+	ram_block1a[3..0].portaaddr[] = ( address_a_wire[13..0]);
+	ram_block1a[0].portabyteenamasks[] = ( byteena_a[0..0]);
+	ram_block1a[1].portabyteenamasks[] = ( byteena_a[1..1]);
+	ram_block1a[2].portabyteenamasks[] = ( byteena_a[2..2]);
+	ram_block1a[3].portabyteenamasks[] = ( byteena_a[3..3]);
+	ram_block1a[0].portadatain[] = ( data_a[7..0]);
+	ram_block1a[1].portadatain[] = ( data_a[15..8]);
+	ram_block1a[2].portadatain[] = ( data_a[23..16]);
+	ram_block1a[3].portadatain[] = ( data_a[31..24]);
+	ram_block1a[3..0].portawe = wren_a;
+	address_a_wire[] = address_a[];
+	q_a[] = ( ram_block1a[3..0].portadataout[7..0]);
+END;
+--VALID FILE
