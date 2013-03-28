@@ -4,7 +4,7 @@
  <systemtable filter="All Interfaces">
   <columns>
    <opcodeName visible="0" />
-   <connections preferredWidth="143" />
+   <connections preferredWidth="287" />
    <irq preferredWidth="34" />
    <export visible="0" />
    <name preferredWidth="381" />
@@ -19,5 +19,5 @@
  </clocktable>
  <window width="1280" height="984" x="0" y="0" />
  <library
-   expandedCategories="Library,Library/Peripherals,Library/Peripherals/Multiprocessor Coordination,Project" />
+   expandedCategories="Library,Library/Peripherals/Multiprocessor Coordination,Library/Peripherals,Project" />
 </preferences>

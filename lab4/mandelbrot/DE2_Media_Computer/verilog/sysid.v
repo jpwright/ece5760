@@ -36,7 +36,7 @@ module sysid (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1364455509 : 0;
+  assign readdata = address ? 1364496304 : 0;
 
 endmodule
 

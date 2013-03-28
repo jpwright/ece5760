@@ -2436,7 +2436,7 @@ SYSTEM nios_system
          Has_Clock = "1";
          View 
          {
-            Settings_Summary = "System ID (at last Generate):<br> <b>00000000</b>    (unique ID tag) <br> <b>5153F055</b> (timestamp: Thu Mar 28, 2013 @3:25 AM)";
+            Settings_Summary = "System ID (at last Generate):<br> <b>00000000</b>    (unique ID tag) <br> <b>51548FB0</b> (timestamp: Thu Mar 28, 2013 @2:45 PM)";
             MESSAGES 
             {
             }
@@ -2445,7 +2445,7 @@ SYSTEM nios_system
       WIZARD_SCRIPT_ARGUMENTS 
       {
          id = "0u";
-         timestamp = "1364455509u";
+         timestamp = "1364496304u";
          regenerate_values = "0";
          MAKE 
          {
@@ -2454,7 +2454,7 @@ SYSTEM nios_system
                verifysysid 
                {
                   All_Depends_On = "0";
-                  Command = "nios2-download $(JTAG_CABLE)                                --sidp=0x10002020 --id=0 --timestamp=1364455509";
+                  Command = "nios2-download $(JTAG_CABLE)                                --sidp=0x10002020 --id=0 --timestamp=1364496304";
                   Is_Phony = "1";
                   Target_File = "dummy_verifysysid_file";
                }

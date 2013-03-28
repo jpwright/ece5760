@@ -1,12 +1,12 @@
-Fitter Status : Successful - Thu Mar 28 04:59:04 2013
+Fitter Status : Successful - Thu Mar 28 14:59:38 2013
 Quartus II 64-Bit Version : 11.0 Build 157 04/27/2011 SJ Full Version
 Revision Name : DE2_Media_Computer
 Top-level Entity Name : DE2_Media_Computer
 Family : Cyclone II
 Device : EP2C35F672C6
 Timing Models : Final
-Total logic elements : 6,685 / 33,216 ( 20 % )
-    Total combinational functions : 5,963 / 33,216 ( 18 % )
+Total logic elements : 6,679 / 33,216 ( 20 % )
+    Total combinational functions : 5,953 / 33,216 ( 18 % )
     Dedicated logic registers : 4,084 / 33,216 ( 12 % )
 Total registers : 4277
 Total pins : 318 / 475 ( 67 % )

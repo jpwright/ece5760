@@ -3,7 +3,7 @@
 # Machine generated for CPU 'cpu_0' in SOPC Builder design 'nios_system'
 # SOPC Builder design path: C:/ece5760/lab4/mandelbrot/DE2_Media_Computer/verilog/nios_system.sopcinfo
 #
-# Generated: Thu Mar 28 00:13:00 EDT 2013
+# Generated: Thu Mar 28 14:37:23 EDT 2013
 
 # DO NOT MODIFY THIS FILE
 #

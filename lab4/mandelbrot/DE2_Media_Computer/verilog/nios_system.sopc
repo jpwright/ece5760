@@ -6,7 +6,7 @@
    {
       datum _sortIndex
       {
-         value = "23";
+         value = "20";
          type = "int";
       }
       datum sopceditor_expanded
@@ -19,7 +19,7 @@
    {
       datum _sortIndex
       {
-         value = "27";
+         value = "24";
          type = "int";
       }
       datum sopceditor_expanded
@@ -32,7 +32,7 @@
    {
       datum _sortIndex
       {
-         value = "30";
+         value = "27";
          type = "int";
       }
       datum sopceditor_expanded
@@ -45,7 +45,7 @@
    {
       datum _sortIndex
       {
-         value = "31";
+         value = "28";
          type = "int";
       }
       datum sopceditor_expanded
@@ -58,7 +58,7 @@
    {
       datum _sortIndex
       {
-         value = "14";
+         value = "11";
          type = "int";
       }
       datum sopceditor_expanded
@@ -71,7 +71,7 @@
    {
       datum _sortIndex
       {
-         value = "15";
+         value = "12";
          type = "int";
       }
       datum sopceditor_expanded
@@ -84,7 +84,7 @@
    {
       datum _sortIndex
       {
-         value = "22";
+         value = "19";
          type = "int";
       }
       datum sopceditor_expanded
@@ -97,7 +97,7 @@
    {
       datum _sortIndex
       {
-         value = "9";
+         value = "6";
          type = "int";
       }
       datum sopceditor_expanded
@@ -110,7 +110,7 @@
    {
       datum _sortIndex
       {
-         value = "10";
+         value = "7";
          type = "int";
       }
       datum sopceditor_expanded
@@ -123,7 +123,7 @@
    {
       datum _sortIndex
       {
-         value = "11";
+         value = "8";
          type = "int";
       }
       datum sopceditor_expanded
@@ -136,7 +136,7 @@
    {
       datum _sortIndex
       {
-         value = "18";
+         value = "15";
          type = "int";
       }
       datum sopceditor_expanded
@@ -158,28 +158,7 @@
          type = "boolean";
       }
    }
-   element JTAG_UART_1
-   {
-      datum _sortIndex
-      {
-         value = "4";
-         type = "int";
-      }
-   }
    element PS2_Port
-   {
-      datum _sortIndex
-      {
-         value = "16";
-         type = "int";
-      }
-      datum sopceditor_expanded
-      {
-         value = "1";
-         type = "boolean";
-      }
-   }
-   element Pushbuttons
    {
       datum _sortIndex
       {
@@ -192,11 +171,24 @@
          type = "boolean";
       }
    }
+   element Pushbuttons
+   {
+      datum _sortIndex
+      {
+         value = "10";
+         type = "int";
+      }
+      datum sopceditor_expanded
+      {
+         value = "1";
+         type = "boolean";
+      }
+   }
    element Red_LEDs
    {
       datum _sortIndex
       {
-         value = "8";
+         value = "5";
          type = "int";
       }
       datum sopceditor_expanded
@@ -209,7 +201,7 @@
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "3";
          type = "int";
       }
       datum megawizard_uipreferences
@@ -227,7 +219,7 @@
    {
       datum _sortIndex
       {
-         value = "7";
+         value = "4";
          type = "int";
       }
       datum sopceditor_expanded
@@ -240,7 +232,7 @@
    {
       datum _sortIndex
       {
-         value = "17";
+         value = "14";
          type = "int";
       }
       datum sopceditor_expanded
@@ -253,7 +245,7 @@
    {
       datum _sortIndex
       {
-         value = "12";
+         value = "9";
          type = "int";
       }
       datum sopceditor_expanded
@@ -266,7 +258,7 @@
    {
       datum _sortIndex
       {
-         value = "26";
+         value = "23";
          type = "int";
       }
       datum sopceditor_expanded
@@ -279,7 +271,7 @@
    {
       datum _sortIndex
       {
-         value = "29";
+         value = "26";
          type = "int";
       }
       datum sopceditor_expanded
@@ -292,7 +284,7 @@
    {
       datum _sortIndex
       {
-         value = "28";
+         value = "25";
          type = "int";
       }
       datum sopceditor_expanded
@@ -305,7 +297,7 @@
    {
       datum _sortIndex
       {
-         value = "24";
+         value = "21";
          type = "int";
       }
       datum sopceditor_expanded
@@ -318,7 +310,7 @@
    {
       datum _sortIndex
       {
-         value = "25";
+         value = "22";
          type = "int";
       }
       datum sopceditor_expanded
@@ -421,14 +413,6 @@
          type = "long";
       }
    }
-   element JTAG_UART_1.avalon_jtag_slave
-   {
-      datum baseAddress
-      {
-         value = "8388608";
-         type = "long";
-      }
-   }
    element Char_LCD_16x2.avalon_lcd_slave
    {
       datum _lockedAddress
@@ -442,7 +426,7 @@
          type = "long";
       }
    }
-   element Expansion_JP2.avalon_parallel_port_slave
+   element HEX3_HEX0.avalon_parallel_port_slave
    {
       datum _lockedAddress
       {
@@ -451,7 +435,20 @@
       }
       datum baseAddress
       {
-         value = "268435568";
+         value = "268435488";
+         type = "long";
+      }
+   }
+   element Slider_Switches.avalon_parallel_port_slave
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "268435520";
          type = "long";
       }
    }
@@ -465,6 +462,19 @@
       datum baseAddress
       {
          value = "268435504";
+         type = "long";
+      }
+   }
+   element Expansion_JP2.avalon_parallel_port_slave
+   {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
+      datum baseAddress
+      {
+         value = "268435568";
          type = "long";
       }
    }
@@ -494,32 +504,6 @@
          type = "long";
       }
    }
-   element HEX3_HEX0.avalon_parallel_port_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "268435488";
-         type = "long";
-      }
-   }
-   element Red_LEDs.avalon_parallel_port_slave
-   {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
-      datum baseAddress
-      {
-         value = "268435456";
-         type = "long";
-      }
-   }
    element Green_LEDs.avalon_parallel_port_slave
    {
       datum _lockedAddress
@@ -533,7 +517,7 @@
          type = "long";
       }
    }
-   element Slider_Switches.avalon_parallel_port_slave
+   element Red_LEDs.avalon_parallel_port_slave
    {
       datum _lockedAddress
       {
@@ -542,7 +526,7 @@
       }
       datum baseAddress
       {
-         value = "268435520";
+         value = "268435456";
          type = "long";
       }
    }
@@ -580,14 +564,6 @@
          type = "boolean";
       }
    }
-   element clk
-   {
-      datum _sortIndex
-      {
-         value = "20";
-         type = "int";
-      }
-   }
    element clk.clk
    {
       datum clock_domain
@@ -596,11 +572,19 @@
          type = "String";
       }
    }
+   element clk
+   {
+      datum _sortIndex
+      {
+         value = "17";
+         type = "int";
+      }
+   }
    element clk_27
    {
       datum _sortIndex
       {
-         value = "21";
+         value = "18";
          type = "int";
       }
    }
@@ -626,7 +610,7 @@
       }
       datum megawizard_uipreferences
       {
-         value = "{}";
+         value = "{output_language=VERILOG, output_directory=C:\\ece5760\\lab4\\mandelbrot\\DE2_Media_Computer\\verilog}";
          type = "String";
       }
       datum sopceditor_expanded
@@ -643,48 +627,6 @@
          type = "int";
       }
    }
-   element cpu_1
-   {
-      datum _sortIndex
-      {
-         value = "3";
-         type = "int";
-      }
-      datum megawizard_uipreferences
-      {
-         value = "{}";
-         type = "String";
-      }
-      datum sopceditor_expanded
-      {
-         value = "1";
-         type = "boolean";
-      }
-   }
-   element cpu_1_altera_nios_custom_instr_floating_point_inst
-   {
-      datum _sortIndex
-      {
-         value = "5";
-         type = "int";
-      }
-   }
-   element cpu_1.data_master
-   {
-      datum _tags
-      {
-         value = "";
-         type = "String";
-      }
-   }
-   element cpu_1.instruction_master
-   {
-      datum _tags
-      {
-         value = "";
-         type = "String";
-      }
-   }
    element cpu_0.jtag_debug_module
    {
       datum _lockedAddress
@@ -698,14 +640,6 @@
          type = "long";
       }
    }
-   element cpu_1.jtag_debug_module
-   {
-      datum baseAddress
-      {
-         value = "167776256";
-         type = "long";
-      }
-   }
    element nios_system
    {
    }
@@ -713,15 +647,20 @@
    {
       datum _sortIndex
       {
-         value = "32";
+         value = "29";
          type = "int";
       }
    }
-   element pio_0.s1
+   element SDRAM.s1
    {
+      datum _lockedAddress
+      {
+         value = "1";
+         type = "boolean";
+      }
       datum baseAddress
       {
-         value = "8388608";
+         value = "0";
          type = "long";
       }
    }
@@ -738,16 +677,11 @@
          type = "long";
       }
    }
-   element SDRAM.s1
+   element pio_0.s1
    {
-      datum _lockedAddress
-      {
-         value = "1";
-         type = "boolean";
-      }
       datum baseAddress
       {
-         value = "0";
+         value = "8388608";
          type = "long";
       }
    }
@@ -771,7 +705,7 @@
    {
       datum _sortIndex
       {
-         value = "19";
+         value = "16";
          type = "int";
       }
       datum sopceditor_expanded
@@ -801,7 +735,7 @@
  <parameter name="projectName">DE2_Media_Computer.qpf</parameter>
  <parameter name="sopcBorderPoints" value="true" />
  <parameter name="systemHash" value="-50525447756" />
- <parameter name="timeStamp" value="1364455509359" />
+ <parameter name="timeStamp" value="1364496304340" />
  <module kind="clock_source" version="11.0" enabled="1" name="clk">
   <parameter name="clockFrequency" value="50000000" />
   <parameter name="clockFrequencyKnown" value="true" />
@@ -1284,116 +1218,6 @@
   <parameter name="AUTO_CLK_IN_PRIMARY_CLOCK_RATE" value="50000000" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
  </module>
- <module kind="altera_nios2" version="11.0" enabled="0" name="cpu_1">
-  <parameter name="userDefinedSettings" value="" />
-  <parameter name="tightlyCoupledInstructionMaster3MapParam" value="" />
-  <parameter name="tightlyCoupledInstructionMaster3AddrWidth" value="1" />
-  <parameter name="tightlyCoupledInstructionMaster2MapParam" value="" />
-  <parameter name="tightlyCoupledInstructionMaster2AddrWidth" value="1" />
-  <parameter name="tightlyCoupledInstructionMaster1MapParam" value="" />
-  <parameter name="tightlyCoupledInstructionMaster1AddrWidth" value="1" />
-  <parameter name="tightlyCoupledInstructionMaster0MapParam" value="" />
-  <parameter name="tightlyCoupledInstructionMaster0AddrWidth" value="1" />
-  <parameter name="tightlyCoupledDataMaster3MapParam" value="" />
-  <parameter name="tightlyCoupledDataMaster3AddrWidth" value="1" />
-  <parameter name="tightlyCoupledDataMaster2MapParam" value="" />
-  <parameter name="tightlyCoupledDataMaster2AddrWidth" value="1" />
-  <parameter name="tightlyCoupledDataMaster1MapParam" value="" />
-  <parameter name="tightlyCoupledDataMaster1AddrWidth" value="1" />
-  <parameter name="tightlyCoupledDataMaster0MapParam" value="" />
-  <parameter name="tightlyCoupledDataMaster0AddrWidth" value="1" />
-  <parameter name="setting_showUnpublishedSettings" value="false" />
-  <parameter name="setting_showInternalSettings" value="false" />
-  <parameter name="setting_shadowRegisterSets" value="0" />
-  <parameter name="setting_preciseSlaveAccessErrorException" value="false" />
-  <parameter name="setting_preciseIllegalMemAccessException" value="false" />
-  <parameter name="setting_preciseDivisionErrorException" value="false" />
-  <parameter name="setting_performanceCounter" value="false" />
-  <parameter name="setting_perfCounterWidth" value="_32" />
-  <parameter name="setting_interruptControllerType" value="Internal" />
-  <parameter name="setting_illegalMemAccessDetection" value="false" />
-  <parameter name="setting_illegalInstructionsTrap" value="false" />
-  <parameter name="setting_fullWaveformSignals" value="false" />
-  <parameter name="setting_extraExceptionInfo" value="false" />
-  <parameter name="setting_exportPCB" value="false" />
-  <parameter name="setting_debugSimGen" value="false" />
-  <parameter name="setting_clearXBitsLDNonBypass" value="true" />
-  <parameter name="setting_branchPredictionType" value="Automatic" />
-  <parameter name="setting_bit31BypassDCache" value="true" />
-  <parameter name="setting_bigEndian" value="false" />
-  <parameter name="setting_bhtPtrSz" value="_8" />
-  <parameter name="setting_bhtIndexPcOnly" value="false" />
-  <parameter name="setting_avalonDebugPortPresent" value="false" />
-  <parameter name="setting_alwaysEncrypt" value="true" />
-  <parameter name="setting_allowFullAddressRange" value="false" />
-  <parameter name="setting_activateTrace" value="true" />
-  <parameter name="setting_activateTestEndChecker" value="false" />
-  <parameter name="setting_activateMonitors" value="true" />
-  <parameter name="setting_activateModelChecker" value="false" />
-  <parameter name="setting_HDLSimCachesCleared" value="true" />
-  <parameter name="setting_HBreakTest" value="false" />
-  <parameter name="resetSlave" value="SDRAM.s1" />
-  <parameter name="resetOffset" value="1048576" />
-  <parameter name="muldiv_multiplierType" value="EmbeddedMulFast" />
-  <parameter name="muldiv_divider" value="false" />
-  <parameter name="mpu_useLimit" value="false" />
-  <parameter name="mpu_numOfInstRegion" value="8" />
-  <parameter name="mpu_numOfDataRegion" value="8" />
-  <parameter name="mpu_minInstRegionSize" value="_12" />
-  <parameter name="mpu_minDataRegionSize" value="_12" />
-  <parameter name="mpu_enabled" value="false" />
-  <parameter name="mmu_uitlbNumEntries" value="_4" />
-  <parameter name="mmu_udtlbNumEntries" value="_6" />
-  <parameter name="mmu_tlbPtrSz" value="_7" />
-  <parameter name="mmu_tlbNumWays" value="_16" />
-  <parameter name="mmu_processIDNumBits" value="_8" />
-  <parameter name="mmu_enabled" value="false" />
-  <parameter name="mmu_autoAssignTlbPtrSz" value="true" />
-  <parameter name="mmu_TLBMissExcSlave" value="" />
-  <parameter name="mmu_TLBMissExcOffset" value="0" />
-  <parameter name="manuallyAssignCpuID" value="true" />
-  <parameter name="internalIrqMaskSystemInfo" value="3" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='SDRAM.s1' start='0x0' end='0x800000' /><slave name='cpu_1.jtag_debug_module' start='0xA001000' end='0xA001800' /></address-map>]]></parameter>
-  <parameter name="instAddrWidth" value="28" />
-  <parameter name="impl" value="Fast" />
-  <parameter name="icache_size" value="_4096" />
-  <parameter name="icache_ramBlockType" value="Automatic" />
-  <parameter name="icache_numTCIM" value="_0" />
-  <parameter name="icache_burstType" value="None" />
-  <parameter name="exceptionSlave" value="SDRAM.s1" />
-  <parameter name="exceptionOffset" value="1048608" />
-  <parameter name="deviceFeaturesSystemInfo">M512_MEMORY 0 M4K_MEMORY 1 M9K_MEMORY 0 M20K_MEMORY 0 M144K_MEMORY 0 MRAM_MEMORY 0 MLAB_MEMORY 0 ESB 0 EPCS 1 DSP 0 EMUL 1 HARDCOPY 0 LVDS_IO 0 ADDRESS_STALL 1 TRANSCEIVER_3G_BLOCK 0 TRANSCEIVER_6G_BLOCK 0 DSP_SHIFTER_BLOCK 0</parameter>
-  <parameter name="deviceFamilyName" value="Cyclone II" />
-  <parameter name="debug_triggerArming" value="true" />
-  <parameter name="debug_level" value="Level1" />
-  <parameter name="debug_jtagInstanceID" value="0" />
-  <parameter name="debug_embeddedPLL" value="true" />
-  <parameter name="debug_debugReqSignals" value="false" />
-  <parameter name="debug_assignJtagInstanceID" value="false" />
-  <parameter name="debug_OCIOnchipTrace" value="_128" />
-  <parameter name="dcache_size" value="_2048" />
-  <parameter name="dcache_ramBlockType" value="Automatic" />
-  <parameter name="dcache_omitDataMaster" value="false" />
-  <parameter name="dcache_numTCDM" value="_0" />
-  <parameter name="dcache_lineSize" value="_32" />
-  <parameter name="dcache_bursts" value="false" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='SDRAM.s1' start='0x0' end='0x800000' /><slave name='JTAG_UART_1.avalon_jtag_slave' start='0x800000' end='0x800008' /><slave name='SRAM.avalon_sram_slave' start='0x8000000' end='0x8080000' /><slave name='cpu_1.jtag_debug_module' start='0xA001000' end='0xA001800' /><slave name='Green_LEDs.avalon_parallel_port_slave' start='0x10000010' end='0x10000020' /><slave name='Interval_Timer.s1' start='0x10002000' end='0x10002020' /><slave name='sysid.control_slave' start='0x10002020' end='0x10002028' /><slave name='External_Clocks.avalon_clocks_slave' start='0x10002030' end='0x10002032' /></address-map>]]></parameter>
-  <parameter name="dataAddrWidth" value="29" />
-  <parameter name="customInstSlavesSystemInfo"><![CDATA[<info><slave name="altera_nios_custom_instr_floating_point_inst" baseAddress="252" addressSpan="4" clockCycleType="VARIABLE" /><slave name="altera_nios_custom_instr_floating_point_inst" baseAddress="252" addressSpan="4" clockCycleType="VARIABLE" /></info>]]></parameter>
-  <parameter name="cpuReset" value="false" />
-  <parameter name="cpuID" value="1" />
-  <parameter name="clockFrequency" value="50000000" />
-  <parameter name="breakSlave">cpu_1.jtag_debug_module</parameter>
-  <parameter name="breakOffset" value="32" />
- </module>
- <module
-   kind="altera_nios_custom_instr_floating_point"
-   version="11.0"
-   enabled="0"
-   name="cpu_1_altera_nios_custom_instr_floating_point_inst">
-  <parameter name="useDivider" value="0" />
-  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
- </module>
  <module
    kind="altera_nios_custom_instr_floating_point"
    version="11.0"
@@ -1401,23 +1225,6 @@
    name="cpu_0_altera_nios_custom_instr_floating_point_inst">
   <parameter name="useDivider" value="0" />
   <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone II" />
- </module>
- <module
-   kind="altera_avalon_jtag_uart"
-   version="11.0"
-   enabled="0"
-   name="JTAG_UART_1">
-  <parameter name="allowMultipleConnections" value="true" />
-  <parameter name="hubInstanceID" value="0" />
-  <parameter name="readBufferDepth" value="64" />
-  <parameter name="readIRQThreshold" value="8" />
-  <parameter name="simInputCharacterStream" value="" />
-  <parameter name="simInteractiveOptions">INTERACTIVE_ASCII_OUTPUT</parameter>
-  <parameter name="useRegistersForReadBuffer" value="false" />
-  <parameter name="useRegistersForWriteBuffer" value="false" />
-  <parameter name="useRelativePathForSimFile" value="false" />
-  <parameter name="writeBufferDepth" value="64" />
-  <parameter name="writeIRQThreshold" value="8" />
  </module>
  <module kind="altera_avalon_pio" version="11.0" enabled="1" name="pio_0">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -1862,82 +1669,6 @@
    start="External_Clocks.sys_clk"
    end="Alpha_Blending.clock_reset" />
  <connection
-   kind="avalon"
-   version="11.0"
-   start="cpu_1.instruction_master"
-   end="cpu_1.jtag_debug_module">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0a001000" />
- </connection>
- <connection
-   kind="avalon"
-   version="11.0"
-   start="cpu_1.data_master"
-   end="cpu_1.jtag_debug_module">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x0a001000" />
- </connection>
- <connection
-   kind="avalon"
-   version="11.0"
-   start="cpu_1.instruction_master"
-   end="SDRAM.s1">
-  <parameter name="arbitrationPriority" value="2" />
-  <parameter name="baseAddress" value="0x0000" />
- </connection>
- <connection
-   kind="avalon"
-   version="11.0"
-   start="cpu_1.data_master"
-   end="Interval_Timer.s1">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x10002000" />
- </connection>
- <connection
-   kind="avalon"
-   version="11.0"
-   start="cpu_1.data_master"
-   end="sysid.control_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x10002020" />
- </connection>
- <connection kind="avalon" version="11.0" start="cpu_1.data_master" end="SDRAM.s1">
-  <parameter name="arbitrationPriority" value="2" />
-  <parameter name="baseAddress" value="0x0000" />
- </connection>
- <connection
-   kind="avalon"
-   version="11.0"
-   start="cpu_1.data_master"
-   end="SRAM.avalon_sram_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x08000000" />
- </connection>
- <connection
-   kind="avalon"
-   version="11.0"
-   start="cpu_1.data_master"
-   end="External_Clocks.avalon_clocks_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x10002030" />
- </connection>
- <connection
-   kind="interrupt"
-   version="11.0"
-   start="cpu_1.d_irq"
-   end="Interval_Timer.irq">
-  <parameter name="irqNumber" value="1" />
- </connection>
- <connection
-   kind="nios_custom_instruction"
-   version="11.0"
-   start="cpu_1.custom_instruction_master"
-   end="cpu_1_altera_nios_custom_instr_floating_point_inst.s1">
-  <parameter name="CIName">altera_nios_custom_instr_floating_point_inst</parameter>
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="252" />
- </connection>
- <connection
    kind="nios_custom_instruction"
    version="11.0"
    start="cpu_0.custom_instruction_master"
@@ -1952,47 +1683,14 @@
    start="cpu_0.jtag_debug_module_reset"
    end="cpu_0.reset_n" />
  <connection
-   kind="interrupt"
-   version="11.0"
-   start="cpu_1.d_irq"
-   end="JTAG_UART_1.irq">
-  <parameter name="irqNumber" value="0" />
- </connection>
- <connection
-   kind="avalon"
-   version="11.0"
-   start="cpu_1.data_master"
-   end="JTAG_UART_1.avalon_jtag_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x00800000" />
- </connection>
- <connection
    kind="clock"
    version="11.0"
    start="External_Clocks.sys_clk"
    end="SDRAM.clk" />
- <connection
-   kind="avalon"
-   version="11.0"
-   start="cpu_1.data_master"
-   end="Green_LEDs.avalon_parallel_port_slave">
-  <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x10000010" />
- </connection>
  <connection kind="clock" version="11.0" start="clk.clk" end="pio_0.clk" />
  <connection kind="avalon" version="11.0" start="cpu_0.data_master" end="pio_0.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x00800000" />
  </connection>
  <connection kind="reset" version="11.0" start="clk.clk_reset" end="pio_0.reset" />
- <connection
-   kind="clock"
-   version="11.0"
-   start="External_Clocks.sys_clk"
-   end="cpu_1.clk" />
- <connection
-   kind="clock"
-   version="11.0"
-   start="External_Clocks.sys_clk"
-   end="JTAG_UART_1.clk" />
 </system>
